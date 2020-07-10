@@ -107,7 +107,9 @@ if (!function_exists('build_cat_route')) {
 
 		if(app('market_params')->cat_url_prefix == ''){
 			return route('first_url',[$alias]);
-		} else {
+		} elseif($alias == 'prices') {
+			return route('first_url',[$alias]);
+        } else {
 			return route('market_cat_url',[$alias]);
 		}
     }
