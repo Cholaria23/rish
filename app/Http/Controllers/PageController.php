@@ -19,6 +19,8 @@ use \Demos\Market\MarketCat;
 use \Demos\Market\Brand;
 use \Demos\Market\Good;
 use \Demos\Market\Order;
+use \Demos\AdminPanel\FormType;
+use \Demos\AdminPanel\Lead;
 
 class PageController extends Controller {
 
@@ -44,22 +46,48 @@ class PageController extends Controller {
         }
 
         $blog = Unit::with('lang')->whereHas('category', function($query){
-            $query->whereIn('cat_id', Cat::descendants(4));
+            $query->whereIn('cat_id', Cat::descendants(2));
         })->where('is_hidden',0)->whereRaw('IF (is_period = 1, start < NOW(),  1=1 )')->whereRaw('IF (is_period = 1,  (end > NOW() || end is null),  1=1)')->orderBy('date_publication','desc')->limit(4)->get();
 
-        // $catalog_cats = MarketCat::with(['lang','children' => function ($query) {
-        //     $query->with(['lang','children' => function ($query) {
-        //         $query->with('lang')->where('is_hidden',0)->orderBy('sort_order','asc');
-        //     }])->where('is_hidden',0)->orderBy('sort_order','asc');
-        // }])->where('is_hidden',0)->where('parent_id', '1')->orderBy('sort_order','asc')->get();
+        $special_actions = Unit::with('lang')->whereHas('category', function($query){
+            $query->whereIn('cat_id', Cat::descendants(3));
+        })->where('is_hidden',0)->whereRaw('IF (is_period = 1, start < NOW(),  1=1 )')->whereRaw('IF (is_period = 1,  (end > NOW() || end is null),  1=1)')->orderBy('date_publication','desc')->limit(4)->get();
 
-        // $brands = Brand::with('lang')->where('is_top',1)->where('is_hidden',0)->orderByRaw('RAND()')->limit(24)->get();
+        $services = \Demos\AdminPanel\Cat::with([
+            'lang',
+            'children' => function ($query) {
+                $query->with([
+                    'lang'                    
+                ])->where('is_hidden',0)->orderBy('sort_order','asc');
+            }
+        ])->where('is_hidden',0)->find(4);
+
+        $services_top = \Demos\AdminPanel\Cat::with('lang')->whereIn('id',\Demos\AdminPanel\Cat::descendants(4))->where('spec_option_1',1)->where('is_hidden',0)->orderBy('sort_order','asc')->get();
+
+        $specialists = Unit::with('lang')->whereHas('category', function($query){
+            $query->where('cat_id', 5);
+        })->where('is_hidden',0)->where('is_top',1)->whereRaw('IF (is_period = 1, start < NOW(),  1=1 )')->whereRaw('IF (is_period = 1,  (end > NOW() || end is null),  1=1)')->orderBy('sort_order','desc')->limit(4)->get();
+        
+        $leads = Lead::with(['goods','answers' => function ($query) {
+            $query->where('is_hidden',0);
+        }])->whereIn('form_type_id',[8])->where('is_hidden',0)->where('parent_id',null)->orderBy('created_at','desc')->limit(5)->get();
+
+        $reviews = Unit::with('lang')->where('is_hidden',0)->find(4);
+
+        $advantages = Unit::with('lang')->whereHas('category', function($query){
+            $query->where('cat_id', 6);
+        })->where('is_hidden',0)->whereRaw('IF (is_period = 1, start < NOW(),  1=1 )')->whereRaw('IF (is_period = 1,  (end > NOW() || end is null),  1=1)')->orderBy('sort_order','desc')->get();
 
         $page_data = [
             'unit' => $unit,
             'blog' => $blog,
-            // 'catalog_cats' => $catalog_cats,
-            // 'brands' => $brands,
+            'special_actions' => $special_actions,
+            'services' => $services,
+            'services_top' => $services_top,
+            'specialists' => $specialists,
+            'leads' => $leads,
+            'reviews' => $reviews,
+            'advantages' => $advantages,
             'meta_type' => 'unit'
         ];
         View::share('page_title', $unit->lang->name);

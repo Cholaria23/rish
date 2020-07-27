@@ -7,6 +7,8 @@ class ViewComposerServiceProvider extends ServiceProvider {
         view()->composer("layouts.main.slider","App\Http\ViewComposers\SliderComposer");
         view()->composer("layouts.main.header","App\Http\ViewComposers\HeaderComposer");
         view()->composer("layouts.main.footer","App\Http\ViewComposers\FooterComposer");
+        view()->composer("layouts.main.checkup","App\Http\ViewComposers\CheckComposer");
+        view()->composer("layouts.main.advantages","App\Http\ViewComposers\AdvantagesComposer");
     }
     public function register() {
 
