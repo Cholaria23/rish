@@ -14,7 +14,7 @@
             @lang('main.perpetual_share')
         @endif
     @else
-        {{$unit_item->date_publication->format('d')}}/{{$unit_item->date_publication->format('m')}}
+        {{-- {{$unit_item->date_publication->format('d')}}/{{$unit_item->date_publication->format('m')}} --}}
     @endif
 
     {{$unit_item->lang->name}}

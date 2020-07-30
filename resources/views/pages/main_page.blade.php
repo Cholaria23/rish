@@ -59,6 +59,11 @@
 	@include('layouts.main.advantages')
 	@if(isset($special_actions) && $special_actions)
 		@lang('main.action_title')
+		@if($special_actions_cat->count())
+			@foreach($special_actions_cat as $cat_item)
+				<a href="{{route('first_url',$cat_item->alias)}}">{{$cat_item->lang->name}}</a>
+			@endforeach
+		@endif
 		@foreach ($special_actions as $unit_item)
 			@include('layouts.tiles.news')
 		@endforeach

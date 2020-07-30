@@ -125,3 +125,9 @@ if (!function_exists('build_good_route')) {
 		}
     }
 }
+
+if (!function_exists('build_expert_route')) {
+    function build_expert_route($alias) {
+        return route('expert',[$alias]);		
+    }
+}

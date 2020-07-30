@@ -21,6 +21,7 @@ use \Demos\Market\Good;
 use \Demos\Market\Order;
 use \Demos\AdminPanel\FormType;
 use \Demos\AdminPanel\Lead;
+use \Demos\AdminPanel\Specialist;
 
 class PageController extends Controller {
 
@@ -52,7 +53,7 @@ class PageController extends Controller {
         $special_actions = Unit::with('lang')->whereHas('category', function($query){
             $query->whereIn('cat_id', Cat::descendants(3));
         })->where('is_hidden',0)->whereRaw('IF (is_period = 1, start < NOW(),  1=1 )')->whereRaw('IF (is_period = 1,  (end > NOW() || end is null),  1=1)')->orderBy('date_publication','desc')->limit(4)->get();
-
+        $special_actions_cat = Cat::with('lang')->whereIn('id', Cat::descendants(3))->where('is_hidden',0)->orderBy('sort_order','asc')->get();
         $services = \Demos\AdminPanel\Cat::with([
             'lang',
             'children' => function ($query) {
@@ -82,6 +83,7 @@ class PageController extends Controller {
             'unit' => $unit,
             'blog' => $blog,
             'special_actions' => $special_actions,
+            'special_actions_cat' => $special_actions_cat,
             'services' => $services,
             'services_top' => $services_top,
             'specialists' => $specialists,
@@ -112,13 +114,34 @@ class PageController extends Controller {
                         ->get();
             $this->calculate_visitors($unit);
             View::share('page_title', $unit->lang->name);
+            $rel_types = \Demos\AdminPanel\UnitsRelType::get();
             $page_data = [
                 'unit' => $unit,
+                'rel_types' => $rel_types,
                 'breadcrumbs' => $breadcrumbs,
                 'meta_type' => 'unit'
             ];
             if($unit->id == 2){
                 $view = 'pages.contact_page';
+            } elseif(in_array($unit->cat_id, array_merge(Cat::descendants(2),[2]))){
+                $cat_ids = [];
+                $rel_service_cats = new \Illuminate\Database\Eloquent\Collection;
+                $rel_service_units = new \Illuminate\Database\Eloquent\Collection;
+                if($rel_types->count()){
+                    foreach ($rel_types as $type_item){
+                        if ($type_item->id == 3){
+                            if(count(array_pluck($unit->related_units[$type_item->id]['units'],'id'))){
+                                $rel_service_units =  Unit::with('lang')->whereIn('id',array_pluck($unit->related_units[$type_item->id]['units'],'id'))->orderBy('sort_order','desc')->get();
+                            }
+                            if(count(array_pluck($unit->related_units[$type_item->id]['units'],'cat_id'))){
+                                $rel_service_cats =  Cat::with('lang')->whereIn('id',array_pluck($unit->related_units[$type_item->id]['units'],'cat_id'))->orderBy('sort_order','asc')->get();
+                            }
+                        }
+                    }
+                }
+                $page_data['rel_service_cats'] = $rel_service_cats;
+                $page_data['rel_service_units'] = $rel_service_units;
+                $view = 'pages.news_page';
             } else {
                 $view = 'pages.unit_page';
             }
@@ -152,9 +175,14 @@ class PageController extends Controller {
             })->where('is_hidden',0)->whereRaw('IF (is_period = 1, start < NOW(),  1=1 )')->whereRaw('IF (is_period = 1,  (end > NOW() || end is null),  1=1)');
             $first_query = clone $query;
             $cat->units = $first_query->orderBy('sort_order','desc')->get();
-            if(in_array($cat->id, array_merge(Cat::descendants(4),[4]))) {
-                $cat->units = $query->orderBy('date_publication','desc')->paginate(10);
-                $view = 'pages.news_list';
+            if(in_array($cat->id, array_merge(array_merge(Cat::descendants(2),[2]), array_merge(Cat::descendants(3),[3])))) {
+                $cat->popular_units = $query->orderBy('visitors','desc')->limit(4)->get();
+                $cat->units = $query->orderBy('date_publication','desc')->paginate(8);
+                if(in_array($cat->id, array_merge(Cat::descendants(2),[2]))){
+                    $view = 'pages.news_list';
+                } else {
+                    $view = 'pages.actions_list';
+                }
             } else {
                 $view = 'pages.cat_page';
             }
@@ -170,6 +198,127 @@ class PageController extends Controller {
             return Redirect::to('404');
         }
 
+    }
+
+    public function showExpert($alias) {
+        $expert = Specialist::with(['lang', 'appoints'])->where('alias', $alias)->first();
+        if($expert){
+            if (Auth::guard('admin_account')->check()) {
+                View::share('admin_edit_link', route('admin.specialists.editSpecialist', $expert->id));
+            }
+            $breadcrumbs = [];
+            $breadcrumbs[] = [
+                'alias' => 'napravleniya-konsulytaciy',
+                'name' => Lang::get('main.experts'),
+            ];
+            View::share('page_title', $expert->lang->first_name." ".$expert->lang->last_name);
+            $_articles = $expert->rel_units()
+                    ->where('is_hidden', 0)
+                    ->where('specialists_units_relations.rel_type_id', 1)
+                    ->with(['lang', 'rel_units' => function($query) {
+                        $query->where('units_relations.rel_type_id', 1)->with('lang');
+                    }])
+                    ->whereRaw('IF (is_period = 1, start < NOW(),  1=1 )')
+                    ->whereRaw('IF (is_period = 1,  (end > NOW() || end is null),  1=1)')
+                    ->orderBy('specialists_units_relations.sort_order')
+                    ->get();
+            $articles = [];
+            foreach ($_articles as $_article) {
+                if ($_article->rel_units->count()){
+                    $articles[$_article->rel_units[0]->alias]['name'] = $_article->rel_units[0]->lang->name;
+                    $articles[$_article->rel_units[0]->alias]['articles'][] = $_article;
+                }
+            }
+            $expert->articles = $articles;
+            $expert->activity = $expert->rel_units()->where('is_hidden', 0)->orderBy('specialists_units_relations.sort_order')->where('specialists_units_relations.rel_type_id', 2)->with('lang')->get();
+            $expert->company = $expert->rel_units()->where('is_hidden', 0)->orderBy('specialists_units_relations.sort_order')->where('specialists_units_relations.rel_type_id', 3)->with('lang')->get();
+            $expert->xp = FALSE;
+            $xp_val = \DB::table('specialists_chars_relations')->where('specialist_id', $expert->id)->where('val_id', 1)->first();
+            if ($xp_val && $xp_val->own_value != '') {
+                $xp_array = json_decode($xp_val->own_value, true);
+                if (isset($xp_array[App::getLocale()])) {
+                    $expert->xp = date('Y') - $xp_array[App::getLocale()];
+                }
+            }
+
+            if ($expert->is_consultant) {
+                $first_day = Carbon::createFromDate(date('Y'), date('m'), date('d'), 'Europe/Kiev')->addDays(3);
+                $begin = new DateTime($first_day->format('Y-m-d'));
+                $end = new DateTime($first_day->format('Y-m-d'));
+                $end = $end->modify( '+28 day' );
+                $interval = new DateInterval('P1D');
+                $daterange = new DatePeriod($begin, $interval, $end);
+                $work_days = explode(",", $expert->work_days);
+                $dates = [];
+                $page = 0;
+                $day = 0;
+                $days_ow_week = [
+                    Lang::get('main.day_1'),
+                    Lang::get('main.day_2'),
+                    Lang::get('main.day_3'),
+                    Lang::get('main.day_4'),
+                    Lang::get('main.day_5'),
+                    Lang::get('main.day_6'),
+                    Lang::get('main.day_7'),
+                ];
+                $appoints = [];
+                foreach ($expert->appoints as $appoint) {
+                    $appoints[$appoint->date->format('d.m.Y')][] = $appoint->time;
+                }
+
+                foreach($daterange as $date){
+                    $day_of_week = \Carbon\Carbon::parse($date)->dayOfWeek;
+                    $day_of_week = ($day_of_week != 0) ? $day_of_week : 7;
+                    $start_var_name = 'work_day_'.$day_of_week.'_start';
+                    $end_var_name = 'work_day_'.$day_of_week.'_end';
+                    $start = $expert->$start_var_name;
+                    $end = $expert->$end_var_name;
+                    $_date = $date->format('d.m.Y');
+                    $day_period = [];
+                    $is_work_day = (in_array($day_of_week, $work_days));
+                    if ($is_work_day) {
+                        $_day_period = new DatePeriod(
+                            new DateTime($_date.' '.$expert->$start_var_name.':00'),
+                            new DateInterval('P0Y0DT0H'.$expert->appoint_interval.'M'),
+                            new DateTime($_date.' '.$expert->$end_var_name.':00')
+                        );
+                        foreach ($_day_period as $key => $value) {
+                            $time = $value->format('H:i');
+                            $day_period[] = [
+                                'time' => $time,
+                                'date' => $date->format('Y-m-d'),
+                                'is_active' => (!isset($appoints[$_date]) || !in_array($time, $appoints[$_date]))
+                            ];
+                        }
+                    }
+                    $dates[$page][$day] = [
+                        'date' => $date->format('d.m'),
+                        'day' => $days_ow_week[$day_of_week-1],
+                        'is_work_day' => $is_work_day,
+                        'day_period' => $day_period,
+                    ];
+                    $day++;
+                    if ($day == 7) {
+                        $day = 0;
+                        $page++;
+                    }
+                }
+            } else {
+                $dates = FALSE;
+            }
+            $directions_consultation = Cat::with('lang')->where('is_hidden',0)->where('parent_id',4)->orderBy('sort_order','asc')->get();
+            $page_data = [
+                'dates' => $dates,
+                'expert' => $expert,
+                'breadcrumbs' => $breadcrumbs,
+                'directions_consultation' => $directions_consultation,
+                'meta_type' => 'expert'
+            ];
+            $view = 'pages.expert_page';
+            return View::make($view, $page_data);
+        } else {
+            return Redirect::to('404');
+        }
     }
 
     public function getCabinet () {
