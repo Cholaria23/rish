@@ -41,17 +41,7 @@
 	@if(isset($leads) && $leads->count())
 		@lang('main.reviews')
 		@foreach ($leads as $lead_item)
-			@if($lead_item->user_first_name != '' || $lead_item->user_last_name != '')
-				@if($lead_item->user_first_name != '')
-					{{$lead_item->user_first_name}}
-				@endif
-				@if($lead_item->user_last_name != '')
-					{{$lead_item->user_last_name}}
-				@endif
-			@endif
-			@if($lead_item->content != '')
-				{!! $lead_item->content !!}
-			@endif
+			@include('layouts.tiles.lead')
 		@endforeach
 		<a href="{{build_unit_route($reviews)}}">@lang('main.all_reviews')</a>
 	@endif

@@ -97,11 +97,19 @@ class PageController extends Controller {
     }
 
     public function showUnit($alias,$cat_alias=NULL) {
-        $unit = Unit::with(['lang', 'additions' => function($query){
-            $query->where('is_hidden', 0)->with(['children' => function($query){
-                $query->where('is_hidden', 0)->orderBy('sort_order');
-            }]);
-        }])->where('alias', $alias)->first();
+        $unit = Unit::with([
+                'lang',
+                'additions' => function($query){
+                    $query->where('is_hidden', 0)->with(['children' => function($query){
+                        $query->where('is_hidden', 0)->orderBy('sort_order');
+                    }]);
+                },
+                'leads' => function ($query) {
+                    $query->with(['answers' => function ($query) {
+                        $query->where('is_hidden',0);
+                    }])->where('is_hidden',0)->where('parent_id',null)->orderBy('created_at','desc');
+                }
+        ])->where('alias', $alias)->first();
         if (isset($unit) && Auth::guard('admin_account')->check()) {
             View::share('admin_edit_link', route('admin.units.editUnit', $unit->id));
         }
@@ -142,6 +150,10 @@ class PageController extends Controller {
                 $page_data['rel_service_cats'] = $rel_service_cats;
                 $page_data['rel_service_units'] = $rel_service_units;
                 $view = 'pages.news_page';
+            } elseif($unit->cat_id == 7) {
+                $view = 'pages.equipment_page';  
+            } elseif(in_array($unit->cat_id, Cat::descendants(4))) {
+                $view = 'pages.services_page';
             } else {
                 $view = 'pages.unit_page';
             }
@@ -153,7 +165,25 @@ class PageController extends Controller {
     }
 
     public function showCat($alias) {
-        $cat = Cat::with('lang')->where('alias', $alias)->first();
+        $cat = Cat::with([
+                'lang',
+                'children' => function ($query) {
+                    $query->with([
+                        'lang',
+                        'children' => function ($query) {
+                            $query->with('lang')->where('is_hidden',0)->orderBy('sort_order','asc');
+                        },
+                        'units' => function ($query) {
+                            $query->with('lang')->where('is_hidden',0)->orderBy('sort_order','desc');
+                        }
+                    ])->where('is_hidden',0)->orderBy('sort_order','asc');
+                },
+                'leads' => function ($query) {
+                    $query->with(['answers' => function ($query) {
+                        $query->where('is_hidden',0);
+                    }])->where('is_hidden',0)->where('parent_id',null)->orderBy('created_at','desc');
+                }
+            ])->where('alias', $alias)->first();
         if ($cat) {
             $cats = Cat::ancestors($cat->id);
             $breadcrumbs = Cat::with('lang')->whereIn('id', $cats)
@@ -183,6 +213,12 @@ class PageController extends Controller {
                 } else {
                     $view = 'pages.actions_list';
                 }
+            } elseif ($cat->id == 7) { 
+                $view = 'pages.equipment_list';
+            } elseif ($cat->id == 4) { 
+                $view = 'pages.services_list';
+            } elseif(in_array($cat->id, Cat::descendants(4))) {
+                $view = 'pages.services_list_page';
             } else {
                 $view = 'pages.cat_page';
             }

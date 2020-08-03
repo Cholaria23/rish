@@ -131,3 +131,15 @@ if (!function_exists('build_expert_route')) {
         return route('expert',[$alias]);		
     }
 }
+
+if (!function_exists('get_cat_id_flag')) {
+    function get_cat_id_flag($units,$ids){
+        foreach($units as $unit){
+            if(in_array($unit->cat_id, $ids)){
+                return true;
+            }
+        }
+        return false;
+
+    }
+}

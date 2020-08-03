@@ -12,6 +12,7 @@
 			{{$unit->lang->name}}
 		</h1>
 	@endif
+	<img src="{{unit_img('small',$unit->img_1)}}" alt="{{$unit->lang->name}}" title="{{$unit->lang->name}}">
 	@if($unit->lang->long_desc_1 != '')
 		{!!$unit->lang->long_desc_1!!}
 	@endif
@@ -60,6 +61,21 @@
 						<img class="description-gallary-item lazyload" data-src="{{gallery_photo_img($galleri_item->id,'small',$photo->file)}}" alt="@lang('main.photo') {{$unit->lang->name}} " title="@lang('main.photo') {{$unit->lang->name}} ">
 					</a>
 				@endforeach
+			@endif
+		@endforeach
+	@endif
+
+	@if($rel_types->count())
+		@foreach ($rel_types as $type_item)
+			@if ($type_item->id == 2)
+				@if (isset($unit->related_units[$type_item->id]) && count($unit->related_units[$type_item->id]['units']))
+					<h2>
+						@lang('main.titles.equipment_in')
+					</h2>
+					@foreach ($unit->related_units[$type_item->id]['units'] as $unit_item)
+						<a href="{{build_unit_route($unit_item)}}">{{$unit_item->lang->name}}</a>
+					@endforeach
+				@endif
 			@endif
 		@endforeach
 	@endif
