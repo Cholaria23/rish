@@ -107,7 +107,9 @@ if (!function_exists('build_cat_route')) {
 
 		if(app('market_params')->cat_url_prefix == ''){
 			return route('first_url',[$alias]);
-		} else {
+		} elseif($alias == 'prices') {
+			return route('first_url',[$alias]);
+        } else {
 			return route('market_cat_url',[$alias]);
 		}
     }
@@ -121,5 +123,23 @@ if (!function_exists('build_good_route')) {
 		} else {
 			return route('market_good_url',[$alias]);
 		}
+    }
+}
+
+if (!function_exists('build_expert_route')) {
+    function build_expert_route($alias) {
+        return route('expert',[$alias]);		
+    }
+}
+
+if (!function_exists('get_cat_id_flag')) {
+    function get_cat_id_flag($units,$ids){
+        foreach($units as $unit){
+            if(in_array($unit->cat_id, $ids)){
+                return true;
+            }
+        }
+        return false;
+
     }
 }
