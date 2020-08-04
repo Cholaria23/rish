@@ -39,4 +39,16 @@ return [
         "name" => "Имя",
         "phone" => "Телефон",
     ],
+    'search_arr' => [
+        "services" => "Услуги",
+        "news" => "Новости",
+        "articles" => "Статьи",
+        "actions" => "Акции",
+        "specialists" => "Специалисты",
+        "equipments" => "Оборудование",
+        "units" => "Другие материалы",
+    ],
+    'search' => "Поиск",
+    'search_page' => "<span>Поиск</span>",
+    'search_meta' => "Поиск",
 ];
