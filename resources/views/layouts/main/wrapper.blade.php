@@ -12,13 +12,13 @@
 		<link rel="canonical" href="{{URL::to(Request::path())}}" />
 		@include('layouts.main.favicon')
 		@yield('links')
-		<script type="text/javascript" src="{{ asset('js/jquery-2.2.4.min.js') }}"></script>
 		@yield('header_scripts')
 		{!! $seo->google_analytics !!}
 		{!! $seo->facebook_pixel !!}
 		@if ( $seo->noindex == 1)
 	        <meta name="robots" content="noindex, nofollow" />
 	    @endif
+		<link rel="stylesheet" href="{{ asset('/css/app.css') }}">
 	</head>
 	<body>
 		@if (isset($admin_edit_link))
@@ -29,12 +29,15 @@
 	                </g>
 	            </svg>
 	        </a>
-	    @endif    
+	    @endif
 		@include('layouts.main.header')
-		<div class="main-wrap">
+		<main class="main">
 			@yield('page')
-		</div>
+		</main>
 		@include('layouts.main.footer')
+		@include('layouts.main.popup')
+		<script src="{{asset('/js/app.js')}}"></script>
+		<script defer type="text/javascript" src='/js/messages_{{ App::getLocale() }}.js'></script>
 		<script>
 			$.ajaxSetup({
                 headers: {
