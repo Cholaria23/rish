@@ -1,11 +1,10 @@
 $(document).ready(function() {
-
     $(function () {
-    	$('.popup-modal').magnificPopup({
+    	$('.popup-js').magnificPopup({
     		fixedContentPos: true,
     	});
 
-    	$(document).on('click', '.popup-modal-close', function (e) {
+    	$(document).on('click', '.popup-close-js', function (e) {
     		e.preventDefault();
     		$.magnificPopup.close();
     	});

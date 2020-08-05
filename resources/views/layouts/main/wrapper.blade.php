@@ -36,6 +36,7 @@
 		</main>
 		@include('layouts.main.footer')
 		@include('layouts.main.popup')
+		@include('layouts.main.svg_sprite')
 		<script src="{{asset('/js/app.js')}}"></script>
 		<script defer type="text/javascript" src='/js/messages_{{ App::getLocale() }}.js'></script>
 		<script>

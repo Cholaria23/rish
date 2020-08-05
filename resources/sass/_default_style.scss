@@ -21,11 +21,11 @@ body {
     width: 100%;
     max-width: 100%;
     overflow-x: hidden;
-    // font-family: $open_sansregular;
+    font-family: $montserrat_regular;
     font-size: 16px;
     line-height: 1.4;
-    // color: $main_color;
-    // background-color: $body-bg;
+    color: $main_color;
+    background-color: $body-bg;
     &.overflow {
         overflow: hidden;
     }

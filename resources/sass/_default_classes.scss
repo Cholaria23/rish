@@ -2,8 +2,20 @@
     flex: 1 0 auto;
 }
 .container {
-    max-width: 1200px;
+    max-width: 1395px;
     width: 100%;
     margin: 0 auto;
     padding: 0 15px;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    &.active {
+        display: block;
+    }
 }

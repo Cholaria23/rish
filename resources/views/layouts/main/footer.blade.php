@@ -37,3 +37,5 @@
     @endif
     @lang('main.footer_copyright',['date'=>date('Y')])
 </footer>
+
+<div class="overlay"></div>

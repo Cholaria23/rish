@@ -32,6 +32,8 @@ return [
     'btn' => [
         'checkup' => 'Запись на чекап',
         "feedback" => "Запись на приём",
+        "callback" => "Обратный звонок",
+        "find" => "Искать",
     ],
     'form' => [
         "feedback_title" => "Запишитесь на прием",
@@ -48,7 +50,9 @@ return [
         "equipments" => "Оборудование",
         "units" => "Другие материалы",
     ],
+    'header_search' => "Введите ваш запрос здесь…",
     'search' => "Поиск",
     'search_page' => "<span>Поиск</span>",
     'search_meta' => "Поиск",
+    'more' => "Ещe",
 ];
