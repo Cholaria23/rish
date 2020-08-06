@@ -17,4 +17,15 @@ $dark_turquoise: #3b9191;
 $white: #fff;
 $grey: #f0f0f0;
 $l_grey: #e3e3e3;
+$li_grey: #d5d5d5;
 $ggrey: #696969;
+
+
+// mixin for adaptive text
+$maxWidth: 1920;
+
+@mixin adaptiv-font($pcSize, $mobSize) {
+ $addSize: $pcSize - $mobSize;
+ $maxWidth: $maxWidth - 320;
+ font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}

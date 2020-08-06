@@ -16,6 +16,8 @@ loadTouchEvents($);
 import 'lazysizes';
 // magnific_popup
 import magnificPopup from "magnific-popup/dist/jquery.magnific-popup.min.js";
+// sliders
+require('./sliders');
 // popup
 require('./popup');
 // main
