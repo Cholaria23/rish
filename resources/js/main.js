@@ -35,6 +35,10 @@ $(document).ready(function() {
                 $('.overlay.active').unbind('click');
             }
         });
-
     });
+    // polifil object-fit
+    if($('.object-fit-js').length) {
+       var someImages = $('.object-fit-js');
+       objectFitPolyfill(someImages);
+    }
 })

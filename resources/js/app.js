@@ -1,6 +1,8 @@
 // jQuery
 require('jquery/dist/jquery.min');
 window.$ = window.jQuery = require('jquery');
+// object-fit-images
+import objectFitPolyfill from 'objectFitPolyfill';
 // import validate from "jquery-validation";
 require("jquery-validation");
 // slick
