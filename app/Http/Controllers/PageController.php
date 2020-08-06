@@ -65,9 +65,9 @@ class PageController extends Controller {
 
         $services_top = \Demos\AdminPanel\Cat::with('lang')->whereIn('id',\Demos\AdminPanel\Cat::descendants(4))->where('spec_option_1',1)->where('is_hidden',0)->orderBy('sort_order','asc')->get();
 
-        $specialists = Unit::with('lang')->whereHas('category', function($query){
-            $query->where('cat_id', 5);
-        })->where('is_hidden',0)->where('is_top',1)->whereRaw('IF (is_period = 1, start < NOW(),  1=1 )')->whereRaw('IF (is_period = 1,  (end > NOW() || end is null),  1=1)')->orderBy('sort_order','desc')->limit(4)->get();
+        $specialist = Unit::with('lang')->where('is_hidden',0)->find(79);
+
+        $specialists = Specialist::with('lang')->where('is_hidden',0)->where('is_top',1)->where('is_block',0)->orderBy('sort_order','desc')->limit(4)->get();
         
         $leads = Lead::with(['goods','answers' => function ($query) {
             $query->where('is_hidden',0);
@@ -86,6 +86,7 @@ class PageController extends Controller {
             'special_actions_cat' => $special_actions_cat,
             'services' => $services,
             'services_top' => $services_top,
+            'specialist' => $specialist,
             'specialists' => $specialists,
             'leads' => $leads,
             'reviews' => $reviews,
@@ -238,14 +239,15 @@ class PageController extends Controller {
 
     public function showExpert($alias) {
         $expert = Specialist::with(['lang', 'appoints'])->where('alias', $alias)->first();
+        $specialist = Unit::with('lang')->where('is_hidden',0)->find(79);
         if($expert){
             if (Auth::guard('admin_account')->check()) {
                 View::share('admin_edit_link', route('admin.specialists.editSpecialist', $expert->id));
             }
             $breadcrumbs = [];
             $breadcrumbs[] = [
-                'alias' => 'napravleniya-konsulytaciy',
-                'name' => Lang::get('main.experts'),
+                'alias' => build_unit_route($specialist),
+                'name' => $specialist->lang->name,
             ];
             View::share('page_title', $expert->lang->first_name." ".$expert->lang->last_name);
             $_articles = $expert->rel_units()

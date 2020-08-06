@@ -30,11 +30,11 @@
 	@endif
 
 	@if(isset($specialists) && $specialists)
-		{{$specialists[0]->category->lang->name}}
-		@foreach ($specialists as $unit_item)
+		{{$specialist->lang->name}}
+		@foreach ($specialists as $specialist_item)
 			@include('layouts.tiles.specialist_tile')
 		@endforeach
-		<a href="{{route('first_url',$specialists[0]->category->alias)}}">
+		<a href="{{build_unit_route($specialist)}}">
 			@lang('main.all_specialists')
 		</a>
 	@endif
