@@ -14,8 +14,8 @@
 	@endif
 	{{$unit->date_publication->format('d')}}/{{$unit->date_publication->format('m')}}
 	@lang('main.titles.'.$unit->category->id)
-	@if(isset($unit->related_specialists) && $unit->related_specialists && isset($unit->related_specialists[2]) && isset($unit->related_specialists[2]['specialists']))
-		@foreach ($unit->related_specialists[2]['specialists'] as  $specialist_item)
+	@if(isset($unit->related_specialists) && $unit->related_specialists && isset($unit->related_specialists[3]) && isset($unit->related_specialists[3]['specialists']))
+		@foreach ($unit->related_specialists[3]['specialists'] as  $specialist_item)
 		<img src="{{specialist_cover('thumb', $specialist_item->img_1)}}" alt="{{$specialist_item->lang->last_name}} {{$specialist_item->lang->first_name}} {{$specialist_item->lang->father_name}}" title="{{$specialist_item->lang->last_name}} {{$specialist_item->lang->first_name}} {{$specialist_item->lang->father_name}}">
 			<a href="{{build_expert_route($specialist_item->alias)}}">
 				{{$specialist_item->lang->last_name}}
@@ -25,7 +25,6 @@
 			@if($specialist_item->lang->short_desc_1 != '')
 				{{$specialist_item->lang->short_desc_1}}
 			@endif
-			
 		@endforeach
 	@endif
 

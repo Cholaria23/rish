@@ -30,6 +30,11 @@
             @include('layouts.tiles.service_unit_tile')
         @endforeach
     @endif
+    @if(isset($cat->related_specialists) && $cat->related_specialists && isset($cat->related_specialists[1]) && isset($cat->related_specialists[1]['specialists']))
+        @foreach ($cat->related_specialists[1]['specialists'] as  $specialist_item)
+            @include('layouts.tiles.specialist_tile')
+        @endforeach
+    @endif
 
     @if(isset($cat->related_units) && $cat->related_units && $cat->related_units->count() && get_cat_id_flag($cat->related_units,[7]))
         @lang('main.equipment')
