@@ -7,7 +7,12 @@
     margin: 0 auto;
     padding: 0 15px;
 }
-
+.container-small {
+    max-width: 925px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
 .overlay {
     position: fixed;
     top: 0;
@@ -19,3 +24,45 @@
         display: block;
     }
 }
+.object-fit-cover {
+    object-fit: cover;
+}
+.main-section {
+    margin-bottom: 85px;
+}
+.main-section-title {
+    font-family: $montserrat_bold;
+    @include adaptiv-font(40, 22);
+    line-height: 1;
+}
+// btn start
+.btn-arrow {
+    display: inline-block;
+    padding: 9px 45px 9px 23px;
+    font-family: $montserrat_medium;
+    color: $turquoise;
+    background-color: $turquoise_rgba_one;
+    border-radius: 6px;
+    transition: .25s linear;
+    &:hover {
+        background-color: $turquoise_rgba_25;
+    }
+    &:hover .btn-arrow-text::after {
+        left: calc(100% + 15px);
+    }
+    .btn-arrow-text {
+        position: relative;
+        &::after {
+            content: '';
+            width: 12px;
+            height: 10px;
+            position: absolute;
+            left: calc(100% + 10px);
+            top: 50%;
+            transform: translateY(-50%);
+            background: url(/img/right-arrow.svg) center center/cover no-repeat;
+            transition: .25s linear;
+        }
+    }
+}
+// btn end

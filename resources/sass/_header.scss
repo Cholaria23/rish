@@ -201,6 +201,9 @@
     &:hover .header-submenu-wrap {
         display: block;
     }
+    &:hover .has-submenu-text {
+        color: $turquoise;
+    }
     &:hover .has-submenu-icon svg {
         fill: $turquoise;
     }

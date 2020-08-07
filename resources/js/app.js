@@ -1,6 +1,8 @@
 // jQuery
 require('jquery/dist/jquery.min');
 window.$ = window.jQuery = require('jquery');
+// object-fit-images
+import objectFitPolyfill from 'objectFitPolyfill';
 // import validate from "jquery-validation";
 require("jquery-validation");
 // slick
@@ -14,6 +16,8 @@ loadTouchEvents($);
 import 'lazysizes';
 // magnific_popup
 import magnificPopup from "magnific-popup/dist/jquery.magnific-popup.min.js";
+// sliders
+require('./sliders');
 // popup
 require('./popup');
 // main
