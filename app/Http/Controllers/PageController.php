@@ -153,6 +153,102 @@ class PageController extends Controller {
                 $view = 'pages.news_page';
             } elseif($unit->cat_id == 7) {
                 $view = 'pages.equipment_page';  
+            } elseif($unit->id == 79) {
+                if($this->request->has('search') && $this->request->get('search') != '') {
+                    $search = substr(strtolower($this->request->get('search')),0,-1);
+                    $result_specialists_ids =[];
+
+                    $specialists = Specialist::with('lang')->where('is_hidden', 0)->whereHas('lang', function($query) use ($search) {
+                        $query->where(function ($query) use ($search) {
+                            $query->where('first_name', 'LIKE', '%'.$search.'%')->orWhere('last_name', 'LIKE', '%'.$search.'%')->orWhere('father_name', 'LIKE', '%'.$search.'%');
+                        });
+                    })->get();
+        
+                    foreach ($specialists as $specialist) {
+                        $result_specialists_ids[] = $specialist->id;
+                    }
+
+                    // $specialists = Specialist::with('lang')->where('is_hidden', 0)->whereNotIn('id', $result_specialists_ids)->whereHas('lang', function($query) use ($search) {
+                    //     $query->where(function($query) use ($search){
+                    //         $query->where('long_desc_1', 'LIKE', '%'.$search.'%')->orWhere('long_desc_2', 'LIKE', '%'.$search.'%');
+                    //     });
+                    // })->get();
+        
+                    // foreach ($specialists as $specialist) {
+                    //     $result_specialists_ids[] = $specialist->id;
+                    // }
+
+                    $search_array = explode(" ", $search);
+                    if (!empty($search_array)) {
+                        foreach ($search_array as $search_item) {
+                            $specialists = Specialist::with('lang')
+                                ->whereNotIn('id', $result_specialists_ids)
+                                ->where('is_hidden', 0)
+                                ->whereHas('lang', function($query) use ($search_item) {
+                                    $query->where(function ($query) use ($search_item) {
+                                        $query->where('first_name', 'LIKE', '%'.$search_item.'%')->orWhere('last_name', 'LIKE', '%'.$search_item.'%')->orWhere('father_name', 'LIKE', '%'.$search_item.'%');
+                                    });
+                                }
+                            )->get();
+                            
+                            foreach ($specialists as $specialist) {
+                                $result_specialists_ids[] = $specialist->id;
+                            }
+                        }
+                    }
+                    // foreach ($search_array as $search_item) {
+                    //     $specialists = Specialist::with('lang')->where('is_hidden', 0)->whereNotIn('id', $result_specialists_ids)->whereHas('lang', function($query) use ($search_item) {
+                    //         $query->where(function($query) use ($search_item){
+                    //             $query->where('long_desc_1', 'LIKE', '%'.$search_item.'%')->orWhere('long_desc_2', 'LIKE', '%'.$search_item.'%');
+                    //         });
+                    //     })->get();
+            
+                    //     foreach ($specialists as $specialist) {
+                    //         $result_specialists_ids[] = $specialist->id;
+                    //     }
+                    // }
+                    
+                    $specialists = Specialist::with('lang')->where('is_hidden',0)
+                        ->whereHas('rel_units', function ($query) use ($search) {
+                            $query->whereIn('cat_id', Cat::descendants(4))->whereHas('lang', function($query)  use ($search) {
+                                $query->where('name', 'LIKE', '%'.$search.'%');
+                            });
+                    })->whereNotIn('id', $result_specialists_ids)->get();
+
+                    foreach ($specialists as $specialist) {
+                        $result_specialists_ids[] = $specialist->id;
+                    }
+
+                    $specialists = Specialist::with('lang')->where('is_hidden',0)
+                        ->whereHas('rel_units_categories', function ($query) use ($search) {
+                            $query->whereIn('cat_id', Cat::descendants(4))->whereHas('lang', function($query)  use ($search) {
+                                $query->where('name', 'LIKE', '%'.$search.'%');
+                            });
+                    })->whereNotIn('id', $result_specialists_ids)->get();
+
+                    foreach ($specialists as $specialist) {
+                        $result_specialists_ids[] = $specialist->id;
+                    }
+
+                    if(count($result_specialists_ids)){
+                        $specialists = Specialist::with('lang')->where('is_hidden',0)->where('is_block',0)->whereIn('id',$result_specialists_ids)->orderBy('sort_order','desc')->paginate(8);
+                        $specialists->appends([
+                            'search' => $search,
+                        ]);
+                    } else {
+                        $specialists = new \Illuminate\Database\Eloquent\Collection;
+                    }
+
+                } else {
+                    $specialists = Specialist::with('lang')->where('is_hidden',0)->where('is_block',0)->orderBy('sort_order','desc')->paginate(8);
+                }
+
+
+                $view = 'pages.expert_list';
+
+
+
+                $page_data['specialists'] = $specialists;
             } elseif(in_array($unit->cat_id, Cat::descendants(4))) {
                 $view = 'pages.services_page';
             } else {
@@ -238,7 +334,18 @@ class PageController extends Controller {
     }
 
     public function showExpert($alias) {
-        $expert = Specialist::with(['lang', 'appoints'])->where('alias', $alias)->first();
+        $expert = Specialist::with([
+                'lang',
+                'appoints',
+                'images_1' =>function ($query) {
+                    $query->where('is_hidden',0)->orderBy('sort_order','asc');
+                },
+                'leads' => function ($query) {
+                    $query->with(['answers' => function ($query) {
+                        $query->where('is_hidden',0);
+                    }])->whereIn('form_type_id',[8])->where('is_hidden',0)->where('parent_id',null)->orderBy('created_at','desc');
+                }
+            ])->where('alias', $alias)->first();
         $specialist = Unit::with('lang')->where('is_hidden',0)->find(79);
         if($expert){
             if (Auth::guard('admin_account')->check()) {
