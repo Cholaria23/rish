@@ -82,7 +82,9 @@
                         </svg>
                     </button>
                 </form>
-                <div class="form-thanks">Спасибо, что подписались на рассылку сайта Rishon</div>
+                <div class="form-thanks">
+                    @lang('main.form.form_thanks_subscription')
+                </div>
                 <div class="footer-copyright">
                     @lang('main.footer_copyright',['date'=>date('Y')])
                 </div>
