@@ -1,8 +1,29 @@
-// Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
-
 // Variables
 @import 'variables';
+// Normalize
+@import "~normalize.css/normalize.css";
+// slick style
+@import "~slick-carousel/slick/slick.css";
+//selectric
+// @import "~selectric/src/selectric.scss";
+// magnific-popup
+@import "~magnific-popup/dist/magnific-popup.css";
+// lightcase
+// @import "~lightcase/src/css/lightcase.css";
 
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
+// fonts
+@import "fonts";
+// default_style
+@import "default_style";
+// default_classes
+@import "default_classes";
+// header
+@import "header";
+// sliders
+@import "sliders";
+// main_page
+@import "main_page";
+// footer
+@import "footer";
+// error_page
+@import "error_page";

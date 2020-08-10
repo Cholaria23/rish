@@ -1,19 +1,35 @@
 // Body
-$body-bg: #f8fafc;
+$body-bg: #fff;
 
 // Typography
-$font-family-sans-serif: 'Nunito', sans-serif;
-$font-size-base: 0.9rem;
-$line-height-base: 1.6;
+$montserrat_regular: 'montserratregular';
+$montserrat_medium: 'montserratmedium';
+$montserrat_semibold: 'montserratsemibold';
+$montserrat_bold: 'montserratbold';
 
 // Colors
-$blue: #3490dc;
-$indigo: #6574cd;
-$purple: #9561e2;
-$pink: #f66d9b;
-$red: #e3342f;
-$orange: #f6993f;
-$yellow: #ffed4a;
-$green: #38c172;
-$teal: #4dc0b5;
-$cyan: #6cb2eb;
+$main_color: #464646;
+$turquoise: #37b6b7;
+$placeholder: #919191;
+$social-icon: #919191;
+$turquoise_rgba_one: rgba(55, 182, 183, 0.1);
+$turquoise_rgba_25: rgba(55, 182, 183, 0.25);
+$dark_turquoise: #3b9191;
+$white: #fff;
+$grey: #f0f0f0;
+$l_grey: #e3e3e3;
+$li_grey: #d5d5d5;
+$lig_grey: #f0f9f9;
+$ggrey: #696969;
+$green: #0f9d4a;
+$red: #d92020;
+
+
+// mixin for adaptive text
+$maxWidth: 1920;
+
+@mixin adaptiv-font($pcSize, $mobSize) {
+ $addSize: $pcSize - $mobSize;
+ $maxWidth: $maxWidth - 320;
+ font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}

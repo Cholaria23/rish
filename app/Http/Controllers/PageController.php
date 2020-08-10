@@ -65,9 +65,9 @@ class PageController extends Controller {
 
         $services_top = \Demos\AdminPanel\Cat::with('lang')->whereIn('id',\Demos\AdminPanel\Cat::descendants(4))->where('spec_option_1',1)->where('is_hidden',0)->orderBy('sort_order','asc')->get();
 
-        $specialists = Unit::with('lang')->whereHas('category', function($query){
-            $query->where('cat_id', 5);
-        })->where('is_hidden',0)->where('is_top',1)->whereRaw('IF (is_period = 1, start < NOW(),  1=1 )')->whereRaw('IF (is_period = 1,  (end > NOW() || end is null),  1=1)')->orderBy('sort_order','desc')->limit(4)->get();
+        $specialist = Unit::with('lang')->where('is_hidden',0)->find(79);
+
+        $specialists = Specialist::with('lang')->where('is_hidden',0)->where('is_top',1)->where('is_block',0)->orderBy('sort_order','desc')->limit(4)->get();
         
         $leads = Lead::with(['goods','answers' => function ($query) {
             $query->where('is_hidden',0);
@@ -86,6 +86,7 @@ class PageController extends Controller {
             'special_actions_cat' => $special_actions_cat,
             'services' => $services,
             'services_top' => $services_top,
+            'specialist' => $specialist,
             'specialists' => $specialists,
             'leads' => $leads,
             'reviews' => $reviews,
@@ -123,8 +124,10 @@ class PageController extends Controller {
             $this->calculate_visitors($unit);
             View::share('page_title', $unit->lang->name);
             $rel_types = \Demos\AdminPanel\UnitsRelType::get();
+            $news = Unit::with('lang')->where('id','!=',$unit->id)->where('cat_id',$unit->cat_id)->where('is_hidden',0)->orderBy('date_publication','desc')->limit(3)->get();
             $page_data = [
                 'unit' => $unit,
+                'news' => $news,
                 'rel_types' => $rel_types,
                 'breadcrumbs' => $breadcrumbs,
                 'meta_type' => 'unit'
@@ -150,8 +153,145 @@ class PageController extends Controller {
                 $page_data['rel_service_cats'] = $rel_service_cats;
                 $page_data['rel_service_units'] = $rel_service_units;
                 $view = 'pages.news_page';
+            } elseif(in_array($unit->cat_id, array_merge(Cat::descendants(3),[3]))) {
+
+                $rel_service_cats = new \Illuminate\Database\Eloquent\Collection;
+                $rel_service_units = new \Illuminate\Database\Eloquent\Collection;
+                if($rel_types->count()){
+                    foreach ($rel_types as $type_item){
+                        if ($type_item->id == 3){
+                            if(count(array_pluck($unit->related_units[$type_item->id]['units'],'id'))){
+                                $rel_service_units =  Unit::with('lang')->whereIn('id',array_pluck($unit->related_units[$type_item->id]['units'],'id'))->orderBy('sort_order','desc')->get();
+                            }
+                            if(count(array_pluck($unit->related_units[$type_item->id]['units'],'cat_id'))){
+                                $rel_service_cats =  Cat::with('lang')->whereIn('id',array_pluck($unit->related_units[$type_item->id]['units'],'cat_id'))->orderBy('sort_order','asc')->get();
+                            }
+                        }
+                    }
+                }
+                $page_data['rel_service_cats'] = $rel_service_cats;
+                $page_data['rel_service_units'] = $rel_service_units;
+                $view = 'pages.actions_page';
             } elseif($unit->cat_id == 7) {
                 $view = 'pages.equipment_page';  
+            } elseif($unit->id == 3) {
+                $specialist = Unit::with('lang')->where('is_hidden',0)->find(79);
+                $specialists = Specialist::with('lang')->where('is_hidden',0)->where('is_top',1)->where('is_block',0)->orderBy('sort_order','desc')->limit(4)->get();
+                $leads = Lead::with(['goods','answers' => function ($query) {
+                    $query->where('is_hidden',0);
+                }])->whereIn('form_type_id',[8])->where('is_hidden',0)->where('parent_id',null)->orderBy('created_at','desc')->limit(5)->get();
+                $reviews = Unit::with('lang')->where('is_hidden',0)->find(4);
+                $advantages = Unit::with('lang')->whereHas('category', function($query){
+                    $query->where('cat_id', 6);
+                })->where('is_hidden',0)->whereRaw('IF (is_period = 1, start < NOW(),  1=1 )')->whereRaw('IF (is_period = 1,  (end > NOW() || end is null),  1=1)')->orderBy('sort_order','desc')->get();
+                
+                $page_data['specialist'] = $specialist;
+                $page_data['specialists'] = $specialists;
+                $page_data['leads'] = $leads;
+                $page_data['reviews'] = $reviews;
+                $page_data['advantages'] = $advantages;
+                $view = 'pages.about_page';  
+            } elseif($unit->id == 4){ 
+                $unit->leads = Lead::with(['answers' => function ($query) {
+                    $query->where('is_hidden',0);
+                }])->where('form_type_id',8)->where('is_hidden',0)->where('parent_id',null)->orderBy('created_at','desc')->paginate(15);
+                $view = 'pages.reviews';
+            } elseif($unit->id == 79) {
+                if($this->request->has('search') && $this->request->get('search') != '') {
+                    $search = substr(strtolower($this->request->get('search')),0,-1);
+                    $result_specialists_ids =[];
+
+                    $specialists = Specialist::with('lang')->where('is_hidden', 0)->whereHas('lang', function($query) use ($search) {
+                        $query->where(function ($query) use ($search) {
+                            $query->where('first_name', 'LIKE', '%'.$search.'%')->orWhere('last_name', 'LIKE', '%'.$search.'%')->orWhere('father_name', 'LIKE', '%'.$search.'%');
+                        });
+                    })->get();
+        
+                    foreach ($specialists as $specialist) {
+                        $result_specialists_ids[] = $specialist->id;
+                    }
+
+                    // $specialists = Specialist::with('lang')->where('is_hidden', 0)->whereNotIn('id', $result_specialists_ids)->whereHas('lang', function($query) use ($search) {
+                    //     $query->where(function($query) use ($search){
+                    //         $query->where('long_desc_1', 'LIKE', '%'.$search.'%')->orWhere('long_desc_2', 'LIKE', '%'.$search.'%');
+                    //     });
+                    // })->get();
+        
+                    // foreach ($specialists as $specialist) {
+                    //     $result_specialists_ids[] = $specialist->id;
+                    // }
+
+                    $search_array = explode(" ", $search);
+                    if (!empty($search_array)) {
+                        foreach ($search_array as $search_item) {
+                            $specialists = Specialist::with('lang')
+                                ->whereNotIn('id', $result_specialists_ids)
+                                ->where('is_hidden', 0)
+                                ->whereHas('lang', function($query) use ($search_item) {
+                                    $query->where(function ($query) use ($search_item) {
+                                        $query->where('first_name', 'LIKE', '%'.$search_item.'%')->orWhere('last_name', 'LIKE', '%'.$search_item.'%')->orWhere('father_name', 'LIKE', '%'.$search_item.'%');
+                                    });
+                                }
+                            )->get();
+                            
+                            foreach ($specialists as $specialist) {
+                                $result_specialists_ids[] = $specialist->id;
+                            }
+                        }
+                    }
+                    // foreach ($search_array as $search_item) {
+                    //     $specialists = Specialist::with('lang')->where('is_hidden', 0)->whereNotIn('id', $result_specialists_ids)->whereHas('lang', function($query) use ($search_item) {
+                    //         $query->where(function($query) use ($search_item){
+                    //             $query->where('long_desc_1', 'LIKE', '%'.$search_item.'%')->orWhere('long_desc_2', 'LIKE', '%'.$search_item.'%');
+                    //         });
+                    //     })->get();
+            
+                    //     foreach ($specialists as $specialist) {
+                    //         $result_specialists_ids[] = $specialist->id;
+                    //     }
+                    // }
+                    
+                    $specialists = Specialist::with('lang')->where('is_hidden',0)
+                        ->whereHas('rel_units', function ($query) use ($search) {
+                            $query->whereIn('cat_id', Cat::descendants(4))->whereHas('lang', function($query)  use ($search) {
+                                $query->where('name', 'LIKE', '%'.$search.'%');
+                            });
+                    })->whereNotIn('id', $result_specialists_ids)->get();
+
+                    foreach ($specialists as $specialist) {
+                        $result_specialists_ids[] = $specialist->id;
+                    }
+
+                    $specialists = Specialist::with('lang')->where('is_hidden',0)
+                        ->whereHas('rel_units_categories', function ($query) use ($search) {
+                            $query->whereIn('cat_id', Cat::descendants(4))->whereHas('lang', function($query)  use ($search) {
+                                $query->where('name', 'LIKE', '%'.$search.'%');
+                            });
+                    })->whereNotIn('id', $result_specialists_ids)->get();
+
+                    foreach ($specialists as $specialist) {
+                        $result_specialists_ids[] = $specialist->id;
+                    }
+
+                    if(count($result_specialists_ids)){
+                        $specialists = Specialist::with('lang')->where('is_hidden',0)->where('is_block',0)->whereIn('id',$result_specialists_ids)->orderBy('sort_order','desc')->paginate(8);
+                        $specialists->appends([
+                            'search' => $search,
+                        ]);
+                    } else {
+                        $specialists = new \Illuminate\Database\Eloquent\Collection;
+                    }
+
+                } else {
+                    $specialists = Specialist::with('lang')->where('is_hidden',0)->where('is_block',0)->orderBy('sort_order','desc')->paginate(8);
+                }
+
+
+                $view = 'pages.expert_list';
+
+
+
+                $page_data['specialists'] = $specialists;
             } elseif(in_array($unit->cat_id, Cat::descendants(4))) {
                 $view = 'pages.services_page';
             } else {
@@ -237,15 +377,27 @@ class PageController extends Controller {
     }
 
     public function showExpert($alias) {
-        $expert = Specialist::with(['lang', 'appoints'])->where('alias', $alias)->first();
+        $expert = Specialist::with([
+                'lang',
+                'appoints',
+                'images_1' =>function ($query) {
+                    $query->where('is_hidden',0)->orderBy('sort_order','asc');
+                },
+                'leads' => function ($query) {
+                    $query->with(['answers' => function ($query) {
+                        $query->where('is_hidden',0);
+                    }])->whereIn('form_type_id',[8])->where('is_hidden',0)->where('parent_id',null)->orderBy('created_at','desc');
+                }
+            ])->where('alias', $alias)->first();
+        $specialist = Unit::with('lang')->where('is_hidden',0)->find(79);
         if($expert){
             if (Auth::guard('admin_account')->check()) {
                 View::share('admin_edit_link', route('admin.specialists.editSpecialist', $expert->id));
             }
             $breadcrumbs = [];
             $breadcrumbs[] = [
-                'alias' => 'napravleniya-konsulytaciy',
-                'name' => Lang::get('main.experts'),
+                'alias' => build_unit_route($specialist),
+                'name' => $specialist->lang->name,
             ];
             View::share('page_title', $expert->lang->first_name." ".$expert->lang->last_name);
             $_articles = $expert->rel_units()
