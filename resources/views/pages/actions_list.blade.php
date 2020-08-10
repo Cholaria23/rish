@@ -12,12 +12,6 @@
 			{{$cat->lang->name}}
 		</h1>
     @endif
-    @if(isset($cat->popular_units) && $cat->popular_units && $cat->popular_units->count())
-        @lang('main.popular_units')
-        @foreach ($cat->popular_units as $unit_item)
-			@include('layouts.tiles.actions')
-        @endforeach
-    @endif
     @if($cat->lang->pre_info != '')
         {!! $cat->lang->pre_info !!}
     @endif
