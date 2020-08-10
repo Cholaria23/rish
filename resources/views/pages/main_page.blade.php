@@ -31,21 +31,64 @@
 				<div class="services-top-text description">
 					@lang('main.main_services_text')
 				</div>
-				@foreach ($services_top as $cat_item)
-					@include('layouts.tiles.service_tile')
-				@endforeach
+				<div class="services-top-wrap">
+					@foreach ($services_top as $cat_item)
+						<div class="services-top-holder">
+							@include('layouts.tiles.service_tile')
+						</div>
+					@endforeach
+				</div>
 			</div>
 		</section>
 	@endif
 
-	@include('layouts.main.checkup')
-
-
-	@include('layouts.main.feedback')
+	<section class="main-section">
+		<div class="container">
+			<div class="checkup-block">
+				<div class="checkup-column">
+					<div class="checkup-item big">
+						@include('layouts.main.checkup')
+					</div>
+					<div class="checkup-item small text">
+						@lang('main.form.feedback_text_1')
+					</div>
+				</div>
+				<div class="checkup-column">
+					<div class="checkup-item small text">
+						@lang('main.form.feedback_text_2')
+					</div>
+					<div class="checkup-item big">
+						<div class="main-section-title">
+							@lang('main.form.checkup-form-title')
+						</div>
+						<form method="post" class="appointment_form">
+				            <div class="input-wrap">
+				            	<input class="input-form" type="tel" name="phone" placeholder="@lang('main.form.name')" required>
+				            </div>
+				            <div class="input-wrap">
+				            	<input class="input-form" type="text" name="name" placeholder="@lang('main.form.phone')">
+				            </div>
+				            <input type="hidden" name="lang" value="{{App::getLocale()}}">
+				            <button type="submit" class="btn-green do_appointment_form">@lang('main.btn.sign_up')</button>
+				        </form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
 	@if($unit->lang->long_desc_2 != '')
 		<section class="main-section">
-			{!!$unit->lang->long_desc_2!!}
+			<div class="container-small">
+				<div class="main-section-title-wrap">
+					<div class="main-section-title">
+						@lang('main.about_us')
+					</div>
+				</div>
+				<div class="description">
+					{!!$unit->lang->long_desc_2!!}
+				</div>
+			</div>
 		</section>
 	@endif
 
@@ -110,34 +153,53 @@
 		</section>
 	@endif
 
-	@include('layouts.main.advantages')
+	{{-- @include('layouts.main.advantages') --}}
 
 	@if(isset($special_actions) && $special_actions)
 		<section class="main-section">
-			@lang('main.action_title')
-			@if($special_actions_cat->count())
-				@foreach($special_actions_cat as $cat_item)
-					<a href="{{route('first_url',$cat_item->alias)}}">{{$cat_item->lang->name}}</a>
-				@endforeach
-			@endif
-			@foreach ($special_actions as $unit_item)
-				@include('layouts.tiles.news')
-			@endforeach
+			<div class="container">
+				<div class="special-actions-wrap">
+					<div class="special-action-holder">
+						<div class="special-action-item">
+							<div class="special-action-title">
+								@lang('main.action_title')
+							</div>
+							@if($special_actions_cat->count())
+								@foreach($special_actions_cat as $cat_item)
+									<a class="special-action-link" href="{{route('first_url',$cat_item->alias)}}">
+										<span class="special-action-link-text">
+											{{$cat_item->lang->name}}
+										</span>
+									</a>
+								@endforeach
+							@endif
+						</div>
+					</div>
+					@foreach ($special_actions as $unit_item)
+						<div class="special-action-holder">
+							@include('layouts.tiles.news')
+						</div>
+					@endforeach
+				</div>
+			</div>
 		</section>
 	@endif
+
 	@if($unit->lang->long_desc_1 != '')
 		<section class="main-section">
-			<div class="container">
+			<div class="container-small">
 				{!!$unit->lang->long_desc_1!!}
 			</div>
 		</section>
 	@endif
+
 	{{-- @if(isset($blog) && $blog)
 		@lang('main.blog_title')
 		@foreach ($blog as $unit_item)
 			@include('layouts.tiles.news')
 		@endforeach
 	@endif --}}
+
 @stop
 @section('scripts')
 @stop

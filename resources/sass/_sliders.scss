@@ -19,7 +19,7 @@
         position: relative;
         width: calc(40% - 10px);
         z-index: 1;
-        background-color: #cde8ea;
+        background: url(/img/light-bg.png) center center/cover no-repeat;
     }
     .content-slide-wrap {
         position: relative;
@@ -127,6 +127,7 @@
         font-family: $montserrat_semibold;
         @include adaptiv-font(40, 30);
         color: $turquoise;
+        line-height: 1;
     }
     .all-count-slide {
         color: $grey;

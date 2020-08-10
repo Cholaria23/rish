@@ -123,6 +123,10 @@ input[type="number"] {
 input:invalid{
     box-shadow:none;
 }
+input:-webkit-autofill {
+    -webkit-box-shadow: inset 0 0 0 40px $white !important;
+
+}
 
 // mixin for adaptive text
 $maxWidth: 1920;

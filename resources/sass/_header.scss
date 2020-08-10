@@ -9,6 +9,10 @@
         display: flex;
         align-items: center;
     }
+    .header-logo {
+        max-width: 233px;
+        width: 100%;
+    }
     .header-top-right {
         margin-left: auto;
         display: flex;
@@ -219,7 +223,8 @@
         padding-top: 10px;
         position: absolute;
         top: 100%;
-        right: -1px;
+        right: 0;
+        z-index: 1;
         &::before {
             content: '';
             position: absolute;

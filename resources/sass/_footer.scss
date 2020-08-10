@@ -1,0 +1,100 @@
+.footer {
+    padding: 85px 0;
+    background: url(/img/light-bg.png) center center/cover no-repeat;
+    .footer-wrap {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .footer-logo {
+        max-width: 228px;
+        width: 100%;
+    }
+    .footer-contacts {
+        display: flex;
+        justify-content: space-between;
+        padding-right: 40px;
+        width: 53%;
+        border-right: 3px solid #fff;
+    }
+    .footer-contacts-wrap {
+        display: flex;
+        flex-direction: column;
+    }
+    .footer-contacts-phone {
+        display: inline-block;
+        font-family: $montserrat_semibold;
+        font-size: 18px;
+        color: $main_color;
+        transition: .25s linear;
+        &:hover {
+            color: $turquoise;
+        }
+        & + .footer-contacts-phone {
+            margin-top: 10px;
+        }
+    }
+    .social-list {
+        margin-top: 20px;
+        display: flex;
+    }
+    .social-item + .social-item {
+        margin-left: 20px;
+    }
+    .social-link {
+        &:hover .social-icon svg {
+            fill: $turquoise;
+        }
+        .social-icon svg {
+            transition: .25s linear;
+            fill: $social-icon;
+        }
+    }
+    .footer-subscription {
+        padding-left: 40px;
+        width: 47%;
+    }
+    .footer-subscription-text {
+        margin-bottom: 15px;
+        font-family: $montserrat_semibold;
+        font-size: 18px;
+    }
+    .new-post-form {
+        margin-bottom: 35px;
+        position: relative;
+        display: inline-block;
+        max-width: 335px;
+        width: 100%;
+    }
+    .input-form {
+        padding: 9px 65px 9px 15px;
+        width: 100%;
+        height: 40px;
+        line-height: 1;
+        border-radius: 6px;
+        background-color: $white;
+        &::placeholder {
+            font-family: $montserrat_medium;
+            color: $placeholder;
+        }
+    }
+    .do-new-post-form {
+        position: absolute;
+        top: 2px;
+        right: 2px;
+        width: 54px;
+        height: 36px;
+        display: flex;
+        background-color: $turquoise;
+        border-radius: 6px;
+        transition: .25s linear;
+        &:hover {
+            background-color: $dark_turquoise;
+        }
+        svg {
+            margin: auto;
+        }
+    }
+    .footer-copyright {
+        font-size: 14px;
+    }
+}
