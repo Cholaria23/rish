@@ -1,24 +1,49 @@
 .footer {
     padding: 85px 0;
     background: url(/img/light-bg.png) center center/cover no-repeat;
+    @media (max-width: 1024px) {
+        padding: 55px 0;
+    }
+    @media (max-width: 768px) {
+        padding: 40px 0;
+    }
     .footer-wrap {
         display: flex;
         flex-wrap: wrap;
     }
     .footer-logo {
+        margin-right: 25px;
         max-width: 228px;
         width: 100%;
+        @media (max-width: 768px) {
+            margin-right: 0;
+            margin-bottom: 20px;
+        }
     }
     .footer-contacts {
         display: flex;
         justify-content: space-between;
         padding-right: 40px;
         width: 53%;
-        border-right: 3px solid #fff;
+        border-right: 3px solid $white;
+        @media (max-width: 1024px) {
+            padding-right: 25px;
+        }
+        @media (max-width: 768px) {
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-right: 0;
+            width: 100%;
+            border-right: none;
+        }
     }
     .footer-contacts-wrap {
         display: flex;
         flex-direction: column;
+        @media (max-width: 768px) {
+            align-items: center;
+        }
     }
     .footer-contacts-phone {
         display: inline-block;
@@ -46,17 +71,32 @@
         }
         .social-icon svg {
             transition: .25s linear;
-            fill: $social-icon;
+            fill: $ligt_grey;
         }
     }
     .footer-subscription {
         padding-left: 40px;
         width: 47%;
+        @media (max-width: 1024px) {
+            padding-left: 25px;
+        }
+        @media (max-width: 768px) {
+            padding-left: 0;
+            width: 100%;
+            text-align: center;
+        }
+        @media (max-width: 576px) {
+            text-align: left;
+        }
     }
     .footer-subscription-text {
         margin-bottom: 15px;
         font-family: $montserrat_semibold;
         font-size: 18px;
+        @media (max-width: 576px) {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
     }
     .new-post-form {
         margin-bottom: 35px;
@@ -64,6 +104,12 @@
         display: inline-block;
         max-width: 335px;
         width: 100%;
+        @media (max-width: 768px) {
+            margin-bottom: 20px;
+        }
+        .input-wrap {
+            margin-bottom: 0;
+        }
     }
     .input-form {
         padding: 9px 65px 9px 15px;
@@ -74,7 +120,7 @@
         background-color: $white;
         &::placeholder {
             font-family: $montserrat_medium;
-            color: $placeholder;
+            color: $ligt_grey;
         }
     }
     .do-new-post-form {
@@ -96,5 +142,8 @@
     }
     .footer-copyright {
         font-size: 14px;
+        @media (max-width: 576px) {
+            text-align: center;
+        }
     }
 }

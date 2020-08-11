@@ -82,10 +82,10 @@
 							</div>
 							<form method="post" class="appointment_form">
 								<div class="input-wrap">
-									<input class="input-form" type="tel" name="phone" placeholder="@lang('main.form.name')" required>
+									<input class="input-form" type="text" name="name" placeholder="@lang('main.form.name')">
 								</div>
 								<div class="input-wrap">
-									<input class="input-form" type="text" name="name" placeholder="@lang('main.form.phone')">
+									<input class="input-form" type="tel" name="phone" placeholder="@lang('main.form.phone')" required>
 								</div>
 								<input type="hidden" name="lang" value="{{App::getLocale()}}">
 								<button type="submit" class="btn-green do_appointment_form">@lang('main.btn.sign_up')</button>
@@ -141,7 +141,7 @@
 	</section>
 
 	@if(isset($specialists) && $specialists)
-		<section class="main-section">
+		<section class="main-section specialists">
 			<div class="container">
 				<div class="main-section-title-wrap">
 					<div class="main-section-title">

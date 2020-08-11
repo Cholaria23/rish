@@ -36,9 +36,23 @@ $(document).ready(function() {
             }
         });
     });
+
     // polifil object-fit
     if($('.object-fit-js').length) {
        var someImages = $('.object-fit-js');
        objectFitPolyfill(someImages);
     }
+    
+    // open all price
+    if($('.all_price_js').length) {
+        $('.all_price_js').click(function(e) {
+            var price_list = $(this).prev();
+            price_list.find('.price-item:not(.visible)').slideToggle(function() {
+                price_list.find('li:not(.visible)').toggleClass('hide');
+            });
+            $(this).children('.visible-text').toggleClass('text-hide');
+            $(this).children('.hide-text').toggleClass('text-hide');
+        });
+    }
+
 })
