@@ -161,7 +161,7 @@
 }
 
 .popup-btn-wrap {
-    margin: -15px 0 0 0;
+    margin: -15px -15px 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -200,7 +200,6 @@
 .btn-green-small {
     display: flex;
     justify-content: center;
-    flex: 0 0 auto;
     padding: 9px 20px;
     font-family: $montserrat_medium;
     color: $white;
@@ -221,11 +220,20 @@
     background-color: $turquoise_rgba_one;
     border-radius: 6px;
     transition: .25s linear;
+    @media (max-width: 1024px) {
+        padding: 9px 12px 9px 9px;
+    }
+    @media (max-width: 576px) {
+        padding: 9px 5px 9px 5px;
+    }
     &:hover {
         background-color: $turquoise_rgba_25;
     }
     .btn-light-green-small-icon {
         margin-right: 10px;
+        @media (max-width: 576px) {
+            margin-right: 5px;
+        }
         svg {
             display: block;
         }
@@ -625,6 +633,15 @@ video {
      .gallery-item {
          width: 25%;
          padding: 10px 0 0 10px;
+         @media (max-width: 1024px) {
+             width: 33.33%;
+         }
+         @media (max-width: 768px) {
+             width: 50%;
+         }
+         @media (max-width: 400px) {
+             width: 100%;
+         }
      }
  }
 // magnific popup-gallery end

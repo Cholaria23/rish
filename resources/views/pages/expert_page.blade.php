@@ -88,28 +88,30 @@
 								<div class="page-section-title-bold">
 									@lang('main.activity_area')
 								</div>
-								@foreach ($expert->related_cats[1]['cats'] as $cat_item)
-									<div class="activity-area-item">
-									111	@include('layouts.tiles.service_tile')
-									</div>
+								<div class="activity-area-item-wrap">
+									@foreach ($expert->related_cats[1]['cats'] as $cat_item)
+										<div class="activity-area-item cat">
+											@include('layouts.tiles.service_tile')
+										</div>
+										@foreach ($expert->related_units[2]['units'] as $unit_item)
+											@if($cat_item->id == $unit_item->cat_id)
+												@php
+												$unit_block_ids[] = $unit_item->id;
+												@endphp
+												<div class="activity-area-item unit">
+													@include('layouts.tiles.service_unit_tile')
+												</div>
+											@endif
+										@endforeach
+									@endforeach
 									@foreach ($expert->related_units[2]['units'] as $unit_item)
-										@if($cat_item->id == $unit_item->cat_id)
-											@php
-											$unit_block_ids[] = $unit_item->id;
-											@endphp
+										@if(!in_array($unit_item->id,$unit_block_ids))
 											<div class="activity-area-item">
-										222		@include('layouts.tiles.service_unit_tile')
+												@include('layouts.tiles.service_unit_tile')
 											</div>
 										@endif
 									@endforeach
-								@endforeach
-								@foreach ($expert->related_units[2]['units'] as $unit_item)
-									@if(!in_array($unit_item->id,$unit_block_ids))
-										<div class="activity-area-item">
-									333		@include('layouts.tiles.service_unit_tile')
-										</div>
-									@endif
-								@endforeach
+								</div>
 							</div>
 						@endif
 					</div>

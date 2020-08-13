@@ -251,19 +251,20 @@
     margin: -35px 0 35px -50px;
     display: flex;
     flex-wrap: wrap;
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
         margin: -25px 0 35px -25px;
     }
     .specialists-holder {
         width: 25%;
         padding: 35px 0 0 50px;
         @media (max-width: 1024px) {
-            width: 50%;
-        }
-        @media (max-width: 768px) {
+            width: 33.33%;
             padding: 25px 0 0 25px;
         }
-        @media (max-width: 576px) {
+        @media (max-width: 768px) {
+            width: 50%;
+        }
+        @media (max-width: 400px) {
             width: 100%;
         }
     }
@@ -316,9 +317,22 @@
     margin: -50px 0 0 -50px;
     display: flex;
     flex-wrap: wrap;
+    @media (max-width: 1024px) {
+        margin: -25px 0 0 -25px;
+    }
     .special-action-holder {
         width: 25%;
         padding: 50px 0 0 50px;
+        @media (max-width: 1024px) {
+            width: 33.33%;
+            padding: 25px 0 0 25px;
+        }
+        @media (max-width: 768px) {
+            width: 50%;
+        }
+        @media (max-width: 400px) {
+            width: 100%;
+        }
     }
     .special-action-item {
         height: 100%;

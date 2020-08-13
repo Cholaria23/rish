@@ -94,6 +94,15 @@ $(document).ready(function() {
 
 
 $(window).on('load resize', function() {
+    if (window.innerWidth < 1025) {
+        if($('.specialist-block-img').length) {
+            $('.specialist-block-img').insertBefore( $( ".specialist-activities-list" ) );
+        }
+    } else {
+        if($('.specialist-block-img').length) {
+            $('.specialist-block-img').appendTo( $( ".sticky" ) );
+        }
+    }
     if (window.innerWidth < 767) {
         if($('.main-section-title-wrap .btn-arrow').length) {
             var moreLink = $('.main-section-title-wrap .btn-arrow');
