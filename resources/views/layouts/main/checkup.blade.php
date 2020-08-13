@@ -1,9 +1,11 @@
 @if(isset($checkup) && $checkup)
-    <section class="main-section">
+    <div class="main-section-title">
         {{$checkup->lang->name}}
-        @if($checkup->lang->short_desc_1 != '')
+    </div>
+    @if($checkup->lang->short_desc_1 != '')
+        <div class="description">
             {!!$checkup->lang->short_desc_1!!}
-        @endif
-        <a href="{{build_unit_route($checkup)}}">@lang('main.btn.checkup')</a>
-    </section>
+        </div>
+    @endif
+    <a class="btn-green" href="{{build_unit_route($checkup)}}">@lang('main.btn.sign_up')</a>
 @endif

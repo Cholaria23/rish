@@ -54,7 +54,7 @@
 							@lang('main.btn.callback')
 						</a>
 					</div>
-					<a class="header-feedback-popup popup-js" href="#test-modal">
+					<a class="btn-green-small popup-js" href="#test-modal">
 						@lang('main.btn.feedback')
 					</a>
 					<button class="header-search-btn" type="button">
@@ -138,7 +138,7 @@
 						</span>
 						<span class="has-submenu-icon">
 							<svg width="11" height="6">
-								<use xlink:href="#icon-right-arrow"></use>
+								<use xlink:href="#checkmark-down"></use>
 							</svg>
 						</span>
 					</span>

@@ -1,6 +1,11 @@
 // jQuery
 require('jquery/dist/jquery.min');
 window.$ = window.jQuery = require('jquery');
+// localization
+var locale = $('html').attr('lang');
+if (locale !== "en") {
+    require('jquery-validation/dist/localization/messages_' + locale + '.min.js');
+}
 // object-fit-images
 import objectFitPolyfill from 'objectFitPolyfill';
 // import validate from "jquery-validation";
@@ -20,5 +25,7 @@ import magnificPopup from "magnific-popup/dist/jquery.magnific-popup.min.js";
 require('./sliders');
 // popup
 require('./popup');
+// form
+require('./form');
 // main
 require('./main');

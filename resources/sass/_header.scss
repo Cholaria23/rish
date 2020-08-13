@@ -9,10 +9,17 @@
         display: flex;
         align-items: center;
     }
+    .header-logo {
+        max-width: 233px;
+        width: 100%;
+    }
     .header-top-right {
         margin-left: auto;
         display: flex;
         align-items: center;
+    }
+    .btn-green-small {
+        margin-left: 60px;
     }
 }
 
@@ -58,21 +65,6 @@
         &:hover {
             color: $dark_turquoise;
         }
-    }
-}
-
-.header-feedback-popup {
-    margin-left: 60px;
-    display: flex;
-    flex: 0 0 auto;
-    padding: 9px 23px;
-    font-family: $montserrat_medium;
-    color: $white;
-    background-color: $turquoise;
-    border-radius: 6px;
-    transition: .25s linear;
-    &:hover {
-        background-color: $dark_turquoise;
     }
 }
 
@@ -130,7 +122,7 @@
             border-radius: 6px;
             &::placeholder {
                 font-family: $montserrat_medium;
-                color: $placeholder;
+                color: $ligt_grey;
             }
         }
         .search-btn {
@@ -219,7 +211,8 @@
         padding-top: 10px;
         position: absolute;
         top: 100%;
-        right: -1px;
+        right: 0;
+        z-index: 1;
         &::before {
             content: '';
             position: absolute;

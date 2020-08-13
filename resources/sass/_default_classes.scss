@@ -24,21 +24,177 @@
         display: block;
     }
 }
+.form-thanks {
+    display: none;
+    text-align: center;
+    font-size: 18px;
+}
 .object-fit-cover {
     object-fit: cover;
 }
+
 .main-section {
     margin-bottom: 85px;
+    @media (max-width: 1024px) {
+        margin-bottom: 60px;
+    }
+    @media (max-width: 768px) {
+        margin-bottom: 40px;
+    }
+    &.turquoise-section {
+        padding: 85px 0;
+        background-color: $turquoise_rgba_7;
+        @media (max-width: 1024px) {
+            padding: 60px 0;
+        }
+        @media (max-width: 768px) {
+            padding: 40px 0;
+        }
+    }
 }
 .main-section-title {
     font-family: $montserrat_bold;
     @include adaptiv-font(40, 22);
     line-height: 1;
 }
+.main-section-top-subtitle {
+    margin-bottom: 35px;
+    text-align: left;
+}
+.page-section {
+    margin-bottom: 55px;
+    @media (max-width: 1024px) {
+        margin-bottom: 35px;
+    }
+    @media (max-width: 768px) {
+        margin-bottom: 25px;
+    }
+    &:last-child {
+        margin-bottom: 85px;
+        @media (max-width: 1024px) {
+            margin-bottom: 60px;
+        }
+        @media (max-width: 768px) {
+            margin-bottom: 40px;
+        }
+    }
+}
+.page-section-title {
+    display: inline-block;
+    margin-bottom: 25px;
+    font-family: $montserrat_semibold;
+    @include adaptiv-font(30, 22);
+    @media (max-width: 1024px) {
+        margin-bottom: 20px;
+    }
+    @media (max-width: 768px) {
+        margin-bottom: 15px;
+    }
+}
+.page-section-title-bold {
+    display: inline-block;
+    margin-bottom: 25px;
+    font-family: $montserrat_bold;
+    @include adaptiv-font(30, 22);
+    @media (max-width: 1024px) {
+        margin-bottom: 20px;
+    }
+    @media (max-width: 768px) {
+        margin-bottom: 15px;
+    }
+}
+.page-section-top-title {
+    margin-bottom: 30px;
+    font-family: $montserrat_bold;
+    @include adaptiv-font(40, 27);
+    text-align: center;
+    line-height: 1;
+    @media (max-width: 768px) {
+        margin-bottom: 20px;
+        text-align: left;
+    }
+}
+.page-section-top-subtitle {
+    text-align: center;
+    @media (max-width: 768px) {
+        text-align: left;
+    }
+}
+// form start
+.input-wrap {
+    position: relative;
+    margin-bottom: 25px;
+    .input-form {
+        padding: 9px 15px;
+        width: 100%;
+        height: 40px;
+        line-height: 1;
+        border-radius: 6px;
+        background-color: $white;
+        &::placeholder {
+            font-family: $montserrat_medium;
+            color: $ligt_grey;
+        }
+    }
+}
+// form end
 // btn start
+.popup-btn-wrap {
+    display: flex;
+    justify-content: center;
+    a + a {
+        margin-left: 30px;
+    }
+}
+.btn-green-small {
+    display: flex;
+    justify-content: center;
+    flex: 0 0 auto;
+    padding: 9px 20px;
+    font-family: $montserrat_medium;
+    color: $white;
+    background-color: $turquoise;
+    border-radius: 6px;
+    transition: .25s linear;
+    &:hover {
+        background-color: $dark_turquoise;
+    }
+}
+.btn-light-green-small {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 9px 20px;
+    font-family: $montserrat_medium;
+    color: $turquoise;
+    background-color: $turquoise_rgba_one;
+    border-radius: 6px;
+    transition: .25s linear;
+    &:hover {
+        background-color: $turquoise_rgba_25;
+    }
+    .btn-light-green-small-icon {
+        margin-right: 10px;
+        svg {
+            display: block;
+        }
+    }
+}
+.btn-green {
+    display: inline-block;
+    padding: 9px 35px;
+    font-family: $montserrat_medium;
+    color: $white;
+    background-color: $turquoise;
+    border-radius: 6px;
+    transition: .25s linear;
+    &:hover {
+        background-color: $dark_turquoise;
+    }
+}
 .btn-arrow {
     display: inline-block;
-    padding: 9px 45px 9px 23px;
+    padding: 9px 45px 9px 20px;
     font-family: $montserrat_medium;
     color: $turquoise;
     background-color: $turquoise_rgba_one;
@@ -65,4 +221,131 @@
         }
     }
 }
+
+
+.more-link-section {
+    position: relative;
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    font-family: $montserrat_medium;
+    color: $main_color;
+    transition: .25s linear;
+    cursor: pointer;
+    &:hover {
+        color: $turquoise;
+    }
+    span {
+        padding: 0 30px;
+        background-color: $white;
+        @media (max-width: 576px) {
+            padding: 0 15px;
+        }
+    }
+    // &:hover::before {
+    //     width: 50%;
+    // }
+    // &::before {
+    //     content: '';
+    //     position: absolute;
+    //     top: 50%;
+    //     transform: translateY(-50%);
+    //     width: 0;
+    //     height: 2px;
+    //     background-color: $turquoise;
+    //     left: 0;
+    //     transition: .25s linear;
+    //     z-index: -1;
+    // }
+    &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+        height: 2px;
+        background-color: $turquoise_rgba_20;
+        right: 0;
+        transition: .25s linear;
+        z-index: -2;
+    }
+}
 // btn end
+
+// description start
+.text {
+    line-height: 26px;
+}
+.text-hide {
+    display: none !important;
+}
+.text-center {
+    text-align: center;
+}
+.description {
+    line-height: 26px;
+}
+// description end
+
+//  breadcrumbs start
+.top_navigate {
+    margin: 0 0 55px;
+    @media (max-width: 768px) {
+        margin: 0 0 25px;
+    }
+}
+.breadcrumbs {
+  margin-bottom: 0;
+  padding: 10px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  background: transparent;
+  text-align: center;
+}
+.crumb-li {
+  margin-left: -10px;
+  display: inline-block;
+  & + .crumb-li {
+    margin-left: 0;
+    padding-left: 5px;
+    .crumb {
+      &::after {
+        content: "";
+        position: absolute;
+        display: block;
+        left: -5px;
+        top: 4px;
+        height: 5.65px;
+        width: 5.65px;
+        border-right: 1px solid $ligt_grey;
+        border-bottom: 1px solid $ligt_grey;
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}
+.crumb  {
+  color: $main_color;
+  position: relative;
+  display: block;
+  padding: 0 10px;
+  font-family: $montserrat_regular;
+  font-size: 14px;
+  transition: .25s linear;
+  &:hover,
+  &:focus,
+  &.js-lastcrumb {
+      color: $ligt_grey;
+  }
+  &.js-lastcrumb {
+      cursor: default;
+      pointer-events: none;
+      &::after {
+          content: none;
+      }
+  }
+}
+
+ //  breadcrumbs end
