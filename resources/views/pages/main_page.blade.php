@@ -28,15 +28,18 @@
 						</span>
 					</a>
 				</div>
-				<div class="services-top-text description">
-					@lang('main.main_services_text')
-				</div>
-				<div class="services-top-wrap">
-					@foreach ($services_top as $cat_item)
-						<div class="services-top-holder">
-							@include('layouts.tiles.service_tile')
-						</div>
-					@endforeach
+				<div class="section-inner">
+					<div class="services-top-text description">
+						@lang('main.main_services_text')
+					</div>
+					<div class="services-top-wrap">
+						@foreach ($services_top as $cat_item)
+							<div class="services-top-holder">
+								@include('layouts.tiles.service_tile')
+							</div>
+						@endforeach
+					</div>
+					<div class="btn-wrap"></div>
 				</div>
 			</div>
 		</section>
@@ -153,12 +156,15 @@
 						</span>
 					</a>
 				</div>
-				<div class="specialists-wrap">
-					@foreach ($specialists as $specialist_item)
-						<div class="specialists-holder">
-							@include('layouts.tiles.specialist_tile')
-						</div>
-					@endforeach
+				<div class="section-inner">
+					<div class="specialists-wrap">
+						@foreach ($specialists as $specialist_item)
+							<div class="specialists-holder">
+								@include('layouts.tiles.specialist_tile')
+							</div>
+						@endforeach
+					</div>
+					<div class="btn-wrap"></div>
 				</div>
 			</div>
 		</section>
@@ -177,26 +183,29 @@
 						</span>
 					</a>
 				</div>
-				<div class="reviews-slider">
-					@foreach ($leads as $lead_item)
-						@include('layouts.tiles.lead')
-					@endforeach
-				</div>
-				<div class="counter-slider">
-					@php
-                        $i = 0;
-                    @endphp
-                    @foreach($leads as $lead_item)
+				<div class="section-inner">
+					<div class="reviews-slider">
+						@foreach ($leads as $lead_item)
+							@include('layouts.tiles.lead')
+						@endforeach
+					</div>
+					<div class="counter-slider">
 						@php
-						$i ++;
+						$i = 0;
 						@endphp
-                        <div class="counter-slider-item">
-                            <div class="count-slide">
-                                {{$i}}<span class="all-count-slide">/{{$leads->count()}}</span>
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
+						@foreach($leads as $lead_item)
+							@php
+							$i ++;
+							@endphp
+							<div class="counter-slider-item">
+								<div class="count-slide">
+									{{$i}}<span class="all-count-slide">/{{$leads->count()}}</span>
+								</div>
+							</div>
+						@endforeach
+					</div>
+					<div class="btn-wrap"></div>
+				</div>
 			</div>
 		</section>
 	@endif
@@ -236,7 +245,9 @@
 	@if($unit->lang->long_desc_1 != '')
 		<section class="main-section">
 			<div class="container-small">
-				{!!$unit->lang->long_desc_1!!}
+				<div class="description">
+					{!!$unit->lang->long_desc_1!!}
+				</div>
 			</div>
 		</section>
 	@endif

@@ -1,4 +1,23 @@
 $(document).ready(function() {
+    if($('.popup-gallery').length) {
+        $('.popup-gallery').each(function() {
+            $(this).magnificPopup({
+                delegate: 'a',
+                type: 'image',
+                mainClass: 'mfp-img-mobile',
+                gallery: {
+                    enabled: true,
+                    navigateByImgClick: true,
+                    preload: [0,1]
+                },
+            });
+        });
+    }
+    // position sticky
+    if($('.sticky').length) {
+        var elements = $('.sticky');
+        Stickyfill.add(elements);
+    }
     //   open search modal
     $('.header-search-btn').click(function() {
         var btn = $(this);
@@ -42,7 +61,7 @@ $(document).ready(function() {
        var someImages = $('.object-fit-js');
        objectFitPolyfill(someImages);
     }
-    
+
     // open all price
     if($('.all_price_js').length) {
         $('.all_price_js').click(function(e) {
@@ -55,4 +74,41 @@ $(document).ready(function() {
         });
     }
 
-})
+    //  faq accordeon
+    if($('.faq-question').length) {
+        $('.faq-question').on('click', function(e) {
+            var submenu = $(this).closest('.faq-item').find('.faq-answer');
+            var icon =  $(this).closest('.faq-item').find('.faq-icon');
+            $(this).toggleClass('active');
+            if($(this).hasClass('active')) {
+                icon.addClass('active');
+                submenu.slideDown(200);
+            } else {
+                icon.removeClass('active');
+                submenu.slideUp(200);
+            }
+        });
+    }
+
+});
+
+
+$(window).on('load resize', function() {
+    if (window.innerWidth < 767) {
+        if($('.main-section-title-wrap .btn-arrow').length) {
+            var moreLink = $('.main-section-title-wrap .btn-arrow');
+            $(moreLink).each(function() {
+                var location = $(this).closest('.main-section').find('.btn-wrap');
+                location.append($(this));
+            })
+        }
+    } else {
+        if($('.btn-wrap .btn-arrow').length) {
+            var moreLink = $('.btn-wrap .btn-arrow');
+            $(moreLink).each(function() {
+                var location = $(this).closest('.main-section').find('.main-section-title-wrap');
+                location.append($(this));
+            })
+        }
+    }
+});

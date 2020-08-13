@@ -9,7 +9,7 @@
                 <div class="subtitle-mistake">
                     @lang('main.not_page')
                 </div>
-                <a class="big-ligth-btn" href="{{ URL::to("/") }}">
+                <a class="btn-green" href="{{ URL::to("/") }}">
                     @lang('main.back_to_main')
                 </a>
             </div>

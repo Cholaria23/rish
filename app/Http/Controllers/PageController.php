@@ -58,7 +58,7 @@ class PageController extends Controller {
             'lang',
             'children' => function ($query) {
                 $query->with([
-                    'lang'                    
+                    'lang'
                 ])->where('is_hidden',0)->orderBy('sort_order','asc');
             }
         ])->where('is_hidden',0)->find(4);
@@ -68,7 +68,7 @@ class PageController extends Controller {
         $specialist = Unit::with('lang')->where('is_hidden',0)->find(79);
 
         $specialists = Specialist::with('lang')->where('is_hidden',0)->where('is_top',1)->where('is_block',0)->orderBy('sort_order','desc')->limit(4)->get();
-        
+
         $leads = Lead::with(['goods','answers' => function ($query) {
             $query->where('is_hidden',0);
         }])->whereIn('form_type_id',[8])->where('is_hidden',0)->where('parent_id',null)->orderBy('created_at','desc')->limit(5)->get();
@@ -125,9 +125,11 @@ class PageController extends Controller {
             View::share('page_title', $unit->lang->name);
             $rel_types = \Demos\AdminPanel\UnitsRelType::get();
             $news = Unit::with('lang')->where('id','!=',$unit->id)->where('cat_id',$unit->cat_id)->where('is_hidden',0)->orderBy('date_publication','desc')->limit(3)->get();
+            $reviews = Unit::with('lang')->where('is_hidden',0)->find(4);
             $page_data = [
                 'unit' => $unit,
                 'news' => $news,
+                'reviews' => $reviews,
                 'rel_types' => $rel_types,
                 'breadcrumbs' => $breadcrumbs,
                 'meta_type' => 'unit'
@@ -173,7 +175,7 @@ class PageController extends Controller {
                 $page_data['rel_service_units'] = $rel_service_units;
                 $view = 'pages.actions_page';
             } elseif($unit->cat_id == 7) {
-                $view = 'pages.equipment_page';  
+                $view = 'pages.equipment_page';
             } elseif($unit->id == 3) {
                 $specialist = Unit::with('lang')->where('is_hidden',0)->find(79);
                 $specialists = Specialist::with('lang')->where('is_hidden',0)->where('is_top',1)->where('is_block',0)->orderBy('sort_order','desc')->limit(4)->get();
@@ -184,14 +186,14 @@ class PageController extends Controller {
                 $advantages = Unit::with('lang')->whereHas('category', function($query){
                     $query->where('cat_id', 6);
                 })->where('is_hidden',0)->whereRaw('IF (is_period = 1, start < NOW(),  1=1 )')->whereRaw('IF (is_period = 1,  (end > NOW() || end is null),  1=1)')->orderBy('sort_order','desc')->get();
-                
+
                 $page_data['specialist'] = $specialist;
                 $page_data['specialists'] = $specialists;
                 $page_data['leads'] = $leads;
                 $page_data['reviews'] = $reviews;
                 $page_data['advantages'] = $advantages;
-                $view = 'pages.about_page';  
-            } elseif($unit->id == 4){ 
+                $view = 'pages.about_page';
+            } elseif($unit->id == 4){
                 $unit->leads = Lead::with(['answers' => function ($query) {
                     $query->where('is_hidden',0);
                 }])->where('form_type_id',8)->where('is_hidden',0)->where('parent_id',null)->orderBy('created_at','desc')->paginate(15);
@@ -206,7 +208,7 @@ class PageController extends Controller {
                             $query->where('first_name', 'LIKE', '%'.$search.'%')->orWhere('last_name', 'LIKE', '%'.$search.'%')->orWhere('father_name', 'LIKE', '%'.$search.'%');
                         });
                     })->get();
-        
+
                     foreach ($specialists as $specialist) {
                         $result_specialists_ids[] = $specialist->id;
                     }
@@ -216,7 +218,7 @@ class PageController extends Controller {
                     //         $query->where('long_desc_1', 'LIKE', '%'.$search.'%')->orWhere('long_desc_2', 'LIKE', '%'.$search.'%');
                     //     });
                     // })->get();
-        
+
                     // foreach ($specialists as $specialist) {
                     //     $result_specialists_ids[] = $specialist->id;
                     // }
@@ -233,7 +235,7 @@ class PageController extends Controller {
                                     });
                                 }
                             )->get();
-                            
+
                             foreach ($specialists as $specialist) {
                                 $result_specialists_ids[] = $specialist->id;
                             }
@@ -245,12 +247,12 @@ class PageController extends Controller {
                     //             $query->where('long_desc_1', 'LIKE', '%'.$search_item.'%')->orWhere('long_desc_2', 'LIKE', '%'.$search_item.'%');
                     //         });
                     //     })->get();
-            
+
                     //     foreach ($specialists as $specialist) {
                     //         $result_specialists_ids[] = $specialist->id;
                     //     }
                     // }
-                    
+
                     $specialists = Specialist::with('lang')->where('is_hidden',0)
                         ->whereHas('rel_units', function ($query) use ($search) {
                             $query->whereIn('cat_id', Cat::descendants(4))->whereHas('lang', function($query)  use ($search) {
@@ -334,7 +336,7 @@ class PageController extends Controller {
             if (isset($cat) && Auth::guard('admin_account')->check()) {
                 View::share('admin_edit_link', route('admin.units.categories', 'cat_id='.$cat->id));
             }
-
+            $reviews = Unit::with('lang')->where('is_hidden',0)->find(4);
             $query = Unit::with([
                 'lang',
                 'videos' => function ($query) {
@@ -353,9 +355,9 @@ class PageController extends Controller {
                 } else {
                     $view = 'pages.actions_list';
                 }
-            } elseif ($cat->id == 7) { 
+            } elseif ($cat->id == 7) {
                 $view = 'pages.equipment_list';
-            } elseif ($cat->id == 4) { 
+            } elseif ($cat->id == 4) {
                 $view = 'pages.services_list';
             } elseif(in_array($cat->id, Cat::descendants(4))) {
                 $view = 'pages.services_list_page';
@@ -363,6 +365,7 @@ class PageController extends Controller {
                 $view = 'pages.cat_page';
             }
             $page_data = [
+                'reviews' => $reviews,
                 'cat' => $cat,
                 'breadcrumbs' => $breadcrumbs,
                 'meta_type' => 'cat_unit'
@@ -494,9 +497,11 @@ class PageController extends Controller {
             } else {
                 $dates = FALSE;
             }
+            $reviews = Unit::with('lang')->where('is_hidden',0)->find(4);
             $directions_consultation = Cat::with('lang')->where('is_hidden',0)->where('parent_id',4)->orderBy('sort_order','asc')->get();
             $page_data = [
                 'dates' => $dates,
+                'reviews' => $reviews,
                 'expert' => $expert,
                 'breadcrumbs' => $breadcrumbs,
                 'directions_consultation' => $directions_consultation,
@@ -510,12 +515,12 @@ class PageController extends Controller {
     }
 
     public function getCabinet () {
-        
+
         if (Auth::guard('web')->check()) {
             View::share('page_title', Lang::get("cabinet.page_title"));
             $id = Auth::guard('web')->user()->id;
             $user = \Demos\AdminPanel\User::find($id);
- 
+
             $orders_query = Order::orderBy('created_at', 'desc')->with('status', 'goods.lang');
             if($user){
                 $orders_query->where(function($query) use ($user){
@@ -527,26 +532,26 @@ class PageController extends Controller {
                     if ($search_phone != ''){
                         $query->orWhere('phone', 'LIKE', "%".$search_phone."%");
                     }
- 
+
                     $search_phone = preg_replace( '/[^0-9]/', '', "%".$user->phone_2."%");
                     if ($search_phone != ''){
                         $query->orWhere('phone', 'LIKE', "%".$search_phone."%");
                     }
- 
+
                 });
             }
-            $user->orders = $orders_query->get(); 
+            $user->orders = $orders_query->get();
             $page_data = [
                 'user' => $user,
             ];
- 
+
             $view = 'pages.cabinet.cabinet_page';
             return View::make($view, $page_data);
         } else {
             return Redirect::to('./');
         }
- 
- 
+
+
     }
 
     public function calculate_visitors(Unit $unit) {

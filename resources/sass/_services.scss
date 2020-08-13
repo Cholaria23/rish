@@ -1,17 +1,8 @@
 .top-section {
     .popup-btn-wrap {
-        @media (max-width: 576px) {
-            flex-direction: column;
-            align-items: center;
-            a + a {
-                margin-top: 15px;
-                margin-left: 0;
-            }
-        }
         .btn-light-green-small,
         .btn-green-small {
-            max-width: 240px;
-            width: 100%;
+            min-width: 240px;
         }
     }
 }
@@ -118,9 +109,13 @@
         &:hover {
             color: $turquoise;
         }
-    }
-    .services-list-icon {
-        margin-left: 30px;
+        &:hover .services-list-icon {
+            margin-left: 30px;
+        }
+        .services-list-icon {
+            margin-left: 20px;
+            transition: .25s linear;
+        }
     }
 }
 
@@ -171,54 +166,144 @@
 
 .specialists {
     .popup-btn-wrap {
-        @media (max-width: 768px) {
-            flex-direction: column;
-            align-items: center;
-            a + a {
-                margin-top: 15px;
-                margin-left: 0;
-            }
-        }
         .btn-light-green-small,
         .btn-green-small {
-            max-width: 308px;
-            width: 100%;
+            min-width: 305px;
         }
     }
 }
 
 .question-block {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
+    @media (max-width: 768px) {
+        margin: 0 -15px;
+    }
     .question-block-item {
         position: relative;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding: 80px 12.5%;
+        padding: 80px 30px;
         width: calc(50% - 5px);
-        background: url(/img/light-bg.png) center center/cover no-repeat
+        background: url(/img/light-bg.png) center center/cover no-repeat;
+        @media (max-width: 1024px) {
+            padding: 60px 30px;
+        }
+        @media (max-width: 768px) {
+            width: 100%;
+            & + .question-block-item {
+                margin-top: 10px;
+            }
+        }
+        @media (max-width: 576px) {
+            padding: 40px 15px;
+        }
     }
     .question-block-svg-wrap {
-        max-width: 355px;
+        max-width: 53%;
         width: 100%;
-        padding: 40px;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+        @media (max-width: 768px) {
+            max-width: 30%;
+        }
+        @media (max-width: 576px) {
+            max-width: 40%;
+        }
     }
     .question-item-wrap {
         position: relative;
+        margin: 0 auto;
+        max-width: 400px;
     }
     .main-section-title {
         margin-bottom: 20px;
+    }
+    .question-form-wrap {
+        margin: 0 auto;
+        max-width: 400px;
+        width: 100%;
     }
     .question_form {
         display: flex;
         flex-direction: column;
         .btn-green {
             margin-left: auto;
+        }
+    }
+}
+
+.faq-list {
+    margin-bottom: 35px;
+    @media (max-width: 576px) {
+        margin-bottom: 15px;
+    }
+    .faq-item:not(:last-child) {
+        margin-bottom: 5px;
+    }
+    .faq-question {
+        padding: 18px 15px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: $turquoise_rgba_7;
+        transition: .25s linear;
+        cursor: pointer;
+        @media (max-width: 576px) {
+            padding: 8px 10px;
+        }
+        &.active {
+            background-color: $white;
+        }
+    }
+    .faq-question-name {
+        font-family: $montserrat_medium;
+        font-size: 18px;
+    }
+    .faq-icon {
+        margin-left: 20px;
+        flex: 0 0 auto;
+        width: 16px;
+        height: 16px;
+        position: relative;
+        @media (max-width: 576px) {
+            margin-left: 15px;
+        }
+        &::before {
+            content: '';
+            width: 16px;
+            height: 2px;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: $main_color;
+        }
+        &::after {
+            content: '';
+            width: 2px;
+            height: 16px;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: $main_color;
+        }
+        &.active {
+            &::after {
+                display: none;
+            }
+        }
+    }
+    .faq-answer {
+        display: none;
+        padding: 0 45px 15px 15px;
+        @media (max-width: 576px) {
+            padding: 0 10px 10px;
         }
     }
 }

@@ -149,37 +149,40 @@
 
 
         @if($cat->leads->count())
-            <section class="main-section">
+            <section class="main-section reviews">
     			<div class="container-small">
     				<div class="main-section-title-wrap">
     					<div class="main-section-title">
     						@lang('main.reviews')
     					</div>
-    					<a class="btn-arrow" href="#">
+    					<a class="btn-arrow" href="{{build_unit_route($reviews)}}">
     						<span class="btn-arrow-text">
     							@lang('main.all_reviews')
     						</span>
     					</a>
     				</div>
-    				<div class="reviews-slider">
-                        @foreach ($cat->leads as $lead_item)
-                            @include('layouts.tiles.lead')
-                        @endforeach
-                    </div>
-    				<div class="counter-slider">
-    					@php
+                    <div class="section-inner">
+                        <div class="reviews-slider">
+                            @foreach ($cat->leads as $lead_item)
+                                @include('layouts.tiles.lead')
+                            @endforeach
+                        </div>
+                        <div class="counter-slider">
+                            @php
                             $i = 0;
-                        @endphp
-                        @foreach($cat->leads as $lead_item)
-    						@php
-    						$i ++;
-    						@endphp
-                            <div class="counter-slider-item">
-                                <div class="count-slide">
-                                    {{$i}}<span class="all-count-slide">/{{$cat->leads->count()}}</span>
+                            @endphp
+                            @foreach($cat->leads as $lead_item)
+                                @php
+                                $i ++;
+                                @endphp
+                                <div class="counter-slider-item">
+                                    <div class="count-slide">
+                                        {{$i}}<span class="all-count-slide">/{{$cat->leads->count()}}</span>
+                                    </div>
                                 </div>
-                            </div>
-                        @endforeach
+                            @endforeach
+                        </div>
+                        <div class="btn-wrap"></div>
                     </div>
     			</div>
     		</section>
@@ -243,7 +246,6 @@
                 </div>
             </div>
         </section>
-
     </div>
 @stop
 @section('scripts')

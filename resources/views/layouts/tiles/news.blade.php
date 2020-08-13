@@ -1,5 +1,11 @@
 <?php
 	switch ($unit_item->category->id) {
+		case 19:
+		$class="news";
+		break;
+		case 18:
+		$class="articles";
+		break;
 		case 17:
 		$class="stock";
 		break;
@@ -34,7 +40,7 @@
             @endif
         @else
             <span class="special-action-period">
-                {{$unit_item->date_publication->format('d')}}/{{$unit_item->date_publication->format('m')}}
+				<span class="special-action-period-bold">{{$unit_item->date_publication->format('d')}}</span>/{{$unit_item->date_publication->format('m')}}
             </span>
         @endif
     </span>

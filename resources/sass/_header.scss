@@ -125,19 +125,6 @@
                 color: $ligt_grey;
             }
         }
-        .search-btn {
-            display: flex;
-            flex: 0 0 auto;
-            padding: 9px 63px;
-            font-family: $montserrat_medium;
-            color: $white;
-            background-color: $turquoise;
-            border-radius: 6px;
-            transition: .25s linear;
-            &:hover {
-                background-color: $dark_turquoise;
-            }
-        }
     }
 }
 

@@ -1,15 +1,25 @@
 // main slider start
 .main-slider {
+    @media (max-width: 1024px) {
+        margin: 0 -15px;
+    }
     .slide-item {
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;
     }
     .slide-item-img-wrap {
         position: relative;
         width: 60%;
+        @media (max-width: 1024px) {
+            width: 100%;
+        }
     }
     .slide-item-img {
         height: 512px;
+        @media (max-width: 1024px) {
+            height: auto;
+        }
     }
     .content-slide {
         padding: 30px 3.5%;
@@ -20,17 +30,27 @@
         width: calc(40% - 10px);
         z-index: 1;
         background: url(/img/light-bg.png) center center/cover no-repeat;
+        @media (max-width: 1024px) {
+            width: 100%;
+            padding: 30px 15px 70px;
+        }
     }
     .content-slide-wrap {
         position: relative;
     }
     .content-slide-svg-wrap {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         padding: 20% 10%;
         position: absolute;
         top: 0;
         right: 0;
         bottom: 0;
         left: 0;
+        @media (max-width: 1024px) {
+            display: none;
+        }
     }
     .slide-item-mask {
         position: absolute;
@@ -43,9 +63,15 @@
         margin-bottom: 30px;
         font-family: $montserrat_bold;
          @include adaptiv-font(45, 30);
+         @media (max-width: 1024px) {
+             margin-bottom: 20px;
+         }
     }
     .slide-text {
         margin-bottom: 30px;
+        @media (max-width: 1024px) {
+            margin-bottom: 15px;
+        }
     }
     .slick-dots {
         padding-left: 0;
@@ -56,6 +82,10 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        @media (max-width: 1024px) {
+            left: 15px;
+            bottom: 30px;
+        }
         li {
             width: 11px;
             height: 11px;
@@ -143,6 +173,7 @@
         list-style: none;
         text-align: center;
         display: flex;
+        flex-wrap: wrap;
         justify-content: flex-end;
         z-index: 99;
         li {

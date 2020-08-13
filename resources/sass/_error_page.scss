@@ -9,7 +9,7 @@
             .title-mistake {
                 margin-top: 0;
                 margin-bottom: 40px;
-                // font-family: $title_fonts;
+                font-family: $montserrat_semibold;
                 font-size: 120px;
                 line-height: 1;
                 text-transform: uppercase;
@@ -31,7 +31,7 @@
             .subtitle-mistake {
                 margin-top: 0;
                 margin-bottom: 80px;
-                // font-family: $title_fonts;
+                font-family: $montserrat_medium;
                 font-size: 62px;
                 line-height: 1;
                 @media screen and (max-width: 1200px) {

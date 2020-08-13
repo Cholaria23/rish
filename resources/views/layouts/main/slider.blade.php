@@ -21,7 +21,7 @@
 							</div>
 							<div class="content-slide-wrap">
 								<div class="slide-title">{!! $slide->lang->title !!}</div>
-								<div class="slide-text">{!! $slide->lang->text !!}</div>
+								<div class="slide-text text">{!! $slide->lang->text !!}</div>
 								{{-- @if ($slide->data_attr_1 != '')
 									<button class="btn-slider open-modal-js" data-popup="{{ $slide->data_attr_1 }}">
 										{{ $slide->lang->button_1_caption }}
@@ -38,7 +38,7 @@
 					</div>
 				@endforeach
 			</div>
-		</div>		
+		</div>
 	</section>
 	@section('scripts')
 	@parent
@@ -53,15 +53,15 @@
 					  arrows: false,
 					  dots: true,
 					  draggable: true,
-					//   responsive: [
-			        //       {
-			        //         breakpoint: 1025,
-			        //         settings: {
-			        //           adaptiveHeight: true,
-					// 		  autoplay: false,
-			        //         }
-			        //       }
-			        //     ]
+					  responsive: [
+			              {
+			                breakpoint: 1025,
+			                settings: {
+			                  adaptiveHeight: true,
+							  autoplay: false,
+			                }
+			              }
+			            ]
 		          });
 		      });
 		</script>

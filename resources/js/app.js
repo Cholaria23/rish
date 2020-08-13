@@ -1,6 +1,9 @@
 // jQuery
 require('jquery/dist/jquery.min');
 window.$ = window.jQuery = require('jquery');
+// form Stickyfill
+import Stickyfill from "stickyfilljs/dist/stickyfill.min";
+window.Stickyfill = require('stickyfilljs');
 // localization
 var locale = $('html').attr('lang');
 if (locale !== "en") {

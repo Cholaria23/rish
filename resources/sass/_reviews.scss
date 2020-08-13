@@ -1,0 +1,7 @@
+.page {
+    .reviews .main-section-title {
+        display: inline-block;
+        font-family: $montserrat_bold;
+        @include adaptiv-font(30, 22);
+    }
+}
