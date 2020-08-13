@@ -41,24 +41,27 @@
 		@endif
 	@endif
 
-	@if($rel_types->count())
-		@foreach ($rel_types as $type_item)
-			@if ($type_item->id == 4)
-				@if (isset($unit->related_units[$type_item->id]) && count($unit->related_units[$type_item->id]['units']))
-					<h2>
-						@lang('main.titles.faq')
-					</h2>
-					@foreach ($unit->related_units[$type_item->id]['units'] as $unit_item)
-						{{$unit_item->lang->name}}
-						@if($unit_item->lang->long_desc_1 != '')
-							{!!$unit_item->lang->long_desc_1!!}
-						@endif
-					@endforeach
-				@endif
+	@if($unit->rel_faq_groups->count())
+		<h2>
+			@lang('main.titles.faq')
+		</h2>
+		@foreach ($unit->rel_faq_groups as $group_item)
+			<h3>{{$group_item->lang->title}}</h3>
+			@if($group_item->faq->count())
+				@foreach ($group_item->faq as $faq_item)
+					@if($faq_item->lang->question != '')
+						{!!$faq_item->lang->question!!}
+					@endif
+					@if($faq_item->lang->answer != '')
+						{!!$faq_item->lang->answer!!}
+					@endif
+					@if($faq_item->lang->link  != '')
+						<a href="{{$faq_item->lang->link}}">@lang('main.more')</a>
+					@endif
+				@endforeach
 			@endif
 		@endforeach
 	@endif
-
 
 	@if($rel_types->count())
 		@foreach ($rel_types as $type_item)
