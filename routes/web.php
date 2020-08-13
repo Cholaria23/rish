@@ -69,22 +69,22 @@ Route::group(
 ],
 function() {
     Route::get('/', 'PageController@index')->name('index');
-    Route::get('cabinet', 'PageController@getCabinet')->middleware('slashes')->name('indexCabinet');
-    Route::view('/404', 'errors.404')->middleware('slashes')->name('404');
-    Route::view('/500', 'errors.500')->middleware('slashes')->name('500');
-    Route::get('/catalog/cart', 'ShopController@getCart')->middleware('slashes')->name('getCart');
-    Route::get('/catalog/order', 'ShopController@getOrder')->middleware('slashes')->name('getOrder');
-    Route::get('/catalog', 'ShopController@showCat')->middleware('slashes')->name('showCat');
-    Route::get('brands', 'ShopController@showBrands')->middleware('slashes')->name('showBrands');
-    Route::get('brands/{slug}', function($slug) {
+    Route::get('cabinet/', 'PageController@getCabinet')->name('indexCabinet');
+    Route::view('/404/', 'errors.404')->name('404');
+    Route::view('/500/', 'errors.500')->name('500');
+    Route::get('/catalog/cart/', 'ShopController@getCart')->name('getCart');
+    Route::get('/catalog/order/', 'ShopController@getOrder')->name('getOrder');
+    Route::get('/catalog/', 'ShopController@showCat')->name('showCat');
+    Route::get('brands/', 'ShopController@showBrands')->name('showBrands');
+    Route::get('brands/{slug}/', function($slug) {
         if (Demos\Market\Brand::where('alias', '=', $slug)->count() > 0 ) {
             $controller = App::make('App\Http\Controllers\ShopController');
             return $controller->showBrand($slug);
         } else {
             return Redirect::to('404');
         }
-    })->middleware('slashes')->name('showBrand');
-    Route::get('brands/{slug}/{alias}', function($slug,$alias) {
+    })->name('showBrand');
+    Route::get('brands/{slug}/{alias}/', function($slug,$alias) {
         if (Demos\Market\BrandSeries::where('alias', '=', $alias)->count() > 0 ) {
             $controller = App::make('App\Http\Controllers\ShopController');
             return $controller->showSeries($slug,$alias);
@@ -93,7 +93,7 @@ function() {
         }
     });
 
-    Route::get('search', 'SearchController@showSearch')->middleware('slashes')->name('search');
+    Route::get('search/', 'SearchController@showSearch')->name('search');
     if(class_exists(\Demos\Market\MarketServiceProvider::class) && app('market_params')->cat_url_prefix != ''){
         $slash_check = substr(app('market_params')->cat_url_prefix, -1) != '/'? '/':'';
         Route::get(app('market_params')->cat_url_prefix.$slash_check.'{slug}', function($slug){
@@ -103,21 +103,21 @@ function() {
             } else {
                 return Redirect::to('404');
             }
-        })->middleware('slashes')->name('market_cat_url');
+        })->name('market_cat_url');
     }
     if(class_exists(\Demos\Market\MarketServiceProvider::class) && app('market_params')->good_url_prefix != '') {
         $slash_check = substr(app('market_params')->good_url_prefix, -1) != '/'? '/':'';
-        Route::get(app('market_params')->good_url_prefix.$slash_check.'{slug}', function($slug){
+        Route::get(app('market_params')->good_url_prefix.$slash_check.'{slug}/', function($slug){
             if (Demos\Market\Good::where('alias', '=', $slug)->count() > 0 ) {
                 $controller = App::make('App\Http\Controllers\ShopController');
                 return $controller->showGood($slug);
             } else {
                 return Redirect::to('404');
             }
-        })->middleware('slashes')->name('market_good_url');
+        })->name('market_good_url');
     }
 
-    Route::get('expert/{slug}', function($slug) {
+    Route::get('expert/{slug}/', function($slug) {
         if (Demos\AdminPanel\Specialist::where('alias', '=', $slug)->count() > 0 ) {
             $controller = App::make('App\Http\Controllers\PageController');
             return $controller->showExpert($slug);
@@ -128,16 +128,16 @@ function() {
         'slug' => '[a-zA-Z0-9-_]+'
     ])->name('expert');
 
-    Route::get('{cat}/{slug}', function($cat, $slug) {
+    Route::get('{cat}/{slug}/', function($cat, $slug) {
         if (Demos\AdminPanel\Unit::where('alias', '=', $slug)->count() > 0 ) {
             $controller = App::make('App\Http\Controllers\PageController');
             return $controller->showUnit($slug,$cat);
         } else {
             return Redirect::to('404');
         }
-    })->middleware('slashes')->name('second_url');
+    })->name('second_url');
 
-    Route::get('{slug}', function($slug) {
+    Route::get('{slug}/', function($slug) {
         if (Demos\AdminPanel\Cat::where('alias', '=', $slug)->count() > 0) {
             $controller = App::make('App\Http\Controllers\PageController');
             return $controller->showCat($slug);
@@ -155,5 +155,5 @@ function() {
         }
     })->where([
         'slug' => '[a-zA-Z0-9-_]+'
-    ])->middleware('slashes')->name('first_url');
+    ])->name('first_url');
 });

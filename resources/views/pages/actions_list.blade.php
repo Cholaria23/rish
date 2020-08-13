@@ -19,6 +19,7 @@
         @foreach ($cat->units as $unit_item)
 			@include('layouts.tiles.actions')
         @endforeach
+        {{$cat->units->links()}}
     @else
         @lang('main.empty_cat')
 	@endif

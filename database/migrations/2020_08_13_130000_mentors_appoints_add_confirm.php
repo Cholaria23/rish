@@ -11,8 +11,8 @@ class MentorsAppointsAddConfirm extends Migration {
      */
     public function up() {
         Schema::table('specialists_appoints', function (Blueprint $table) {
-            $table->boolean('is_add_confirm_sent')->default(0);
             $table->string('hash', 255)->nullable();
+            $table->date('add_confirm_date')->nullable();
         });
     }
 
@@ -23,8 +23,8 @@ class MentorsAppointsAddConfirm extends Migration {
      */
     public function down() {
         Schema::table('specialists_appoints', function (Blueprint $table) {
-            $table->dropColumn('is_add_confirm_sent');
             $table->dropColumn('hash');
+            $table->dropColumn('add_confirm_date');
         });
     }
 }
