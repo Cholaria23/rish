@@ -95,12 +95,14 @@ $(document).ready(function() {
 
 $(window).on('load resize', function() {
     if (window.innerWidth < 1025) {
-        if($('.specialist-block-img').length) {
-            $('.specialist-block-img').insertBefore( $( ".specialist-activities-list" ) );
+        if($('.unit-block-img').length) {
+            var unitImg = $('.unit-block-img-wrap .unit-block-img');
+            unitImg.insertAfter( $( ".unit-block-title-js" ) );
         }
     } else {
-        if($('.specialist-block-img').length) {
-            $('.specialist-block-img').appendTo( $( ".sticky" ) );
+        if($('.unit-block-img').length) {
+            var unitImg = $('.unit-block-info .unit-block-img');
+            unitImg.appendTo( $( ".sticky" ) );
         }
     }
     if (window.innerWidth < 767) {

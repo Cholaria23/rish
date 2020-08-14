@@ -6,14 +6,14 @@
 		@include('layouts.main.breadcrumbs')
 		<div class="main-section">
 			<div class="container">
-				<div class="specialist-block">
-					<div class="specialist-block-img-wrap">
+				<div class="unit-block specialist-block">
+					<div class="unit-block-img-wrap">
 						<div class="sticky">
-							<img class="specialist-block-img lazyload" data-src="{{specialist_cover('small', $expert->img_1)}}" alt="{{$expert->lang->last_name}} {{$expert->lang->first_name}} {{$expert->lang->father_name}}" title="{{$expert->lang->last_name}} {{$expert->lang->first_name}} {{$expert->lang->father_name}}">
+							<img class="unit-block-img lazyload" data-src="{{specialist_cover('small', $expert->img_1)}}" alt="{{$expert->lang->last_name}} {{$expert->lang->first_name}} {{$expert->lang->father_name}}" title="{{$expert->lang->last_name}} {{$expert->lang->first_name}} {{$expert->lang->father_name}}">
 						</div>
 					</div>
-					<div class="specialist-block-info">
-						<div class="main-section-title">
+					<div class="unit-block-info">
+						<div class="main-section-title unit-block-title-js">
 							{{$expert->lang->last_name}}
 							{{$expert->lang->first_name}}
 							{{$expert->lang->father_name}}

@@ -84,8 +84,8 @@
         @endif
         @if($cat->lang->post_info != '')
             <section class="page-section">
-                <div class="container">
-                    <div class="description text-center">
+                <div class="container-small">
+                    <div class="description">
                         {!! $cat->lang->post_info !!}
                     </div>
                 </div>

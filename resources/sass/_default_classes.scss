@@ -626,22 +626,31 @@ video {
   // Pagination end
 
 // magnific popup-gallery start
- .popup-gallery {
-     margin: -10px 0 0 -10px;
-     display: flex;
-     flex-wrap: wrap;
-     .gallery-item {
-         width: 25%;
-         padding: 10px 0 0 10px;
-         @media (max-width: 1024px) {
-             width: 33.33%;
-         }
-         @media (max-width: 768px) {
-             width: 50%;
-         }
-         @media (max-width: 400px) {
-             width: 100%;
-         }
-     }
- }
+.popup-gallery-wrap {
+    margin-bottom: 85px;
+    @media (max-width: 1024px) {
+        margin-bottom: 60px;
+    }
+    @media (max-width: 768px) {
+        margin-bottom: 40px;
+    }
+}
+.popup-gallery {
+    margin: -10px 0 0 -10px;
+    display: flex;
+    flex-wrap: wrap;
+    .gallery-item {
+        width: 25%;
+        padding: 10px 0 0 10px;
+        @media (max-width: 1024px) {
+            width: 33.33%;
+        }
+        @media (max-width: 768px) {
+            width: 50%;
+        }
+        @media (max-width: 400px) {
+            width: 100%;
+        }
+    }
+}
 // magnific popup-gallery end

@@ -40,6 +40,13 @@
     }
 }
 
+.specialist-block {
+    .popup-btn-wrap {
+        margin-bottom: 50px;
+        justify-content: flex-start;
+    }
+}
+
 .search-specialists-form {
     display: flex;
     @media (max-width: 576px) {
@@ -71,9 +78,9 @@
     }
 }
 
-.specialist-block {
+.unit-block {
     display: flex;
-    .specialist-block-img-wrap {
+    .unit-block-img-wrap {
         width: 304px;
         flex: 0 0 auto;
         margin-right: 50px;
@@ -81,7 +88,7 @@
             display: none;
         }
     }
-    .specialist-block-img {
+    .unit-block-img {
         @media (max-width: 1024px) {
             margin: 0 auto 25px 0;
         }
@@ -95,7 +102,7 @@
             display: table;
         }
     }
-    .specialist-block-info {
+    .unit-block-info {
         .main-section-title {
             margin-bottom: 25px;
             @media (max-width: 768px) {
@@ -105,73 +112,71 @@
                 margin-bottom: 10px;
             }
         }
-        .specialist-activities-list {
-            margin-bottom: 25px;
-            padding-left: 13px;
-            padding-bottom: 25px;
-            border-bottom: 1px solid $li_grey;
-            list-style: none;
+    }
+}
+
+.specialist-activities-list {
+    margin-bottom: 25px;
+    padding-left: 13px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid $li_grey;
+    list-style: none;
+    @media (max-width: 768px) {
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+    }
+    @media (max-width: 576px) {
+        margin-bottom: 15px;
+        padding-bottom: 15px;
+    }
+    .specialist-activities-item {
+        position: relative;
+        font-family: $montserrat_medium;
+        font-size: 18px;
+        & + .specialist-activities-item {
+            margin-top: 10px;
             @media (max-width: 768px) {
-                margin-bottom: 20px;
-                padding-bottom: 20px;
-            }
-            @media (max-width: 576px) {
-                margin-bottom: 15px;
-                padding-bottom: 15px;
-            }
-            .specialist-activities-item {
-                position: relative;
-                font-family: $montserrat_medium;
-                font-size: 18px;
-                & + .specialist-activities-item {
-                    margin-top: 10px;
-                    @media (max-width: 768px) {
-                        margin-top: 5px;
-                    }
-                }
-                &::before {
-                    content: '';
-                    position: absolute;
-                    left: -13px;
-                    top: 7px;
-                    width: 7px;
-                    height: 7px;
-                    border-radius: 50%;
-                    background-color: $turquoise;
-                }
+                margin-top: 5px;
             }
         }
-        .specialist-status-wrap {
-            margin: -15px 0 25px;
-            display: flex;
-            flex-wrap: wrap;
-            @media (max-width: 768px) {
-                margin: -15px 0 15px;
-            }
-            .specialist-status-item {
-                margin-right: 70px;
-                padding: 15px 0 0;
-                display: flex;
-                align-items: center;
-                @media (max-width: 576px) {
-                    width: 100%;
-                    margin-right: 0;
-                }
-            }
-            .specialist-status-svg {
-                flex: 0 0 auto;
-                max-width: 26px;
-                margin-right: 10px;
-            }
-            .specialist-status-text {
-                font-family: $montserrat_medium;
-                font-size: 18px;
-            }
+        &::before {
+            content: '';
+            position: absolute;
+            left: -13px;
+            top: 7px;
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background-color: $turquoise;
         }
-        .popup-btn-wrap {
-            margin-bottom: 50px;
-            justify-content: flex-start;
+    }
+}
+
+.specialist-status-wrap {
+    margin: -15px 0 25px;
+    display: flex;
+    flex-wrap: wrap;
+    @media (max-width: 768px) {
+        margin: -15px 0 15px;
+    }
+    .specialist-status-item {
+        margin-right: 70px;
+        padding: 15px 0 0;
+        display: flex;
+        align-items: center;
+        @media (max-width: 576px) {
+            width: 100%;
+            margin-right: 0;
         }
+    }
+    .specialist-status-svg {
+        flex: 0 0 auto;
+        max-width: 26px;
+        margin-right: 10px;
+    }
+    .specialist-status-text {
+        font-family: $montserrat_medium;
+        font-size: 18px;
     }
 }
 

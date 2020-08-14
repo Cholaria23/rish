@@ -159,6 +159,7 @@
             @include adaptiv-font(24, 18);
             @media (max-width: 576px) {
                 margin-bottom: 10px;
+                font-family: $montserrat_medium;
             }
         }
     }
