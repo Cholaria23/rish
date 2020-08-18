@@ -26,8 +26,9 @@
 }
 .form-thanks {
     display: none;
-    text-align: center;
+    font-family: $montserrat_semibold;
     font-size: 18px;
+    text-align: center;
 }
 .object-fit-cover {
     object-fit: cover;
@@ -71,6 +72,16 @@
     }
     @media (max-width: 768px) {
         margin-bottom: 25px;
+    }
+    &.turquoise-section {
+        padding: 60px 0;
+        background-color: $turquoise_rgba_10;
+        @media (max-width: 1024px) {
+            padding: 50px 0;
+        }
+        @media (max-width: 768px) {
+            padding: 40px 0;
+        }
     }
     &:last-child {
         margin-bottom: 85px;
@@ -117,6 +128,18 @@
         text-align: left;
     }
 }
+.aside-title {
+    display: inline-block;
+    margin-bottom: 25px;
+    font-family: $montserrat_bold;
+    @include adaptiv-font(24, 18);
+    @media (max-width: 1024px) {
+        margin-bottom: 20px;
+    }
+    @media (max-width: 768px) {
+        margin-bottom: 15px;
+    }
+}
 .page-section-top-subtitle {
     text-align: center;
     @media (max-width: 768px) {
@@ -131,7 +154,7 @@
         margin-bottom: 15px;
     }
     .input-form {
-        padding: 9px 15px;
+        padding: 11px 15px 8px;
         width: 100%;
         height: 40px;
         line-height: 1;
@@ -141,6 +164,13 @@
             font-family: $montserrat_medium;
             color: $ligt_grey;
         }
+    }
+    label.error {
+        position: absolute;
+        left: 0;
+        bottom: -18px;
+        font-size: 12px;
+        color: $red;
     }
 }
 // form end
@@ -220,12 +250,6 @@
     background-color: $turquoise_rgba_one;
     border-radius: 6px;
     transition: .25s linear;
-    @media (max-width: 1024px) {
-        padding: 9px 12px 9px 9px;
-    }
-    @media (max-width: 576px) {
-        padding: 9px 5px 9px 5px;
-    }
     &:hover {
         background-color: $turquoise_rgba_25;
     }
@@ -518,6 +542,7 @@ video {
 .crumb-li {
   margin-left: -10px;
   display: inline-block;
+  text-align: left;
   & + .crumb-li {
     margin-left: 0;
     padding-left: 5px;
@@ -527,7 +552,7 @@ video {
         position: absolute;
         display: block;
         left: -6px;
-        top: 4px;
+        top: 5px;
         height: 5.65px;
         width: 5.65px;
         border-right: 1px solid $ligt_grey;
@@ -654,3 +679,23 @@ video {
     }
 }
 // magnific popup-gallery end
+
+// custom scroll bar start
+// scroll bar
+.mCSB_scrollTools .mCSB_draggerRail {
+    background-color: $ggrey_rgba_45;
+    width: 1px;
+}
+
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+    background-color: $turquoise;
+    width: 3px;
+}
+.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar {
+    background-color: $turquoise;
+}
+.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar,
+.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar{
+	background-color: $turquoise;
+}
+// custom scroll bar end

@@ -65,7 +65,7 @@
 			@endif
 		@endforeach
 	@endif
-	
+
 	@if(isset($rel_service_units) && $rel_service_units->count())
 		@foreach ($rel_service_cats as $rel_service_cat)
 			{{$rel_service_cat->lang->name}}
@@ -76,6 +76,7 @@
 			@endforeach
 		@endforeach
 	@endif
+
 	@if(isset($news) && $news->count())
 		@lang('main.last_units')
 		@foreach ($news as $unit_item)

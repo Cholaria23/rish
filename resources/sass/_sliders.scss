@@ -210,3 +210,86 @@
 }
 // counter-slider end
 // reviews-slider end
+
+// special-actions-wrap slider start
+.special-actions-wrap.slider {
+    .slick-dots {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        top: calc(100% + 15px);
+        font-size: 0;
+        list-style: none;
+        text-align: center;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        z-index: 99;
+        li {
+            width: auto;
+            height: auto;
+            & + li {
+                margin-left: 18px;
+            }
+            &.slick-active button::before {
+                background: $turquoise;
+            }
+            &:hover button::before {
+                background: $turquoise;
+            }
+            button {
+                position: relative;
+                width: 30px;
+                height: 30px;
+                padding: 0;
+                &::before {
+                    z-index: 2;
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    width: 100%;
+                    height: 5px;
+                    background: $white;
+                    transition: .25s linear;
+                }
+            }
+        }
+    }
+}
+// special-actions-wrap slider end
+
+// mobile-slider-js start
+.mobile-slider-js {
+    .mobile-slider-arrow {
+        position: absolute;
+        top: 35%;
+        width: 40px;
+        height: 40px;
+        background-color: rgba(255, 255, 255, 0.55);
+        transition: .25s linear;
+        cursor: pointer;
+        &:hover {
+            background-color: $turquoise_rgba_25;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            width: 12px;
+            height: 10px;
+            background: url(/img/right-arrow.svg) center center/cover no-repeat;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+        &.prev {
+            left: 0;
+            z-index: 1;
+            transform: rotate(180deg);
+        }
+        &.next {
+            right: 0;
+        }
+    }
+}
+// mobile-slider-js end

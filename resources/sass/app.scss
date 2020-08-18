@@ -1,3 +1,5 @@
+// fonts
+@import "fonts";
 // Variables
 @import 'variables';
 // Normalize
@@ -10,9 +12,8 @@
 @import "~magnific-popup/dist/magnific-popup.css";
 // lightcase
 // @import "~lightcase/src/css/lightcase.css";
-
-// fonts
-@import "fonts";
+// malihu
+@import "~malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css";
 // default_style
 @import "default_style";
 // default_classes
@@ -29,6 +30,8 @@
 @import "specialists";
 // equipment
 @import "equipment";
+// blog
+@import "blog";
 // reviews
 @import "reviews";
 // footer

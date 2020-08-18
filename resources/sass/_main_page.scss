@@ -320,6 +320,9 @@
     @media (max-width: 1024px) {
         margin: -25px 0 0 -25px;
     }
+    @media (max-width: 400px) {
+        margin: 0;
+    }
     .special-action-holder {
         width: 25%;
         padding: 50px 0 0 50px;
@@ -332,6 +335,7 @@
         }
         @media (max-width: 400px) {
             width: 100%;
+            padding: 0;
         }
     }
     .special-action-item {

@@ -4,11 +4,6 @@ window.$ = window.jQuery = require('jquery');
 // form Stickyfill
 import Stickyfill from "stickyfilljs/dist/stickyfill.min";
 window.Stickyfill = require('stickyfilljs');
-// localization
-var locale = $('html').attr('lang');
-if (locale !== "en") {
-    require('jquery-validation/dist/localization/messages_' + locale + '.min.js');
-}
 // object-fit-images
 import objectFitPolyfill from 'objectFitPolyfill';
 // import validate from "jquery-validation";
@@ -20,6 +15,8 @@ import Inputmask from "inputmask";
 // eventstouch
 var loadTouchEvents = require('jquery-touch-events');
 loadTouchEvents($);
+// malihu_scrollbar
+import mCustomScrollbar from "malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js";
 // lazysizes
 import 'lazysizes';
 // magnific_popup

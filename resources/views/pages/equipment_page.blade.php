@@ -86,7 +86,7 @@
 								@if ($type_item->id == 2)
 									@if (isset($unit->related_units[$type_item->id]) && count($unit->related_units[$type_item->id]['units']))
 										<div class="activity-area-block">
-											<div class="page-section-title-bold">
+											<div class="page-section-title">
 												@lang('main.titles.equipment_in')
 											</div>
 											<div class="activity-area-item-wrap">

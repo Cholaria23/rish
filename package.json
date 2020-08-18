@@ -33,6 +33,7 @@
         "lazysizes": "^5.2.0",
         "lightcase": "^2.5.0",
         "magnific-popup": "^1.1.0",
+        "malihu-custom-scrollbar-plugin": "^3.1.5",
         "normalize.css": "^8.0.1",
         "objectFitPolyfill": "^2.3.0",
         "selectric": "^1.13.0",

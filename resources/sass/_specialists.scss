@@ -31,10 +31,12 @@
             min-width: 305px;
             @media (max-width: 1024px) {
                 min-width: 290px;
+                padding: 9px 12px 9px 9px;
             }
             @media (max-width: 576px) {
                 min-width: auto;
                 width: 100%;
+                padding: 9px 5px 9px 5px;
             }
         }
     }

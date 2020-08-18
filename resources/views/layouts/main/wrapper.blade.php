@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="{{ App::getLocale() }}">
 	<head>
 		<base href="{{ URL::to('/') }}/" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=0">
@@ -37,8 +37,16 @@
 		@include('layouts.main.footer')
 		@include('layouts.main.popup')
 		@include('layouts.main.svg_sprite')
+		<script defer type="text/javascript">
+			var routes = {
+				'postSend' : "{{route('service.postSend')}}",
+				'postLoadFile' : "{{route('service.postLoadFile')}}",
+			}
+		</script>
 		<script src="{{asset('/js/app.js')}}"></script>
-		{{-- <script defer type="text/javascript" src='/js/messages_{{ App::getLocale() }}.js'></script> --}}
+		@if (App::getLocale() !== "en")
+			<script defer type="text/javascript" src='/js/messages_{{ App::getLocale() }}.js'></script>
+		@endif
 		<script>
 			$.ajaxSetup({
                 headers: {
