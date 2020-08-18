@@ -184,7 +184,7 @@
 				<div class="page-section-title-bold">
 					@lang('main.expert_publication')
 				</div>
-				<div class="special-actions-wrap">
+				<div class="special-actions-wrap mobile-slider-js">
 					@foreach ($expert->related_units[3]['units'] as $unit_item)
 						@if (in_array($unit_item->cat_id, \Demos\AdminPanel\Cat::descendants(2)))
 							<div class="special-action-holder">

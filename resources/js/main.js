@@ -6,7 +6,55 @@ function initScrollbar() {
     });
 }
 
+function initPriceTabs() {
+	$(document).on('click', '.tab-link', function(e) {
+        var selectTab = $(this).attr('data-tab');
+        var parent = $(this).closest('.tabs-container');
+        if( selectTab == 2 ) {
+            parent.find('.tab-link').removeClass('active');
+            $(this).addClass('active');
+            parent.find('.tab-content').fadeIn();
+        } else {
+            parent.find('.tab-link').removeClass('active');
+            $(this).addClass('active');
+            parent.find('.tab-content').hide();
+            $('#'+selectTab).fadeIn();
+        }
+    });
+
+    $(document).on('click', '.tab-mobile-link', function(e) {
+        var selectTab = $(this).attr('data-tab');
+        var parent = $(this).closest('.tabs-container');
+        if( selectTab == 2 ) {
+            parent.find('.tab-mobile-link').removeClass('active');
+            $(this).addClass('active');
+            parent.find('.tab-content').fadeIn();
+            $(".active-tab-mobile-text").html($('.tab-mobile-link.active').text());
+            $('.active-tab-mobile').toggleClass("active");
+            $(".tabs").slideToggle();
+        } else {
+            parent.find('.tab-mobile-link').removeClass('active');
+            $(this).addClass('active');
+            parent.find('.tab-content').hide();
+            $('#'+selectTab).fadeIn();
+            $(".active-tab-mobile-text").html($('.tab-mobile-link.active').text());
+            $('.active-tab-mobile').toggleClass("active");
+            $(".tabs").slideToggle();
+        }
+    });
+}
+
 $(document).ready(function() {
+    // tabs
+    if ($('.price-page').length) {
+        initPriceTabs();
+    }
+
+    $(".active-tab-mobile").click(function (e) {
+        $(this).toggleClass("active");
+        $(".tabs").slideToggle();
+    })
+
     // CustomScrollbar
     if($('.scroll-js').length) {
         initScrollbar();
@@ -157,4 +205,37 @@ $(window).on('load resize', function() {
             })
         }
     }
+
+    if (window.innerWidth < 577) {
+        if($('.tabs').length) {
+            $('.tabs').each(function() {
+                var li = $(this).find('li').removeClass('tab-link').addClass('tab-mobile-link');
+                if (li.hasClass('active')) {
+
+                } else {
+                    var active_tab = $(this).find('.tab-mobile-link').first();
+                    var tabs_container = $(this).closest('.tabs-container');
+                    var selectTab = active_tab.attr('data-tab');
+                    active_tab.addClass('active');
+                }
+    		});
+            $(".active-tab-mobile-text").html($('.tab-mobile-link.active').text());
+        }
+    } else {
+        if($('.tabs').length) {
+            $('.tabs').css('display', '');
+            $('.tabs').each(function() {
+                var li = $(this).find('li').removeClass('tab-mobile-link').addClass('tab-link');
+                if (li.hasClass('active')) {
+
+                } else {
+                    var active_tab = $(this).find('.tab-link').first();
+                    var tabs_container = $(this).closest('.tabs-container');
+                    var selectTab = active_tab.attr('data-tab');
+                    active_tab.addClass('active');
+                }
+    		});
+        }
+    }
+    
 });

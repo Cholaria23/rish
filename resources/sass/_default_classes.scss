@@ -699,3 +699,84 @@ video {
 	background-color: $turquoise;
 }
 // custom scroll bar end
+
+// tabs start
+.tabs-btn-wrap {
+    position: relative;
+}
+.tabs {
+    display: flex;
+    flex-wrap: wrap;
+    @media (max-width: 576px) {
+        display: none;
+        position: absolute;
+        top: calc(100% + 5px);
+        left: 0;
+        right: 0;
+        padding: 8px 10px;
+        background-color: $white;
+        border: 1px solid $grey;
+        border-radius: 6px;
+        z-index: 5;
+    }
+    .tab-link {
+        margin: 0 20px 20px 0;
+        padding: 9px 20px;
+        font-family: $montserrat_medium;
+        font-size: 18px;
+        color: $main_color;
+        background-color: $white;
+        border: 1px solid $grey;
+        cursor: pointer;
+        transition: 0.25s linear;
+        &:hover,
+        &.active {
+            color: $dark_turquoise;
+            background-color: $turquoise_rgba_10;
+            border: 1px solid $turquoise_rgba_10;
+        }
+    }
+    .tab-mobile-link {
+        padding: 5px 0;
+        cursor: pointer;
+        & + .tab-mobile-link {
+            margin-top: 5px;
+        }
+        &.active {
+            color: $turquoise;
+        }
+    }
+}
+// tabs end
+.active-tab-mobile {
+    display: none;
+    position: relative;
+    width: 100%;
+    margin-bottom: 25px;
+    padding: 8px 30px 8px 15px;
+    text-align: left;
+    border: 1px solid $grey;
+    border-radius: 6px;
+    &.active .active-tab-mobile-text::after {
+        transform: translateY(-25%) rotate(-45deg);
+    }
+    .active-tab-mobile-text {
+
+        &::after {
+            content: '';
+            position: absolute;
+            display: block;
+            width: 8px;
+            height: 8px;
+            border-top: 2px solid $turquoise;
+            border-right: 2px solid $turquoise;
+            right: 15px;
+            top: 50%;
+            transition: 0.25s linear;
+            transform: translateY(-50%) rotate(135deg);
+        }
+    }
+    @media (max-width: 576px) {
+        display: block;
+    }
+}

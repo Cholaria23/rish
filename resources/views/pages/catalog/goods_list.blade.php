@@ -5,16 +5,16 @@
     <div class="page price-page">
         @include('layouts.main.breadcrumbs')
         @if($cat->lang->h1 != '')
-            <div class="container">
-				<h1 class="page-title">
+            <div class="container-small">
+				<div class="main-section-title">
                     {{$cat->lang->h1}}
-	            </h1>
+	            </div>
 			</div>
         @else
-            <div class="container">
-				<h1 class="page-title">
+            <div class="container-small">
+				<div class="main-section-title">
                     {{$cat->lang->name}}
-	            </h1>
+	            </div>
 			</div>
         @endif
         <div class="main-section price">
@@ -30,14 +30,16 @@
                                 </button>
                                 <ul class="tabs">
                                     @foreach ($categories as $cat_item)
-                                        @if($cat_item->id == 2)
-                                            <li class="tab-link" data-tab="{{$cat_item->id}}">
-                                                @lang('main.view_all_price')
-                                            </li>
-                                        @else
-                                            <li class="tab-link" data-tab="{{$cat_item->id}}">
-                                                {{$cat_item->lang->name}}
-                                            </li>
+                                        @if ($cat_item->goods->count())
+                                            @if($cat_item->id == 2)
+                                                <li class="tab-link" data-tab="{{$cat_item->id}}">
+                                                    @lang('main.view_all_price')
+                                                </li>
+                                            @else
+                                                <li class="tab-link" data-tab="{{$cat_item->id}}">
+                                                    {{$cat_item->lang->name}}
+                                                </li>
+                                            @endif
                                         @endif
                                     @endforeach
                                 </ul>
@@ -45,11 +47,11 @@
                         @endif
                         <ul class="tab-content-wrap">
                             @foreach ($cat->children as $first_child_item)
-                                <li class="tab-content" id="{{$first_child_item->id}}">
-                                    <h2 class="tab-title">
-                                        {{$first_child_item->lang->name}}
-                                    </h2>
-                                    @if($first_child_item->goods->count())
+                                @if($first_child_item->goods->count())
+                                    <li class="tab-content" id="{{$first_child_item->id}}">
+                                        <div class="tab-title">
+                                            {{$first_child_item->lang->name}}
+                                        </div>
                                         <div class="price-list-wrap">
                                             <ul class="price-list">
                                                 @php
@@ -77,8 +79,8 @@
                                                 </div>
                                             @endif
                                         </div>
-                                    @endif
-                                </li>
+                                    </li>
+                                @endif
                             @endforeach
                         </ul>
                     @else

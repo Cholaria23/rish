@@ -52,9 +52,7 @@
                             </div>
                         @endforeach
                     </div>
-                    @if($cat->leads instanceof \Illuminate\Pagination\LengthAwarePaginator)
-                        {{$cat->leads->links()}}
-                    @endif
+                    {{$cat->units->links()}}
                 </div>
             </section>
         @else

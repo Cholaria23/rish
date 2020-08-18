@@ -291,5 +291,15 @@
             right: 0;
         }
     }
+    &.special-actions-wrap {
+        @media (max-width: 400px) {
+            margin: 0;
+        }
+        .special-action-holder {
+            @media (max-width: 400px) {
+                padding: 0;
+            }
+        }
+    }
 }
 // mobile-slider-js end

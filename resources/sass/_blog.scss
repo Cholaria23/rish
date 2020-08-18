@@ -42,6 +42,7 @@
         flex-wrap: wrap;
     }
     .unit-page-main {
+        flex-grow: 1;
         padding-right: 30px;
         padding-bottom: 85px;
         @media (max-width: 1024px) {
@@ -60,6 +61,44 @@
             margin-bottom: 20px;
             @media (max-width: 768px) {
                 margin-bottom: 15px;
+            }
+        }
+        .unit-category-wrap {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            .unit-category-item-name {
+                position: relative;
+                margin-right: 15px;
+                padding-left: 17px;
+                font-family: $montserrat_medium;
+                font-size: 14px;
+                text-transform: uppercase;
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 17px 17px 0 0;
+                }
+                &.package-offer {
+                    color: $green;
+                    &::after {
+                        border-color: $green transparent transparent transparent;
+                    }
+                }
+                &.stock {
+                    color: $red;
+                    &::after {
+                        border-color: $red transparent transparent transparent;
+                    }
+                }
+            }
+            .unit-date-publication {
+                font-family: $montserrat_medium;
             }
         }
         .unit-category-info {
@@ -140,6 +179,15 @@
                 color: $main_color;
             }
         }
+        .activity-area-block {
+            margin-top: 85px;
+            @media (max-width: 1024px) {
+                margin-top: 60px;
+            }
+            @media (max-width: 768px) {
+                margin-top: 40px;
+            }
+        }
         .iframe-wrap {
             margin-bottom: 60px;
             @media (max-width: 1024px) {
@@ -203,7 +251,7 @@
                 width: 50%;
             }
             @media (max-width: 400px) {
-                width: 100% !important;
+                width: 100%;
             }
         }
     }
