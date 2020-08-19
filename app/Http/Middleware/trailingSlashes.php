@@ -18,7 +18,6 @@ class trailingSlashes
      */
     public function handle($request, Closure $next)
     {
-      die($request->getRequestUri());
       if (!preg_match('/.+\/$/', $request->getRequestUri()))
       {            
         $base_url = Config::get('app.url');                    
