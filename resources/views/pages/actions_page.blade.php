@@ -4,12 +4,6 @@
 @section('page')
 	<?php
 		switch ($unit->category->id) {
-			case 19:
-			$class="news";
-			break;
-			case 18:
-			$class="articles";
-			break;
 			case 17:
 			$class="stock";
 			break;
@@ -41,8 +35,13 @@
 							@lang('main.titles.'.$unit->category->id)
 						</div>
 						<div class="unit-date-publication">
-							{{-- @lang('main.date_publication') --}}
-							{{$unit->date_publication->format('d')}}/{{$unit->date_publication->format('m')}}
+							@if ($unit->category->id == 16)
+								@lang('main.date_publication')
+								{{$unit->date_publication->format('d')}}/{{$unit->date_publication->format('m')}}
+							@elseif ($unit->category->id == 17)
+								@lang('main.validity')
+								{{$unit->start->format('d.m.Y')}} - {{$unit->end->format('d.m.Y')}}
+							@endif
 						</div>
 					</div>
 

@@ -780,3 +780,45 @@ video {
         display: block;
     }
 }
+
+.about-us-img {
+    margin-top: 35px;
+    bottom: 10px;
+}
+// advantages start
+.advantages-block {
+    position: relative;
+    padding: 40px 15px;
+    background-color: #69d1d2;
+}
+.advantages-block-svg-wrap {
+    max-width: 21%;
+    width: 100%;
+    padding: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.advantages-wrap {
+    display: flex;
+    justify-content: space-around;
+    .advantages-item {
+        max-width: 234px;
+        display: flex;
+        flex-direction: column;
+        .advantages-item-name {
+            @include adaptiv-font(40, 22);
+            text-align: center;
+        }
+        .advantages-item-name-desc {
+
+            text-align: center;
+        }
+        .advantages-item-description {
+
+            text-align: center;
+        }
+    }
+}
+// advantages end

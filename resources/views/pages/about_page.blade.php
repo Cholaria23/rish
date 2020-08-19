@@ -2,32 +2,70 @@
 @section('links')
 @stop
 @section('page')
-	@include('layouts.main.breadcrumbs')
-	@if($unit->lang->h1 != '')
-		<h1>
-			{{$unit->lang->h1}}
-		</h1>
-	@else
-		<h1>
-			{{$unit->lang->name}}
-		</h1>
-	@endif
-	<img src="{{unit_logo($unit->logo)}}" alt="{{$unit->lang->name}}" title="{{$unit->lang->name}}">
-	@include('layouts.main.advantages')
+	<div class="page">
+		@include('layouts.main.breadcrumbs')
+		@if($unit->lang->h1 != '')
+			<div class="container">
+				<div class="main-section-title text-center">
+					{{$unit->lang->h1}}
+				</div>
+			</div>
+		@else
+			<div class="container">
+				<div class="main-section-title text-center">
+					{{$unit->lang->name}}
+				</div>
+			</div>
+		@endif
+	</div>
+	<div class="main-section">
+		<div class="container">
+			<img class="about-us-img lazyload" data-src="{{unit_logo($unit->logo)}}" alt="{{$unit->lang->name}}" title="{{$unit->lang->name}}">
+			@include('layouts.main.advantages')
+		</div>
+	</div>
 
 
 	@if($unit->lang->long_desc_1 != '')
-		{!!$unit->lang->long_desc_1!!}
+		<div class="main-section">
+			<div class="container-small">
+				<div class="description">
+					{!!$unit->lang->long_desc_1!!}
+				</div>
+			</div>
+		</div>
 	@endif
-	@if($unit->lang->long_desc_2 != '')
-		{!!$unit->lang->long_desc_2!!}
-	@endif
+
+	<section class="main-section">
+		<div class="container">
+			<div class="virtual-block">
+				<div class="virtual-block-info-wrap">
+					<div class="virtual-block-info-inner">
+						<div class="virtual-block-info-title">
+							@lang('main.virtual_tour_title')
+						</div>
+						<div class="virtual-block-text text">
+							@lang('main.virtual_tour_text')
+						</div>
+						<a class="btn-arrow" href="#">
+							<span class="btn-arrow-text">
+								@lang('main.look')
+							</span>
+						</a>
+					</div>
+				</div>
+				<div class="virtual-block-img-wrap">
+					<img class="virtual-block-img object-fit-js object-fit-cover lazyload" data-src="img/virtual-tur-img.jpg" alt="rishon virtual-tur-img">
+				</div>
+			</div>
+		</div>
+	</section>
 
 	@if(isset($specialists) && $specialists)
 		<section class="main-section">
 			<div class="container">
 				<div class="main-section-title-wrap">
-					<div class="main-section-title">
+					<div class="page-section-title-bold">
 						{{$specialist->lang->name}}
 					</div>
 					<a class="btn-arrow" href="{{build_unit_route($specialist)}}">
@@ -36,13 +74,14 @@
 						</span>
 					</a>
 				</div>
-				<div class="specialists-wrap">
+				<div class="specialists-wrap mobile-slider-js">
 					@foreach ($specialists as $specialist_item)
 						<div class="specialists-holder">
 							@include('layouts.tiles.specialist_tile')
 						</div>
 					@endforeach
 				</div>
+				<div class="btn-wrap"></div>
 			</div>
 		</section>
 	@endif
@@ -51,7 +90,7 @@
 		<section class="main-section">
 			<div class="container-small">
 				<div class="main-section-title-wrap">
-					<div class="main-section-title">
+					<div class="page-section-title-bold">
 						@lang('main.reviews')
 					</div>
 					<a class="btn-arrow" href="{{build_unit_route($reviews)}}">
@@ -60,31 +99,34 @@
 						</span>
 					</a>
 				</div>
-				<div class="reviews-slider">
-					@foreach ($leads as $lead_item)
-						@include('layouts.tiles.lead')
-					@endforeach
-				</div>
-				<div class="counter-slider">
-					@php
-						$i = 0;
-					@endphp
-					@foreach($leads as $lead_item)
+				<div class="section-inner">
+					<div class="reviews-slider">
+						@foreach ($leads as $lead_item)
+							@include('layouts.tiles.lead')
+						@endforeach
+					</div>
+					<div class="counter-slider">
 						@php
-						$i ++;
+							$i = 0;
 						@endphp
-						<div class="counter-slider-item">
-							<div class="count-slide">
-								{{$i}}<span class="all-count-slide">/{{$leads->count()}}</span>
+						@foreach($leads as $lead_item)
+							@php
+							$i ++;
+							@endphp
+							<div class="counter-slider-item">
+								<div class="count-slide">
+									{{$i}}<span class="all-count-slide">/{{$leads->count()}}</span>
+								</div>
 							</div>
-						</div>
-					@endforeach
+						@endforeach
+					</div>
+					<div class="btn-wrap"></div>
 				</div>
 			</div>
 		</section>
 	@endif
 
-	@if($unit->files->count())
+	{{-- @if($unit->files->count())
 		@foreach ($unit->files as $file)
 			<a class="files-item-link" href="{{ URL::to('/storage/files/'.$file->src) }}" target="_blank">
 				@foreach (app('brandbook')['extentions'] as $key => $value)
@@ -109,26 +151,50 @@
 				@endif
 			</a>
 		@endforeach
-	@endif
+	@endif --}}
 
 	@if($unit->videos->count())
-		@foreach ($unit->videos as $video)
-			@include('layouts.main.video')
-		@endforeach
+		<div class="main-section">
+			<div class="container-small">
+				@foreach ($unit->videos as $video)
+					@include('layouts.main.video')
+				@endforeach
+			</div>
+		</div>
 	@endif
+
 	@if($unit->galleries->count())
 		@foreach ($unit->galleries as $galleri_item)
-			@lang('main.gallary')
-			@if($galleri_item->photos->count())
-				@foreach($galleri_item->photos as $key => $photo)
-					<a class="description-gallary-holder" href="{{gallery_photo_img($galleri_item->id,'big',$photo->file)}}" data-rel="lightcase:gallery">
-						<img class="description-gallary-item lazyload" data-src="{{gallery_photo_img($galleri_item->id,'small',$photo->file)}}" alt="@lang('main.photo') {{$key+1}} {{$unit->lang->name}} " title="@lang('main.photo') {{$key+1}} {{$unit->lang->name}} ">
-					</a>
-				@endforeach
-			@endif
+			<div class="main-section">
+				<div class="container">
+					<div class="popup-gallery-wrap">
+						<div class="page-section-title-bold">
+							@lang('main.gallary')
+						</div>
+						<div class="popup-gallery">
+							@if($galleri_item->photos->count())
+								@foreach($galleri_item->photos as $key => $photo)
+									<a class="gallery-item" href="{{gallery_photo_img($galleri_item->id,'big',$photo->file)}}" title="@lang('main.photo') {{$key+1}} {{$unit->lang->name}}">
+										<img class="lazyload" data-src="{{gallery_photo_img($galleri_item->id,'small',$photo->file)}}" alt="@lang('main.photo') {{$key+1}} {{$unit->lang->name}}" title="@lang('main.photo') {{$key+1}} {{$unit->lang->name}}">
+									</a>
+								@endforeach
+							@endif
+						</div>
+					</div>
+				</div>
+			</div>
 		@endforeach
 	@endif
 
+	@if($unit->lang->long_desc_2 != '')
+		<div class="main-section">
+			<div class="container-small">
+				<div class="description">
+					{!!$unit->lang->long_desc_2!!}
+				</div>
+			</div>
+		</div>
+	@endif
 @stop
 @section('scripts')
 @stop
