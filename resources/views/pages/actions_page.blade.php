@@ -36,16 +36,18 @@
 						</div>
 						<div class="unit-date-publication">
 							@if ($unit->category->id == 16)
-								@lang('main.date_publication')
-								{{$unit->date_publication->format('d')}}/{{$unit->date_publication->format('m')}}
+								@if ($unit->date_publication)
+									@lang('main.date_publication')
+									{{$unit->date_publication->format('d')}}/{{$unit->date_publication->format('m')}}
+								@endif
 							@elseif ($unit->category->id == 17)
-								@lang('main.validity')
-								{{$unit->start->format('d.m.Y')}} - {{$unit->end->format('d.m.Y')}}
+								@if($unit->start != '' && $unit->end != '')
+									@lang('main.validity')
+									{{$unit->start->format('d.m.Y')}} - {{$unit->end->format('d.m.Y')}}
+								@endif
 							@endif
 						</div>
 					</div>
-
-					{{-- <img class="img-in-text lazyload" data-src="{{unit_img('small',$unit->img_1)}}" alt="{{$unit->lang->name}}" title="{{$unit->lang->name}}"> --}}
 
 					@if($unit->lang->long_desc_1 != '')
 						<div class="description">

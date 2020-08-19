@@ -45,6 +45,21 @@ function initPriceTabs() {
 }
 
 $(document).ready(function() {
+    ///admin img
+    var adminImg = document.querySelectorAll(".description");
+    if (adminImg) {
+        Array.prototype.forEach.call(adminImg, function (wrapper, i) {
+            var images = wrapper.querySelectorAll("img");
+            if (images) {
+                Array.prototype.forEach.call(images, function (img, i) {
+                    const float = img.style.float;
+                    if (float == "left") img.classList.add("margin-left-none");
+                    else if (float == "right") img.classList.add("margin-right-none");
+                });
+            }
+        });
+    };
+
     // tabs
     if ($('.price-page').length) {
         initPriceTabs();
@@ -221,6 +236,7 @@ $(window).on('load resize', function() {
     		});
             $(".active-tab-mobile-text").html($('.tab-mobile-link.active').text());
         }
+
     } else {
         if($('.tabs').length) {
             $('.tabs').css('display', '');

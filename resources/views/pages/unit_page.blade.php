@@ -2,24 +2,43 @@
 @section('links')
 @stop
 @section('page')
-	@include('layouts.main.breadcrumbs')
+	<div class="page">
+		@include('layouts.main.breadcrumbs')
+	</div>
 	@if($unit->lang->h1 != '')
-		<h1>
-			{{$unit->lang->h1}}
-		</h1>
+		<div class="container">
+			<div class="page-section-top-title">
+				{{$unit->lang->h1}}
+			</div>
+		</div>
 	@else
-		<h1>
-			{{$unit->lang->name}}
-		</h1>
+		<div class="container">
+			<div class="page-section-top-title">
+				{{$unit->lang->name}}
+			</div>
+		</div>
 	@endif
 	@if($unit->lang->long_desc_1 != '')
-		{!!$unit->lang->long_desc_1!!}
-	@endif
-	@if($unit->lang->long_desc_2 != '')
-		{!!$unit->lang->long_desc_2!!}
+		<div class="main-section">
+			<div class="container-small">
+				<div class="description">
+					{!!$unit->lang->long_desc_1!!}
+				</div>
+			</div>
+		</div>
 	@endif
 
-	@if($unit->files->count())
+	@if($unit->lang->long_desc_2 != '')
+		<div class="main-section">
+			<div class="container-small">
+				<div class="description">
+					{!!$unit->lang->long_desc_2!!}
+				</div>
+			</div>
+		</div>
+	@endif
+
+	{{-- @if($unit->files->count())
 		@foreach ($unit->files as $file)
 			<a class="files-item-link" href="{{ URL::to('/storage/files/'.$file->src) }}" target="_blank">
 				@foreach (app('brandbook')['extentions'] as $key => $value)
@@ -44,23 +63,38 @@
 				@endif
 			</a>
 		@endforeach
-	@endif
+	@endif --}}
 
 	@if($unit->videos->count())
 		@foreach ($unit->videos as $video)
-			@include('layouts.main.video')
+			<div class="main-section">
+				<div class="container-small">
+					@include('layouts.main.video')
+				</div>
+			</div>
 		@endforeach
 	@endif
+
 	@if($unit->galleries->count())
 		@foreach ($unit->galleries as $galleri_item)
-			@lang('main.gallary')
-			@if($galleri_item->photos->count())
-				@foreach($galleri_item->photos as $photo)
-					<a class="description-gallary-holder" href="{{gallery_photo_img($galleri_item->id,'big',$photo->file)}}" data-rel="lightcase:gallery">
-						<img class="description-gallary-item lazyload" data-src="{{gallery_photo_img($galleri_item->id,'small',$photo->file)}}" alt="@lang('main.photo') {{$unit->lang->name}} " title="@lang('main.photo') {{$unit->lang->name}} ">
-					</a>
-				@endforeach
-			@endif
+			<div class="main-section">
+				<div class="container">
+					<div class="popup-gallery-wrap">
+						<div class="page-section-title-bold">
+							@lang('main.gallary')
+						</div>
+						<div class="popup-gallery">
+							@if($galleri_item->photos->count())
+								@foreach($galleri_item->photos as $photo)
+									<a class="gallery-item" href="{{gallery_photo_img($galleri_item->id,'big',$photo->file)}}" title="@lang('main.photo') {{$unit->lang->name}}">
+										<img class="lazyload" data-src="{{gallery_photo_img($galleri_item->id,'small',$photo->file)}}" alt="@lang('main.photo') {{$unit->lang->name}}" title="@lang('main.photo') {{$unit->lang->name}}">
+									</a>
+								@endforeach
+							@endif
+						</div>
+					</div>
+				</div>
+			</div>
 		@endforeach
 	@endif
 
