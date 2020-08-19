@@ -64,72 +64,72 @@
 								</li>
 							@endif
 						</ul>
-						<ul class="tab-content-wrap">
-							@if(isset($services) && count($services))
-								<li class="tab-content" id="services">
-									<div class="tab-content-inner">
-										@foreach ($services as $unit_item)
-											@include('layouts.tiles.search')
-										@endforeach
-									</div>
-								</li>
-							@endif
-							@if(isset($news) && count($news))
-								<li class="tab-content" id="news">
-									<div class="tab-content-inner">
-										@foreach ($news as $unit_item)
-											@include('layouts.tiles.search')
-										@endforeach
-									</div>
-								</li>
-							@endif
-							@if(isset($articles) && count($articles))
-								<li class="tab-content" id="articles">
-									<div class="tab-content-inner">
-										@foreach ($articles as $unit_item)
-											@include('layouts.tiles.search')
-										@endforeach
-									</div>
-								</li>
-							@endif
-							@if(isset($actions) && count($actions))
-								<li class="tab-content" id="actions">
-									<div class="tab-content-inner">
-										@foreach ($actions as $unit_item)
-											@include('layouts.tiles.search')
-										@endforeach
-									</div>
-								</li>
-							@endif
-							@if(isset($specialists) && count($specialists))
-								<li class="tab-content" id="specialists">
-									<div class="tab-content-inner">
-										@foreach ($specialists as $unit_item)
-											@include('layouts.tiles.search')
-										@endforeach
-									</div>
-								</li>
-							@endif
-							@if(isset($equipments) && count($equipments))
-								<li class="tab-content" id="equipments">
-									<div class="tab-content-inner">
-										@foreach ($equipments as $unit_item)
-											@include('layouts.tiles.search')
-										@endforeach
-									</div>
-								</li>
-							@endif
-							@if(isset($units) && count($units))
-								<li class="tab-content" id="units">
-									<div class="tab-content-inner">
-										@foreach ($units as $unit_item)
-											@include('layouts.tiles.search')
-										@endforeach
-									</div>
-								</li>
-							@endif
-						</ul>
 					</div>
+					<ul class="tab-content-wrap">
+						@if(isset($services) && count($services))
+							<li class="tab-content" id="services">
+								<div class="tab-content-inner">
+									@foreach ($services as $unit_item)
+										@include('layouts.tiles.search')
+									@endforeach
+								</div>
+							</li>
+						@endif
+						@if(isset($news) && count($news))
+							<li class="tab-content" id="news">
+								<div class="tab-content-inner">
+									@foreach ($news as $unit_item)
+										@include('layouts.tiles.search')
+									@endforeach
+								</div>
+							</li>
+						@endif
+						@if(isset($articles) && count($articles))
+							<li class="tab-content" id="articles">
+								<div class="tab-content-inner">
+									@foreach ($articles as $unit_item)
+										@include('layouts.tiles.search')
+									@endforeach
+								</div>
+							</li>
+						@endif
+						@if(isset($actions) && count($actions))
+							<li class="tab-content" id="actions">
+								<div class="tab-content-inner">
+									@foreach ($actions as $unit_item)
+										@include('layouts.tiles.search')
+									@endforeach
+								</div>
+							</li>
+						@endif
+						@if(isset($specialists) && count($specialists))
+							<li class="tab-content" id="specialists">
+								<div class="tab-content-inner">
+									@foreach ($specialists as $unit_item)
+										@include('layouts.tiles.search')
+									@endforeach
+								</div>
+							</li>
+						@endif
+						@if(isset($equipments) && count($equipments))
+							<li class="tab-content" id="equipments">
+								<div class="tab-content-inner">
+									@foreach ($equipments as $unit_item)
+										@include('layouts.tiles.search')
+									@endforeach
+								</div>
+							</li>
+						@endif
+						@if(isset($units) && count($units))
+							<li class="tab-content" id="units">
+								<div class="tab-content-inner">
+									@foreach ($units as $unit_item)
+										@include('layouts.tiles.search')
+									@endforeach
+								</div>
+							</li>
+						@endif
+					</ul>
 				</div>
 			@endif
 		</div>

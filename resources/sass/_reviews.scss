@@ -1,0 +1,225 @@
+.page {
+    .reviews .main-section-title {
+        display: inline-block;
+        font-family: $montserrat_bold;
+        @include adaptiv-font(30, 22);
+    }
+}
+
+
+.reviews-page {
+    .write-reviews-title-wrap {
+        margin-bottom: 45px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        @media (max-width: 1024px) {
+            margin-bottom: 30px;
+        }
+        @media (max-width: 768px) {
+            margin-bottom: 20px;
+            flex-direction: column;
+            align-items: flex-start;
+            .btn-light-green-small {
+                margin-top: 15px;
+            }
+        }
+    }
+    .write-reviews-form-wrap {
+        position: relative;
+        padding: 40px 70px;
+        background: url(/img/light-bg.png) center center/cover no-repeat;
+        @media (max-width: 1024px) {
+            padding: 40px 50px;
+        }
+        @media (max-width: 768px) {
+            padding: 40px 30px;
+            margin: 0 -15px;
+        }
+        @media (max-width: 768px) {
+            padding: 40px 15px;
+        }
+    }
+    .reviews-svg-decore {
+        max-width: 46%;
+        width: 100%;
+        padding: 30px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .reviews-form-block {
+        position: relative;
+    }
+    .reviews-form-name {
+        margin-bottom: 40px;
+        margin-left: 15px;
+        font-family: $montserrat_bold;
+        @include adaptiv-font(40, 22);
+        line-height: 1;
+        @media (max-width: 768px) {
+            margin-bottom: 20px;
+            margin-left: 0;
+        }
+    }
+    .review-form-inner {
+        margin: 0 -25px 20px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .review-input-wrap,
+    .review-textarea-wrap {
+        width: 50%;
+        padding:  0 25px;
+        @media (max-width: 768px) {
+            width: 100%;
+        }
+    }
+    .input-wrap {
+        margin-bottom: 0;
+        & + .input-wrap {
+            margin-top: 25px;
+            @media (max-width: 768px) {
+                margin-top: 15px;
+            }
+        }
+    }
+    .review-textarea-wrap {
+        @media (max-width: 768px) {
+            margin-top: 15px;
+        }
+        .input-wrap {
+            height: 100%;
+        }
+        .form-input-textarea {
+            display: block;
+            height: 100%;
+            @media (max-width: 768px) {
+                min-height: 105px;
+            }
+        }
+    }
+    .input-file-wrap {
+        margin: -15px 0 10px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .label-input-file {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+    .label-svg {
+        margin-right: 10px;
+        svg {
+            display: block;
+            fill: $white;
+            @media (max-width: 768px) {
+                fill: $dark_turquoise;
+            }
+        }
+    }
+    .label-text {
+        font-family: $montserrat_medium;
+        color: $white;
+        @media (max-width: 768px) {
+            color: $dark_turquoise;
+        }
+    }
+    .input-file-inner {
+        margin-top: 15px;
+        margin-right: 15px;
+    }
+    .input-file-inner-wrap {
+        display: flex;
+        align-items: center;
+        &:not(:first-child) {
+            display: none;
+        }
+        & + .input-file-inner-wrap {
+            margin-top: 15px;
+        }
+    }
+    .label-remove {
+        display: none;
+        margin-left: 10px;
+        flex: 0 0 auto;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        svg {
+            fill: $red;
+        }
+    }
+    .popup-info-text {
+        margin-top: 15px;
+        margin-bottom: 0;
+        line-height: 24px;
+    }
+    .error-file-info {
+        display: none;
+        margin-bottom: 10px;
+        .max-files {
+            margin-bottom: 5px;
+        }
+        .max-files,
+        .max-size {
+            display: none;
+            text-align: left;
+            color: $red;
+        }
+    }
+    .do_review_form {
+        margin-top: 15px;
+    }
+    .reviews-list {
+        margin-bottom: 40px;
+        .reviews-item:not(:first-child) {
+            margin-top: 40px;
+            @media (max-width: 768px) {
+                margin-top: 30px;
+            }
+        }
+        .reviews-item-name-wrap {
+            margin-bottom: 13px;
+            display: flex;
+            align-items: center;
+            @media (max-width: 768px) {
+                margin-bottom: 8px;
+            }
+        }
+        .reviews-item-name {
+            margin-right: 30px;
+            font-family: $montserrat_semibold;
+            font-size: 18px;
+            color: $ggrey;
+            @media (max-width: 768px) {
+                margin-right: 20px;
+            }
+        }
+        .reviews-item-date {
+            font-family: $montserrat_medium;
+            font-size: 18px;
+            color: $ligt_grey;
+        }
+        .reviews-img-wrap {
+            margin: -15px 0 20px -25px;
+            display: flex;
+            flex-wrap: wrap;
+            .reviews-img-item {
+                width: 33.33%;
+                padding: 25px 0 0 25px;
+                @media screen and (max-width: 768px) {
+                    width: 50%;
+                }
+                @media screen and (max-width: 576px) {
+                    width: 100%;
+                }
+            }
+        }
+    }
+    .form-thanks {
+        width: 100%;
+    }
+}

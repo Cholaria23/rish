@@ -46,9 +46,12 @@ class ShopController extends Controller
             'lang',
             'rel_goods',
             'children' => function ($query){
-                $query->with(['lang', 'children' => function ($query){
-                    $query->with('lang')->where('is_hidden',0)->orderBy('sort_order','asc');
-                }])->where('is_hidden',0)->orderBy('sort_order','asc');
+                $query->with([
+                        'lang',
+                        'children' => function ($query){
+                            $query->with('lang')->where('is_hidden',0)->orderBy('sort_order','asc');
+                        }
+                    ])->where('is_hidden',0)->orderBy('sort_order','asc');
             }])->first();
         if ($cat) {
             $cat_id = $cat->id;
@@ -96,16 +99,10 @@ class ShopController extends Controller
             // } else {
 
                 $rel_ids = $cat->rel_goods->pluck('id')->toArray();
+                $all_categories_ids = array_merge(MarketCat::where('parent_id',2)->pluck('id')->toArray(), [2]);
+                $categories = MarketCat::with('lang')->whereIn('id',$all_categories_ids)->where('is_hidden',0)->orderBy('sort_order','asc')->get();
 
                 $query = $this->good
-                    ->with([
-                        'lang',
-                        'price',
-                        'category.lang',
-                        "leads" => function ($query) {
-                            $query->where('is_hidden',0)->where('parent_id',null)->orderBy('created_at','desc');
-                        }
-                    ])
                     ->where('is_archive', '=', '0')
                     ->where('market_goods.is_hidden', '=', '0')
                     ->where(function($query) use($descendants, $rel_ids) {
@@ -117,216 +114,28 @@ class ShopController extends Controller
                     $query->CatSorting($cat->id);
                 }
 
-                if($this->request->has('type') && $this->request->get('type') == 'sale'){
-                    $select_arr = [];
-                    $arr = \DB::select('select g.id from market_goods as g, market_prices as p where g.id = p.good_id and p.price_type_id = 2 and p.value > 0
-                    union all
-                    select g.id from market_goods as g, market_goods_actions as a, units as u where g.id = a.good_id and u.is_hidden = 0 and u.id = a.unit_id and NOW() BETWEEN ifnull( u.action_date_start, NOW()) and ifnull(u.action_date_end, NOW())');
-                    if(count($arr)){
-                        foreach($arr as $item_arr){
-                            $select_arr[] = $item_arr->id;
-                        }
-                        $select_arr = array_unique($select_arr);
-                    }
-                    $query->whereIn('market_goods.id',$select_arr);
-                }
-
-                $query_all_goods = clone $query;
-                $all_goods_ids = $query_all_goods->pluck('id')->toArray();
-
-                if($cat->is_tag == 0) {
-                    $tag_rel_type_id = 5;
-
-                    $tag_categori_ids = [];
-                    $tag_categori_ids = \DB::table('market_cats_relations')->where('rel_type_id', $tag_rel_type_id)->whereIn('good_id', $all_goods_ids)->pluck('cat_id');
-                    $cat->tag_categories =  MarketCat::with('lang')->whereIn('id',$tag_categori_ids)->orderBy('sort_order','asc')->get();
-                }
-                $query_count = clone $query;
-                $count_goods = $query_count->count();
-                $_filters = $this->request->get('filter', []);
-                $active_filters['filters'] = [];
-                if(!empty($_filters)){
-                    $query->filter($_filters);
-                    $active_filters['filters'] = MarketCharVal::with('lang', 'char')->whereIn('id', $_filters)->get();
-
-                }
-
-                //  price start filter
-                $query_price_goods = clone $query;
-                $prices_collect = $query_price_goods->where(function($query) {
-                    $query->whereHas('price', function($query) {
-                        $query->join('market_currs as curr', 'curr.id', '=', 'curr_id')->whereRaw("value * curr.rate");
-                    });
-                })->get();
-
-                $price_filter['min'] = '';
-                $price_filter['max'] = '';
-                if($prices_collect->count()){
-                    foreach($prices_collect as $tmp_price){
-                        if ($tmp_price->c_action_price && $tmp_price->c_action_price != 0 && $tmp_price->c_action_price < $tmp_price->c_price){
-                            $tmp_price->c_filter_price = $tmp_price->c_action_price;
-                        } else {
-                            $tmp_price->c_filter_price = $tmp_price->c_price;
-                        }
-                    }
-                    $price_filter['min'] = $prices_collect->min('c_filter_price');
-                    $price_filter['max'] = $prices_collect->max('c_filter_price');
-                }
-
-                $_filter_prices = $this->request->get('prices_filt', []);
-                if (!empty($_filter_prices) ) {
-                    if ($_filter_prices['min'] == ''){
-                        $_filter_prices['min'] = 0;
-                    }
-                    if ($_filter_prices['max'] == ''){
-                        $_filter_prices['max'] = $prices_collect->max('c_filter_price');
-                    }
-                    $active_filters['price_min'] = $_filter_prices['min'];
-                    $active_filters['price_max'] = $_filter_prices['max'];
-
-                    $query->where(function($query) use ($_filter_prices) {
-                        if ($_filter_prices['min'] OR $_filter_prices['max']) {
-                            $query->whereHas('price', function($query) use ($_filter_prices) {
-                                $query->join('market_currs as curr', 'curr.id', '=', 'curr_id')
-                                ->whereRaw("value * curr.rate between ".($_filter_prices['min'] -0.01)." and ".($_filter_prices['max'] +0.01 ))
-                                ->whereHas('type', function ($query) {
-                                    $query->where(function ($query) {
-                                        $query->where(function($query) {
-                                            $query
-                                            ->where(function($query) {
-                                            $query
-                                                ->whereRaw("date_start IS NOT NULL AND date_end IS NOT NULL")
-                                                ->where('date_start', '<', \DB::raw('NOW()'))
-                                                ->where('date_end', '>', \DB::raw('NOW()'));
-                                            })
-                                            ->orWhereRaw("date_start IS NULL AND date_end IS NULL");
-                                        });
-                                        $query->where('is_action',1);
-                                    })->orWhere('is_main',1);
-                                });
-                            });
-                        }
-                    });
-                }
-                $query_ids = clone $query;
-                $_good_ids = $query_ids->pluck('id');
-                $brand_ids = $query->distinct()->pluck('brand_id');
-                $series_ids = $query->distinct()->pluck('brand_series_id');
-                $brands = Brand::with([
-                    'lang',
-                    'goods' => function ($query) use($descendants, $rel_ids,$_good_ids) {
-                        $query->with('lang')->where(function ($query) use($descendants,$rel_ids,$_good_ids){
-                            $query->where(function ($query) use($descendants,$rel_ids,$_good_ids) {
-                                $query->whereIn('market_goods.id',$_good_ids)->orWhereIn('market_goods.id',$rel_ids)/*->orWhereIn('cat_id',$descendants)*/;
-                            })->groupBy('market_goods.id')->get();
-                        })->where('is_archive',0)->where('is_hidden',0);
-                    },
-                    "series" => function ($query) use($descendants, $series_ids, $rel_ids,$_good_ids) {
-                        $query->with([
-                            'lang',
-                            'goods' => function ($query) use($descendants, $rel_ids,$_good_ids) {
-                                $query->with('lang')->where(function ($query) use($descendants,$rel_ids,$_good_ids){
-                                    $query->where(function ($query) use($descendants,$rel_ids,$_good_ids) {
-                                        $query->whereIn('market_goods.id',$_good_ids)->orWhereIn('market_goods.id',$rel_ids)/*->orWhereIn('cat_id',$descendants)*/;
-                                    })->groupBy('market_goods.id')->get();
-                                })->where('is_archive',0)->where('is_hidden',0);
-                            }
-                        ])->whereIn("id",$series_ids)->where('is_hidden',0)->orderBy('sort_order','asc');
-                    }
-                ])->whereIn('id',$brand_ids)->get();
-                $_brands = $this->request->get('brand', []);
-                $active_filters['brands'] = [];
-
-                if(!empty($_brands)){
-                    $query->whereIn('brand_id',$_brands);
-                    $active_filters['brands'] = Brand::with('lang')->whereIn('id', $_brands)->get();
-
-                }
-
-                $series_ids = $query->distinct()->pluck('brand_series_id');
-                $series = BrandSeries::with(['lang', 'goods' => function ($query) use($descendants, $rel_ids) {
-                    $query->with('lang')->where(function ($query) use($descendants,$rel_ids){
-                        $query->whereIn('cat_id',$descendants)->orWhereIn('market_goods.id',$rel_ids)->groupBy('market_goods.id')->get();
-                    })->where('is_archive',0)->where('is_hidden',0);
-                }])->whereIn('id',$series_ids)->whereIn('brand_id',$this->request->get('brand', []))->get();
-                $_series = $this->request->get('series', []);
-                $active_filters['series'] = [];
-
-                if(!empty($_series)){
-                    $query->whereIn('brand_series_id',$_series);
-                    $active_filters['series'] = BrandSeries::with('lang')->whereIn('id', $_series)->get();
-
-                }
-
-                if($this->request->has('sort')){
-                    $sort = $this->request->get('sort');
-                    switch ($sort) {
-                        case 'price_asc':
-                            $query->selectRaw('market_goods.*')
-                                ->join('market_prices as mp', 'mp.good_id', '=', 'market_goods.id')
-                                ->join('market_currs as mcurr', 'mp.curr_id', '=', 'mcurr.id')
-                                ->where('mp.value', '!=', 0)
-                                ->groupBy('market_goods.id')
-                                ->orderByRaw("if (mp.value='' OR mp.value is null,0,1) DESC")
-                                ->orderByRaw('(mp.value * mcurr.rate) asc');
-                        break;
-                        case 'price_desc':
-                            $query->selectRaw('market_goods.*')
-                                ->join('market_prices as mp', 'mp.good_id', '=', 'market_goods.id')
-                                ->join('market_currs as mcurr', 'mp.curr_id', '=', 'mcurr.id')
-                                ->where('mp.value', '!=', 0)
-                                ->groupBy('market_goods.id')
-                                ->orderByRaw("if (mp.value='' OR mp.value is null,0,1) DESC")
-                                ->orderByRaw('(mp.value * mcurr.rate) desc');
-                        break;
-
-                        case 'remains':
-                            $query->where('remains','>','0');
-                        break;
-                        case 'new_asc':
-                            $query->orderBy('is_new','desc');
-                        break;
-                        case 'top_asc':
-                            $query->orderBy('is_top','desc');
-                        break;
+                if($cat->children->count()){
+                    foreach($cat->children as $child) {
+                        $child->goods = $this->good
+                            ->where('is_archive', '=', '0')
+                            ->where('market_goods.is_hidden', '=', '0')
+                            ->where('cat_id', $child->id)
+                            ->CatSorting($child->id)->get();
                     }
                 }
 
-                $query_all_goods_with_filters = clone $query;
-                $all_goods_with_filters_ids = $query_all_goods_with_filters->pluck('id')->toArray();
-
-                $good_ids = array_unique(array_merge($all_goods_ids,$rel_ids));
-                $filters = getMarketFilters($cat_id,$_filters, $good_ids);
-                $query_count_with_options = clone $query;
-                $count_good_with_options = $query_count_with_options->count();
-                $take_count = 3;
-                $cat->goods = $query->take($take_count)->get();
+                $cat->goods = $query->get();
                 if($cat->goods->count()){
                     foreach($cat->goods as &$good){
                         $good->load_gift_goods($good,3);
                         get_action_flag($good);
                     }
                 }
-                // $cat->goods->appends([
-                //     'sort' => $this->request->has('sort') && $this->request->get('sort') != '' ? $this->request->get('sort') : '',
-                //     'type' => $this->request->has('type') && $this->request->get('type') != '' ? $this->request->get('type') : '',
-                //     'filter' => $this->request->has('filter') && !empty($this->request->get('filter')) ? $this->request->get('filter') : [],
-                //     'brand' => $this->request->has('brand') && !empty($this->request->get('brand')) ? $this->request->get('brand') : [],
-                //     'series' => $this->request->has('series') && !empty($this->request->get('series')) ? $this->request->get('series') : [],
-                //     'prices_filt' => $this->request->get('prices_filt', []),
-                // ]);
+
                 return View::make('pages.catalog.goods_list', [
                     'breadcrumbs' => $breadcrumbs,
+                    'categories' => $categories,
                     'cat' => $cat,
-                    'filters' => $filters,
-                    'brands' => $brands,
-                    'series' => $series,
-                    'active_class' => $active_class,
-                    'price_filter' => $price_filter,
-                    'take_count' => $take_count,
-                    'active_filters' => $active_filters,
-                    "count_goods" => $count_goods,
-                    "count_good_with_options" => $count_good_with_options,
                     'meta_type' => 'cat_good',
                 ]);
             // }

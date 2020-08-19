@@ -1,0 +1,301 @@
+.top-section {
+    .popup-btn-wrap {
+        .btn-light-green-small,
+        .btn-green-small {
+            min-width: 240px;
+        }
+    }
+}
+
+.servises-block {
+    display: flex;
+    flex-wrap: wrap;
+    .servises-item {
+        width: 50%;
+        padding: 45px 50px;
+        display: flex;
+        align-items: center;
+        border: 1px solid $ligh_grey;
+        margin: -1px -1px 0 0;
+        &:hover .servises-item-name {
+            color: $turquoise;
+        }
+        @media (max-width: 1366px) {
+            padding: 20px 25px;
+        }
+        @media (max-width: 768px) {
+            padding: 10px 15px;
+            width: 100%;
+        }
+        .servises-item-count {
+            margin-right: 25px;
+            font-family: $montserrat_medium;
+            @include adaptiv-font(24, 18);
+            color: $ligt_grey;
+            @media (max-width: 1366px) {
+                margin-right: 15px;
+            }
+        }
+        .servises-item-name {
+            margin-right: 15px;
+            @include adaptiv-font(24, 18);
+            font-family: $montserrat_semibold;
+            color: $ggrey;
+            transition: .25s linear;
+        }
+        .servises-item-icon {
+            margin-left: auto;
+        }
+    }
+}
+
+.price-list {
+    margin-bottom: 30px;
+    @media (max-width: 576px) {
+        margin-bottom: 20px;
+    }
+    .price-item {
+        padding: 17.5px 15px;
+        font-family: $montserrat_medium;
+        @include adaptiv-font(18, 16);
+        @media (max-width: 576px) {
+            padding: 8px 10px;
+        }
+        &:nth-child(odd) {
+            background-color: $turquoise_rgba_7;
+        }
+        &.hide {
+            display: none;
+        }
+        .price-item-wrap {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            @media (max-width: 576px) {
+                flex-wrap: wrap;
+            }
+        }
+        .price-name {
+            @media (max-width: 576px) {
+                width: 100%;
+                font-family: $montserrat_semibold;
+            }
+        }
+        .price-count {
+            margin-left: 30px;
+            flex: 0 0 auto;
+            @media (max-width: 576px) {
+                margin-top: 3px;
+                margin-left: 0;
+                width: 100%;
+            }
+        }
+    }
+}
+
+
+.services-list {
+    .services-list-item + .services-list-item {
+        margin-top: 20px;
+        @media (max-width: 768px) {
+            margin-top: 15px;
+        }
+    }
+    .services-list-link {
+        font-family: $montserrat_medium;
+        @include adaptiv-font(24, 18);
+        color: $main_color;
+        transition: .25s linear;
+        &:hover {
+            color: $turquoise;
+        }
+        &:hover .services-list-icon {
+            margin-left: 30px;
+        }
+        .services-list-icon {
+            margin-left: 20px;
+            transition: .25s linear;
+        }
+    }
+}
+
+.equipment-list {
+    .equipment-item + .equipment-item {
+        margin-top: 25px;
+        @media (max-width: 576px) {
+            margin-top: 30px;
+        }
+    }
+    .equipment-block-link {
+        display: flex;
+        color: $main_color;
+        transition: .25s linear;
+        @media (max-width: 576px) {
+            flex-wrap: wrap;
+        }
+    }
+    .equipment-img-wrap {
+        flex: 0 0 auto;
+        margin: 0 30px 0 0;
+        width: 125px;
+        height: 125px;
+        border-radius: 50%;
+        box-shadow: 0 3px 20px rgba(145, 145, 145, 0.16);
+        transition: .25s linear;
+        overflow: hidden;
+        @media (max-width: 576px) {
+            margin: 0 auto 22px;
+            width: 250px;
+            height: 250px;
+        }
+    }
+    .equipment-info-wrap {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        .equipment-info-name {
+            margin-bottom: 15px;
+            font-family: $montserrat_semibold;
+            @include adaptiv-font(24, 18);
+            @media (max-width: 576px) {
+                margin-bottom: 10px;
+                font-family: $montserrat_medium;
+            }
+        }
+    }
+}
+
+.question-block {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    @media (max-width: 768px) {
+        margin: 0 -15px;
+    }
+    .question-block-item {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 80px 30px;
+        width: calc(50% - 5px);
+        background: url(/img/light-bg.png) center center/cover no-repeat;
+        @media (max-width: 1024px) {
+            padding: 60px 30px;
+        }
+        @media (max-width: 768px) {
+            width: 100%;
+            & + .question-block-item {
+                margin-top: 10px;
+            }
+        }
+        @media (max-width: 576px) {
+            padding: 40px 15px;
+        }
+    }
+    .question-block-svg-wrap {
+        max-width: 53%;
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        @media (max-width: 768px) {
+            max-width: 30%;
+        }
+        @media (max-width: 576px) {
+            max-width: 40%;
+        }
+    }
+    .question-item-wrap {
+        position: relative;
+        margin: 0 auto;
+        max-width: 400px;
+    }
+    .main-section-title {
+        margin-bottom: 20px;
+    }
+    .question-form-wrap {
+        margin: 0 auto;
+        max-width: 400px;
+        width: 100%;
+    }
+    .question_form {
+        display: flex;
+        flex-direction: column;
+        .btn-green {
+            margin-left: auto;
+        }
+    }
+}
+
+.faq-list {
+    margin-bottom: 35px;
+    @media (max-width: 576px) {
+        margin-bottom: 15px;
+    }
+    .faq-item:not(:last-child) {
+        margin-bottom: 5px;
+    }
+    .faq-question {
+        padding: 18px 15px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: $turquoise_rgba_7;
+        transition: .25s linear;
+        cursor: pointer;
+        @media (max-width: 576px) {
+            padding: 8px 10px;
+        }
+        &.active {
+            background-color: $white;
+        }
+    }
+    .faq-question-name {
+        font-family: $montserrat_medium;
+        font-size: 18px;
+    }
+    .faq-icon {
+        margin-left: 20px;
+        flex: 0 0 auto;
+        width: 16px;
+        height: 16px;
+        position: relative;
+        @media (max-width: 576px) {
+            margin-left: 15px;
+        }
+        &::before {
+            content: '';
+            width: 16px;
+            height: 2px;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: $main_color;
+        }
+        &::after {
+            content: '';
+            width: 2px;
+            height: 16px;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: $main_color;
+        }
+        &.active {
+            &::after {
+                display: none;
+            }
+        }
+    }
+    .faq-answer {
+        display: none;
+        padding: 0 45px 15px 15px;
+        @media (max-width: 576px) {
+            padding: 0 10px 10px;
+        }
+    }
+}
