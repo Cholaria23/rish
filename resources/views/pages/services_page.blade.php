@@ -178,7 +178,7 @@
 			@endforeach
 		@endif
 
-		@if(isset($unit->related_specialists) && $unit->related_specialists && isset($unit->related_specialists[2]) && isset($unit->related_specialists[2]['specialists']))
+		@if(isset($unit->related_specialists) && $unit->related_specialists && isset($unit->related_specialists[2]) && isset($unit->related_specialists[2]['specialists']) && $unit->related_specialists[2]['specialists']->count())
 			<section class="main-section specialists">
     			<div class="container">
                     <div class="page-section-title-bold">

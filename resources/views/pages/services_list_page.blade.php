@@ -117,7 +117,7 @@
             </section>
         @endif
 
-        @if(isset($cat->related_specialists) && $cat->related_specialists && isset($cat->related_specialists[1]) && isset($cat->related_specialists[1]['specialists']))
+        @if(isset($cat->related_specialists) && $cat->related_specialists && isset($cat->related_specialists[1]) && isset($cat->related_specialists[1]['specialists']) && $cat->related_specialists[1]['specialists']->count())
             <section class="main-section specialists">
     			<div class="container">
                     <div class="page-section-title-bold">
