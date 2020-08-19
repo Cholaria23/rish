@@ -11,7 +11,6 @@
 |
 */
 
-
 Route::prefix('service')->group(function () {
     Route::get('/close-cookie', 'ServiceController@closeCookie')->name('service.closeCookie');
     Route::post('/post-send', 'ServiceController@postSend')->name('service.postSend');
