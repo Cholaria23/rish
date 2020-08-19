@@ -257,12 +257,8 @@
 		@foreach ($blog as $unit_item)
 			@include('layouts.tiles.news')
 		@endforeach
-<<<<<<< HEAD
-	@endif
-=======
 	@endif --}}
 
->>>>>>> fa41a72415dc502909c1cf4ead1907528c5eafe0
 @stop
 @section('scripts')
 @stop

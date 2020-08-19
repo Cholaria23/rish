@@ -102,7 +102,7 @@ function() {
             } else {
                 return Redirect::to('404');
             }
-        })->middleware('slashes')->name('market_cat_url');
+        })->name('market_cat_url');
     }
     if(class_exists(\Demos\Market\MarketServiceProvider::class) && app('market_params')->good_url_prefix != '') {
         $slash_check = substr(app('market_params')->good_url_prefix, -1) != '/'? '/':'';
@@ -113,7 +113,7 @@ function() {
             } else {
                 return Redirect::to('404');
             }
-        })->middleware('slashes')->name('market_good_url');
+        })->name('market_good_url');
     }
 
     Route::get('expert/{slug}/', function($slug) {
@@ -134,7 +134,7 @@ function() {
         } else {
             return Redirect::to('404');
         }
-    })->middleware('slashes')->name('second_url');
+    })->name('second_url');
 
     Route::get('{slug}/', function($slug) {
         if (Demos\AdminPanel\Cat::where('alias', '=', $slug)->count() > 0) {
@@ -154,5 +154,5 @@ function() {
         }
     })->where([
         'slug' => '[a-zA-Z0-9-_]+'
-    ])->middleware('slashes')->name('first_url');
+    ])->name('first_url');
 });
