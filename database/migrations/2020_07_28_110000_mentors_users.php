@@ -31,7 +31,7 @@ class MentorsUsers extends Migration {
             $table->dropForeign('specialists_1');
         });
         
-        Schema::table('specialists_params', function(Blueprint $table){
+        Schema::table('specialists', function(Blueprint $table){
             $table->dropColumn('user_id');
             $table->dropColumn('is_autor');
             $table->dropColumn('is_consultant');

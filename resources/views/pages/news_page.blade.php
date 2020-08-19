@@ -12,6 +12,23 @@
 			{{$unit->lang->name}}
 		</h1>
 	@endif
+	{{$unit->date_publication->format('d')}}/{{$unit->date_publication->format('m')}}
+	@lang('main.titles.'.$unit->category->id)
+	@if(isset($unit->related_specialists) && $unit->related_specialists && isset($unit->related_specialists[2]) && isset($unit->related_specialists[2]['specialists']))
+		@foreach ($unit->related_specialists[2]['specialists'] as  $specialist_item)
+		<img src="{{specialist_cover('thumb', $specialist_item->img_1)}}" alt="{{$specialist_item->lang->last_name}} {{$specialist_item->lang->first_name}} {{$specialist_item->lang->father_name}}" title="{{$specialist_item->lang->last_name}} {{$specialist_item->lang->first_name}} {{$specialist_item->lang->father_name}}">
+			<a href="{{build_expert_route($specialist_item->alias)}}">
+				{{$specialist_item->lang->last_name}}
+				{{$specialist_item->lang->first_name}}
+				{{$specialist_item->lang->father_name}}
+			</a>
+			@if($specialist_item->lang->short_desc_1 != '')
+				{{$specialist_item->lang->short_desc_1}}
+			@endif
+			
+		@endforeach
+	@endif
+
 	@if($unit->lang->long_desc_1 != '')
 		{!!$unit->lang->long_desc_1!!}
 	@endif
@@ -63,7 +80,17 @@
 			@endif
 		@endforeach
 	@endif
-
+	
+	@if(isset($rel_service_units) && $rel_service_units->count())
+		@foreach ($rel_service_cats as $rel_service_cat)
+			{{$rel_service_cat->lang->name}}
+			@foreach ($rel_service_units as $unit_item)
+				@if($rel_service_cat->id == $unit_item->cat_id)
+					<a href="{{build_unit_route($unit_item)}}">{{$unit_item->lang->name}}</a>
+				@endif
+			@endforeach
+		@endforeach
+	@endif
 @stop
 @section('scripts')
 @stop

@@ -89,10 +89,28 @@
                 }
             }
         @endphp
-    @else
-        <title>{{ isset($page_title) ? htmlspecialchars($page_title) : '404' }}</title>
+    @elseif(isset($meta_type) && $meta_type == 'expert')
+        <title>{{ $expert->lang->meta_title != '' ? htmlspecialchars($expert->lang->meta_title) : htmlspecialchars($page_title) }} </title>
+        <meta name="description" content="{{ htmlspecialchars($expert->lang->meta_desc) }}">
+        <meta name="keywords" content="{{ htmlspecialchars($expert->lang->meta_key) }}">
+        <meta property="og:url" content="{{ Request::url() }}" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="{{ isset($page_title) ? htmlspecialchars($page_title) : '404' }}" />
+        <meta property="og:title" content="{{ $expert->lang->meta_title != '' ? htmlspecialchars($expert->lang->meta_title) : htmlspecialchars($page_title) }} " />
+        <meta property="og:description" content="{{ htmlspecialchars($expert->lang->meta_desc) }}" />
+        <meta property="og:image" content="{{ (isset($expert) && $expert->img_1 != '') ? specialist_cover('thumb', $expert->img_1) : asset('storage/logo/logo_img_1.png') }}" />
+        @php
+            if(isset($expert) && $expert->img_1 != '' && file_exists(specialist_cover('thumb', $expert->img_1))){
+                $img_size = getimagesize(specialist_cover('thumb', $expert->img_1));
+            }else{
+                if(file_exists('storage/logo/logo_img_1.png')){
+                    $img_size = getimagesize(asset('storage/logo/logo_img_1.png'));
+                }
+            }
+        @endphp
+    @else
+        <title>@if(isset($meta_title) && $meta_title != ''){{htmlspecialchars($meta_title)}}@elseif(isset($page_title) && $page_title != ''){{htmlspecialchars($page_title)}}@else 404 @endif</title>
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="@if(isset($meta_title) && $meta_title != ''){{htmlspecialchars($meta_title)}}@elseif(isset($page_title) && $page_title != ''){{htmlspecialchars($page_title)}}@else 404 @endif" />
         <meta property="og:url" content="{{ Request::url() }}" />
         <meta property="og:image" content="{{ asset('storage/logo/logo_img_1.png') }}" />
         @php
