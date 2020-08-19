@@ -4,19 +4,11 @@
 @section('page')
 	<div class="page">
 		@include('layouts.main.breadcrumbs')
-		@if($unit->lang->h1 != '')
-			<div class="container">
-				<div class="main-section-title text-center">
-					{{$unit->lang->h1}}
-				</div>
+		<div class="container">
+			<div class="main-section-title text-center">
+				@lang('main.about_us')
 			</div>
-		@else
-			<div class="container">
-				<div class="main-section-title text-center">
-					{{$unit->lang->name}}
-				</div>
-			</div>
-		@endif
+		</div>
 	</div>
 	<div class="main-section">
 		<div class="container">
