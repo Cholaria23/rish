@@ -4,7 +4,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>@lang('main.form.callback')</title>
+        <title>@lang('main.request_new_post')</title>
         <style>
             p {
                 margin: 0;
@@ -14,13 +14,13 @@
     </head>
     <body>
         <div style="width: 600px; padding: 15px; background: transparent; padding-left: 0px !important; padding-right: 0px !important; font-family: Arial, sans-serif;">
-            <table align="left" cellpadding="0" cellspacing="0" border="0" style="margin: 0; background: #ffffff; padding: 10px; width: 100%;">
+            <table width="100%" align="left" cellpadding="0" cellspacing="0" border="0" style="margin: 0; background: #ffffff; padding: 10px;">
                 <tbody>
                     <tr>
-                        <td style="border: 0;" align="left" valign="top" border="0">
+                        <td style="border: 0;" width="100%" align="left" valign="top" border="0">
                             <div style="border-width: 0px; border-style: solid; border-radius: 0px; border-color: #ffffff;">
                                 <div class="email_header">
-                                    <table cellpadding="0" cellspacing="0" border="0" style="margin: 0; width: 100%;">
+                                    <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin: 0;">
                                         <tbody>
                                             <tr>
                                                 <td align="left" valign="bottom" border="0" style="vertical-align: middle;">
@@ -37,43 +37,26 @@
                                     </table>
                                 </div>
                                 <div class="body-mail">
-                                    <table cellpadding="0" cellspacing="0" border="0" style="margin: 0; width: 100%;">
+                                    <table cellpadding="0" cellspacing="0" border="0" style="width: 100%; margin: 0;">
                                         <tbody>
                                             <tr>
                                                 <td align="left" valign="top" border="0">
                                                     <div style="margin-bottom: 20px;text-align: left; font-size:14px; font-family: Arial, sans-serif;">
                                                         <div style="padding-bottom:10px;">
-                                                            <p style="margin: 0; padding-bottom: 15px; text-align: left; font-size: 14px; color: #343434; font-weight: bold; border-bottom: 1px solid #f2f2f2;">
-                                                                @lang('main.email.client_info'):
+                                                            <p style="margin: 0; padding-bottom: 30px; text-align: left; font-size: 18px; color: #343434; font-weight: bold;">
+                                                                @lang('main.subscribу_newsletter')
                                                             </p>
-                                                            @if (isset($phone) && $phone != '')
+                                                            <p style="margin: 0; padding-bottom: 15px; text-align: left; font-size: 14px; color: #343434; font-weight: bold; border-bottom: 1px solid #f2f2f2;">
+                                                                @lang('main.email.your_data'):
+                                                            </p>
+                                                            @if (isset($email) && $email != '')
                                                                 <p style="display: flex; align-items: center; justify-content: space-between;font-size: 14px; margin: 0; padding: 10px 0; color: #343434; font-weight: 400; border-bottom: 1px solid #f2f2f2;">
                                                                     <span style="width: 50%; text-align: left; font-size: 14px; color: #343434;">
-                                                                        @Lang('main.form.phone'):
-                                                                    </span>
-                                                                    <span style="width: 50%; color:#343434; text-decoration:none; text-align: right;">
-                                                                        {{ $phone }}
-                                                                    </span>
-                                                                </p>
-                                                            @endif
-                                                            @if (isset($name) && $name != '')
-                                                                <p style="display: flex; align-items: center; justify-content: space-between;font-size: 14px; margin: 0; padding: 10px 0; color: #343434; font-weight: 400; border-bottom: 1px solid #f2f2f2;">
-                                                                    <span style="width: 50%; text-align: left; font-size: 14px; color: #343434;">
-                                                                        @Lang('main.form.name'):
+                                                                        @Lang('main.form.email'):
                                                                     </span>
                                                                     <span style="width: 50%; text-align: right; font-size: 14px; color: #343434;">
-                                                                        {{ $name }}
+                                                                        {{ $email }}
                                                                     </span>
-                                                                </p>
-                                                            @endif
-                                                            @if (isset($url) && $url != '')
-                                                                <p style="display: flex; align-items: center; justify-content: space-between;font-size: 14px; margin: 0; padding: 10px 0; color: #343434; font-weight: 400; border-bottom: 1px solid #f2f2f2;">
-                                                                    <span style="width: 50%; text-align: left; font-size: 14px; font-weight: bold; color: #343434;">
-                                                                        @Lang('main.form.url'):
-                                                                    </span>
-                                                                    <a href="{{route('first_url',[$url])}}" style="width: 50%; text-align: right; font-size: 14px; color: #343434; text-decoration: underline;">
-                                                                        {{$url_name}}
-                                                                    </a>
                                                                 </p>
                                                             @endif
                                                         </div>
@@ -146,9 +129,10 @@
                                     </table>
                                 </div>
                             </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+                          </td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
     </body>
 </html>

@@ -1,0 +1,49 @@
+.mfp-close-btn-in .mfp-close {
+    display: none;
+}
+.popup-wrap {
+    margin: 0 auto;
+    padding: 85px;
+    background: url(/img/light-bg.png) center center/cover no-repeat;
+    &.mini {
+        max-width: 570px;
+        .btn-green {
+            margin: 0 auto;
+        }
+        .popup-sub-name {
+            margin-top: 5px;
+            font-family: $montserrat_semibold;
+            text-align: center;
+            font-size: 18px;
+        }
+    }
+    &.big {
+        max-width: 1020px;
+        .popup-sub-name {
+            margin-top: 5px;
+            font-family: $montserrat_semibold;
+            text-align: left;
+            font-size: 18px;
+        }
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+    .popup-name-wrap {
+        margin: 0 0 25px 0;
+    }
+    .popup-name {
+        font-family: $montserrat_bold;
+        @include adaptiv-font(40, 27);
+        text-align: center;
+    }
+    .input-form {
+        box-shadow: 0 3px 15px rgba(145, 145, 145, 0.16);
+    }
+    .popup-info-text {
+        margin: -15px 0 25px;
+        font-size: 14px;
+        color: $ggrey;
+    }
+}

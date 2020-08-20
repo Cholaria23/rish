@@ -21,7 +21,7 @@
 					</div>
 				@endif
 				<div class="popup-btn-wrap">
-                    <a class="btn-light-green-small popup-js" href="#test-modal">
+                    <a class="btn-light-green-small popup-js" href="#callback">
                         <span class="btn-light-green-small-icon">
                             <svg width="20" height="20">
                                 <use xlink:href="#phone"></use>
@@ -29,7 +29,7 @@
                         </span>
 						@lang('main.btn.call_me')
 					</a>
-                    <a class="btn-green-small popup-js" href="#test-modal">
+                    <a class="btn-green-small popup-js appointment-btn-js" href="#appointment" data-subtitle="{{$unit->lang->name}}">
 						@lang('main.btn.make_appointment')
 					</a>
                 </div>
@@ -184,7 +184,7 @@
                     <div class="page-section-title-bold">
                         @lang('main.our_specialists')
                     </div>
-                    <div class="specialists-wrap">
+                    <div class="specialists-wrap mobile-slider-js">
 						@foreach ($unit->related_specialists[2]['specialists'] as  $specialist_item)
 							<div class="specialists-holder">
 								@include('layouts.tiles.specialist_tile')

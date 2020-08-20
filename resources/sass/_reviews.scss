@@ -56,7 +56,7 @@
         margin-bottom: 40px;
         margin-left: 15px;
         font-family: $montserrat_bold;
-        @include adaptiv-font(40, 22);
+        @include adaptiv-font(40, 27);
         line-height: 1;
         @media (max-width: 768px) {
             margin-bottom: 20px;

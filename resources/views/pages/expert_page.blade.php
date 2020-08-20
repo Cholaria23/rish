@@ -129,7 +129,7 @@
 				</div>
 				<div class="popup-gallery diploms-gallery">
 					@foreach ($expert->images_1 as $key => $img_item)
-						<a href="{{specialist_image('small',$img_item->src)}}" class="gallery-item" title="{{$expert->lang->last_name}} {{$expert->lang->first_name}} {{$expert->lang->father_name}} @lang('main.diploms') {{$key+1}}">
+						<a href="{{specialist_image('big',$img_item->src)}}" class="gallery-item" title="{{$expert->lang->last_name}} {{$expert->lang->first_name}} {{$expert->lang->father_name}} @lang('main.diploms') {{$key+1}}">
 							<img class="lazyload" data-src="{{specialist_image('small',$img_item->src)}}" alt="{{$expert->lang->last_name}} {{$expert->lang->first_name}} {{$expert->lang->father_name}} @lang('main.diploms') {{$key+1}}" title="{{$expert->lang->last_name}} {{$expert->lang->first_name}} {{$expert->lang->father_name}} @lang('main.diploms') {{$key+1}}">
 						</a>
 					@endforeach

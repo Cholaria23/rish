@@ -151,7 +151,162 @@ $(document).ready( function() {
         formReviewValidate(formVal);
         formVal.submit();
     });
-
     // validate form review end
+
+    // validate form callback
+    $(".do_callback_form").click(function(e) {
+        e.stopPropagation();
+        e.preventDefault();
+        var formVal = $(this).closest('.callback_form');
+        formCallbackValidate(formVal);
+        formVal.submit();
+    });
+    function formCallbackValidate(form) {
+        form.validate({
+            submitHandler: function(form) {
+              var csrf_token = $('meta[name="csrf-token"]').attr('content');
+              var formdata = $(form).serialize();
+              $(form)[0].reset();
+              $.ajax({
+                url: routes.postSend,
+                type: 'POST',
+                data: {
+                    "_token" : csrf_token,
+                    "data": formdata,
+                    "subj": "callback"
+                },
+                success: function(data) {
+                    $(".form-input").val("").blur();
+                    $(form).hide();
+                    $(form).next('.form-thanks').show();
+                    function hidePopup(){
+                        $.magnificPopup.close();
+                    }
+                    function showForm(){
+                        $(form).next('.form-thanks').hide();
+                        $(form).show();
+                    }
+                    setTimeout( hidePopup ,5000);
+                    setTimeout( showForm ,5000);
+                }
+              });
+            }
+        });
+    }
+
+    // validate form feedback
+    $(".do_feedback_form").click(function(e) {
+        e.stopPropagation();
+        e.preventDefault();
+        var formVal = $(this).closest('.feedback_form');
+        formFeedbackValidate(formVal);
+        formVal.submit();
+    });
+    function formFeedbackValidate(form) {
+        form.validate({
+            submitHandler: function(form) {
+              var csrf_token = $('meta[name="csrf-token"]').attr('content');
+              var formdata = $(form).serialize();
+              $(form)[0].reset();
+              $.ajax({
+                url: routes.postSend,
+                type: 'POST',
+                data: {
+                    "_token" : csrf_token,
+                    "data": formdata,
+                    "subj": "feedback"
+                },
+                success: function(data) {
+                    $(".form-input").val("").blur();
+                    $(form).hide();
+                    $(form).next('.form-thanks').show();
+                    function showForm(){
+                        $(form).next('.form-thanks').hide();
+                        $(form).show();
+                    }
+                    setTimeout( showForm ,5000);
+                }
+              });
+            }
+        });
+    }
+
+    // new-post-form start
+    function formValidateNewPost(form) {
+        form.validate({
+            submitHandler: function(form) {
+                var csrf_token = $('meta[name="csrf-token"]').attr('content');
+                var formdata = $(form).serialize();
+                $(form)[0].reset();
+                $.ajax({
+                    url: routes.postSend,
+                    type: 'POST',
+                    data: {
+                        "_token" : csrf_token,
+                        "data": formdata,
+                        "subj": "subscription"
+                    },
+                    success: function(data) {
+                        $(form).hide();
+                        $(form).next('.form-thanks').show();
+                        function showForm(){
+                            $(form).next('.form-thanks').hide();
+                            $(form).show();
+                        }
+                        setTimeout( showForm ,5000);
+                    }
+                })
+            }
+        });
+    };
+    $(".do-new-post-form").click(function(e) {
+        e.stopPropagation();
+        e.preventDefault();
+        var formVal = $(this).closest('.new-post-form');
+        formValidateNewPost(formVal);
+        formVal.submit();
+    });
+    // new-post-form end
+
+    // Registration for a service
+    $(".do_registration_form").click(function(e) {
+        e.stopPropagation();
+        e.preventDefault();
+        var formVal = $(this).closest('.registration_form');
+        formRegistrationValidate(formVal);
+        formVal.submit();
+    });
+    function formRegistrationValidate(form) {
+        form.validate({
+            submitHandler: function(form) {
+              var csrf_token = $('meta[name="csrf-token"]').attr('content');
+              var formdata = $(form).serialize();
+              $(form)[0].reset();
+              $.ajax({
+                url: routes.postSend,
+                type: 'POST',
+                data: {
+                    "_token" : csrf_token,
+                    "data": formdata,
+                    "subj": "appointment"
+                },
+                success: function(data) {
+                    $(".form-input").val("").blur();
+                    $(form).hide();
+                    $(form).next('.form-thanks').show();
+                    function hidePopup(){
+                        $.magnificPopup.close();
+                    }
+                    function showForm(){
+                        $(form).next('.form-thanks').hide();
+                        $(form).show();
+                    }
+                    setTimeout( hidePopup ,5000);
+                    setTimeout( showForm ,5000);
+                }
+              });
+            }
+        });
+    }
 
 });

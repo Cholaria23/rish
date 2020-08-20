@@ -1,5 +1,5 @@
 <div class='top_navigate'>
-	<div class="container">	
+	<div class="container">
 		<ol class='breadcrumbs' itemscope itemtype="http://schema.org/BreadcrumbList">
 			<li  class="crumb-li" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
 				<a itemprop="item" class="crumb" href='{{ URL::to("/") }}'>
@@ -33,7 +33,7 @@
 			@if ($page_title != '')
 				<li  class="crumb-li" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
 					<a itemprop="item" class="crumb js-lastcrumb" href="{{ URL::to(Request::path()) }}">
-						<span itemprop="name">{{ $page_title }}</span>
+						<span itemprop="name">{!! $page_title !!}</span>
 					</a>
 					<meta itemprop="position" content={{$i+1}} />
 				</li>

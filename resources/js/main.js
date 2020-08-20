@@ -44,6 +44,36 @@ function initPriceTabs() {
     });
 }
 
+function initSearchTabs() {
+    var active_tab = $('.tabs li').first();
+	var tabs_container = $(this).closest('.tabs-container');
+    var selectTab = active_tab.attr('data-tab');
+	active_tab.addClass('active');
+	tabs_container.find('.tab-content').hide();
+    $('#'+selectTab).fadeIn();
+
+	$(document).on('click', '.tab-link', function(e) {
+        var selectTab = $(this).attr('data-tab');
+        var parent = $(this).closest('.tabs-container');
+        parent.find('.tab-link').removeClass('active');
+        $(this).addClass('active');
+        parent.find('.tab-content').hide();
+        $('#'+selectTab).fadeIn();
+    });
+
+    $(document).on('click', '.tab-mobile-link', function(e) {
+        var selectTab = $(this).attr('data-tab');
+        var parent = $(this).closest('.tabs-container');
+            parent.find('.tab-mobile-link').removeClass('active');
+            $(this).addClass('active');
+            parent.find('.tab-content').hide();
+            $('#'+selectTab).fadeIn();
+            $(".active-tab-mobile-text").html($('.tab-mobile-link.active').text());
+            $('.active-tab-mobile').toggleClass("active");
+            $(".tabs").slideToggle();
+    });
+}
+
 $(document).ready(function() {
     ///admin img
     var adminImg = document.querySelectorAll(".description");
@@ -63,6 +93,10 @@ $(document).ready(function() {
     // tabs
     if ($('.price-page').length) {
         initPriceTabs();
+    }
+
+    if ($('.search_page').length) {
+        initSearchTabs();
     }
 
     $(".active-tab-mobile").click(function (e) {

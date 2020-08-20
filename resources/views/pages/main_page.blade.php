@@ -157,7 +157,7 @@
 					</a>
 				</div>
 				<div class="section-inner">
-					<div class="specialists-wrap">
+					<div class="specialists-wrap mobile-slider-js">
 						@foreach ($specialists as $specialist_item)
 							<div class="specialists-holder">
 								@include('layouts.tiles.specialist_tile')
@@ -215,8 +215,24 @@
 	@if(isset($special_actions) && $special_actions)
 		<section class="main-section">
 			<div class="container">
-				<div class="special-actions-wrap">
-					<div class="special-action-holder">
+				<div class="special-action-holder no-slider">
+					<div class="special-action-item">
+						<div class="special-action-title">
+							@lang('main.action_title')
+						</div>
+						@if($special_actions_cat->count())
+							@foreach($special_actions_cat as $cat_item)
+								<a class="special-action-link" href="{{route('first_url',$cat_item->alias)}}">
+									<span class="special-action-link-text">
+										{{$cat_item->lang->name}}
+									</span>
+								</a>
+							@endforeach
+						@endif
+					</div>
+				</div>
+				<div class="special-actions-wrap mobile-slider-js">
+					<div class="special-action-holder slider">
 						<div class="special-action-item">
 							<div class="special-action-title">
 								@lang('main.action_title')
