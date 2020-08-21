@@ -72,7 +72,35 @@
 	    </div>
 	    <div class="input-wrap">
             <input class="input-form" type="email" name="email" placeholder="@lang('main.form.email')">
-	    </div>
+		</div>
+		<div class="popup-textarea-wrap">
+			@if(isset($meta_type) && $meta_type == 'expert')
+				<input class="input-form" type="hidden" name="specialist_id" value="{{$expert->id}}">
+			@else
+				@if(isset($cat) && isset($cat->related_specialists) && $cat->related_specialists && isset($cat->related_specialists[1]) && isset($cat->related_specialists[1]['specialists']) && $cat->related_specialists[1]['specialists']->count() || 
+				isset($unit) && isset($unit->related_specialists) && $unit->related_specialists && isset($unit->related_specialists[2]) && isset($unit->related_specialists[2]['specialists']) && $unit->related_specialists[2]['specialists']->count() ||
+				isset($all_specialists) && $all_specialists && $all_specialists->count())
+					<div class="input-wrap">
+						<select class="selectric" name="specialist_id">
+							<option value="@lang('main.form.no_choose_specialist')">@lang('main.form.choose_specialist')</option>
+							@if(isset($cat) && isset($cat->related_specialists) && $cat->related_specialists && isset($cat->related_specialists[1]) && isset($cat->related_specialists[1]['specialists']) && $cat->related_specialists[1]['specialists']->count())
+								@foreach ($cat->related_specialists[1]['specialists'] as  $specialist_item)
+									<option value="{{$specialist_item->id}}">{{$specialist_item->lang->last_name}} {{$specialist_item->lang->first_name}} {{$specialist_item->lang->father_name}}</option>
+								@endforeach
+							@elseif(isset($unit) && isset($unit->related_specialists) && $unit->related_specialists && isset($unit->related_specialists[2]) && isset($unit->related_specialists[2]['specialists']) && $unit->related_specialists[2]['specialists']->count())
+								@foreach ($unit->related_specialists[2]['specialists'] as  $specialist_item)
+									<option value="{{$specialist_item->id}}">{{$specialist_item->lang->last_name}} {{$specialist_item->lang->first_name}} {{$specialist_item->lang->father_name}}</option>
+								@endforeach
+							@else
+								@foreach ($all_specialists as $specialist_item)
+									<option value="{{$specialist_item->id}}">{{$specialist_item->lang->last_name}} {{$specialist_item->lang->first_name}} {{$specialist_item->lang->father_name}}</option>
+								@endforeach
+							@endif
+						</select>
+					</div>
+				@endif
+			@endif
+		</div>
 	    <input type="hidden" name="url" value="{{Request::path()}}">
 	    <input type="hidden" name="title" value="@lang('main.form.registration')">
 	    <input type="hidden" name="appointment" value="">
@@ -108,16 +136,32 @@
 				</div>
 			</div>
 			<div class="popup-textarea-wrap">
-
-				{{-- @if ($cat->id == '8') --}}
-					<div class="input-wrap">
-						<select class="selectric" name="specialist">
-							<option value="@lang('main.form.no_choose_specialist')">@lang('main.form.choose_specialist')</option>
-							<option value="value2">Значение 2</option>
-						</select>
-					</div>
-				{{-- @endif --}}
-
+				@if(isset($meta_type) && $meta_type == 'expert')
+					<input class="input-form" type="hidden" name="specialist_id" value="{{$expert->id}}">
+				@else
+					@if(isset($cat) && isset($cat->related_specialists) && $cat->related_specialists && isset($cat->related_specialists[1]) && isset($cat->related_specialists[1]['specialists']) && $cat->related_specialists[1]['specialists']->count() || 
+					isset($unit) && isset($unit->related_specialists) && $unit->related_specialists && isset($unit->related_specialists[2]) && isset($unit->related_specialists[2]['specialists']) && $unit->related_specialists[2]['specialists']->count() ||
+					isset($all_specialists) && $all_specialists && $all_specialists->count())
+						<div class="input-wrap">
+							<select class="selectric" name="specialist_id">
+								<option value="@lang('main.form.no_choose_specialist')">@lang('main.form.choose_specialist')</option>
+								@if(isset($cat) && isset($cat->related_specialists) && $cat->related_specialists && isset($cat->related_specialists[1]) && isset($cat->related_specialists[1]['specialists']) && $cat->related_specialists[1]['specialists']->count())
+									@foreach ($cat->related_specialists[1]['specialists'] as  $specialist_item)
+										<option value="{{$specialist_item->id}}">{{$specialist_item->lang->last_name}} {{$specialist_item->lang->first_name}} {{$specialist_item->lang->father_name}}</option>
+									@endforeach
+								@elseif(isset($unit) && isset($unit->related_specialists) && $unit->related_specialists && isset($unit->related_specialists[2]) && isset($unit->related_specialists[2]['specialists']) && $unit->related_specialists[2]['specialists']->count())
+									@foreach ($unit->related_specialists[2]['specialists'] as  $specialist_item)
+										<option value="{{$specialist_item->id}}">{{$specialist_item->lang->last_name}} {{$specialist_item->lang->first_name}} {{$specialist_item->lang->father_name}}</option>
+									@endforeach
+								@else
+									@foreach ($all_specialists as $specialist_item)
+										<option value="{{$specialist_item->id}}">{{$specialist_item->lang->last_name}} {{$specialist_item->lang->first_name}} {{$specialist_item->lang->father_name}}</option>
+									@endforeach
+								@endif
+							</select>
+						</div>
+					@endif
+				@endif
 				<div class="input-wrap">
 					<textarea class="input-form form-input-textarea" name="content" placeholder="@lang('main.form.your_question')*" required></textarea>
 				</div>

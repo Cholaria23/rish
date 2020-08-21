@@ -36,9 +36,8 @@ class ServiceController extends Controller {
      *
      * @return void
      */
-    public function __construct(Request $request, Good $good) {
+    public function __construct(Request $request) {
 		$this->request = $request;
-		$this->good = $good;
 	}
 
     public function postLoadFile() {
@@ -88,14 +87,9 @@ class ServiceController extends Controller {
             $save_data['user_ip'] = isset($_SERVER['HTTP_X_REAL_IP']) ? $_SERVER['HTTP_X_REAL_IP'] : $_SERVER['REMOTE_ADDR'];
             $save_data['content'] = (isset($data['content']) && $data['content'] != '') ? $data['content'] : '';
             if(isset($data['unit_id'])){
-				$save_data['unit_id'] = $data['unit_id'];
 				$data['unit'] = Unit::with('lang')->find($data['unit_id']);
             }
-            if(isset($data['cat_id'])){
-                $save_data['cat_id'] = $data['cat_id'];
-            }
             if(isset($data['good_id'])){
-				$save_data['good_id'] = $data['good_id'];
 				$data['good'] = Good::with('lang')->find($data['good_id']);
             }
             if(isset($data['url'])){
@@ -112,6 +106,26 @@ class ServiceController extends Controller {
             $lead = new Lead();
             $lead->fill($save_data);
 			$lead->save();
+
+			if (isset($data['cat_id']) && $data['cat_id'] != '') {
+				$lead->cats()->attach($data['cat_id']);
+			}
+
+			if (isset($data['unit_id']) && $data['unit_id'] != '') {
+				$lead->units()->attach($data['unit_id']);
+			}
+
+			if (isset($data['market_cat_id']) && $data['market_cat_id'] != '') {
+				$lead->market_cats()->attach($data['market_cat_id']);
+			}
+
+			if (isset($data['good_id']) && $data['good_id'] != '') {
+				$lead->goods()->attach($data['good_id']);
+			}
+
+			if (isset($data['specialist_id']) && $data['specialist_id'] != '') {
+				$lead->specialists()->attach($data['specialist_id']);
+			}
 
 			if($this->request->has('file')){
 				$files = $this->request->get('file');

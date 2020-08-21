@@ -28,7 +28,7 @@ class SearchController extends Controller
 {
     public function showSearch(Request $request) {
 
-        $search = substr(strtolower($request->search),0,-1);
+        $search = strtolower($request->search);
 
         $response = [
             'page_title'   => Lang::get('main.search_page').' «'.$search.'»',

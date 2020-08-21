@@ -143,7 +143,7 @@
 		</div>
 	</section>
 
-	@if(isset($specialists) && $specialists)
+	@if(isset($specialists) && $specialists && $specialists->count())
 		<section class="main-section specialists">
 			<div class="container">
 				<div class="main-section-title-wrap">
