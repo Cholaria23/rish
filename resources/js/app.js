@@ -6,8 +6,6 @@ import Stickyfill from "stickyfilljs/dist/stickyfill.min";
 window.Stickyfill = require('stickyfilljs');
 // object-fit-images
 import objectFitPolyfill from 'objectFitPolyfill';
-// import validate from "jquery-validation";
-require("jquery-validation");
 // slick
 import slick from "slick-carousel/slick/slick.min.js";
 // input mask
@@ -21,6 +19,10 @@ import mCustomScrollbar from "malihu-custom-scrollbar-plugin/jquery.mCustomScrol
 import 'lazysizes';
 // magnific_popup
 import magnificPopup from "magnific-popup/dist/jquery.magnific-popup.min.js";
+// selectric
+import selectric from "selectric";
+// import validate from "jquery-validation";
+require("jquery-validation");
 // sliders
 require('./sliders');
 // popup

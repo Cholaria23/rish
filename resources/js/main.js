@@ -104,6 +104,14 @@ $(document).ready(function() {
         $(".tabs").slideToggle();
     })
 
+    // selectric init
+    if($('.selectric').length) {
+        $('.selectric').selectric({
+            disableOnMobile: false,
+            nativeOnMobile: false,
+        })
+    }
+
     // CustomScrollbar
     if($('.scroll-js').length) {
         initScrollbar();

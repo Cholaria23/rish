@@ -5,10 +5,21 @@
     margin: 0 auto;
     padding: 85px;
     background: url(/img/light-bg.png) center center/cover no-repeat;
+    @media (max-width: 768px) {
+        padding: 50px;
+    }
+    @media (max-width: 576px) {
+        padding: 30px 15px;
+    }
     &.mini {
         max-width: 570px;
         .btn-green {
             margin: 0 auto;
+        }
+        .popup-name {
+            font-family: $montserrat_bold;
+            @include adaptiv-font(40, 27);
+            text-align: center;
         }
         .popup-sub-name {
             margin-top: 5px;
@@ -19,11 +30,59 @@
     }
     &.big {
         max-width: 1020px;
+        @media (max-width: 768px) {
+            max-width: 570px;
+        }
+        .popup-name {
+            font-family: $montserrat_bold;
+            @include adaptiv-font(40, 27);
+            text-align: left;
+            @media (max-width: 768px) {
+                text-align: center;
+            }
+        }
         .popup-sub-name {
             margin-top: 5px;
             font-family: $montserrat_semibold;
             text-align: left;
             font-size: 18px;
+            @media (max-width: 768px) {
+                text-align: center;
+            }
+        }
+        .popup-form-wrap {
+            margin: 0 -25px;
+            display: flex;
+            flex-wrap: wrap;
+            .popup-input-wrap {
+                width: 50%;
+                padding: 0 25px;
+                @media (max-width: 768px) {
+                    width: 100%;
+                }
+            }
+            .popup-textarea-wrap {
+                width: 50%;
+                padding: 0 25px;
+                @media (max-width: 768px) {
+                    width: 100%;
+                }
+                .form-input-textarea {
+                    height: 105px;
+                }
+            }
+        }
+        .form-thanks {
+            text-align: left;
+            @media (max-width: 768px) {
+                text-align: center;
+            }
+        }
+        .btn-green {
+            margin-left: auto;
+            @media (max-width: 768px) {
+                margin: 0 auto;
+            }
         }
     }
     form {
@@ -32,18 +91,19 @@
     }
     .popup-name-wrap {
         margin: 0 0 25px 0;
-    }
-    .popup-name {
-        font-family: $montserrat_bold;
-        @include adaptiv-font(40, 27);
-        text-align: center;
+        @media (max-width: 768px) {
+            margin: 0 0 15px 0;
+        }
     }
     .input-form {
         box-shadow: 0 3px 15px rgba(145, 145, 145, 0.16);
     }
     .popup-info-text {
-        margin: -15px 0 25px;
+        margin: -10px 0 25px;
         font-size: 14px;
         color: $ggrey;
+        @media (max-width: 768px) {
+            margin: 0 0 25px;
+        }
     }
 }

@@ -307,6 +307,92 @@ $(document).ready( function() {
               });
             }
         });
+    };
+
+
+
+    // Registration for specialist
+    $(".do_specialist_form").click(function(e) {
+        e.stopPropagation();
+        e.preventDefault();
+        var formVal = $(this).closest('.specialist_form');
+        formRegistrationSpecialistValidate(formVal);
+        formVal.submit();
+    });
+    function formRegistrationSpecialistValidate(form) {
+        form.validate({
+            submitHandler: function(form) {
+              var csrf_token = $('meta[name="csrf-token"]').attr('content');
+              var formdata = $(form).serialize();
+              $(form)[0].reset();
+              $.ajax({
+                url: routes.postSend,
+                type: 'POST',
+                data: {
+                    "_token" : csrf_token,
+                    "data": formdata,
+                    "subj": "specialist"
+                },
+                success: function(data) {
+                    $(".form-input").val("").blur();
+                    $(form).hide();
+                    $(form).next('.form-thanks').show();
+                    function hidePopup(){
+                        $('.registration').removeClass('open');
+                        $('body').removeClass('overflow');
+                    }
+                    function showForm(){
+                        $(form).next('.form-thanks').hide();
+                        $(form).show();
+                    }
+                    setTimeout( hidePopup ,5000);
+                    setTimeout( showForm ,5000);
+                }
+              });
+            }
+        });
+    };
+
+    // validate question_service_form
+    $(".do_question_form").click(function(e) {
+        e.stopPropagation();
+        e.preventDefault();
+        var formVal = $(this).closest('.question_form');
+        formQuestionServiceValidate(formVal);
+        formVal.submit();
+    });
+    function formQuestionServiceValidate(form) {
+        form.validate({
+            submitHandler: function(form) {
+              var csrf_token = $('meta[name="csrf-token"]').attr('content');
+              var formdata = $(form).serialize();
+              $(form)[0].reset();
+              $.ajax({
+                url: routes.postSend,
+                type: 'POST',
+                data: {
+                    "_token" : csrf_token,
+                    "data": formdata,
+                    "subj": "question"
+                },
+                success: function(data) {
+                    $(".form-input").val("").blur();
+                    $(form).hide();
+                    $(form).next('.form-thanks').show();
+                    function hidePopup(){
+                        $('.question-service').removeClass('open');
+                        $('body').removeClass('overflow');
+                    }
+                    function showForm(){
+                        $(form).next('.form-thanks').hide();
+                        $(form).show();
+                    }
+                    setTimeout( hidePopup ,5000);
+                    setTimeout( showForm ,5000);
+                }
+              });
+            }
+        });
     }
 
 });

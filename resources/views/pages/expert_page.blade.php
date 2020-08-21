@@ -58,7 +58,7 @@
 							</div>
 						@endif
 						<div class="popup-btn-wrap">
-							<a class="btn-light-green-small popup-js" href="#test-modal">
+							<a class="btn-light-green-small popup-js question-btn-js" data-subtitle="{{$expert->lang->last_name}} {{$expert->lang->first_name}} {{$expert->lang->father_name}}" href="#question">
 								<span class="btn-light-green-small-icon">
 									<svg width="19" height="19">
 										<use xlink:href="#chat"></use>
@@ -66,7 +66,7 @@
 								</span>
 								@lang('main.btn.question_specialist')
 							</a>
-							<a class="btn-green-small popup-js" href="#test-modal">
+							<a class="btn-green-small popup-js specialist-btn-js" data-subtitle="{{$expert->lang->last_name}} {{$expert->lang->first_name}} {{$expert->lang->father_name}}" href="#specialist">
 								@lang('main.btn.make_appointment')
 							</a>
 						</div>
