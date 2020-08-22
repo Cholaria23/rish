@@ -133,6 +133,9 @@
                 margin-top: 30px;
                 margin-bottom: 0;
             }
+            @media (max-width: 576px) {
+                padding-top: 56.25%;
+            }
             iframe {
                 position: absolute;
                 top: 0;

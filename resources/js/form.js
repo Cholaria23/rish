@@ -176,7 +176,6 @@ $(document).ready( function() {
                     "subj": "callback"
                 },
                 success: function(data) {
-                    $(".form-input").val("").blur();
                     $(form).hide();
                     $(form).next('.form-thanks').show();
                     function hidePopup(){
@@ -217,7 +216,6 @@ $(document).ready( function() {
                     "subj": "feedback"
                 },
                 success: function(data) {
-                    $(".form-input").val("").blur();
                     $(form).hide();
                     $(form).next('.form-thanks').show();
                     function showForm(){
@@ -291,7 +289,6 @@ $(document).ready( function() {
                     "subj": "appointment"
                 },
                 success: function(data) {
-                    $(".form-input").val("").blur();
                     $(form).hide();
                     $(form).next('.form-thanks').show();
                     function hidePopup(){
@@ -334,12 +331,10 @@ $(document).ready( function() {
                     "subj": "specialist"
                 },
                 success: function(data) {
-                    $(".form-input").val("").blur();
                     $(form).hide();
                     $(form).next('.form-thanks').show();
                     function hidePopup(){
-                        $('.registration').removeClass('open');
-                        $('body').removeClass('overflow');
+                        $.magnificPopup.close();
                     }
                     function showForm(){
                         $(form).next('.form-thanks').hide();
@@ -376,12 +371,10 @@ $(document).ready( function() {
                     "subj": "question"
                 },
                 success: function(data) {
-                    $(".form-input").val("").blur();
                     $(form).hide();
                     $(form).next('.form-thanks').show();
                     function hidePopup(){
-                        $('.question-service').removeClass('open');
-                        $('body').removeClass('overflow');
+                        $.magnificPopup.close();
                     }
                     function showForm(){
                         $(form).next('.form-thanks').hide();

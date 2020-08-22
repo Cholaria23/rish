@@ -131,7 +131,7 @@
                         @endforeach
                     </div>
                     <div class="popup-btn-wrap">
-                        <a class="btn-light-green-small popup-js" href="#test-modal">
+                        <a class="btn-light-green-small popup-js question-btn-js" href="#question">
                             <span class="btn-light-green-small-icon">
                                 <svg width="19" height="19">
                                     <use xlink:href="#chat"></use>
@@ -139,7 +139,7 @@
                             </span>
                             @lang('main.btn.question_specialist')
                         </a>
-                        <a class="btn-green-small popup-js" href="#test-modal">
+                        <a class="btn-green-small popup-js appointment-btn-js" href="#appointment" data-subtitle="{{$cat->lang->name}}">
                             @lang('main.btn.make_appointment')
                         </a>
                     </div>

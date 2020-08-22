@@ -17,9 +17,18 @@ $(document).ready(function() {
     });
 
     $('.appointment-btn-js').click(function () {
+        $('#appointment').find('.popup-sub-name').text();
+        $('#appointment').find('input[name=appointment]').val('');
+        $('#appointment').find('input[name=specialist]').val('');
+        $('.select-appointment-specialist').prop('selectedIndex', 0).selectric('refresh');
         var text = $(this).attr('data-subtitle');
         $('#appointment').find('.popup-sub-name').text(text);
         $('#appointment').find('input[name=appointment]').val(text);
+    });
+
+    $(document).on('change', '.select-appointment-specialist', function(e) {
+        var selectAppointmentSpecialist = $(".select-appointment-specialist option:selected").text();
+        $('#appointment').find('input[name=specialist]').val(selectAppointmentSpecialist);
     });
 
     $('.specialist-btn-js').click(function () {
@@ -29,9 +38,17 @@ $(document).ready(function() {
     });
 
     $('.question-btn-js').click(function () {
+        $('#question').find('.popup-sub-name').text();
+        $('#question').find('input[name=appointment]').val('');
+        $('.select-question').prop('selectedIndex', 0).selectric('refresh');
         var text = $(this).attr('data-subtitle');
         $('#question').find('.popup-sub-name').text(text);
         $('#question').find('input[name=appointment]').val(text);
+    });
+
+    $(document).on('change', '.select-question', function(e) {
+        var selectQuestionText = $(".select-question option:selected").text();
+        $('#question').find('input[name=appointment]').val(selectQuestionText);
     });
 
 })
