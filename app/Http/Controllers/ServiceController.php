@@ -80,7 +80,7 @@ class ServiceController extends Controller {
             $form_type = FormType::with(['accounts' => function ($query) {
                 $query->where('is_banned', 0)->where('email', '!=', '');
             }])->where('alias', $subj)->firstOrFail();
-
+			$data['form_type'] = $form_type;
             $save_data['user_first_name'] = (isset($data['name']) && $data['name'] != '') ? $data['name'] : '';
             $save_data['user_email'] = (isset($data['email']) && $data['email'] != '') ? $data['email'] : '';
             $save_data['user_phone'] = (isset($data['phone']) && $data['phone'] != '') ? $data['phone'] : '';
