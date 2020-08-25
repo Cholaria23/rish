@@ -4,7 +4,13 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>@lang('main.form.callback')</title>
+        <title>
+            @if(isset($form_type->lang_name[App::getLocale()]) && $form_type->lang_name[App::getLocale()] !='')
+            	{{$form_type->lang_name[App::getLocale()]}}
+            @else
+                @lang('main.consultation')
+            @endif
+        </title>
         <style>
             p {
                 margin: 0;
@@ -14,13 +20,13 @@
     </head>
     <body>
         <div style="width: 600px; padding: 15px; background: transparent; padding-left: 0px !important; padding-right: 0px !important; font-family: Arial, sans-serif;">
-            <table align="left" cellpadding="0" cellspacing="0" border="0" style="margin: 0; background: #ffffff; padding: 10px; width: 100%;">
+            <table align="left" cellpadding="0" cellspacing="0" border="0" style="width: 100%; margin: 0; background: #ffffff; padding: 10px;">
                 <tbody>
                     <tr>
                         <td style="border: 0;" align="left" valign="top" border="0">
                             <div style="border-width: 0px; border-style: solid; border-radius: 0px; border-color: #ffffff;">
                                 <div class="email_header">
-                                    <table cellpadding="0" cellspacing="0" border="0" style="margin: 0; width: 100%;">
+                                    <table cellpadding="0" cellspacing="0" border="0" style="width: 100%; margin: 0;">
                                         <tbody>
                                             <tr>
                                                 <td align="left" valign="bottom" border="0" style="vertical-align: middle;">
@@ -37,7 +43,7 @@
                                     </table>
                                 </div>
                                 <div class="body-mail">
-                                    <table cellpadding="0" cellspacing="0" border="0" style="margin: 0; width: 100%;">
+                                    <table cellpadding="0" cellspacing="0" border="0" style="width: 100%; margin: 0;">
                                         <tbody>
                                             <tr>
                                                 <td align="left" valign="top" border="0">
@@ -64,6 +70,14 @@
                                                                     <span style="width: 50%; text-align: right; font-size: 14px; color: #343434;">
                                                                         {{ $name }}
                                                                     </span>
+                                                                </p>
+                                                            @endif
+                                                            @if (isset($content) && $content != '')
+                                                                <p style="margin: 0; padding: 15px 0; text-align: left; font-size: 14px; color: #343434;; font-weight: bold; border-bottom: 1px solid #f2f2f2;">
+                                                                    <b>@Lang('main.form.client_question'):</b>
+                                                                </p>
+                                                                <p style="display: flex; align-items: center; justify-content: space-between;font-size: 14px; margin: 0; padding: 10px 0; color: #343434; font-weight: 400; border-bottom: 1px solid #f2f2f2;">
+                                                                    {{ $content }}
                                                                 </p>
                                                             @endif
                                                             @if (isset($url) && $url != '')
@@ -155,5 +169,6 @@
                     </tr>
                 </tbody>
             </table>
+        </div>
     </body>
 </html>

@@ -267,6 +267,46 @@ $(document).ready( function() {
     // new-post-form end
 
     // Registration for a service
+    $(".do_appointment_form").click(function(e) {
+        e.stopPropagation();
+        e.preventDefault();
+        var formVal = $(this).closest('.appointment_form');
+        formAppointmentValidate(formVal);
+        formVal.submit();
+    });
+    function formAppointmentValidate(form) {
+        form.validate({
+            submitHandler: function(form) {
+              var csrf_token = $('meta[name="csrf-token"]').attr('content');
+              var formdata = $(form).serialize();
+              $(form)[0].reset();
+              $.ajax({
+                url: routes.postSend,
+                type: 'POST',
+                data: {
+                    "_token" : csrf_token,
+                    "data": formdata,
+                    "subj": "appointment"
+                },
+                success: function(data) {
+                    $(form).hide();
+                    $(form).next('.form-thanks').show();
+                    function hidePopup(){
+                        $.magnificPopup.close();
+                    }
+                    function showForm(){
+                        $(form).next('.form-thanks').hide();
+                        $(form).show();
+                    }
+                    setTimeout( hidePopup ,5000);
+                    setTimeout( showForm ,5000);
+                }
+              });
+            }
+        });
+    };
+
+    // Registration for a service
     $(".do_registration_form").click(function(e) {
         e.stopPropagation();
         e.preventDefault();
@@ -375,6 +415,9 @@ $(document).ready( function() {
                     "subj": "question"
                 },
                 success: function(data) {
+                    $('#question').find('.popup-sub-name').text();
+                    $('#question').find('input[name=appointment]').val('');
+                    $('.select-question').prop('selectedIndex', 0).selectric('refresh');
                     $(form).hide();
                     $(form).next('.form-thanks').show();
                     function hidePopup(){
@@ -391,5 +434,83 @@ $(document).ready( function() {
             }
         });
     }
+
+    $(".do_chekup_form").click(function(e) {
+        e.stopPropagation();
+        e.preventDefault();
+        var formVal = $(this).closest('.chekup_form');
+        formChekupValidate(formVal);
+        formVal.submit();
+    });
+    function formChekupValidate(form) {
+        form.validate({
+            submitHandler: function(form) {
+              var csrf_token = $('meta[name="csrf-token"]').attr('content');
+              var formdata = $(form).serialize();
+              $(form)[0].reset();
+              $.ajax({
+                url: routes.postSend,
+                type: 'POST',
+                data: {
+                    "_token" : csrf_token,
+                    "data": formdata,
+                    "subj": "chekup"
+                },
+                success: function(data) {
+                    $(form).hide();
+                    $(form).next('.form-thanks').show();
+                    function hidePopup(){
+                        $.magnificPopup.close();
+                    }
+                    function showForm(){
+                        $(form).next('.form-thanks').hide();
+                        $(form).show();
+                    }
+                    setTimeout( hidePopup ,5000);
+                    setTimeout( showForm ,5000);
+                }
+              });
+            }
+        });
+    };
+
+    $(".do_consultation_form").click(function(e) {
+        e.stopPropagation();
+        e.preventDefault();
+        var formVal = $(this).closest('.consultation_form');
+        formChekupValidate(formVal);
+        formVal.submit();
+    });
+    function formChekupValidate(form) {
+        form.validate({
+            submitHandler: function(form) {
+              var csrf_token = $('meta[name="csrf-token"]').attr('content');
+              var formdata = $(form).serialize();
+              $(form)[0].reset();
+              $.ajax({
+                url: routes.postSend,
+                type: 'POST',
+                data: {
+                    "_token" : csrf_token,
+                    "data": formdata,
+                    "subj": "consultation"
+                },
+                success: function(data) {
+                    $(form).hide();
+                    $(form).next('.form-thanks').show();
+                    function hidePopup(){
+                        $.magnificPopup.close();
+                    }
+                    function showForm(){
+                        $(form).next('.form-thanks').hide();
+                        $(form).show();
+                    }
+                    setTimeout( hidePopup ,5000);
+                    setTimeout( showForm ,5000);
+                }
+              });
+            }
+        });
+    };
 
 });

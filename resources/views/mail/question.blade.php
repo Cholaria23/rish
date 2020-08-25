@@ -94,6 +94,16 @@
                                                                     {{ $content }}
                                                                 </p>
                                                             @endif
+                                                            @if (isset($url) && $url != '')
+                                                                <p style="display: flex; align-items: center; justify-content: space-between;font-size: 14px; margin: 0; padding: 10px 0; color: #343434; font-weight: 400; border-bottom: 1px solid #f2f2f2;">
+                                                                    <span style="width: 50%; text-align: left; font-size: 14px; font-weight: bold; color: #343434;">
+                                                                        @Lang('main.form.url'):
+                                                                    </span>
+                                                                    <a href="{{route('first_url',[$url])}}" style="width: 50%; text-align: right; font-size: 14px; color: #343434; text-decoration: underline;">
+                                                                        {{$url_name}}
+                                                                    </a>
+                                                                </p>
+                                                            @endif
                                                         </div>
                                                     </div>
                                                 </td>
@@ -109,6 +119,11 @@
                                                     <div style="text-align: left; color: #343434; font-weight: 400; font-size:14px; font-family: Arial, sans-serif;">
                                                         <p style="margin: 0 0 15px 0; text-align: left; font-size: 14px; color: #343434;">
                                                             @lang('main.email.with_respect')
+                                                            @if(isset($form_type->lang_sender[App::getLocale()]) && $form_type->lang_sender[App::getLocale()] !='')
+                                                                {{$form_type->lang_sender[App::getLocale()]}}
+                                                            @else
+                                                                RISHON
+                                                            @endif
                                                         </p>
                                                         @if(isset(app('contacts')['main']['contacts']['phone_1']) && app('contacts')['main']['contacts']['phone_1'] != '')
                                                             <p style="margin: 0 0 5px 0; text-align: left; font-size: 14px; color: #343434;">

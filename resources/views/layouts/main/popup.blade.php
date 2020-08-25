@@ -24,6 +24,32 @@
 </div>
 
 
+<div class="mfp-hide popup-wrap mini" id="general_appointment">
+	<div class="popup-name-wrap">
+		<div class="popup-name">
+			@lang('main.btn.feedback')
+		</div>
+	</div>
+	<form method="post" class="appointment_form">
+        <div class="input-wrap">
+            <input class="input-form" type="tel" name="phone" placeholder="@lang('main.form.phone')*"  required>
+        </div>
+        <div class="input-wrap">
+            <input class="input-form" type="text" name="name" placeholder="@lang('main.form.name')">
+        </div>
+        <input type="hidden" name="url" value="{{Request::path()}}">
+        <input type="hidden" name="url_name" value="{{isset($page_title) && $page_title != '' ? $page_title : '' }}">
+        <input type="hidden" name="title" value="@lang('main.btn.feedback')">
+        <input type="hidden" name="lang" value="{{App::getLocale()}}">
+        <div class="popup-info-text">
+            @lang('main.form.required_text')
+        </div>
+        <button type="submit" class="btn-green do_appointment_form">@lang('main.btn.sign_up')</button>
+    </form>
+   <div class='form-thanks'>@lang('main.form.form_thanks')</div>
+</div>
+
+
 
 {{-- service registration --}}
 <div class="mfp-hide popup-wrap mini" id="appointment">
@@ -70,6 +96,7 @@
             <input class="input-form" type="email" name="email" placeholder="@lang('main.form.email')">
 	    </div>
 	    <input type="hidden" name="url" value="{{Request::path()}}">
+		<input type="hidden" name="url_name" value="{{isset($page_title) && $page_title != '' ? $page_title : '' }}">
 	    <input type="hidden" name="title" value="@lang('main.form.appointment')">
 	    <input type="hidden" name="appointment" value="">
 		<input type="hidden" name="specialist" value="">
@@ -196,6 +223,7 @@
 			</div>
 		</div>
 	    <input type="hidden" name="url" value="{{Request::path()}}">
+		<input type="hidden" name="url_name" value="{{isset($page_title) && $page_title != '' ? $page_title : '' }}">
 	    <input type="hidden" name="title" value="@lang('main.btn.question_specialist')">
 	    <input type="hidden" name="appointment" value="">
 	    <input type="hidden" name="lang" value="{{App::getLocale()}}">
@@ -207,7 +235,60 @@
 
 
 
-<div class="mfp-hide popup-wrap mini" id="test-modal">
+<div class="mfp-hide popup-wrap mini" id="chekup">
+	<div class="popup-name-wrap">
+		<div class="popup-name">
+			@lang('main.chekup')
+		</div>
+		<div class="popup-sub-name"></div>
+	</div>
+	<form method="post" class="chekup_form">
+	    <div class="input-wrap">
+            <input class="input-form" class="phone" type="tel" name="phone" placeholder="@lang('main.form.phone')" required>
+	    </div>
+	    <div class="input-wrap">
+            <input class="input-form" type="text" name="name" placeholder="@lang('main.form.name')">
+	    </div>
+	    <div class="input-wrap">
+            <input class="input-form" type="email" name="email" placeholder="@lang('main.form.email')">
+	    </div>
+	    <input type="hidden" name="url" value="{{Request::path()}}">
+	    <input type="hidden" name="title" value="@lang('main.chekup')">
+	    <input type="hidden" name="lang" value="{{App::getLocale()}}">
+	    <div class="popup-info-text">
+	        @lang('main.form.required_text')
+	    </div>
+	    <button type="submit" class="btn-green do_chekup_form">@lang('main.btn.sign_up')</button>
+	</form>
+	<div class='form-thanks'>@lang('main.form.form_thanks')</div>
+</div>
 
-	<div class="popup-close-js">Dismiss</div>
+<div class="mfp-hide popup-wrap mini" id="consultation">
+	<div class="popup-name-wrap">
+		<div class="popup-name">
+			@lang('main.consultation')
+		</div>
+		<div class="popup-sub-name"></div>
+	</div>
+	<form method="post" class="consultation_form">
+	    <div class="input-wrap">
+            <input class="input-form" class="phone" type="tel" name="phone" placeholder="@lang('main.form.phone')" required>
+	    </div>
+	    <div class="input-wrap">
+            <input class="input-form" type="text" name="name" placeholder="@lang('main.form.name')">
+	    </div>
+	    <div class="input-wrap">
+            <textarea class="input-form form-input-textarea" name="content" placeholder="@lang('main.form.your_question')"></textarea>
+	    </div>
+		<input type="hidden" name="url" value="{{Request::path()}}">
+		<input type="hidden" name="url_name" value="{{isset($page_title) && $page_title != '' ? $page_title : '' }}">
+	    <input type="hidden" name="url" value="{{Request::path()}}">
+	    <input type="hidden" name="title" value="@lang('main.consultation')">
+	    <input type="hidden" name="lang" value="{{App::getLocale()}}">
+	    <div class="popup-info-text">
+	        @lang('main.form.required_text')
+	    </div>
+	    <button type="submit" class="btn-green do_consultation_form">@lang('main.btn.sign_up')</button>
+	</form>
+	<div class='form-thanks'>@lang('main.form.form_thanks')</div>
 </div>

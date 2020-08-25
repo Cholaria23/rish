@@ -48,14 +48,18 @@
         display: block;
         margin-bottom: 25px;
     }
+    &.desktop {
+        max-width: 250px;
+    }
     .header-address-item {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         & + .header-address-item {
             margin-top: 8px;
         }
     }
     .header-address-icon {
+        padding-top: 2px;
         display: flex;
         width: 15px;
         margin-right: 12px;

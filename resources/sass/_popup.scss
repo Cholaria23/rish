@@ -1,7 +1,19 @@
 .mfp-close-btn-in .mfp-close {
-    display: none;
+    top: 10px;
+    right: 10px;
+    opacity: 1;
+    color: $main_color;
+    transition: .25s linear;
+    @media (max-width: 576px) {
+        top: 5px;
+        right: 5px;
+    }
+    &:hover {
+        color: $turquoise;
+    }
 }
 .popup-wrap {
+    position: relative;
     margin: 0 auto;
     padding: 85px;
     background: url(/img/light-bg.png) center center/cover no-repeat;
@@ -9,7 +21,7 @@
         padding: 50px;
     }
     @media (max-width: 576px) {
-        padding: 30px 15px;
+        padding: 50px 15px 30px;
     }
     &.mini {
         max-width: 570px;
@@ -67,9 +79,9 @@
                 @media (max-width: 768px) {
                     width: 100%;
                 }
-                .form-input-textarea {
-                    height: 105px;
-                }
+                // .form-input-textarea {
+                //     height: 105px;
+                // }
             }
         }
         .form-thanks {
@@ -105,5 +117,8 @@
         @media (max-width: 768px) {
             margin: 0 0 25px;
         }
+    }
+    .form-input-textarea {
+        height: 105px;
     }
 }

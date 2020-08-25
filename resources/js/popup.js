@@ -3,10 +3,6 @@ $(document).ready(function() {
     	$('.popup-js').magnificPopup({
     		fixedContentPos: true,
     	});
-
-    	// $(document).on('click', '.popup-close-js', function () {
-    	// 	$.magnificPopup.close();
-    	// });
     });
 
     $('.popup-js').click(function () {
@@ -34,9 +30,6 @@ $(document).ready(function() {
     });
 
     $('.question-btn-js').click(function () {
-        $('#question').find('.popup-sub-name').text();
-        $('#question').find('input[name=appointment]').val('');
-        $('.select-question').prop('selectedIndex', 0).selectric('refresh');
         var text = $(this).attr('data-subtitle');
         $('#question').find('.popup-sub-name').text(text);
         $('#question').find('input[name=appointment]').val(text);

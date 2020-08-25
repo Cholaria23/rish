@@ -88,7 +88,7 @@
 					@endif --}}
 
 					<div class="btn-wrap">
-						<a href="#test-modal" class="btn-green popup-js">
+						<a href="#consultation" class="btn-green popup-js">
 							@lang('main.sign_up_consultation')
 						</a>
 					</div>

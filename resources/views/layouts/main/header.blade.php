@@ -54,7 +54,7 @@
 							@lang('main.btn.callback')
 						</a>
 					</div>
-					<a class="btn-green-small popup-js desktop" href="#test-modal">
+					<a class="btn-green-small popup-js desktop" href="#general_appointment">
 						@lang('main.btn.feedback')
 					</a>
 					<button class="header-search-btn desktop" type="button">
@@ -99,7 +99,7 @@
 		<div class="container">
 			<div class="header-menu-wrap">
 				<div class="mobile-menu-top mobile">
-					<a class="btn-green-small popup-js" href="#test-modal">
+					<a class="btn-green-small popup-js" href="#general_appointment">
 						@lang('main.btn.feedback')
 					</a>
 					<form class="search-form" action="{{route('search')}}">

@@ -90,6 +90,9 @@
 								<div class="input-wrap">
 									<input class="input-form" type="tel" name="phone" placeholder="@lang('main.form.phone')" required>
 								</div>
+								<input type="hidden" name="url" value="{{Request::path()}}">
+						        <input type="hidden" name="url_name" value="{{isset($page_title) && $page_title != '' ? $page_title : '' }}">
+						        <input type="hidden" name="title" value="@lang('main.btn.feedback')">
 								<input type="hidden" name="lang" value="{{App::getLocale()}}">
 								<button type="submit" class="btn-green do_appointment_form">@lang('main.btn.sign_up')</button>
 							</form>
