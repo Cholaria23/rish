@@ -289,6 +289,10 @@ $(document).ready( function() {
                     "subj": "appointment"
                 },
                 success: function(data) {
+                    $('#appointment').find('.popup-sub-name').text();
+                    $('#appointment').find('input[name=appointment]').val('');
+                    $('#appointment').find('input[name=specialist]').val('');
+                    $('.select-appointment-specialist').prop('selectedIndex', 0).selectric('refresh');
                     $(form).hide();
                     $(form).next('.form-thanks').show();
                     function hidePopup(){

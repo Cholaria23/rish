@@ -17,10 +17,6 @@ $(document).ready(function() {
     });
 
     $('.appointment-btn-js').click(function () {
-        $('#appointment').find('.popup-sub-name').text();
-        $('#appointment').find('input[name=appointment]').val('');
-        $('#appointment').find('input[name=specialist]').val('');
-        $('.select-appointment-specialist').prop('selectedIndex', 0).selectric('refresh');
         var text = $(this).attr('data-subtitle');
         $('#appointment').find('.popup-sub-name').text(text);
         $('#appointment').find('input[name=appointment]').val(text);
