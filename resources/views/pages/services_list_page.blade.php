@@ -131,7 +131,7 @@
                         @endforeach
                     </div>
                     <div class="popup-btn-wrap">
-                        <a class="btn-light-green-small popup-js" href="#test-modal">
+                        <a class="btn-light-green-small popup-js question-btn-js" href="#question">
                             <span class="btn-light-green-small-icon">
                                 <svg width="19" height="19">
                                     <use xlink:href="#chat"></use>
@@ -139,7 +139,7 @@
                             </span>
                             @lang('main.btn.question_specialist')
                         </a>
-                        <a class="btn-green-small popup-js" href="#test-modal">
+                        <a class="btn-green-small popup-js appointment-btn-js" href="#appointment" data-subtitle="{{$cat->lang->name}}">
                             @lang('main.btn.make_appointment')
                         </a>
                     </div>
@@ -228,7 +228,7 @@
                     </div>
                     <div class="question-block-item">
 						<div class="question-form-wrap">
-							<form method="post" class="question_form">
+							<form method="post" class="callback_form">
                                 <div class="input-wrap">
                                     <input class="input-form" type="text" name="name" placeholder="@lang('main.form.name')">
                                 </div>
@@ -236,7 +236,9 @@
 									<input class="input-form" type="tel" name="phone" placeholder="@lang('main.form.phone')" required>
 								</div>
 								<input type="hidden" name="lang" value="{{App::getLocale()}}">
-								<button type="submit" class="btn-green do_question_form">@lang('main.btn.sign_up')</button>
+                                <input type="hidden" name="url" value="{{Request::path()}}">
+                                <input type="hidden" name="url_name" value="{{isset($page_title) && $page_title != '' ? $page_title : '' }}">
+								<button type="submit" class="btn-green do_callback_form">@lang('main.btn.call_me')</button>
 							</form>
 							<div class="form-thanks">
 								@lang('main.form.form_thanks')

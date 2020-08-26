@@ -3,10 +3,6 @@ $(document).ready(function() {
     	$('.popup-js').magnificPopup({
     		fixedContentPos: true,
     	});
-
-    	// $(document).on('click', '.popup-close-js', function () {
-    	// 	$.magnificPopup.close();
-    	// });
     });
 
     $('.popup-js').click(function () {
@@ -22,6 +18,11 @@ $(document).ready(function() {
         $('#appointment').find('input[name=appointment]').val(text);
     });
 
+    $(document).on('change', '.select-appointment-specialist', function(e) {
+        var selectAppointmentSpecialist = $(".select-appointment-specialist option:selected").text();
+        $('#appointment').find('input[name=specialist]').val(selectAppointmentSpecialist);
+    });
+
     $('.specialist-btn-js').click(function () {
         var text = $(this).attr('data-subtitle');
         $('#specialist').find('.popup-sub-name').text(text);
@@ -32,6 +33,11 @@ $(document).ready(function() {
         var text = $(this).attr('data-subtitle');
         $('#question').find('.popup-sub-name').text(text);
         $('#question').find('input[name=appointment]').val(text);
+    });
+
+    $(document).on('change', '.select-question', function(e) {
+        var selectQuestionText = $(".select-question option:selected").text();
+        $('#question').find('input[name=appointment]').val(selectQuestionText);
     });
 
 })

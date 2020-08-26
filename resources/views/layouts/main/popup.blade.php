@@ -24,6 +24,32 @@
 </div>
 
 
+<div class="mfp-hide popup-wrap mini" id="general_appointment">
+	<div class="popup-name-wrap">
+		<div class="popup-name">
+			@lang('main.btn.feedback')
+		</div>
+	</div>
+	<form method="post" class="appointment_form">
+        <div class="input-wrap">
+            <input class="input-form" type="tel" name="phone" placeholder="@lang('main.form.phone')*"  required>
+        </div>
+        <div class="input-wrap">
+            <input class="input-form" type="text" name="name" placeholder="@lang('main.form.name')">
+        </div>
+        <input type="hidden" name="url" value="{{Request::path()}}">
+        <input type="hidden" name="url_name" value="{{isset($page_title) && $page_title != '' ? $page_title : '' }}">
+        <input type="hidden" name="title" value="@lang('main.btn.feedback')">
+        <input type="hidden" name="lang" value="{{App::getLocale()}}">
+        <div class="popup-info-text">
+            @lang('main.form.required_text')
+        </div>
+        <button type="submit" class="btn-green do_appointment_form">@lang('main.btn.sign_up')</button>
+    </form>
+   <div class='form-thanks'>@lang('main.form.form_thanks')</div>
+</div>
+
+
 
 {{-- service registration --}}
 <div class="mfp-hide popup-wrap mini" id="appointment">
@@ -34,6 +60,32 @@
 		<div class="popup-sub-name"></div>
 	</div>
 	<form method="post" class="registration_form">
+		@if(isset($meta_type) && $meta_type == 'expert')
+			<input class="input-form" type="hidden" name="specialist_id" value="{{$expert->id}}">
+		@else
+			@if(isset($cat) && isset($cat->related_specialists) && $cat->related_specialists && isset($cat->related_specialists[1]) && isset($cat->related_specialists[1]['specialists']) && $cat->related_specialists[1]['specialists']->count() ||
+			isset($unit) && isset($unit->related_specialists) && $unit->related_specialists && isset($unit->related_specialists[2]) && isset($unit->related_specialists[2]['specialists']) && $unit->related_specialists[2]['specialists']->count() ||
+			isset($all_specialists) && $all_specialists && $all_specialists->count())
+				<div class="input-wrap">
+					<select class="selectric select-appointment-specialist" name="specialist_id">
+						<option value="">@lang('main.form.choose_specialist')</option>
+						@if(isset($cat) && isset($cat->related_specialists) && $cat->related_specialists && isset($cat->related_specialists[1]) && isset($cat->related_specialists[1]['specialists']) && $cat->related_specialists[1]['specialists']->count())
+							@foreach ($cat->related_specialists[1]['specialists'] as  $specialist_item)
+								<option value="{{$specialist_item->id}}">{{$specialist_item->lang->last_name}} {{$specialist_item->lang->first_name}} {{$specialist_item->lang->father_name}}</option>
+							@endforeach
+						@elseif(isset($unit) && isset($unit->related_specialists) && $unit->related_specialists && isset($unit->related_specialists[2]) && isset($unit->related_specialists[2]['specialists']) && $unit->related_specialists[2]['specialists']->count())
+							@foreach ($unit->related_specialists[2]['specialists'] as  $specialist_item)
+								<option value="{{$specialist_item->id}}">{{$specialist_item->lang->last_name}} {{$specialist_item->lang->first_name}} {{$specialist_item->lang->father_name}}</option>
+							@endforeach
+						@else
+							@foreach ($all_specialists as $specialist_item)
+								<option value="{{$specialist_item->id}}">{{$specialist_item->lang->last_name}} {{$specialist_item->lang->first_name}} {{$specialist_item->lang->father_name}}</option>
+							@endforeach
+						@endif
+					</select>
+				</div>
+			@endif
+		@endif
 	    <div class="input-wrap">
             <input class="input-form" class="phone" type="tel" name="phone" placeholder="@lang('main.form.phone')" required>
 	    </div>
@@ -44,8 +96,10 @@
             <input class="input-form" type="email" name="email" placeholder="@lang('main.form.email')">
 	    </div>
 	    <input type="hidden" name="url" value="{{Request::path()}}">
-	    <input type="hidden" name="title" value="@lang('main.form.registration')">
+		<input type="hidden" name="url_name" value="{{isset($page_title) && $page_title != '' ? $page_title : '' }}">
+	    <input type="hidden" name="title" value="@lang('main.form.appointment')">
 	    <input type="hidden" name="appointment" value="">
+		<input type="hidden" name="specialist" value="">
 	    <input type="hidden" name="lang" value="{{App::getLocale()}}">
 	    <div class="popup-info-text">
 	        @lang('main.form.required_text')
@@ -72,7 +126,33 @@
 	    </div>
 	    <div class="input-wrap">
             <input class="input-form" type="email" name="email" placeholder="@lang('main.form.email')">
-	    </div>
+		</div>
+		@if(isset($meta_type) && $meta_type == 'expert')
+			<input class="input-form" type="hidden" name="specialist_id" value="{{$expert->id}}">
+		@else
+			@if(isset($cat) && isset($cat->related_specialists) && $cat->related_specialists && isset($cat->related_specialists[1]) && isset($cat->related_specialists[1]['specialists']) && $cat->related_specialists[1]['specialists']->count() ||
+			isset($unit) && isset($unit->related_specialists) && $unit->related_specialists && isset($unit->related_specialists[2]) && isset($unit->related_specialists[2]['specialists']) && $unit->related_specialists[2]['specialists']->count() ||
+			isset($all_specialists) && $all_specialists && $all_specialists->count())
+				<div class="input-wrap">
+					<select class="selectric" name="specialist_id">
+						<option value="">@lang('main.form.choose_specialist')</option>
+						@if(isset($cat) && isset($cat->related_specialists) && $cat->related_specialists && isset($cat->related_specialists[1]) && isset($cat->related_specialists[1]['specialists']) && $cat->related_specialists[1]['specialists']->count())
+							@foreach ($cat->related_specialists[1]['specialists'] as  $specialist_item)
+								<option value="{{$specialist_item->id}}">{{$specialist_item->lang->last_name}} {{$specialist_item->lang->first_name}} {{$specialist_item->lang->father_name}}</option>
+							@endforeach
+						@elseif(isset($unit) && isset($unit->related_specialists) && $unit->related_specialists && isset($unit->related_specialists[2]) && isset($unit->related_specialists[2]['specialists']) && $unit->related_specialists[2]['specialists']->count())
+							@foreach ($unit->related_specialists[2]['specialists'] as  $specialist_item)
+								<option value="{{$specialist_item->id}}">{{$specialist_item->lang->last_name}} {{$specialist_item->lang->first_name}} {{$specialist_item->lang->father_name}}</option>
+							@endforeach
+						@else
+							@foreach ($all_specialists as $specialist_item)
+								<option value="{{$specialist_item->id}}">{{$specialist_item->lang->last_name}} {{$specialist_item->lang->first_name}} {{$specialist_item->lang->father_name}}</option>
+							@endforeach
+						@endif
+					</select>
+				</div>
+			@endif
+		@endif
 	    <input type="hidden" name="url" value="{{Request::path()}}">
 	    <input type="hidden" name="title" value="@lang('main.form.registration')">
 	    <input type="hidden" name="appointment" value="">
@@ -108,16 +188,32 @@
 				</div>
 			</div>
 			<div class="popup-textarea-wrap">
-
-				{{-- @if ($cat->id == '8') --}}
-					<div class="input-wrap">
-						<select class="selectric" name="specialist">
-							<option value="@lang('main.form.no_choose_specialist')">@lang('main.form.choose_specialist')</option>
-							<option value="value2">Значение 2</option>
-						</select>
-					</div>
-				{{-- @endif --}}
-
+				@if(isset($meta_type) && $meta_type == 'expert')
+					<input class="input-form" type="hidden" name="specialist_id" value="{{$expert->id}}">
+				@else
+					@if(isset($cat) && isset($cat->related_specialists) && $cat->related_specialists && isset($cat->related_specialists[1]) && isset($cat->related_specialists[1]['specialists']) && $cat->related_specialists[1]['specialists']->count() ||
+					isset($unit) && isset($unit->related_specialists) && $unit->related_specialists && isset($unit->related_specialists[2]) && isset($unit->related_specialists[2]['specialists']) && $unit->related_specialists[2]['specialists']->count() ||
+					isset($all_specialists) && $all_specialists && $all_specialists->count())
+						<div class="input-wrap">
+							<select class="selectric select-question" name="specialist_id">
+								<option value="">@lang('main.form.choose_specialist')</option>
+								@if(isset($cat) && isset($cat->related_specialists) && $cat->related_specialists && isset($cat->related_specialists[1]) && isset($cat->related_specialists[1]['specialists']) && $cat->related_specialists[1]['specialists']->count())
+									@foreach ($cat->related_specialists[1]['specialists'] as  $specialist_item)
+										<option value="{{$specialist_item->id}}">{{$specialist_item->lang->last_name}} {{$specialist_item->lang->first_name}} {{$specialist_item->lang->father_name}}</option>
+									@endforeach
+								@elseif(isset($unit) && isset($unit->related_specialists) && $unit->related_specialists && isset($unit->related_specialists[2]) && isset($unit->related_specialists[2]['specialists']) && $unit->related_specialists[2]['specialists']->count())
+									@foreach ($unit->related_specialists[2]['specialists'] as  $specialist_item)
+										<option value="{{$specialist_item->id}}">{{$specialist_item->lang->last_name}} {{$specialist_item->lang->first_name}} {{$specialist_item->lang->father_name}}</option>
+									@endforeach
+								@else
+									@foreach ($all_specialists as $specialist_item)
+										<option value="{{$specialist_item->id}}">{{$specialist_item->lang->last_name}} {{$specialist_item->lang->first_name}} {{$specialist_item->lang->father_name}}</option>
+									@endforeach
+								@endif
+							</select>
+						</div>
+					@endif
+				@endif
 				<div class="input-wrap">
 					<textarea class="input-form form-input-textarea" name="content" placeholder="@lang('main.form.your_question')*" required></textarea>
 				</div>
@@ -127,6 +223,7 @@
 			</div>
 		</div>
 	    <input type="hidden" name="url" value="{{Request::path()}}">
+		<input type="hidden" name="url_name" value="{{isset($page_title) && $page_title != '' ? $page_title : '' }}">
 	    <input type="hidden" name="title" value="@lang('main.btn.question_specialist')">
 	    <input type="hidden" name="appointment" value="">
 	    <input type="hidden" name="lang" value="{{App::getLocale()}}">
@@ -138,7 +235,60 @@
 
 
 
-<div class="mfp-hide popup-wrap mini" id="test-modal">
+<div class="mfp-hide popup-wrap mini" id="chekup">
+	<div class="popup-name-wrap">
+		<div class="popup-name">
+			@lang('main.chekup')
+		</div>
+		<div class="popup-sub-name"></div>
+	</div>
+	<form method="post" class="chekup_form">
+	    <div class="input-wrap">
+            <input class="input-form" class="phone" type="tel" name="phone" placeholder="@lang('main.form.phone')" required>
+	    </div>
+	    <div class="input-wrap">
+            <input class="input-form" type="text" name="name" placeholder="@lang('main.form.name')">
+	    </div>
+	    <div class="input-wrap">
+            <input class="input-form" type="email" name="email" placeholder="@lang('main.form.email')">
+	    </div>
+	    <input type="hidden" name="url" value="{{Request::path()}}">
+	    <input type="hidden" name="title" value="@lang('main.chekup')">
+	    <input type="hidden" name="lang" value="{{App::getLocale()}}">
+	    <div class="popup-info-text">
+	        @lang('main.form.required_text')
+	    </div>
+	    <button type="submit" class="btn-green do_chekup_form">@lang('main.btn.sign_up')</button>
+	</form>
+	<div class='form-thanks'>@lang('main.form.form_thanks')</div>
+</div>
 
-	<div class="popup-close-js">Dismiss</div>
+<div class="mfp-hide popup-wrap mini" id="consultation">
+	<div class="popup-name-wrap">
+		<div class="popup-name">
+			@lang('main.consultation')
+		</div>
+		<div class="popup-sub-name"></div>
+	</div>
+	<form method="post" class="consultation_form">
+	    <div class="input-wrap">
+            <input class="input-form" class="phone" type="tel" name="phone" placeholder="@lang('main.form.phone')" required>
+	    </div>
+	    <div class="input-wrap">
+            <input class="input-form" type="text" name="name" placeholder="@lang('main.form.name')">
+	    </div>
+	    <div class="input-wrap">
+            <textarea class="input-form form-input-textarea" name="content" placeholder="@lang('main.form.your_question')"></textarea>
+	    </div>
+		<input type="hidden" name="url" value="{{Request::path()}}">
+		<input type="hidden" name="url_name" value="{{isset($page_title) && $page_title != '' ? $page_title : '' }}">
+	    <input type="hidden" name="url" value="{{Request::path()}}">
+	    <input type="hidden" name="title" value="@lang('main.consultation')">
+	    <input type="hidden" name="lang" value="{{App::getLocale()}}">
+	    <div class="popup-info-text">
+	        @lang('main.form.required_text')
+	    </div>
+	    <button type="submit" class="btn-green do_consultation_form">@lang('main.btn.sign_up')</button>
+	</form>
+	<div class='form-thanks'>@lang('main.form.form_thanks')</div>
 </div>

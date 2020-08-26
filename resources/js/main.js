@@ -75,6 +75,24 @@ function initSearchTabs() {
 }
 
 $(document).ready(function() {
+    $('.burger-menu').on('click', function() {
+       $('.menu__icon').toggleClass('open');
+       $('.header-menu').toggleClass('open');
+       $('body').toggleClass('overflow');
+       $('html').toggleClass('not-overflow');
+   });
+
+   $(document).on('click', '.header-menu.open', function() {
+       $('.menu__icon').removeClass('open');
+       $('.header-menu').removeClass('open');
+       $('body').removeClass('overflow');
+       $('html').removeClass('not-overflow');
+   });
+
+   $('.header-menu-wrap').on('click', function(e) {
+       e.stopPropagation();
+   })
+
     ///admin img
     var adminImg = document.querySelectorAll(".description");
     if (adminImg) {

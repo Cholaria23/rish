@@ -7,5 +7,5 @@
             {!!$checkup->lang->short_desc_1!!}
         </div>
     @endif
-    <a class="btn-green" href="{{build_unit_route($checkup)}}">@lang('main.btn.sign_up')</a>
+    <a class="btn-green popup-js" href="#chekup">@lang('main.btn.sign_up')</a>
 @endif

@@ -136,6 +136,12 @@
                 @media (max-width: 768px) {
                     max-width: 241px;
                 }
+                @media (max-width: 576px) {
+                    max-width: 40%;
+                }
+                @media (max-width: 400px) {
+                    max-width: 60%;
+                }
             }
         }
         &.big {
@@ -166,7 +172,13 @@
                 left: 50%;
                 transform: translate(-50%, -50%);
                 @media (max-width: 768px) {
-                    max-width: 354px;
+                    max-width: 45%;
+                }
+                @media (max-width: 576px) {
+                    max-width: 55%;
+                }
+                @media (max-width: 400px) {
+                    max-width: 75%;
                 }
             }
         }

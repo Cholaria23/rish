@@ -208,7 +208,7 @@ class PageController extends Controller {
                 $view = 'pages.reviews';
             } elseif($unit->id == 79) {
                 if($this->request->has('search') && $this->request->get('search') != '') {
-                    $search = substr(strtolower($this->request->get('search')),0,-1);
+                    $search = strtolower($this->request->get('search'));
                     $result_specialists_ids =[];
 
                     $specialists = Specialist::with('lang')->where('is_hidden', 0)->whereHas('lang', function($query) use ($search) {

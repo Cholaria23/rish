@@ -74,6 +74,11 @@
                                                     <div style="text-align: left; color: #343434; font-weight: 400; font-size:14px; font-family: Arial, sans-serif;">
                                                         <p style="margin: 0 0 15px 0; text-align: left; font-size: 14px; color: #343434;">
                                                             @lang('main.email.with_respect')
+                                                            @if(isset($form_type->lang_sender[App::getLocale()]) && $form_type->lang_sender[App::getLocale()] !='')
+                                                                {{$form_type->lang_sender[App::getLocale()]}}
+                                                            @else
+                                                                RISHON
+                                                            @endif
                                                         </p>
                                                         @if(isset(app('contacts')['main']['contacts']['phone_1']) && app('contacts')['main']['contacts']['phone_1'] != '')
                                                             <p style="margin: 0 0 5px 0; text-align: left; font-size: 14px; color: #343434;">
