@@ -513,4 +513,40 @@ $(document).ready( function() {
         });
     };
 
+
+
+    $('.online-consultation-form').validate({
+        submitHandler: function(form) {
+            var csrf_token = $('meta[name="csrf-token"]').attr('content');
+            var formdata = $('.online-consultation-form').serialize();
+            $('.online-consultation-form')[0].reset();
+            $.ajax({
+                url: routes.postSend,
+                type: 'POST',
+                data: {
+                    "_token" : csrf_token,
+                    "data": formdata,
+                    "subj": "onlinereview"
+                },
+                success: function(data) {
+                    $('.online-consultation-form').hide();
+                    $('.online-consultation-form').next('.form-thanks').show();
+                    function showForm(){
+                        $('.online-consultation-form').next('.form-thanks').hide();
+                        $('.online-consultation-form').show();
+                    }
+                    setTimeout( showForm ,5000);
+                }
+            })
+        }
+    });
+
+    $(".do-online-consultation").click(function(e) {
+        e.stopPropagation();
+        e.preventDefault();
+        var formVal = $(this).closest('.online-consultation-form');
+        formValidateNewPost(formVal);
+        formVal.submit();
+    });
+
 });

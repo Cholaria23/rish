@@ -75,6 +75,7 @@ function initSearchTabs() {
 }
 
 $(document).ready(function() {
+
     $('.burger-menu').on('click', function() {
        $('.menu__icon').toggleClass('open');
        $('.header-menu').toggleClass('open');

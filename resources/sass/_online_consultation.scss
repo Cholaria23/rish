@@ -1,0 +1,24 @@
+.online-consultation-wrap {
+    margin: 0 auto;
+    padding: 0 15px;
+    max-width: 400px;
+    .input-wrap {
+        margin-bottom: 0;
+        & + .input-wrap {
+            margin-top: 20px;
+        }
+    }
+    .input-name {
+        margin: 15px 0 5px;
+    }
+    .input-form {
+        border: 1px solid $l_grey;
+    }
+    .popup-info-text {
+        margin: 20px 0;
+    }
+    .btn-green {
+        margin: 0 auto;
+        display: block;
+    }
+}
