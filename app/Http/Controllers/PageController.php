@@ -184,6 +184,8 @@ class PageController extends Controller {
                 $view = 'pages.actions_page';
             } elseif($unit->cat_id == 7) {
                 $view = 'pages.equipment_page';
+            } elseif($unit->id == 5) {
+                $view = 'pages.online_consultation';
             } elseif($unit->id == 3) {
                 $specialist = Unit::with('lang')->where('is_hidden',0)->find(79);
                 $specialists = Specialist::with('lang')->where('is_hidden',0)->where('is_top',1)->where('is_block',0)->orderBy('sort_order','desc')->limit(4)->get();
