@@ -192,6 +192,13 @@
 							</a>
 						</li>
 					@endif
+					@if(isset($header_data['online_consultation']) && $header_data['online_consultation'])
+						<li class="header-menu-item mobile">
+							<a class="header-menu-link" href="{{build_unit_route($header_data['online_consultation'])}}">
+								{{$header_data['online_consultation']->lang->name}}
+							</a>
+						</li>
+					@endif
 					<li class="header-menu-item has-submenu desktop">
 						<span class="header-menu-link">
 							<span class="has-submenu-text">
@@ -237,6 +244,13 @@
 									<li class="header-menu-item">
 										<a class="header-menu-link" href="{{build_cat_route($header_data['prices']->alias)}}">
 											{{$header_data['prices']->lang->name}}
+										</a>
+									</li>
+								@endif
+								@if(isset($header_data['online_consultation']) && $header_data['online_consultation'])
+									<li class="header-menu-item">
+										<a class="header-menu-link" href="{{build_unit_route($header_data['online_consultation'])}}">
+											{{$header_data['online_consultation']->lang->name}}
 										</a>
 									</li>
 								@endif

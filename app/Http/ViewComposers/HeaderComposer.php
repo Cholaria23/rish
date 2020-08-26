@@ -9,7 +9,8 @@ class HeaderComposer {
         $checkup = \Demos\AdminPanel\Unit::with('lang')->where('is_hidden',0)->find(6);
         $contacts = \Demos\AdminPanel\Unit::with('lang')->where('is_hidden',0)->find(2);
         $reviews = \Demos\AdminPanel\Unit::with('lang')->where('is_hidden',0)->find(4);
-
+        $online_consultation = \Demos\AdminPanel\Unit::with('lang')->where('is_hidden',0)->find(5);
+        
         $actions = \Demos\AdminPanel\Cat::with('lang')->where('is_hidden',0)->find(17);
         $specialists = \Demos\AdminPanel\Cat::with('lang')->where('is_hidden',0)->find(5);
         $equipment = \Demos\AdminPanel\Cat::with('lang')->where('is_hidden',0)->find(7);
@@ -29,12 +30,13 @@ class HeaderComposer {
             ])->where('is_hidden',0)->find(4);
 
         $prices = \Demos\Market\MarketCat::with('lang')->where('is_hidden',0)->find(2);
-        
+
     	$header_data = [
             'about_company' => $about_company,
             'checkup' => $checkup,
             'contacts' => $contacts,
             'reviews' => $reviews,
+            'online_consultation' => $online_consultation,
             'actions' => $actions,
             'specialists' => $specialists,
             'equipment' => $equipment,
@@ -42,6 +44,6 @@ class HeaderComposer {
             'services' => $services,
             'prices' => $prices,
         ];
-        $view->with('header_data', $header_data);        
+        $view->with('header_data', $header_data);
     }
 }
