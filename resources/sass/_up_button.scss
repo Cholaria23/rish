@@ -1,0 +1,33 @@
+.up_button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: -100px;
+    right: 15px;
+    width: 65px;
+    height: 65px;
+    z-index: 2;
+    background-color: $white;
+    border: 3px solid $grey;
+    border-radius: 50%;
+    visibility: hidden;
+    transition: all 0.25s linear;
+    @media (max-width: 1366px) {
+        width: 45px;
+        height: 45px;
+    }
+    &.visible {
+        visibility: visible;
+        bottom: 30px;
+        transition: all 0.25s linear;
+        &:hover {
+            border: 3px solid $turquoise;
+            cursor: pointer;
+        }
+    }
+    & svg {
+        width: 21px;
+        height: 13px;
+    }
+}

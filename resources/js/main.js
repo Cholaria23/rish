@@ -76,6 +76,12 @@ function initSearchTabs() {
 
 $(document).ready(function() {
 
+    // scrollTop
+    $('.up_button').click(function(){
+        $("html, body").animate({ scrollTop: 0 }, 1000);
+        return false;
+    });
+
     $('.burger-menu').on('click', function() {
        $('.menu__icon').toggleClass('open');
        $('.header-menu').toggleClass('open');
@@ -315,4 +321,14 @@ $(window).on('load resize', function() {
         }
     }
 
+});
+
+
+// scroll-btn
+$(window).on('load scroll', function(){
+    if ($(this).scrollTop() > 100) {
+         $('.up_button').addClass("visible").fadeIn();
+    } else {
+         $('.up_button').removeClass("visible").fadeOut();
+    };
 });

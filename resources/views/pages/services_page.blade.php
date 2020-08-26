@@ -179,7 +179,7 @@
 		@endif
 
 		@if(isset($unit->related_specialists) && $unit->related_specialists && isset($unit->related_specialists[2]) && isset($unit->related_specialists[2]['specialists']) && $unit->related_specialists[2]['specialists']->count())
-			<section class="main-section specialists">
+			<section class="main-section">
     			<div class="container">
                     <div class="page-section-title-bold">
                         @lang('main.our_specialists')

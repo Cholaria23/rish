@@ -118,7 +118,7 @@
         @endif
 
         @if(isset($cat->related_specialists) && $cat->related_specialists && isset($cat->related_specialists[1]) && isset($cat->related_specialists[1]['specialists']) && $cat->related_specialists[1]['specialists']->count())
-            <section class="main-section specialists">
+            <section class="main-section">
     			<div class="container">
                     <div class="page-section-title-bold">
                         @lang('main.our_specialists')
