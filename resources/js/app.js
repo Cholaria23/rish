@@ -29,5 +29,7 @@ require('./sliders');
 require('./popup');
 // form
 require('./form');
+// air-datepicker
+require('./air-datepicker');
 // main
 require('./main');

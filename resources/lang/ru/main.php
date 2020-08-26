@@ -131,4 +131,11 @@ return [
     "subscribу_newsletter" => "Спасибо, что подписались на рассылку сайта медицинского центра RISHON",
     "chekup" => "Запись на чекап",
     "consultation" => "Записаться на консультацию",
+    "fio" => "ФИО",
+    "year_birth" => "Год рождения",
+    "data" => "дд.мм.гггг",
+    "data_text" => "Дата",
+    "consultation_platform" => "Платформа для консультации",
+    "messenger" => "Вайбер, Скайп",
+    "sign_up_online_consultation" => "Запись на онлайн консультацию",
 ];

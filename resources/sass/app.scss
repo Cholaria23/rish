@@ -10,8 +10,8 @@
 @import "~selectric/src/selectric.scss";
 // magnific-popup
 @import "~magnific-popup/dist/magnific-popup.css";
-// lightcase
-// @import "~lightcase/src/css/lightcase.css";
+// air-datepicker
+@import "~air-datepicker/dist/css/datepicker.css";
 // malihu
 @import "~malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css";
 // default_style
@@ -44,5 +44,7 @@
 @import "footer";
 // error_page
 @import "error_page";
+// online_consultation
+@import "online_consultation";
 // popup
 @import "popup";
