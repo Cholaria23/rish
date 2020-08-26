@@ -1298,7 +1298,6 @@ class ServiceController extends Controller {
         parse_str($data_req, $data);
 		try {
 			if ( Auth::guard('web')->attempt(array('email' => $data['email'], 'password' => $data['password'])) ) {
-				$this->updateLoginCart();
 				return Response::make("success", 200);
 			} else {
 				return Response::make("wrong_pass", 200);
@@ -1314,9 +1313,6 @@ class ServiceController extends Controller {
     public function postLogout() {
 		try {
 			Auth::logout();
-			if(Cart::getTotalQuantity()){
-				$this->updateLoginCart();
-			}
 		} catch (Exception $e) {
 			return Response::make($e->getMessage(), 500);
 		}
@@ -1390,60 +1386,6 @@ class ServiceController extends Controller {
 			);
 		}
 		return Response::make(json_encode($response), 200);
-	}
-
-	public function updateLoginCart () {
-		\Log::info('___updateLoginCart in');
-		try {
-			if(Auth::guard('web')->check()){
-				$user = User::find(Auth::guard('web')->user()->id);
-			}
-		
-			$cart = Cart::getContent();
-			Cart::clear();
-			if($cart->count()){
-				foreach($cart as $item_cart){
-					$good = Good::with('lang')->findOrFail($item_cart['id']);
-					if ($item_cart->id == $good->id) {
-						$good->quantity = $item_cart->quantity;
-						$good->rowid = $item_cart->rowid;
-						$good->subtotal = $item_cart->getPriceSum();
-					}
-					$gift_ids = [];
-
-            		$gift_arr = [];
-			
-					if ($good->c_action_price && $good->c_action_price != 0 && $good->c_action_price <$good->c_price){
-						$price = $good->c_action_price;
-					}else{
-						$price = $good->c_price;
-					}
-
-					$new_cart = array(
-						'id' => $good->id,
-						'quantity' => $good->quantity > 0 ? $good->quantity : 1,
-						'name' => $good->lang->name,
-						'price' => $price,
-						'attributes' => array(
-							'img' =>  $good->img_1 != '' ? $good->img_1 : '',
-							'alias' => $good->alias != '' ? $good->alias : '',
-							'article' => $good->article != '' ? $good->article : '',
-							'name_cat' => $good->category->lang->name,
-							'code' => $good->code != '' ? $good->code : '',
-							'c_price' => $good->c_price,
-							'c_action_price' => $good->c_action_price,
-							'gift_arr' => $gift_arr,
-							)
-						);
-							
-					Cart::add($new_cart);
-				}
-			}
-		} catch (Exception $e) {
-			\Log::info('___updateLoginCart '.$e->getMessage().' Line: '. $e->getLine());
-			return Response::make($e->getMessage(), 500);
-		}
-		\Log::info('___updateLoginCart out');
 	}
 
 	public function postTypeahead () {

@@ -302,4 +302,5 @@
 			</div>
 		</div>
 	</div>
+	@include('layouts.main.header_login')
 </header>

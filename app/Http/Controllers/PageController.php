@@ -525,12 +525,12 @@ class PageController extends Controller {
     }
 
     public function getCabinet () {
-
+        
         if (Auth::guard('web')->check()) {
             View::share('page_title', Lang::get("cabinet.page_title"));
             $id = Auth::guard('web')->user()->id;
             $user = \Demos\AdminPanel\User::find($id);
-
+ 
             $orders_query = Order::orderBy('created_at', 'desc')->with('status', 'goods.lang');
             if($user){
                 $orders_query->where(function($query) use ($user){
@@ -542,26 +542,26 @@ class PageController extends Controller {
                     if ($search_phone != ''){
                         $query->orWhere('phone', 'LIKE', "%".$search_phone."%");
                     }
-
+ 
                     $search_phone = preg_replace( '/[^0-9]/', '', "%".$user->phone_2."%");
                     if ($search_phone != ''){
                         $query->orWhere('phone', 'LIKE', "%".$search_phone."%");
                     }
-
+ 
                 });
             }
-            $user->orders = $orders_query->get();
+            $user->orders = $orders_query->get(); 
             $page_data = [
                 'user' => $user,
             ];
-
+ 
             $view = 'pages.cabinet.cabinet_page';
             return View::make($view, $page_data);
         } else {
             return Redirect::to('./');
         }
-
-
+ 
+ 
     }
 
     public function calculate_visitors(Unit $unit) {
