@@ -187,6 +187,14 @@ class PageController extends Controller {
                 $page_data['rel_service_cats'] = $rel_service_cats;
                 $page_data['rel_service_units'] = $rel_service_units;
                 $view = 'pages.actions_page';
+            } elseif($unit->id == 6) {
+                $view = 'pages.checkup_page';
+
+                $checkup_info = Unit::with('lang')->whereHas('category', function($query){
+                    $query->where('cat_id', 41);
+                })->where('is_hidden',0)->whereRaw('IF (is_period = 1, start < NOW(),  1=1 )')->whereRaw('IF (is_period = 1,  (end > NOW() || end is null),  1=1)')->orderBy('sort_order','desc')->get();
+                $page_data['checkup_info'] = $checkup_info;
+
             } elseif($unit->cat_id == 7) {
                 $view = 'pages.equipment_page';
             } elseif($unit->id == 5) {
