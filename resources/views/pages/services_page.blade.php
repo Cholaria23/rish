@@ -64,7 +64,7 @@
 							@endif
 							@if(!empty($unit->related_goods))
 									@php
-										$k = $i;
+										$k = 0;
 									@endphp
 									@foreach ($unit->related_goods as $good)
 										@php
@@ -78,7 +78,7 @@
 									@endforeach
 
 							@endif
-							
+
 						</ul>
 					@endif
 					@if (isset($i) && $i > 5 || isset($k) && $k > 5)

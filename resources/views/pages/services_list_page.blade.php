@@ -61,7 +61,7 @@
                             @endforeach
                         @endif
                         @php
-							$k = $i;
+							$k = 0;
 						@endphp
                         @foreach ($cat->related_goods as $good)
                             @php

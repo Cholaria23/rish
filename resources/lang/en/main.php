@@ -138,4 +138,14 @@ return [
     "consultation_platform" => "Consultation platform",
     "messenger" => "Viber, Skype",
     "sign_up_online_consultation" => "Sign up for an online consultation",
+    'emails' => [
+      'order_done' => 'Your order has been accepted for processing',
+      'saccess_reg' => 'You have successfully registered on ',
+      'pass' => 'Your password',
+      'link_cabinet' => 'Link to enter your personal account',
+      'change_pass' => 'You can change the password in',
+      'personal_office' => 'personal account',
+      'requested_rest' => 'You have requested to restore access to the site',
+      'requested_rest_show' => 'Restoring access to the site',
+    ],
 ];

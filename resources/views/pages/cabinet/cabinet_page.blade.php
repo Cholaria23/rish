@@ -2,155 +2,109 @@
 
 @section('page')
     <div class="cabinet-page section-cabinet">
-        <div class="page-bg">
-          <div class="container unit-bg-container">
-            <div class="unit-nav unit-nav--center">@include('layouts.main.breadcrumbs')</div>
-            <h1 class="page__title page-title--cat center-block">@lang('cabinet.page_title')</h1>
-          </div>
-        </div>
-        <div class="page-padding unit-pad unit-pad--item">
-            <div class="cab-container">
-                  <div class="tabs-container">
-                    <ul id='myTab' class="tabs">
-                    <li class="tab_nav tab-link" data-tab="wish_lists">
-                        <a data-section='wish_lists' class='tab_a' href='#tab_wish_lists'>
-                          @lang('cabinet.tab_menu.wish_lists')
-                          <span class='pull-right'></span>
-                        </a>
-                        <svg class="flex-svg" >
-                          <use xlink:href="#more-icon"></use>
-                        </svg>
-                      </li>
-                      <li class="tab_nav tab-link" data-tab="orders">
-                        <a data-section='orders' class='tab_a' href='#tab_orders'>
-                          @lang('cabinet.tab_menu.my_orders')
-                        </a>
-                        <svg class="flex-svg">
-                          <use xlink:href="#more-icon"></use>
-                        </svg>
-                      </li>
-                      <li class="tab_nav tab-link" data-tab="personal_data">
-                        <a data-section='personal_data' class='tab_a' href='#tab_personal_data'>
-                          @lang('cabinet.tab_menu.personal_data')
-                        </a>
-                        <svg class="flex-svg">
-                          <use xlink:href="#more-icon"></use>
-                        </svg>
-                      </li>
-                      {{-- <li class="tab_nav tab-link" data-tab="entity_data">
-                        <a data-section='entity_data' class='tab_a' href='#'>
-                          @lang('main.entity.entity_title')
-                        </a>
-                        <svg class="flex-svg" width="19" height="19">
-                          <use xlink:href="#more-icon"></use>
-                        </svg>
-                      </li> --}}
-                       {{-- <li class="tab_nav tab-link" data-tab="subscribe">
-                        <a data-section='subscribe' class='tab_a' href='#'>
-                          @lang('cabinet.personal_data.subscription')
-                          <span class='pull-right'></span>
-                        </a>
-                        <svg class="flex-svg" width="19" height="19">
-                          <use xlink:href="#more-icon"></use>
-                        </svg>
-                      </li> --}}
-                      {{-- <li class="tab_nav tab-link" data-tab="viewed_goods">
-                        <a data-section='viewed_goods' class='tab_a' href='#'>
-                          @lang('cabinet.personal_data.viewed_two')
-                        </a>
-                        <svg class="flex-svg" width="19" height="19">
-                          <use xlink:href="#more-icon"></use>
-                        </svg>
-                      </li> --}}
-
-                      {{-- <li class="tab_nav tab-link" data-tab="password">
-                        <a data-section='password' class='tab_a' href='#'>
-                          @lang('cabinet.tab_menu.reset_password')
-                        </a>
-                      </li> --}}
-                      <li class="tab_logout">
-                        <a href="" class="cabinet-link a-logout">
-                          @lang('cabinet.logout')
-                        </a>
-                      </li>
-                    </ul>
-                    <div class="tab_logout tab_logout--mobile">
-                      <a href="" class="cabinet-link a-logout">
-                        @lang('cabinet.logout')
-                      </a>
-                    </div>
-                    <div class="tab-content-wrap">
-                      <div class="accordion-link tab_nav" data-accord="personal_data">
-                        <div data-section='personal_data' class='tab_a'>
-                          @lang('cabinet.tab_menu.personal_data')
-                          <svg class="flex-svg">
-                            <use xlink:href="#more-icon"></use>
-                          </svg>
+        @include('layouts.main.breadcrumbs')
+        <div class="container">
+            <div class="page-section-top-title">
+                @lang('cabinet.page_title')
+            </div>
+            <section class="main-section">
+                <div class="cabinet-tab-wrap">
+                    <div class="tabs-container">
+                        <ul id='myTab' class="cabinet-tabs">
+                            <li class="tab_nav tab-link" data-tab="wish_lists">
+                                <a data-section='wish_lists' class='tab_a' href='#tab_wish_lists'>
+                                    @lang('cabinet.tab_menu.wish_lists')
+                                    <span class='pull-right'></span>
+                                </a>
+                                <svg class="flex-svg" >
+                                    <use xlink:href="#more-icon"></use>
+                                </svg>
+                            </li>
+                            <li class="tab_nav tab-link" data-tab="personal_data">
+                                <a data-section='personal_data' class='tab_a' href='#tab_personal_data'>
+                                    @lang('cabinet.tab_menu.personal_data')
+                                </a>
+                                <svg class="flex-svg">
+                                    <use xlink:href="#more-icon"></use>
+                                </svg>
+                            </li>
+                            <li class="tab_logout">
+                                <a href="" class="cabinet-link a-logout">
+                                    @lang('cabinet.logout')
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="tab_logout tab_logout--mobile">
+                            <a href="" class="cabinet-link a-logout">
+                                @lang('cabinet.logout')
+                            </a>
                         </div>
-                      </div>
-                      <div class="tab-content" data-id="personal_data" >
-                        {{-- Персональные данные  --}}
-                          @include('pages.cabinet.personal_data')
-                        {{--Персональные данные  --}}
-                      </div>
-                      <div class="accordion-link tab_nav" data-accord="wish_lists">
-                          <div data-section='wish_lists' class='tab_a'>
-                            @lang('cabinet.tab_menu.wish_lists')
-                            <svg class="flex-svg">
-                              <use xlink:href="#more-icon"></use>
-                            </svg>
-                          </div>
-                        </div>
-                        <div class="tab-content" data-id="wish_lists" >
-                          {{--Список желаний --}}
-                           @include('pages.cabinet.wish_list')
-                          {{--Список желаний --}}
-                        </div>
-                        <div class="accordion-link tab_nav" data-accord="orders">
-                          <div data-section='orders' class='tab_a'>
+                        <div class="tab-content-wrap">
+                            <div class="accordion-link tab_nav" data-accord="personal_data">
+                                <div data-section='personal_data' class='tab_a'>
+                                    @lang('cabinet.tab_menu.personal_data')
+                                    <svg class="flex-svg">
+                                        <use xlink:href="#more-icon"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="tab-content" data-id="personal_data" >
+                                {{-- Персональные данные  --}}
+                                @include('pages.cabinet.personal_data')
+                                {{--Персональные данные  --}}
+                            </div>
+                            <div class="accordion-link tab_nav" data-accord="wish_lists">
+                                <div data-section='wish_lists' class='tab_a'>
+                                    @lang('cabinet.tab_menu.wish_lists')
+                                    <svg class="flex-svg">
+                                        <use xlink:href="#more-icon"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="tab-content" data-id="wish_lists" >
+                                {{--Список желаний --}}
+                                @include('pages.cabinet.wish_list')
+                                {{--Список желаний --}}
+                            </div>
+                            {{-- <div class="accordion-link tab_nav" data-accord="orders">
+                            <div data-section='orders' class='tab_a'>
                             @lang('cabinet.tab_menu.my_orders')
                             <svg class="flex-svg">
-                              <use xlink:href="#more-icon"></use>
-                            </svg>
-                          </div>
-                        </div>
-                        <div class="tab-content" data-id="orders" >
-                          {{-- Мои заказы --}}
-                              @include('pages.cabinet.my_orders')
-                          {{-- Мои заказы --}}
-                        </div>
-
-                      <!-- <div class="accordion-link tab_nav" data-accord="viewed_goods">
-                        <div data-section='viewed_goods' class='tab_a'>
-                          @lang('cabinet.tab_menu.viewed_two')
-                          <svg class="flex-svg" width="19" height="19">
                             <use xlink:href="#more-icon"></use>
-                          </svg>
+                        </svg>
                         </div>
-                      </div>
-                      <div class="tab-content" id="viewed_goods" >
+                        </div> --}}
+                        <div class="tab-content" data-id="orders" >
+                            {{-- Мои заказы --}}
+                            @include('pages.cabinet.my_orders')
+                            {{-- Мои заказы --}}
+                        </div>
+                        <!-- <div class="accordion-link tab_nav" data-accord="viewed_goods">
+                        <div data-section='viewed_goods' class='tab_a'>
+                        @lang('cabinet.tab_menu.viewed_two')
+                        <svg class="flex-svg" width="19" height="19">
+                        <use xlink:href="#more-icon"></use>
+                        </svg>
+                        </div>
+                        </div>
+                        <div class="tab-content" id="viewed_goods" >
                         {{--Просмотренные товары  --}}
-                            {{--  @include('pages.cabinet.viewed_goods') --}}
+                        {{--  @include('pages.cabinet.viewed_goods') --}}
                         {{--Просмотренные товары  --}}
-                      </div> -->
-
-
+                        </div> -->
+                        </div>
                     </div>
-                  </div>
                 </div>
+            </section>
         </div>
     </div>
 @stop
 @section('links')
-  <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}" />
-  <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap-theme.min.css') }}" />
-  <link rel="stylesheet" type="text/css" href="{{ asset('css/alertify.core.css') }}" />
-  <link rel="stylesheet" type="text/css" href="{{ asset('css/alertify.default.css') }}" />
-  <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap-editable.css') }}" />
-  {{-- <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap-switch.min.css') }}" />
-  <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap_client.min.css') }}" /> --}}
-  {{-- <link rel="stylesheet" type="text/css" href="{{ asset('css/cabinet.css') }}" /> --}}
-
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css" />
+  <link rel="stylesheet" type="text/css" href="css/alertify.core.css" />
+  <link rel="stylesheet" type="text/css" href="css/alertify.default.css" />
+  <link rel="stylesheet" type="text/css" href="css/bootstrap-editable.css" />
   <style type="text/css">
         .editable-empty { color: #999; }
         .editable-empty:hover { color: #666; }
@@ -164,8 +118,8 @@
         });
 
         function initTabs_to_accordeon() {
-          if($('.tabs').length) {
-            $('.tabs').each(function() {
+          if($('.cabinet-tabs').length) {
+            $('.cabinet-tabs').each(function() {
               var active_tab = $(this).find('.tab-link').first();
               var tabs_container = $(this).closest('.tabs-container');
               var selectTab = active_tab.attr('data-tab');
@@ -175,10 +129,10 @@
               $(".accordion-link[data-accord^='" + selectTab + "']").addClass("active");
             });
 
-            $('.tabs li').click(function(e) {
+            $('.cabinet-tabs li').click(function(e) {
               var parent = $(this).closest('.tabs-container');
               var selectTab = $(this).attr('data-tab');
-              parent.find('.tabs li').removeClass('active');
+              parent.find('.cabinet-tabs li').removeClass('active');
               $(this).addClass('active');
               parent.find('.tab-content').hide();
               $("[data-id='"+selectTab+"']").show();

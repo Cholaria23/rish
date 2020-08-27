@@ -253,10 +253,9 @@ $(window).on('load resize', function() {
         if($('.unit-page-aside-inner').length) {
             if ($('.unit-page-aside-inner').hasClass('scroll-js')) {
                 $('.unit-page-aside-inner.scroll-js').mCustomScrollbar("destroy");
-                // setTimeout(function(){
-                // },100)
             }
         }
+        
     } else {
         if($('.unit-block-img').length) {
             var unitImg = $('.unit-block-info .unit-block-img');

@@ -69,6 +69,7 @@ return [
         'my_delivery_address' => 'Адрес доставки',
 		'my_delivery_address_alternative' => 'Альтернативный адрес доставки',
         'payment' => 'Оплата',
+        'wrong_pass' => 'неверный пароль',
     ],
     'orders' => "Мои заказы",
     'number_order'  => 'Заказ №',

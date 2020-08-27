@@ -1,11 +1,24 @@
 @if(Auth::guard('web')->check())
     <div class="cabinet icons-item login-hover js_mobile_cabinet">
-        <a href="/cabinet" class="login-icon svg-icon">
-            <svg width="23" height="25">
-            <use xlink:href="#icon-user"></use>
-            </svg>
-            <span class="burger-menu-link">@lang('cabinet.page_title')</span>
-        </a>
+        <div class="header-log">
+            <a class="header-log-link" href="/cabinet">
+                <span class="header-log-icon">
+                    <svg width="15" height="15">
+    					<use xlink:href="#cabinet-icon"></use>
+    				</svg>
+                </span>
+                <span class="header-log-text">
+                    @lang('cabinet.page_title')
+                </span>
+            </a>
+            {{-- <a href="/cabinet" class="login-icon svg-icon">
+                <svg width="15" height="15">
+                    <use xlink:href="#cabinet-icon"></use>
+                </svg>
+                <span class="burger-menu-link">@lang('cabinet.page_title')</span>
+            </a> --}}
+        </div>
+
         <div class="cabinet-menu-cover desctop-cabinet">
             <ul class="cabinet-menu">
                 {{-- <li class="catalog-li">
@@ -31,11 +44,11 @@
                         @lang('cabinet.wish_lists.wish_list')
                     </a>
                 </li>
-                <li class='cabinet-li'>
+                {{-- <li class='cabinet-li'>
                     <a class='cabinet-link' href='/cabinet#orders'>
                         @lang('cabinet.tab_menu.my_orders')
                     </a>
-                </li>
+                </li> --}}
                 {{-- <li class='cabinet-li'>
                     <a class='cabinet-link' href='/cabinet#password'>
                         @lang('cabinet.tab_menu.reset_password')

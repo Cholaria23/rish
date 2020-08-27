@@ -55,7 +55,9 @@
 						</a>
 					</div>
 					<div class="header-btns-wrap">
-						@include('layouts.main.header_login')
+						<div class="header-cabinet-wrap desktop">
+							@include('layouts.main.header_login')
+						</div>
 						<a class="btn-green-small popup-js desktop" href="#general_appointment">
 							@lang('main.btn.feedback')
 						</a>
@@ -305,6 +307,9 @@
 				<div class="mobile-menu-top mobile">
 					@if(isset(app('contacts')['main']['contacts']['lang']['note_1']) && app('contacts')['main']['contacts']['lang']['note_1'] != '' || isset(app('contacts')['main']['contacts']['lang']['address']) && app('contacts')['main']['contacts']['lang']['address'] != '')
 						<div class="header-address-wrap">
+							<div class="header-cabinet-wrap">
+								@include('layouts.main.header_login')
+							</div>
 							@if(isset(app('contacts')['main']['contacts']['lang']['note_1']) && app('contacts')['main']['contacts']['lang']['note_1'] != '')
 								<div class="header-address-item">
 									<div class="header-address-icon">

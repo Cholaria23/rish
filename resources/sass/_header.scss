@@ -37,23 +37,6 @@
         @media (max-width: 1200px) {
             margin-left: 60px;
         }
-        .header-log {
-            margin-bottom: 10px;
-        }
-        .header-log-link {
-            font-family: $montserrat_medium;
-            color: $turquoise;
-            transition: .25s linear;
-            &:hover {
-                color: $dark_turquoise;
-            }
-            .header-log-icon {
-                margin-right: 10px;
-            }
-        }
-        .btn-green-small {
-        }
-
     }
 }
 

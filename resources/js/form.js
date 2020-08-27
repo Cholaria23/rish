@@ -645,4 +645,27 @@ $(document).ready( function() {
         $(".login-form").submit();
     });
 
+    $(".a-logout").click(function(e) {
+      e.stopPropagation();
+      e.preventDefault();
+      var csrf_token = $('meta[name="csrf-token"]').attr('content');
+      $.ajax({
+          url: routes.postLogout,
+          type: 'POST',
+          data: {
+              "_token" : csrf_token,
+          },
+          success: function(data) {
+              switch (data) {
+                  case "success":
+                    var href = window.location.href;
+                    var return_href = href.split('#')[0];
+
+                      window.location.href = return_href;
+                      break
+              }
+          }
+      });
+    });
+
 });
