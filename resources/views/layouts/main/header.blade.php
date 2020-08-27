@@ -159,18 +159,10 @@
 							</a>
 						</li>
 					@endif
-
-					@if(isset($header_data['actions']) && $header_data['actions'])
+					@if(isset($header_data['specialist']) && $header_data['specialist'])
 						<li class="header-menu-item mobile">
-							<a class="header-menu-link" href="{{route('first_url',$header_data['actions']->alias)}}">
-								{{$header_data['actions']->lang->name}}
-							</a>
-						</li>
-					@endif
-					@if(isset($header_data['specialists']) && $header_data['specialists'])
-						<li class="header-menu-item mobile">
-							<a class="header-menu-link" href="{{route('first_url',$header_data['specialists']->alias)}}">
-								{{$header_data['specialists']->lang->name}}
+							<a class="header-menu-link" href="{{build_unit_route($header_data['specialist'])}}">
+								{{$header_data['specialist']->lang->name}}
 							</a>
 						</li>
 					@endif
@@ -178,6 +170,34 @@
 						<li class="header-menu-item mobile">
 							<a class="header-menu-link" href="{{route('first_url',$header_data['equipment']->alias)}}">
 								{{$header_data['equipment']->lang->name}}
+							</a>
+						</li>
+					@endif
+					@if(isset($header_data['articles']) && $header_data['articles'])
+						<li class="header-menu-item mobile">
+							<a class="header-menu-link" href="{{route('first_url',$header_data['articles']->alias)}}">
+								{{$header_data['articles']->lang->name}}
+							</a>
+						</li>
+					@endif
+					@if(isset($header_data['news']) && $header_data['news'])
+						<li class="header-menu-item mobile">
+							<a class="header-menu-link" href="{{route('first_url',$header_data['news']->alias)}}">
+								{{$header_data['news']->lang->name}}
+							</a>
+						</li>
+					@endif
+					@if(isset($header_data['offers']) && $header_data['offers'])
+						<li class="header-menu-item mobile">
+							<a class="header-menu-link" href="{{route('first_url',$header_data['offers']->alias)}}">
+								{{$header_data['offers']->lang->name}}
+							</a>
+						</li>
+					@endif
+					@if(isset($header_data['actions']) && $header_data['actions'])
+						<li class="header-menu-item mobile">
+							<a class="header-menu-link" href="{{route('first_url',$header_data['actions']->alias)}}">
+								{{$header_data['actions']->lang->name}}
 							</a>
 						</li>
 					@endif
@@ -215,17 +235,10 @@
 						</span>
 						<div class="header-submenu-wrap">
 							<ul class="header-submenu">
-								@if(isset($header_data['actions']) && $header_data['actions'])
+								@if(isset($header_data['specialist']) && $header_data['specialist'])
 									<li class="header-menu-item">
-										<a class="header-menu-link" href="{{route('first_url',$header_data['actions']->alias)}}">
-											{{$header_data['actions']->lang->name}}
-										</a>
-									</li>
-								@endif
-								@if(isset($header_data['specialists']) && $header_data['specialists'])
-									<li class="header-menu-item">
-										<a class="header-menu-link" href="{{route('first_url',$header_data['specialists']->alias)}}">
-											{{$header_data['specialists']->lang->name}}
+										<a class="header-menu-link" href="{{build_unit_route($header_data['specialist'])}}">
+											{{$header_data['specialist']->lang->name}}
 										</a>
 									</li>
 								@endif
@@ -233,6 +246,34 @@
 									<li class="header-menu-item">
 										<a class="header-menu-link" href="{{route('first_url',$header_data['equipment']->alias)}}">
 											{{$header_data['equipment']->lang->name}}
+										</a>
+									</li>
+								@endif
+								@if(isset($header_data['articles']) && $header_data['articles'])
+									<li class="header-menu-item">
+										<a class="header-menu-link" href="{{route('first_url',$header_data['articles']->alias)}}">
+											{{$header_data['articles']->lang->name}}
+										</a>
+									</li>
+								@endif
+								@if(isset($header_data['news']) && $header_data['news'])
+									<li class="header-menu-item">
+										<a class="header-menu-link" href="{{route('first_url',$header_data['news']->alias)}}">
+											{{$header_data['news']->lang->name}}
+										</a>
+									</li>
+								@endif
+								@if(isset($header_data['offers']) && $header_data['offers'])
+									<li class="header-menu-item">
+										<a class="header-menu-link" href="{{route('first_url',$header_data['offers']->alias)}}">
+											{{$header_data['offers']->lang->name}}
+										</a>
+									</li>
+								@endif
+								@if(isset($header_data['actions']) && $header_data['actions'])
+									<li class="header-menu-item">
+										<a class="header-menu-link" href="{{route('first_url',$header_data['actions']->alias)}}">
+											{{$header_data['actions']->lang->name}}
 										</a>
 									</li>
 								@endif
