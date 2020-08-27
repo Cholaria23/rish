@@ -123,6 +123,11 @@ class PageController extends Controller {
             View::share('admin_edit_link', route('admin.units.editUnit', $unit->id));
         }
         if($unit){
+            if(!empty($unit->related_market_cats)){
+                foreach ($unit->related_market_cats as $market_cat){
+                    $market_cat->goods = $market_cat->goods()->where('is_hidden',0)->where('is_archive',0)->CatSorting($market_cat->id)->get();
+                }
+            }
             $cats = array_merge(Cat::ancestors($unit->category->id),[$unit->category->id]);
             $breadcrumbs = Cat::with('lang')->whereIn('id', $cats)
                         ->where('alias', '!=', 'html')
@@ -337,6 +342,11 @@ class PageController extends Controller {
                 }
             ])->where('alias', $alias)->first();
         if ($cat) {
+            if(!empty($cat->related_market_cats)){
+                foreach ($cat->related_market_cats as $market_cat){
+                    $market_cat->goods = $market_cat->goods()->where('is_hidden',0)->where('is_archive',0)->CatSorting($market_cat->id)->get();
+                }
+            }
             $cats = Cat::ancestors($cat->id);
             $breadcrumbs = Cat::with('lang')->whereIn('id', $cats)
                                     ->where('alias', '!=', 'html')

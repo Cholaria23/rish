@@ -36,28 +36,45 @@
             </div>
         </section>
 
-        @if(isset($cat->related_goods) && $cat->related_goods && $cat->related_goods->count())
+        @if(isset($cat->related_goods) && $cat->related_goods && $cat->related_goods->count() || !empty($cat->related_market_cats) && $cat->related_market_cats)
             <section class="main-section">
                 <div class="container-small">
                     <div class="page-section-title-bold">
                         @lang('main.price')
                     </div>
                     <ul class="price-list">
+                        @if(!empty($cat->related_market_cats))
+                            @foreach ($cat->related_market_cats as $market_cat)
+                                @php
+                                    $i = 0;
+                                @endphp
+                                @foreach ($market_cat->goods as $good)
+                                    @php
+                                        $i ++;
+                                    @endphp
+                                    <li class="price-item {{ $i<6 ? 'visible' : 'hide' }}">
+                                        <div class="price-item-wrap">
+                                            @include('layouts.tiles.good')
+                                        </div>
+                                    </li>
+                                @endforeach
+                            @endforeach
+                        @endif
                         @php
-							$i = 0;
+							$k = $i;
 						@endphp
                         @foreach ($cat->related_goods as $good)
                             @php
-								$i ++;
+                                $k ++;
 							@endphp
-                            <li class="price-item {{ $i<6 ? 'visible' : 'hide' }}">
+                            <li class="price-item {{ $k<6 ? 'visible' : 'hide' }}">
 								<div class="price-item-wrap">
                                     @include('layouts.tiles.good')
 	                            </div>
 							</li>
                         @endforeach
                     </ul>
-                    @if ($i > 5)
+                    @if (isset($i) && $i > 5 || isset($k) && $k > 5)
 						<div class="more-link-section all_price_js">
 							<span class="visible-text">
 								@lang('main.view_all_price')
