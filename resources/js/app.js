@@ -33,3 +33,9 @@ require('./form');
 require('./air-datepicker');
 // main
 require('./main');
+
+//cabinet
+require("bootstrap");
+require('x-editable/dist/bootstrap3-editable/js/bootstrap-editable');
+require('bootstrap-switch');
+require('pgenerator');

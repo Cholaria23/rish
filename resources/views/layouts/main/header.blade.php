@@ -54,9 +54,12 @@
 							@lang('main.btn.callback')
 						</a>
 					</div>
-					<a class="btn-green-small popup-js desktop" href="#general_appointment">
-						@lang('main.btn.feedback')
-					</a>
+					<div class="header-btns-wrap">
+						@include('layouts.main.header_login')
+						<a class="btn-green-small popup-js desktop" href="#general_appointment">
+							@lang('main.btn.feedback')
+						</a>
+					</div>
 					<button class="header-search-btn desktop" type="button">
 						<svg width="16" height="16">
 							<use xlink:href="#icon-search"></use>
@@ -302,5 +305,4 @@
 			</div>
 		</div>
 	</div>
-	@include('layouts.main.header_login')
 </header>

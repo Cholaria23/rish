@@ -51,10 +51,16 @@
   </a> --}}
   {{-- <a href="#" class="header-login-btn a-logout svg-text">@lang('main.exit')</a> --}}
 @else
-    <div class="header__log">
-        <a class="modal-magnific" href="#login" data-tab="login">@lang('cabinet.log_in')</a>
-        /
-        <a class="modal-magnific" href="#login"  data-tab="reg" >@lang('cabinet.registration')</a>
+    <div class="header-log">
+        <a class="popup-js header-log-link" href="#login">
+            <span class="header-log-icon">
+                <svg width="15" height="15">
+					<use xlink:href="#cabinet-icon"></use>
+				</svg>
+            </span>
+            <span class="header-log-text">
+                @lang('cabinet.personal_area')
+            </span>
+        </a>
     </div>
 @endif
-

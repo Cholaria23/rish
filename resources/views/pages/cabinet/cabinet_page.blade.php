@@ -62,7 +62,7 @@
                           <use xlink:href="#more-icon"></use>
                         </svg>
                       </li> --}}
-                      
+
                       {{-- <li class="tab_nav tab-link" data-tab="password">
                         <a data-section='password' class='tab_a' href='#'>
                           @lang('cabinet.tab_menu.reset_password')
@@ -134,7 +134,7 @@
                         {{--Просмотренные товары  --}}
                       </div> -->
 
-                      
+
                     </div>
                   </div>
                 </div>
@@ -152,14 +152,14 @@
   {{-- <link rel="stylesheet" type="text/css" href="{{ asset('css/cabinet.css') }}" /> --}}
 
   <style type="text/css">
-		.editable-empty { color: #999; }
-		.editable-empty:hover { color: #666; }
-	</style>
+        .editable-empty { color: #999; }
+        .editable-empty:hover { color: #666; }
+    </style>
 @stop
 @section('scripts')
   <script src="js/alertify.min.js"></script>
-	<script>
-		$(window).on("load", function() {
+    <script>
+        $(window).on("load", function() {
           $(window).trigger('scroll');
         });
 
@@ -469,7 +469,7 @@
                       $('.top-wishlist .user-nav__counter').hide();
                   }
               });
-              
+
           });
         function saveUser(field, value) {
           var csrf_token = $('meta[name="csrf-token"]').attr('content');
@@ -495,5 +495,5 @@
           });
         }
     });
-	</script>
+    </script>
 @stop
