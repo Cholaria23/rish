@@ -36,12 +36,13 @@
 				<div class="virtual-block-info-wrap">
 					<div class="virtual-block-info-inner">
 						<div class="virtual-block-info-title">
-							@lang('main.virtual_tour_title')
+							{{-- @lang('main.virtual_tour_title') --}}
+							@lang('main.virtual_tour_title_gallery')
 						</div>
 						<div class="virtual-block-text text">
 							@lang('main.virtual_tour_text')
 						</div>
-						<a class="btn-arrow" href="#">
+						<a class="btn-arrow" href="/galereya">
 							<span class="btn-arrow-text">
 								@lang('main.look')
 							</span>

@@ -109,6 +109,7 @@ return [
     'perpetual_share' => "Indefinite",
     'subscription_text' => "Subscribe to stay updated on the latest news and events",
     'virtual_tour_title' => "Virtual tour of RISHON medical center",
+    'virtual_tour_title_gallery' => "Gallery of the medical center RISHON",
     'virtual_tour_text' => "For us, there are no trifles in the service and in the interior. Every detail of the Rishon Medical Center has been thought out and implemented in order to create maximum comfort and a friendly atmosphere for the patient.",
     'look' => "Look",
     'not_page' => "No such page exists",
