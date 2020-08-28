@@ -428,7 +428,7 @@
         @media (max-width: 576px) {
             margin-bottom: 15px;
         }
-        li {
+        & > li {
             position: relative;
             & + li {
                 margin-top: 10px;
@@ -464,7 +464,7 @@
         @media (max-width: 576px) {
             margin-bottom: 15px;
         }
-        li {
+        & > li {
             position: relative;
             &::before {
                 content: counter(num) '. ';

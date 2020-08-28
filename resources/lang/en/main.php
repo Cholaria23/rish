@@ -131,6 +131,7 @@ return [
     'feedback' => "Feedback",
     "subscribу_newsletter" => "Thank you for subscribing to the RISHON Medical Center website newsletter",
     "chekup" => "Record on a check",
+    "sign_up_chekup" => "Sign up for a check",
     "consultation" => "Sign up for a consultation",
     "fio" => "Full name",
     "year_birth" => "Year of birth",

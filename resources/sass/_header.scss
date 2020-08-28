@@ -110,6 +110,10 @@
     height: 40px;
     background-color: $grey;
     border-radius: 50%;
+    transition: .25s linear;
+    &:hover {
+        background-color: rgba(105, 209, 210, 0.1);
+    }
     @media (max-width: 1280px) {
         margin-left: 50px;
     }
