@@ -292,3 +292,152 @@
 	</form>
 	<div class='form-thanks'>@lang('main.form.form_thanks')</div>
 </div>
+
+<div class="mfp-hide popup-wrap mini popup-cabinet" id="login">
+	<div class="popup-name-wrap">
+		<div class="popup-name">
+			@lang('cabinet.log_inn')
+		</div>
+	</div>
+	{{-- <div class="social-login-block">
+		<a href="{{ route('social-login', array('google')) }}" class="social-login-link">
+			<span class="social-login-icon">
+				<svg width="21" height="21">
+					<use xlink:href="#google-icon"></use>
+				</svg>
+			</span>
+			<span class="social-login-name">
+				@lang('cabinet.reg_via_google')
+			</span>
+		</a>
+		<a href="{{ route('social-login', array('facebook')) }}" class="social-login-link">
+			<span class="social-login-icon">
+				<svg width="21" height="21">
+					<use xlink:href="#fb-icon"></use>
+				</svg>
+			</span>
+			<span class="social-login-name">
+				@lang('cabinet.reg_via_facebook')
+			</span>
+		</a>
+	</div>
+	<div class="or-line">
+		<span class="or-line-text">
+			@lang('cabinet.or')
+		</span>
+	</div> --}}
+	<form class="login-form">
+		<div class="input-wrap">
+            <input class="input-form" type="email" name="email" placeholder="@lang('cabinet.email')*">
+	    </div>
+		<div class="input-wrap">
+            <input class="input-form" type="password" name="password" placeholder="@lang('cabinet.password')*">
+	    </div>
+		<div class="recovery-block">
+			<div class="recovery-text">
+				@lang('cabinet.forget_password')
+			</div>
+			<a href="#reset" class="recovery-link popup-js">
+				@lang('cabinet.reset_password_btn')
+			</a>
+		</div>
+		<button type="submit" class="btn-green do_login-form">
+			@lang('cabinet.log_in')
+		</button>
+		<div class="cabinet-bottom-block">
+			<div class="cabinet-bottom-text">
+				@lang('cabinet.no_acc')
+			</div>
+			<a href="#registration" class="cabinet-bottom-link popup-js">
+				@lang('cabinet.register')
+			</a>
+		</div>
+		<div class="auth-error" style="display:none">
+			@lang('cabinet.incorrect')
+		</div>
+	</form>
+</div>
+
+<div class="mfp-hide popup-wrap mini popup-cabinet" id="registration">
+	<div class="popup-name-wrap">
+		<div class="popup-name">
+			@lang('cabinet.registration')
+		</div>
+	</div>
+	{{-- <div class="social-login-block">
+		<a href="{{ route('social-login', array('google')) }}" class="social-login-link">
+			<span class="social-login-icon">
+				<svg width="21" height="21">
+					<use xlink:href="#google-icon"></use>
+				</svg>
+			</span>
+			<span class="social-login-name">
+				@lang('cabinet.reg_via_google')
+			</span>
+		</a>
+		<a href="{{ route('social-login', array('facebook')) }}" class="social-login-link">
+			<span class="social-login-icon">
+				<svg width="21" height="21">
+					<use xlink:href="#fb-icon"></use>
+				</svg>
+			</span>
+			<span class="social-login-name">
+				@lang('cabinet.reg_via_facebook')
+			</span>
+		</a>
+	</div>
+	<div class="or-line">
+		<span class="or-line-text">
+			@lang('cabinet.or')
+		</span>
+	</div> --}}
+	<form class="registration-form">
+		<div class="input-wrap">
+            <input class="input-form" type="email" name="email" placeholder="@lang('cabinet.email')*" required>
+	    </div>
+		<button type="submit" class="btn-green do_registration-form">
+			@lang('cabinet.do_reg')
+		</button>
+		<div class="cabinet-bottom-block">
+			<div class="cabinet-bottom-text">
+				@lang('cabinet.is_account')
+			</div>
+			<a href="#login" class="cabinet-bottom-link popup-js">
+				@lang('cabinet.log_in')
+			</a>
+		</div>
+		<div class="auth-error" style="display:none">
+			@lang('cabinet.exists')
+		</div>
+		<div class="auth-del" style="display:none">
+			@lang('cabinet.deleted')
+		</div>
+	</form>
+</div>
+
+<div class="mfp-hide popup-wrap mini popup-cabinet" id="reset">
+	<div class="popup-name-wrap">
+		<div class="popup-name">
+			@lang('cabinet.reseting_password')
+		</div>
+	</div>
+	<form class="reset-form">
+		<div class="input-wrap">
+            <input class="input-form" type="email" name="email" placeholder="@lang('cabinet.email')*">
+	    </div>
+		<button type="submit" class="btn-green do_reset-form">
+			@lang('cabinet.reset_password_btn')
+		</button>
+		<div class="cabinet-bottom-block">
+			<a href="#login" class="cabinet-bottom-link popup-js">
+				@lang('cabinet.back')
+			</a>
+		</div>
+		<div class="auth-error" style="display:none">
+			@lang('cabinet.no_email')
+		</div>
+		<div class="auth-restored" style="display:none">
+			@lang('cabinet.pass_sent')
+		</div>
+	</form>
+</div>

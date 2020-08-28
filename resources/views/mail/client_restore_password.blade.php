@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="{{ app()->getLocale() }}" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>@lang('main.mail_reg.requested_rest_show')</title>
+        <style>
+            p {
+                margin: 0;
+                padding: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div style="width: 600px; padding: 15px; background: #ffffff; padding-left: 0px !important; padding-right: 0px !important;">
+            <table width="100%" align="left" cellpadding="0" cellspacing="0" border="0" style="margin: 0 auto; background: rgb(255,255,255);">
+                <tbody>
+                    <tr>
+                        <td style="border: 0;" align="left" valign="top" border="0">
+                            <div style="border-width: 0px; border-style: solid; border-radius: 0px; border-color: #dddddd;" class="main">
+                                <div class="email_header">
+                                    <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin: 0;">
+                                        <tbody>
+                                            <tr>
+                                                <td align="left" valign="bottom" width="100%" border="0" style="vertical-align: middle;">
+                                                    <div style="text-align: center; margin-bottom: 45px; padding: 15px 0; background: #f8f8f8;">
+                                                        <a href="{{ URL::to('/') }}" style="display:inline-block;">
+                                                            @if (isset(app('seo')['logo_img_1']) && app('seo')['logo_img_1'] != '')
+                                                                <img style="border: 0; display: block; margin: 0 auto 0 0; width: 150px; height: auto; text-align: center;" src="{{ asset('storage/'.app('seo')['logo_img_1']) }}">
+                                                            @endif
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="body-mail">
+                                    <table style="background-color: #ffffff;" width="100%" cellpadding="0" cellspacing="0" border="0">
+                                        <tbody>
+                                            <tr>
+                                                <td align="left" valign="top" width="100%" border="0">
+                                                    <div style="margin-bottom: 20px;text-align: left; font-size:14px; font-family: Arial, sans-serif;">
+                                                        <div style="padding-bottom:10px;">
+                                                            <p style="margin: 0; padding-bottom: 15px; text-align: left; font-size: 14px; color: #333; font-weight: bold; border-bottom: 1px solid #f2f2f2;">
+                                                                @lang('main.email.your_data'):
+                                                            </p>
+                                                            <p style="display: flex; align-items: center; justify-content: space-between;font-size: 14px; margin: 0; padding: 10px 0; color: #333; font-weight: 400; border-bottom: 1px solid #f2f2f2;">
+                                                                <span style="width: 50%; text-align: left; font-size: 14px; color: #333;">
+                                                                    @lang('main.emails.requested_rest'):
+                                                                </span>
+                                                                <span style="width: 50%; text-align: right; font-size: 14px; color: #333;">
+                                                                    <a href="{{ URL::to('/') }}/" style="color: #333; text-decoration:none; display:block;">{{env('APP_NAME', 'Laravel')}}</a>
+                                                                </span>
+                                                            </p>
+                                                            <p style="display: flex; align-items: center; justify-content: space-between;font-size: 14px; margin: 0; padding: 10px 0; color: #333; font-weight: 400; border-bottom: 1px solid #f2f2f2;">
+                                                                <span style="width: 50%; text-align: left; font-size: 14px; color: #333;">
+                                                                    @lang('main.emails.pass'):
+                                                                </span>
+                                                                <span style="width: 50%; color:#333; text-decoration:none; text-align: right;">
+                                                                    {{ $password }}
+                                                                </span>
+                                                            </p>
+                                                            <p style="display: flex; align-items: center; justify-content: space-between;font-size: 14px; margin: 0; padding: 10px 0; color: #333; font-weight: 400; border-bottom: 1px solid #f2f2f2;">
+                                                                <span style="width: 50%; text-align: left; font-size: 14px; color: #333;">
+                                                                    @lang('main.emails.change_pass') @lang('main.emails.personal_office'):
+                                                                </span>
+                                                                <a style="width: 50%; text-align: right; font-size: 14px; color: #343434; text-decoration: underline;" href="{{URL::to('/cabinet')}}">@lang('main.emails.link_cabinet')</a>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="email_footer">
+                                    <table style="width: 100%; margin: 0; background-color: #ffffff;" cellpadding="0" cellspacing="0" border="0">
+                                        <tbody>
+                                            <tr>
+                                                <td align="left" valign="top" border="0">
+                                                    <div style="text-align: left; color: #343434; font-weight: 400; font-size:14px; font-family: Arial, sans-serif;">
+                                                        <p style="margin: 0 0 15px 0; text-align: left; font-size: 14px; color: #343434;">
+                                                            @lang('main.email.with_respect')
+                                                            @if(isset($form_type->lang_sender[App::getLocale()]) && $form_type->lang_sender[App::getLocale()] !='')
+                                                                {{$form_type->lang_sender[App::getLocale()]}}
+                                                            @else
+                                                                RISHON
+                                                            @endif
+                                                        </p>
+                                                        @if(isset(app('contacts')['main']['contacts']['phone_1']) && app('contacts')['main']['contacts']['phone_1'] != '')
+                                                            <p style="margin: 0 0 5px 0; text-align: left; font-size: 14px; color: #343434;">
+                                                                @lang('main.email.phone')
+                                                               <a href="tel:+{{ preg_replace( '/[^0-9]/', '', app('contacts')['main']['contacts']['phone_1'] ) }}" style="font-size: 14px; color: #343434; text-decoration: none;">
+                                                                   {{app('contacts')['main']['contacts']['phone_1']}}
+                                                               </a>
+                                                            </p>
+                                                        @endif
+                                                        @if(isset(app('contacts')['main']['contacts']['email_1']) && app('contacts')['main']['contacts']['email_1'] != '')
+                                                            <p style="margin: 0 0 5px 0; text-align: left; font-size: 14px; color: #343434;">
+                                                                e-mail:
+                                                                <a href="mailto:{{app('contacts')['main']['contacts']['email_1']}}" style="font-size: 14px; color: #343434; text-decoration: none;">
+                                                                    {{app('contacts')['main']['contacts']['email_1']}}
+                                                                </a>
+                                                            </p>
+                                                        @endif
+                                                        @if(isset(app('contacts')['main']['contacts']['lang']['address']) && app('contacts')['main']['contacts']['lang']['address'] != '')
+                                                            <div style="margin: 0 0 5px 0; text-align: left; font-size: 14px; color: #343434;">
+                                                                {!!app('contacts')['main']['contacts']['lang']['address']!!}
+                                                            </div>
+                                                        @endif
+                                                        <a href="{{ URL::to('/') }}" style="display: inline-block; margin-bottom: 20px; color: #3c615d; font-size: 14px;">
+                                                            {{env('APP_NAME', 'Laravel')}}
+                                                        </a>
+                                                        <p style="margin: 0 0 20px 0;">
+                                                            @if(isset(app('contacts')['main']['contacts']['facebook']) && app('contacts')['main']['contacts']['facebook'] != '')
+                                                                <a href="{{app('contacts')['main']['contacts']['facebook']}}" target="_blank" style="display: inline-block; margin: 0 20px 0 0;">
+                                                                    <img style="border: 0; display: block; width: 24px; height: auto;" alt="facebook" title="facebook" src="{{ URL::to('/img/email_facebook.png') }}" align="center">
+                                                                </a>
+                                                            @endif
+                                                            @if(isset(app('contacts')['main']['contacts']['instagram']) && app('contacts')['main']['contacts']['instagram'] != '')
+                                                                <a href="{{app('contacts')['main']['contacts']['instagram']}}" target="_blank" style="display: inline-block; margin: 0 20px 0 0;">
+                                                                    <img style="border: 0; display: block; width: 24px; height: auto;" alt="instagram" title="instagram" src="{{ URL::to('/img/email_instagram.png') }}" align="center">
+                                                                </a>
+                                                            @endif
+                                                            @if(isset(app('contacts')['main']['contacts']['youtube']) && app('contacts')['main']['contacts']['youtube'] != '')
+                                                                <a href="{{app('contacts')['main']['contacts']['youtube']}}" target="_blank" style="display: inline-block;">
+                                                                    <img style="border: 0; display: block; width: 24px; height: auto;" alt="youtube" title="youtube" src="{{ URL::to('/img/email_youtube.png') }}" align="center">
+                                                                </a>
+                                                            @endif
+                                                        </p>
+                                                        <p style="color: #343434; font-size: 11px; font-style: italic;">
+                                                            @lang('main.email.letter_auto')
+                                                            <a href="{{ URL::to('/') }}" style="color: #343434; font-size: 11px; text-decoration: underline; font-style: italic;">
+                                                                @lang('main.email.support')
+                                                            </a>
+                                                        </p>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>

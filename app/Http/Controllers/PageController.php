@@ -123,6 +123,11 @@ class PageController extends Controller {
             View::share('admin_edit_link', route('admin.units.editUnit', $unit->id));
         }
         if($unit){
+            if(!empty($unit->related_market_cats)){
+                foreach ($unit->related_market_cats as $market_cat){
+                    $market_cat->goods = $market_cat->goods()->where('is_hidden',0)->where('is_archive',0)->CatSorting($market_cat->id)->get();
+                }
+            }
             $cats = array_merge(Cat::ancestors($unit->category->id),[$unit->category->id]);
             $breadcrumbs = Cat::with('lang')->whereIn('id', $cats)
                         ->where('alias', '!=', 'html')
@@ -182,6 +187,14 @@ class PageController extends Controller {
                 $page_data['rel_service_cats'] = $rel_service_cats;
                 $page_data['rel_service_units'] = $rel_service_units;
                 $view = 'pages.actions_page';
+            } elseif($unit->id == 6) {
+                $view = 'pages.checkup_page';
+
+                $checkup_info = Unit::with('lang')->whereHas('category', function($query){
+                    $query->where('cat_id', 41);
+                })->where('is_hidden',0)->whereRaw('IF (is_period = 1, start < NOW(),  1=1 )')->whereRaw('IF (is_period = 1,  (end > NOW() || end is null),  1=1)')->orderBy('sort_order','desc')->get();
+                $page_data['checkup_info'] = $checkup_info;
+
             } elseif($unit->cat_id == 7) {
                 $view = 'pages.equipment_page';
             } elseif($unit->id == 5) {
@@ -337,6 +350,11 @@ class PageController extends Controller {
                 }
             ])->where('alias', $alias)->first();
         if ($cat) {
+            if(!empty($cat->related_market_cats)){
+                foreach ($cat->related_market_cats as $market_cat){
+                    $market_cat->goods = $market_cat->goods()->where('is_hidden',0)->where('is_archive',0)->CatSorting($market_cat->id)->get();
+                }
+            }
             $cats = Cat::ancestors($cat->id);
             $breadcrumbs = Cat::with('lang')->whereIn('id', $cats)
                                     ->where('alias', '!=', 'html')
@@ -525,12 +543,12 @@ class PageController extends Controller {
     }
 
     public function getCabinet () {
-
+        
         if (Auth::guard('web')->check()) {
             View::share('page_title', Lang::get("cabinet.page_title"));
             $id = Auth::guard('web')->user()->id;
             $user = \Demos\AdminPanel\User::find($id);
-
+ 
             $orders_query = Order::orderBy('created_at', 'desc')->with('status', 'goods.lang');
             if($user){
                 $orders_query->where(function($query) use ($user){
@@ -542,26 +560,26 @@ class PageController extends Controller {
                     if ($search_phone != ''){
                         $query->orWhere('phone', 'LIKE', "%".$search_phone."%");
                     }
-
+ 
                     $search_phone = preg_replace( '/[^0-9]/', '', "%".$user->phone_2."%");
                     if ($search_phone != ''){
                         $query->orWhere('phone', 'LIKE', "%".$search_phone."%");
                     }
-
+ 
                 });
             }
-            $user->orders = $orders_query->get();
+            $user->orders = $orders_query->get(); 
             $page_data = [
                 'user' => $user,
             ];
-
+ 
             $view = 'pages.cabinet.cabinet_page';
             return View::make($view, $page_data);
         } else {
             return Redirect::to('./');
         }
-
-
+ 
+ 
     }
 
     public function calculate_visitors(Unit $unit) {

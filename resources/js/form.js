@@ -549,4 +549,123 @@ $(document).ready( function() {
         formVal.submit();
     });
 
+    // cabinet
+    $(".registration-form").validate({
+          submitHandler: function(form) {
+              var csrf_token = $('meta[name="csrf-token"]').attr('content');
+              var formdata = $(".registration-form").serialize();
+              $.ajax({
+                  url: routes.postRegister,
+                  type: 'POST',
+                  data: {
+                      "_token" : csrf_token,
+                      "data": formdata,
+                  },
+                  success: function(data) {
+                      switch (data) {
+                        case "email":
+                            $(".registration-form .auth-error").slideDown(200);
+                            break;
+                        case "deleted":
+                            $(".registration-form .auth-del").slideDown(200);
+                            break;
+                        case "success":
+                            window.location.href = window.location.origin + "/cabinet/";
+                            break
+                      }
+                  }
+              })
+          }
+    });
+    $('.do_registration-form').click(function(e) {
+        e.preventDefault();
+        $(".registration-form").submit()
+    });
+
+    $(".reset-form").validate({
+        submitHandler: function(form) {
+            var csrf_token = $('meta[name="csrf-token"]').attr('content');
+            var formdata = $(".reset-form").serialize();
+            $.ajax({
+                url: routes.postPassword,
+                type: 'POST',
+                data: {
+                    "_token" : csrf_token,
+                    "data": formdata,
+                },
+                success: function(data) {
+                    switch (data) {
+                        case "no_email":
+                            $(".reset-form .auth-error").slideDown(200);
+                            $(".reset-form .auth-restored").slideUp(200);
+                            break;
+                        case "success":
+                            $(".reset-form .auth-restored").slideDown(200);
+                            $(".reset-form.auth-error").slideUp(200);
+                            break
+                    }
+                }
+            });
+        }
+    });
+    $(".do_reset-form").click(function(e) {
+        e.preventDefault();
+        $(".reset-form").submit()
+    });
+
+
+    $(".login-form").validate({
+        submitHandler: function(form) {
+            var csrf_token = $('meta[name="csrf-token"]').attr('content');
+            var formdata = $(".login-form").serialize();
+            $.ajax({
+                url: routes.postLogin,
+                type: 'POST',
+                data: {
+                    "_token" : csrf_token,
+                    "data": formdata,
+                },
+                success: function(data) {
+                    switch (data) {
+                        case "wrong_pass":
+                            $(".login-form .auth-error").slideDown(200);
+                            break;
+                        case "success":
+                            window.location.reload(true);
+                            break
+                    }
+                }
+            });
+        }
+    });
+
+    $(".do_login-form").click(function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        $(".login-form").submit();
+    });
+
+    $(".a-logout").click(function(e) {
+      e.stopPropagation();
+      e.preventDefault();
+      var csrf_token = $('meta[name="csrf-token"]').attr('content');
+      $.ajax({
+          url: routes.postLogout,
+          type: 'POST',
+          data: {
+              "_token" : csrf_token,
+          },
+          success: function(data) {
+              switch (data) {
+                  case "success":
+                    var href = window.location.href;
+                    var return_href = href.split('#')[0];
+
+                      window.location.href = return_href;
+                      break
+              }
+          }
+      });
+    });
+
 });

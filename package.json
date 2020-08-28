@@ -11,7 +11,6 @@
     },
     "devDependencies": {
         "axios": "^0.19",
-        "bootstrap": "^4.1.0",
         "browser-sync": "^2.26.12",
         "browser-sync-webpack-plugin": "^2.0.1",
         "cross-env": "^5.1",
@@ -27,6 +26,10 @@
     },
     "dependencies": {
         "air-datepicker": "^2.2.3",
+        "bootstrap": "^3.4.1",
+        "bootstrap-sass": "^3.4.1",
+        "bootstrap-switch": "^3.4.0",
+        "bootstrap-typeahead": "^2.3.2",
         "inputmask": "^5.0.0",
         "jquery-touch-events": "^1.0.7",
         "jquery-validation": "^1.19.1",
@@ -37,8 +40,11 @@
         "malihu-custom-scrollbar-plugin": "^3.1.5",
         "normalize.css": "^8.0.1",
         "objectFitPolyfill": "^2.3.0",
+        "pgenerator": "^1.0.4",
+        "popper": "^1.0.1",
         "selectric": "^1.13.0",
         "slick-carousel": "^1.8.1",
-        "stickyfilljs": "^2.1.0"
+        "stickyfilljs": "^2.1.0",
+        "x-editable": "^1.5.1"
     }
 }

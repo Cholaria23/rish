@@ -10,9 +10,12 @@ class HeaderComposer {
         $contacts = \Demos\AdminPanel\Unit::with('lang')->where('is_hidden',0)->find(2);
         $reviews = \Demos\AdminPanel\Unit::with('lang')->where('is_hidden',0)->find(4);
         $online_consultation = \Demos\AdminPanel\Unit::with('lang')->where('is_hidden',0)->find(5);
+        $specialist = \Demos\AdminPanel\Unit::with('lang')->where('is_hidden',0)->find(79);
         
         $actions = \Demos\AdminPanel\Cat::with('lang')->where('is_hidden',0)->find(17);
-        $specialists = \Demos\AdminPanel\Cat::with('lang')->where('is_hidden',0)->find(5);
+        $offers = \Demos\AdminPanel\Cat::with('lang')->where('is_hidden',0)->find(16);
+        $articles = \Demos\AdminPanel\Cat::with('lang')->where('is_hidden',0)->find(18);
+        $news = \Demos\AdminPanel\Cat::with('lang')->where('is_hidden',0)->find(19);
         $equipment = \Demos\AdminPanel\Cat::with('lang')->where('is_hidden',0)->find(7);
 
         $services_top = \Demos\AdminPanel\Cat::with('lang')->whereIn('id',\Demos\AdminPanel\Cat::descendants(4))->where('spec_option_1',1)->where('is_hidden',0)->orderBy('sort_order','asc')->get();
@@ -38,11 +41,14 @@ class HeaderComposer {
             'reviews' => $reviews,
             'online_consultation' => $online_consultation,
             'actions' => $actions,
-            'specialists' => $specialists,
+            'specialist' => $specialist,
             'equipment' => $equipment,
             'services_top' => $services_top,
             'services' => $services,
             'prices' => $prices,
+            'offers' => $offers,
+            'articles' => $articles,
+            'news' => $news,
         ];
         $view->with('header_data', $header_data);
     }

@@ -1,0 +1,91 @@
+.checkup-page {
+    .checkup-subtitle {
+        margin-bottom: 10px;
+        font-family: $montserrat_semibold;
+        text-transform: uppercase;
+        color: $turquoise;
+    }
+    .description.description-with-check {
+        ul:last-child {
+            padding-left: 30px;
+            li::before {
+                content: "";
+                position: absolute;
+                left: -30px;
+                top: 4px;
+                width: 19px;
+                height: 14px;
+                border-radius: 0;
+                background: url(/img/check.svg) center center/cover no-repeat;
+            }
+        }
+    }
+    .popup-btn-wrap {
+            margin: -5px -15px 0;
+    }
+    .checkup-services-wrap {
+        margin: -10px 0 0 -50px;
+        display: flex;
+        flex-wrap: wrap;
+        @media (max-width: 1024px) {
+            margin: 0 0 0 0;
+        }
+        @media (max-width: 576px) {
+            margin: -10px 0 0 0;
+        }
+        .checkup-services-holder {
+            width: 50%;
+            padding: 10px 0 0 50px;
+            @media (max-width: 1024px) {
+                width: 100%;
+                padding: 0 0 0 0;
+            }
+            @media (max-width: 1024px) {
+                padding: 10px 0 0 0;
+            }
+        }
+        .checkup-services-title {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: stretch;
+            @media (max-width: 768px) {
+                flex-wrap: wrap;
+            }
+        }
+        .checkup-services-count {
+            padding: 5px 10px;
+            margin-right: 15px;
+            font-family: $montserrat_medium;
+            font-size: 24px;
+            color: $turquoise;
+            background-color: rgba(105, 209, 210, 0.1);
+            @media (max-width: 768px) {
+                margin-bottom: 5px;
+            }
+        }
+        .checkup-services-name {
+            flex-grow: 1;
+            padding: 5px 10px;
+            font-family: $montserrat_medium;
+            font-size: 24px;
+            color: $turquoise;
+            background-color: rgba(105, 209, 210, 0.1);
+            @media (max-width: 768px) {
+                width: 100%;
+                font-size: 18px;
+            }
+        }
+        .description {
+            ol {
+                li {
+                    & + li {
+                        margin-top: 3px;
+                    }
+                    ul {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+}

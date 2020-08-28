@@ -37,40 +37,24 @@
 		</section>
 
 
-		@if(!empty($unit->related_goods) && $unit->related_goods->count() || !empty($unit->related_market_cats) && $unit->related_market_cats_flag)
+		@if(!empty($unit->related_goods) && $unit->related_goods->count() || !empty($unit->related_market_cats) && $unit->related_market_cats)
 			<section class="main-section">
                 <div class="container-small">
                     <div class="page-section-title-bold">
 						@lang('main.price')
 					</div>
-					@if(!empty($unit->related_goods) || !empty($unit->related_market_cats))
+					@if(!empty($unit->related_goods) || !empty($unit->related_market_cats) && $unit->related_market_cats)
 						<ul class="price-list">
-							@if(!empty($unit->related_goods))
-									@php
-										$i = 0;
-									@endphp
-									@foreach ($unit->related_goods as $good)
-										@php
-										   $i ++;
-									    @endphp
-										<li class="price-item {{ $i<6 ? 'visible' : 'hide' }}">
-											<div class="price-item-wrap">
-												@include('layouts.tiles.good')
-											</div>
-										</li>
-									@endforeach
-
-							@endif
 							@if(!empty($unit->related_market_cats))
 								@foreach ($unit->related_market_cats as $market_cat)
 									@php
-										$k = $i;
+										$i = 0;
 									@endphp
 									@foreach ($market_cat->goods as $good)
 										@php
-											$k ++;
+											$i ++;
 										@endphp
-										<li class="price-item {{ $k<6 ? 'visible' : 'hide' }}">
+										<li class="price-item {{ $i<6 ? 'visible' : 'hide' }}">
 											<div class="price-item-wrap">
 												@include('layouts.tiles.good')
 											</div>
@@ -78,9 +62,26 @@
 									@endforeach
 								@endforeach
 							@endif
+							@if(!empty($unit->related_goods))
+									@php
+										$k = 0;
+									@endphp
+									@foreach ($unit->related_goods as $good)
+										@php
+										   $k ++;
+									    @endphp
+										<li class="price-item {{ $k<6 ? 'visible' : 'hide' }}">
+											<div class="price-item-wrap">
+												@include('layouts.tiles.good')
+											</div>
+										</li>
+									@endforeach
+
+							@endif
+
 						</ul>
 					@endif
-					@if ($i > 5 || $k > 5)
+					@if (isset($i) && $i > 5 || isset($k) && $k > 5)
 						<div class="more-link-section all_price_js">
 							<span class="visible-text">
 								@lang('main.view_all_price')
@@ -179,7 +180,7 @@
 		@endif
 
 		@if(isset($unit->related_specialists) && $unit->related_specialists && isset($unit->related_specialists[2]) && isset($unit->related_specialists[2]['specialists']) && $unit->related_specialists[2]['specialists']->count())
-			<section class="main-section specialists">
+			<section class="main-section">
     			<div class="container">
                     <div class="page-section-title-bold">
                         @lang('main.our_specialists')
