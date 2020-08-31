@@ -392,6 +392,7 @@ class PageController extends Controller {
             } else {
                 $view = 'pages.cat_page';
             }
+            $this->calculate_market_goods($cat);
             $page_data = [
                 'reviews' => $reviews,
                 'cat' => $cat,
