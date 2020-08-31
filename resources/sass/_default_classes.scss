@@ -734,10 +734,10 @@ video {
 .tabs-btn-wrap {
     position: relative;
 }
-.tabs {
+.tabs:not(.price-tabs) {
     display: flex;
     flex-wrap: wrap;
-    @media (max-width: 576px) {
+    @media (max-width: 1024px) {
         display: none;
         position: absolute;
         top: calc(100% + 5px);
@@ -779,10 +779,10 @@ video {
 }
 // tabs end
 .active-tab-mobile {
+    margin-bottom: 25px;
     display: none;
     position: relative;
     width: 100%;
-    margin-bottom: 25px;
     padding: 8px 30px 8px 15px;
     text-align: left;
     border: 1px solid $grey;
@@ -791,7 +791,6 @@ video {
         transform: translateY(-25%) rotate(-45deg);
     }
     .active-tab-mobile-text {
-
         &::after {
             content: '';
             position: absolute;
@@ -806,7 +805,7 @@ video {
             transform: translateY(-50%) rotate(135deg);
         }
     }
-    @media (max-width: 576px) {
+    @media (max-width: 1024px) {
         display: block;
     }
 }

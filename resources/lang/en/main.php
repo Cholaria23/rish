@@ -150,4 +150,5 @@ return [
       'requested_rest' => 'You have requested to restore access to the site',
       'requested_rest_show' => 'Restoring access to the site',
     ],
+    "all_categories" => "All categories",
 ];

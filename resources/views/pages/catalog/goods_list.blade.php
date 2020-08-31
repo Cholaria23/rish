@@ -19,9 +19,19 @@
                 </div>
             @endif
             @if($cat->children->count())
-                @foreach ($cat->children as $first_child_item)
-                    <a href="{{build_cat_route($first_child_item->alias)}}">{{$first_child_item->lang->name}}</a>
-                @endforeach
+                <section class="main-section">
+                    <div class="container">
+                        <ul class="price-category-list">
+                            @foreach ($cat->children as $first_child_item)
+                                <li class="price-category-item">
+                                    <a class="price-category-link" href="{{build_cat_route($first_child_item->alias)}}">
+                                        {{$first_child_item->lang->name}}
+                                    </a>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                </section>
             @endif
         </div>
     @else
@@ -40,27 +50,31 @@
                     </div>
                 </div>
             @endif
-            <div class="main-section price">
-                <div class="container-small">
-                    <div class="tabs-container">
+            <div class="main-section price {{$cat->children->count() && $categories->count() ? 'price-with-category':'' }}">
+                <div class="{{$cat->children->count() && $categories->count() ? 'container':'container-small' }}">
+                    <div class="tabs-container {{$cat->children->count() && $categories->count() ? 'price-container-wrap':'' }}">
                         @if($cat->children->count())
                             @if($categories->count())
                                 <div class="tabs-btn-wrap">
                                     <button class="active-tab-mobile" type="button" name="button">
                                         <span class="active-tab-mobile-text">
-                                            @lang('main.view_all_price')
+                                            @lang('main.all_categories')
                                         </span>
                                     </button>
-                                    <ul class="tabs">
+                                    <ul class="tabs price-tabs sticky scroll-js">
                                         @foreach ($categories as $cat_item)
                                             @if($cat_item->id == $cat->id)
-                                                <li class="tab-link" data-tab="{{$cat_item->id}}">
-                                                    @lang('main.view_all_price')
+                                                <li class="tab-link" data-tab="all">
+                                                    <span class="tab-link-name">
+                                                        @lang('main.all_categories')
+                                                    </span>
                                                 </li>
                                             @else
                                                 @if ($cat_item->goods->count())
                                                     <li class="tab-link" data-tab="{{$cat_item->id}}">
-                                                        {{$cat_item->lang->name}}
+                                                        <span class="tab-link-name">
+                                                            {{$cat_item->lang->name}}
+                                                        </span>
                                                     </li>
                                                 @endif
                                             @endif
@@ -138,7 +152,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
         {{-- <div class="page price-page">
             @include('layouts.main.breadcrumbs')
