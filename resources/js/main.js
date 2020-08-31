@@ -165,6 +165,7 @@ $(document).ready(function() {
     }
     // position sticky
     if($('.sticky').length) {
+        // Stickyfill.forceSticky();
         var elements = $('.sticky');
         Stickyfill.add(elements);
     }
@@ -255,7 +256,7 @@ $(window).on('load resize', function() {
                 $('.unit-page-aside-inner.scroll-js').mCustomScrollbar("destroy");
             }
         }
-        
+
     } else {
         if($('.unit-block-img').length) {
             var unitImg = $('.unit-block-info .unit-block-img');
