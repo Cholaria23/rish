@@ -128,6 +128,7 @@ class PageController extends Controller {
                     $market_cat->goods = $market_cat->goods()->where('is_hidden',0)->where('is_archive',0)->CatSorting($market_cat->id)->get();
                 }
             }
+            $this->calculate_market_goods($unit);
             $cats = array_merge(Cat::ancestors($unit->category->id),[$unit->category->id]);
             $breadcrumbs = Cat::with('lang')->whereIn('id', $cats)
                         ->where('alias', '!=', 'html')
