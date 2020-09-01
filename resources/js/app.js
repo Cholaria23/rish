@@ -14,7 +14,9 @@ import Inputmask from "inputmask";
 var loadTouchEvents = require('jquery-touch-events');
 loadTouchEvents($);
 // malihu_scrollbar
-import mCustomScrollbar from "malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js";
+// import mCustomScrollbar from "malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js";
+// simplebar
+import 'simplebar';
 // lazysizes
 import 'lazysizes';
 // magnific_popup

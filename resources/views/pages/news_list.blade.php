@@ -17,7 +17,7 @@
                 </div>
             </div>
         @endif
-        <div class="page-section turquoise-section">
+        {{-- <div class="page-section turquoise-section">
             <div class="container">
                 @if(isset($cat->popular_units) && $cat->popular_units && $cat->popular_units->count())
                     <div class="page-section-title-bold">
@@ -32,7 +32,7 @@
                     </div>
                 @endif
             </div>
-        </div>
+        </div> --}}
         @if($cat->lang->pre_info != '')
             <section class="page-section">
                 <div class="container">

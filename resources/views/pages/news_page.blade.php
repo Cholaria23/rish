@@ -142,34 +142,11 @@
 				</div>
 				@if(isset($news) && $news->count())
 					<div class="unit-page-aside">
-						<div class="unit-page-aside-inner sticky scroll-js">
+						<div data-simplebar data-simplebar-auto-hide="false" class="unit-page-aside-inner sticky simplebar">
 							<div class="aside-title">
 								@lang('main.last_units')
 							</div>
 							<div class="special-actions-wrap mobile-slider-js">
-								@foreach ($news as $unit_item)
-									@if (in_array($unit_item->cat_id, \Demos\AdminPanel\Cat::descendants(2)))
-										<div class="special-action-holder">
-											@include('layouts.tiles.news')
-										</div>
-									@elseif(in_array($unit_item->cat_id, \Demos\AdminPanel\Cat::descendants(3)))
-										<div class="special-action-holder">
-											@include('layouts.tiles.actions')
-										</div>
-									@endif
-								@endforeach
-
-								@foreach ($news as $unit_item)
-									@if (in_array($unit_item->cat_id, \Demos\AdminPanel\Cat::descendants(2)))
-										<div class="special-action-holder">
-											@include('layouts.tiles.news')
-										</div>
-									@elseif(in_array($unit_item->cat_id, \Demos\AdminPanel\Cat::descendants(3)))
-										<div class="special-action-holder">
-											@include('layouts.tiles.actions')
-										</div>
-									@endif
-								@endforeach
 								@foreach ($news as $unit_item)
 									@if (in_array($unit_item->cat_id, \Demos\AdminPanel\Cat::descendants(2)))
 										<div class="special-action-holder">

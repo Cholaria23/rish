@@ -61,7 +61,7 @@
                                             @lang('main.all_categories')
                                         </span>
                                     </button>
-                                    <ul class="tabs price-tabs sticky scroll-js">
+                                    <ul data-simplebar data-simplebar-auto-hide="false" class="tabs price-tabs sticky simplebar">
                                         @foreach ($categories as $cat_item)
                                             @if($cat_item->id == $cat->id)
                                                 <li class="tab-link" data-tab="all">

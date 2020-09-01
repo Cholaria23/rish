@@ -91,17 +91,6 @@
                 border-right: none;
             }
         }
-        .sticky {
-            position: sticky;
-            top: 30px;
-            height: calc(100vh - 30px);
-            overflow-y: auto;
-            &:before,
-            &:after {
-                content: '';
-                display: table;
-            }
-        }
         .price-tabs {
             @media (max-width: 1024px) {
                 display: none;

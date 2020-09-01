@@ -233,21 +233,6 @@
         @media (max-width: 768px) {
             margin-bottom: 40px;
         }
-        .unit-page-aside-inner {
-            position: sticky;
-            top: 30px;
-            height: calc(100vh - 30px);
-            overflow-y: auto;
-            &:before,
-            &:after {
-                content: '';
-                display: table;
-            }
-            @media (max-width: 1024px) {
-                position: static;
-                height: auto;
-            }
-        }
         .special-action-holder {
             width: 100%;
             @media (max-width: 1024px) {

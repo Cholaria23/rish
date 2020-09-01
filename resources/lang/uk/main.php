@@ -104,7 +104,7 @@ return [
     'search' => "Пошук",
     'search_page' => "<span>Пошук</span>",
     'search_meta' => "Пошук",
-    'more' => "Ещe",
+    'more' => "Ще",
     'about_us' => "Про нас",
     'perpetual_share' => "Безстрокова",
     'subscription_text' => "Підпишіться, щоб бути в курсі останніх новин і подій",

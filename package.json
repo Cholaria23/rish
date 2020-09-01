@@ -43,6 +43,7 @@
         "pgenerator": "^1.0.4",
         "popper": "^1.0.1",
         "selectric": "^1.13.0",
+        "simplebar": "^6.0.0-beta.3",
         "slick-carousel": "^1.8.1",
         "stickyfilljs": "^2.1.0",
         "x-editable": "^1.5.1"

@@ -75,7 +75,6 @@ function initSearchTabs() {
 }
 
 $(document).ready(function() {
-
     // scrollTop
     $('.up_button').click(function(){
         $("html, body").animate({ scrollTop: 0 }, 1000);
@@ -251,9 +250,9 @@ $(window).on('load resize', function() {
             unitImg.insertAfter( $( ".unit-block-title-js" ) );
         }
 
-        if($('.unit-page-aside-inner').length) {
-            if ($('.unit-page-aside-inner').hasClass('scroll-js')) {
-                $('.unit-page-aside-inner.scroll-js').mCustomScrollbar("destroy");
+        if($('.scroll-js').length) {
+            if ($('.scroll-js').hasClass('mCustomScrollbar')) {
+                $('.scroll-js').mCustomScrollbar("destroy");
             }
         }
 
@@ -280,8 +279,9 @@ $(window).on('load resize', function() {
         }
 
         // destroy custom scroll filter block
-         if($('.unit-page-aside-inner').length) {
-             if ($('.unit-page-aside-inner').hasClass('scroll-js')) {
+
+         if($('.scroll-js').length) {
+             if ($('.scroll-js').hasClass('mCS_destroyed')) {
                  initScrollbar();
              }
          }

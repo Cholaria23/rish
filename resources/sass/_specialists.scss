@@ -95,15 +95,6 @@
             margin: 0 auto 25px 0;
         }
     }
-    .sticky {
-        position: sticky;
-        top: 30px;
-        &:before,
-        &:after {
-            content: '';
-            display: table;
-        }
-    }
     .unit-block-info {
         .main-section-title {
             margin-bottom: 25px;
