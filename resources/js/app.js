@@ -2,7 +2,7 @@
 require('jquery/dist/jquery.min');
 window.$ = window.jQuery = require('jquery');
 // form Stickyfill
-import Stickyfill from "stickyfilljs/dist/stickyfill.min";
+import Stickyfill from "stickyfilljs/dist/stickyfill.min.js";
 window.Stickyfill = require('stickyfilljs');
 // object-fit-images
 import objectFitPolyfill from 'objectFitPolyfill';

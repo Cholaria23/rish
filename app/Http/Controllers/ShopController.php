@@ -79,15 +79,6 @@ class ShopController extends Controller
             $descendants = array_merge(MarketCat::descendants($cat->id), [$cat->id]);
             $ancestors = array_merge(MarketCat::ancestors($cat->id), [$cat->id]);
 
-            $query = $this->good
-                    ->with('lang', 'price','category.lang')
-                    ->where('is_archive', '=', '0')
-                    ->where('market_goods.is_hidden', '=', '0')
-                    ->whereIn('cat_id', $descendants);
-
-            $brand_ids = $query->distinct()->pluck('brand_id');
-            $brands = Brand::with('lang')->whereIn('id',$brand_ids)->limit(8)->orderByRaw('RAND()')->get();
-
             // if ($cat->children->count() && !$this->request->has('type')) {
 
             //     return View::make('pages.catalog.cats_list', [
@@ -97,22 +88,14 @@ class ShopController extends Controller
             //         'meta_type' => 'cat_good',
             //     ]);
             // } else {
+            if($cat->id == 2) {
 
+            } else {
                 $rel_ids = $cat->rel_goods->pluck('id')->toArray();
-                $all_categories_ids = array_merge(MarketCat::where('parent_id',2)->pluck('id')->toArray(), [2]);
+                $all_categories_ids = array_merge(MarketCat::where('parent_id',$cat->id)->pluck('id')->toArray(), [$cat->id]);
                 $categories = MarketCat::with('lang')->whereIn('id',$all_categories_ids)->where('is_hidden',0)->orderBy('sort_order','asc')->get();
 
-                $query = $this->good
-                    ->where('is_archive', '=', '0')
-                    ->where('market_goods.is_hidden', '=', '0')
-                    ->where(function($query) use($descendants, $rel_ids) {
-                        $query->whereIn('cat_id', $descendants)->orWhereIn('id', $rel_ids);
-                    })
-                    ->orderBy('spec_option_1','desc');
-
-                if(!$this->request->has('sort') || ($this->request->has('sort') && $this->request->get('sort') == 'default') || ($this->request->has('sort') && $this->request->get('sort') == null)){
-                    $query->CatSorting($cat->id);
-                }
+                
 
                 if($cat->children->count()){
                     foreach($cat->children as $child) {
@@ -122,19 +105,32 @@ class ShopController extends Controller
                             ->where('cat_id', $child->id)
                             ->CatSorting($child->id)->get();
                     }
-                }
+                } else {
+                    $query = $this->good
+                    ->where('is_archive', '=', '0')
+                    ->where('market_goods.is_hidden', '=', '0')
+                    ->where(function($query) use($descendants, $rel_ids) {
+                        $query->whereIn('cat_id', $descendants)->orWhereIn('id', $rel_ids);
+                    });
 
-                $cat->goods = $query->get();
-                if($cat->goods->count()){
-                    foreach($cat->goods as &$good){
-                        $good->load_gift_goods($good,3);
-                        get_action_flag($good);
+                    if(!$this->request->has('sort') || ($this->request->has('sort') && $this->request->get('sort') == 'default') || ($this->request->has('sort') && $this->request->get('sort') == null)){
+                        $query->CatSorting($cat->id);
+                    }
+
+                    $cat->goods = $query->get();
+                    if($cat->goods->count()){
+                        foreach($cat->goods as &$good){
+                            $good->load_gift_goods($good,3);
+                            get_action_flag($good);
+                        }
                     }
                 }
 
+            }
+
                 return View::make('pages.catalog.goods_list', [
                     'breadcrumbs' => $breadcrumbs,
-                    'categories' => $categories,
+                    'categories' => isset($categories) ? $categories : new \Illuminate\Database\Eloquent\Collection,
                     'cat' => $cat,
                     'meta_type' => 'cat_good',
                 ]);

@@ -36,14 +36,14 @@
             </div>
         </section>
 
-        @if(isset($cat->related_goods) && $cat->related_goods && $cat->related_goods->count() || !empty($cat->related_market_cats) && $cat->related_market_cats)
+        @if(isset($cat->related_goods) && $cat->related_goods && $cat->related_goods->count() || !empty($cat->related_market_cats) && $cat->related_market_cats && $cat->related_market_cats_flag)
             <section class="main-section">
                 <div class="container-small">
                     <div class="page-section-title-bold">
                         @lang('main.price')
                     </div>
                     <ul class="price-list">
-                        @if(!empty($cat->related_market_cats))
+                        @if(!empty($cat->related_market_cats)  && $cat->related_market_cats && $cat->related_market_cats_flag)
                             @foreach ($cat->related_market_cats as $market_cat)
                                 @php
                                     $i = 0;

@@ -10,10 +10,10 @@ function initPriceTabs() {
 	$(document).on('click', '.tab-link', function(e) {
         var selectTab = $(this).attr('data-tab');
         var parent = $(this).closest('.tabs-container');
-        if( selectTab == 2 ) {
+        if( selectTab == 'all' ) {
             parent.find('.tab-link').removeClass('active');
             $(this).addClass('active');
-            parent.find('.tab-content').fadeIn();
+            $('.tab-content').fadeIn();
         } else {
             parent.find('.tab-link').removeClass('active');
             $(this).addClass('active');
@@ -25,7 +25,7 @@ function initPriceTabs() {
     $(document).on('click', '.tab-mobile-link', function(e) {
         var selectTab = $(this).attr('data-tab');
         var parent = $(this).closest('.tabs-container');
-        if( selectTab == 2 ) {
+        if( selectTab == 'all' ) {
             parent.find('.tab-mobile-link').removeClass('active');
             $(this).addClass('active');
             parent.find('.tab-content').fadeIn();
@@ -165,6 +165,7 @@ $(document).ready(function() {
     }
     // position sticky
     if($('.sticky').length) {
+        Stickyfill.forceSticky();
         var elements = $('.sticky');
         Stickyfill.add(elements);
     }
@@ -255,7 +256,23 @@ $(window).on('load resize', function() {
                 $('.unit-page-aside-inner.scroll-js').mCustomScrollbar("destroy");
             }
         }
-        
+
+        if($('.tabs').length) {
+            $('.tabs').each(function() {
+                var li = $(this).find('li').removeClass('tab-link').addClass('tab-mobile-link');
+                if (li.hasClass('active')) {
+
+                } else {
+                    var active_tab = $(this).find('.tab-mobile-link').first();
+                    var tabs_container = $(this).closest('.tabs-container');
+                    var selectTab = active_tab.attr('data-tab');
+                    active_tab.addClass('active');
+                }
+            });
+            $(".active-tab-mobile-text").html($('.tab-mobile-link.active').text());
+        }
+
+
     } else {
         if($('.unit-block-img').length) {
             var unitImg = $('.unit-block-info .unit-block-img');
@@ -268,6 +285,22 @@ $(window).on('load resize', function() {
                  initScrollbar();
              }
          }
+
+         if($('.tabs').length) {
+             $('.tabs').css('display', '');
+             $('.tabs').each(function() {
+                 var li = $(this).find('li').removeClass('tab-mobile-link').addClass('tab-link');
+                 if (li.hasClass('active')) {
+
+                 } else {
+                     var active_tab = $(this).find('.tab-link').first();
+                     var tabs_container = $(this).closest('.tabs-container');
+                     var selectTab = active_tab.attr('data-tab');
+                     active_tab.addClass('active');
+                 }
+             });
+         }
+
     }
     if (window.innerWidth < 767) {
         if($('.main-section-title-wrap .btn-arrow').length) {
@@ -284,39 +317,6 @@ $(window).on('load resize', function() {
                 var location = $(this).closest('.main-section').find('.main-section-title-wrap');
                 location.append($(this));
             })
-        }
-    }
-
-    if (window.innerWidth < 577) {
-        if($('.tabs').length) {
-            $('.tabs').each(function() {
-                var li = $(this).find('li').removeClass('tab-link').addClass('tab-mobile-link');
-                if (li.hasClass('active')) {
-
-                } else {
-                    var active_tab = $(this).find('.tab-mobile-link').first();
-                    var tabs_container = $(this).closest('.tabs-container');
-                    var selectTab = active_tab.attr('data-tab');
-                    active_tab.addClass('active');
-                }
-    		});
-            $(".active-tab-mobile-text").html($('.tab-mobile-link.active').text());
-        }
-
-    } else {
-        if($('.tabs').length) {
-            $('.tabs').css('display', '');
-            $('.tabs').each(function() {
-                var li = $(this).find('li').removeClass('tab-mobile-link').addClass('tab-link');
-                if (li.hasClass('active')) {
-
-                } else {
-                    var active_tab = $(this).find('.tab-link').first();
-                    var tabs_container = $(this).closest('.tabs-container');
-                    var selectTab = active_tab.attr('data-tab');
-                    active_tab.addClass('active');
-                }
-    		});
         }
     }
 
