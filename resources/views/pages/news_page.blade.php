@@ -158,29 +158,6 @@
 										</div>
 									@endif
 								@endforeach
-
-								@foreach ($news as $unit_item)
-									@if (in_array($unit_item->cat_id, \Demos\AdminPanel\Cat::descendants(2)))
-										<div class="special-action-holder">
-											@include('layouts.tiles.news')
-										</div>
-									@elseif(in_array($unit_item->cat_id, \Demos\AdminPanel\Cat::descendants(3)))
-										<div class="special-action-holder">
-											@include('layouts.tiles.actions')
-										</div>
-									@endif
-								@endforeach
-								@foreach ($news as $unit_item)
-									@if (in_array($unit_item->cat_id, \Demos\AdminPanel\Cat::descendants(2)))
-										<div class="special-action-holder">
-											@include('layouts.tiles.news')
-										</div>
-									@elseif(in_array($unit_item->cat_id, \Demos\AdminPanel\Cat::descendants(3)))
-										<div class="special-action-holder">
-											@include('layouts.tiles.actions')
-										</div>
-									@endif
-								@endforeach
 							</div>
 						</div>
 					</div>
