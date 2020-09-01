@@ -46,15 +46,15 @@
 				</div>
 			</div>
 		@endif
-		@if(!empty($unit->related_goods) && $unit->related_goods->count() || !empty($unit->related_market_cats) && $unit->related_market_cats)
+		@if(!empty($unit->related_goods) && $unit->related_goods->count() || !empty($unit->related_market_cats) && $unit->related_market_cats && $unit->related_market_cats_flag)
 			<section class="main-section">
 				<div class="container-small">
 					<div class="page-section-title-bold">
 						@lang('main.price')
 					</div>
-					@if(!empty($unit->related_goods) || !empty($unit->related_market_cats) && $unit->related_market_cats)
+					@if(!empty($unit->related_goods) || !empty($unit->related_market_cats) && $unit->related_market_cats && $unit->related_market_cats_flag)
 						<ul class="price-list">
-							@if(!empty($unit->related_market_cats))
+							@if(!empty($unit->related_market_cats) && $unit->related_market_cats_flag)
 								@foreach ($unit->related_market_cats as $market_cat)
 									@php
 									$i = 0;
