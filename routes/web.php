@@ -1,5 +1,10 @@
 <?php
 
+if (strpos(Request::path(), '//')) {
+    header('Location: '.str_replace("http:/", "http://", str_replace("//", "/", Request::fullUrl())));
+    die();
+}
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
