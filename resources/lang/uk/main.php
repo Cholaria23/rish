@@ -21,6 +21,8 @@ return [
     "price" => "Прайс",
     "service_direction" => "Послуги у напрямку",
     "from" => "Від",
+    "to" => "До",
+    "request_price" => "Ціну уточнюйте",
     "photo" => "фото",
     "xp" => ":year рік досвіду|:year роки досвіду|:year років досвіду",
     "diploms" => "Дипломи",
