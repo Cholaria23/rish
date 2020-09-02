@@ -427,6 +427,17 @@ class PageController extends Controller {
             if (Auth::guard('admin_account')->check()) {
                 View::share('admin_edit_link', route('admin.specialists.editSpecialist', $expert->id));
             }
+            $expert->related_market_cats_flag = 0;
+            if(!empty($expert->related_market_cats)){
+                foreach ($expert->related_market_cats as $related_market_cat){
+                    if(isset($related_market_cat['cats']) && count($related_market_cat['cats'])){
+                        foreach($related_market_cat['cats'] as $market_cat){
+                            $market_cat->goods = $market_cat->goods()->where('is_hidden',0)->where('is_archive',0)->CatSorting($market_cat->id)->get();
+                            $expert->related_market_cats_flag += $market_cat->goods->count();
+                        }
+                    }
+                }
+            }
             $breadcrumbs = [];
             $breadcrumbs[] = [
                 'alias' => build_unit_route($specialist),
