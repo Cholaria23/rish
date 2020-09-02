@@ -8,17 +8,24 @@ function initScrollbar() {
 
 function initPriceTabs() {
 	$(document).on('click', '.tab-link', function(e) {
+        var hTopTitle = $('.main-section-title').offset().top;
         var selectTab = $(this).attr('data-tab');
         var parent = $(this).closest('.tabs-container');
         if( selectTab == 'all' ) {
             parent.find('.tab-link').removeClass('active');
             $(this).addClass('active');
             $('.tab-content').fadeIn();
+            if ($(window).scrollTop() > hTopTitle) {
+                $('html, body').animate({ scrollTop: $('.main-section-title').offset().top - 40 }, 500);
+            }
         } else {
             parent.find('.tab-link').removeClass('active');
             $(this).addClass('active');
             parent.find('.tab-content').hide();
             $('#'+selectTab).fadeIn();
+            if ($('#'+selectTab).length != 0 && $(window).scrollTop() > hTopTitle) {
+                $('html, body').animate({ scrollTop: $('.main-section-title').offset().top - 40 }, 500);
+            }
         }
     });
 
