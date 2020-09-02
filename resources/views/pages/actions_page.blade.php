@@ -146,7 +146,7 @@
 				</div>
 				@if(isset($news) && $news->count())
 					<div class="unit-page-aside">
-						<div data-simplebar data-simplebar-auto-hide="false" class="unit-page-aside-inner sticky simplebar">
+						<div data-simplebar data-simplebar-auto-hide="false" class="unit-page-aside-inner simplebar sticky-with-hiden">
 							<div class="aside-title">
 								@lang('main.last_units')
 							</div>

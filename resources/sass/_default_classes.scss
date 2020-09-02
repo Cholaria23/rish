@@ -992,7 +992,8 @@ video {
     }
 }
 // sticky
-.sticky {
+.sticky,
+.sticky-with-hiden {
     position: sticky;
     top: 30px;
     &:before,

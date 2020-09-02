@@ -171,8 +171,13 @@ $(document).ready(function() {
     }
     // position sticky
     if($('.sticky').length) {
-        Stickyfill.forceSticky();
         var elements = $('.sticky');
+        Stickyfill.add(elements);
+    }
+    // position sticky with overflow hidden
+    if($('.sticky-with-hiden').length) {
+        Stickyfill.forceSticky();
+        var elements = $('.sticky-with-hiden');
         Stickyfill.add(elements);
     }
     //   open search modal
