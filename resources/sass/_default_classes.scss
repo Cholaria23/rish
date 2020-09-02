@@ -1018,6 +1018,7 @@ video {
 .simplebar {
     height: calc(100vh - 30px);
     overflow-y: auto;
+    overflow-x: hidden;
     @media (max-width: 1024px) {
         height: auto;
     }
