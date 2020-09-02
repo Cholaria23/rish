@@ -70,6 +70,59 @@
 								@lang('main.btn.make_appointment')
 							</a>
 						</div>
+						@if(!empty($expert->related_goods) && isset($expert->related_goods['1']['goods']) && $expert->related_goods['1']['goods']->count() || !empty($expert->related_market_cats) && isset($expert->related_market_cats['1']['cats']) && $expert->related_market_cats_flag)
+							<section class="main-section">
+								<div class="page-section-title-bold">
+									@lang('main.price')
+								</div>
+								@if(!empty($expert->related_goods) || !empty($expert->related_market_cats['1']['cats']) && isset($expert->related_market_cats['1']['cats']) && $expert->related_market_cats_flag)
+									<ul class="price-list">
+										@if(!empty($expert->related_market_cats['1']['cats']) && isset($expert->related_market_cats['1']['cats']) && $expert->related_market_cats_flag)
+											@foreach ($expert->related_market_cats['1']['cats'] as $market_cat)
+												@php
+													$i = 0;
+												@endphp
+												@foreach ($market_cat->goods as $good)
+													@php
+														$i ++;
+													@endphp
+													<li class="price-item {{ $i<6 ? 'visible' : 'hide' }}">
+														<div class="price-item-wrap">
+															@include('layouts.tiles.good')
+														</div>
+													</li>
+												@endforeach
+											@endforeach
+										@endif
+										@if(!empty($expert->related_goods) && isset($expert->related_goods['1']['goods']) && $expert->related_goods['1']['goods']->count())
+											@php
+												$k = 0;
+											@endphp
+											@foreach ($expert->related_goods['1']['goods'] as $good)
+												@php
+													$k ++;
+												@endphp
+												<li class="price-item {{ $k<6 ? 'visible' : 'hide' }}">
+													<div class="price-item-wrap">
+														@include('layouts.tiles.good')
+													</div>
+												</li>
+											@endforeach
+										@endif
+									</ul>
+								@endif
+								@if (isset($i) && $i > 5 || isset($k) && $k > 5)
+									<div class="more-link-section all_price_js">
+										<span class="visible-text">
+											@lang('main.view_all_price')
+										</span>
+										<span class="hide-text text-hide">
+											@lang('main.hide-text')
+										</span>
+									</div>
+								@endif
+							</section>
+						@endif
 						@if($expert->lang->long_desc_1 != '')
 							<div class="description">
 								{!!$expert->lang->long_desc_1!!}
@@ -120,7 +173,7 @@
 		</div>
 	</div>
 
-	@if(!empty($expert->related_goods) && isset($expert->related_goods['1']['goods']) && $expert->related_goods['1']['goods']->count() || !empty($expert->related_market_cats) && isset($expert->related_market_cats['1']['cats']) && $expert->related_market_cats_flag)
+	{{-- @if(!empty($expert->related_goods) && isset($expert->related_goods['1']['goods']) && $expert->related_goods['1']['goods']->count() || !empty($expert->related_market_cats) && isset($expert->related_market_cats['1']['cats']) && $expert->related_market_cats_flag)
 		<section class="main-section">
 			<div class="container-small">
 				<div class="page-section-title-bold">
@@ -159,9 +212,7 @@
 										</div>
 									</li>
 								@endforeach
-
 						@endif
-
 					</ul>
 				@endif
 				@if (isset($i) && $i > 5 || isset($k) && $k > 5)
@@ -176,7 +227,7 @@
 				@endif
 			</div>
 		</section>
-	@endif
+	@endif --}}
 
 
 	@if($expert->images_1->count())
