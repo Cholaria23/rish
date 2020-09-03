@@ -138,17 +138,17 @@
                                                         <p style="margin: 0 0 20px 0;">
                                                             @if(isset(app('contacts')['main']['contacts']['facebook']) && app('contacts')['main']['contacts']['facebook'] != '')
                                                                 <a href="{{app('contacts')['main']['contacts']['facebook']}}" target="_blank" style="display: inline-block; margin: 0 20px 0 0;">
-                                                                    <img style="border: 0; display: block; width: 24px; height: auto;" alt="facebook" title="facebook" src="{{ URL::to('/img/email_facebook.png') }}" align="center">
+                                                                    <img style="border: 0; display: block; width: 24px; height: auto;" alt="facebook" title="facebook" src="{{ asset('img/email_facebook.png') }}" align="center">
                                                                 </a>
                                                             @endif
                                                             @if(isset(app('contacts')['main']['contacts']['instagram']) && app('contacts')['main']['contacts']['instagram'] != '')
                                                                 <a href="{{app('contacts')['main']['contacts']['instagram']}}" target="_blank" style="display: inline-block; margin: 0 20px 0 0;">
-                                                                    <img style="border: 0; display: block; width: 24px; height: auto;" alt="instagram" title="instagram" src="{{ URL::to('/img/email_instagram.png') }}" align="center">
+                                                                    <img style="border: 0; display: block; width: 24px; height: auto;" alt="instagram" title="instagram" src="{{ asset('img/email_instagram.png') }}" align="center">
                                                                 </a>
                                                             @endif
                                                             @if(isset(app('contacts')['main']['contacts']['youtube']) && app('contacts')['main']['contacts']['youtube'] != '')
                                                                 <a href="{{app('contacts')['main']['contacts']['youtube']}}" target="_blank" style="display: inline-block;">
-                                                                    <img style="border: 0; display: block; width: 24px; height: auto;" alt="youtube" title="youtube" src="{{ URL::to('/img/email_youtube.png') }}" align="center">
+                                                                    <img style="border: 0; display: block; width: 24px; height: auto;" alt="youtube" title="youtube" src="{{ asset('img/email_youtube.png') }}" align="center">
                                                                 </a>
                                                             @endif
                                                         </p>
