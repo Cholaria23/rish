@@ -24,7 +24,9 @@ import magnificPopup from "magnific-popup/dist/jquery.magnific-popup.min.js";
 // selectric
 import selectric from "selectric";
 // matchHeight
-require('./matchHeight');
+import 'jquery-match-height';
+// jquery-touchswipe
+require('jquery-touchswipe/jquery.touchSwipe.min.js');
 // import validate from "jquery-validation";
 require("jquery-validation");
 // sliders

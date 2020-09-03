@@ -82,9 +82,29 @@ function initSearchTabs() {
 }
 
 $(document).ready(function() {
+    // swipe for magnific-popup
+    if($('.popup-gallery').length) {
+        $("body").swipe({
+            swipeLeft: function(event, direction, distance, duration, fingerCount) {
+                $(".mfp-arrow-right").magnificPopup("next");
+            },
+            swipeRight: function() {
+                $(".mfp-arrow-left").magnificPopup("prev");
+            },
+            threshold: 50
+        });
+    }
     // Расчет выстоты
-    $('.special-action-info').matchHeight();
-    
+    if($('.special-action-info').length) {
+        $('.special-action-info').matchHeight();
+    }
+
+    if($('.specialists-experience').length) {
+        $('.specialists-experience').matchHeight({
+            byRow: false,
+        });
+    }
+
     // scrollTop
     $('.up_button').click(function(){
         $("html, body").animate({ scrollTop: 0 }, 1000);

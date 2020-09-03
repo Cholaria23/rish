@@ -35,6 +35,23 @@
                 </div>
             </div>
         </section>
+        
+        @if($cat->units->count())
+            <section class="main-section">
+                <div class="container-small">
+                    <div class="page-section-title-bold">
+                        @lang('main.service_direction')
+                    </div>
+                    <ul class="services-list">
+                        @foreach ($cat->units as $unit_item)
+                            <li class="services-list-item">
+                                @include('layouts.tiles.service_unit_tile')
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
+            </section>
+        @endif
 
         @if(isset($cat->related_goods) && $cat->related_goods && $cat->related_goods->count() || !empty($cat->related_market_cats) && $cat->related_market_cats && $cat->related_market_cats_flag)
             <section class="main-section">
@@ -98,22 +115,6 @@
             </section>
         @endif
 
-        @if($cat->units->count())
-            <section class="main-section">
-                <div class="container-small">
-                    <div class="page-section-title-bold">
-                        @lang('main.service_direction')
-                    </div>
-                    <ul class="services-list">
-                        @foreach ($cat->units as $unit_item)
-                            <li class="services-list-item">
-                                @include('layouts.tiles.service_unit_tile')
-                            </li>
-                        @endforeach
-                    </ul>
-                </div>
-            </section>
-        @endif
 
         @if(isset($cat->related_units) && $cat->related_units && $cat->related_units->count() && get_cat_id_flag($cat->related_units,[7]))
             <section class="main-section">

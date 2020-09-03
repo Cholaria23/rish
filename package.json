@@ -33,6 +33,7 @@
         "inputmask": "^5.0.0",
         "jquery-match-height": "^0.7.2",
         "jquery-touch-events": "^1.0.7",
+        "jquery-touchswipe": "^1.6.19",
         "jquery-validation": "^1.19.1",
         "jquery.maskedinput": "^1.4.1",
         "lazysizes": "^5.2.0",
