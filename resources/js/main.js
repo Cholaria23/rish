@@ -82,6 +82,9 @@ function initSearchTabs() {
 }
 
 $(document).ready(function() {
+    // Расчет выстоты
+    $('.special-action-info').matchHeight();
+    
     // scrollTop
     $('.up_button').click(function(){
         $("html, body").animate({ scrollTop: 0 }, 1000);
@@ -174,12 +177,7 @@ $(document).ready(function() {
         var elements = $('.sticky');
         Stickyfill.add(elements);
     }
-    // position sticky with overflow hidden
-    if($('.sticky-with-hiden').length) {
-        Stickyfill.forceSticky();
-        var elements = $('.sticky-with-hiden');
-        Stickyfill.add(elements);
-    }
+
     //   open search modal
     $('.header-search-btn').click(function() {
         var btn = $(this);
@@ -257,6 +255,12 @@ $(document).ready(function() {
 
 $(window).on('load resize', function() {
     if (window.innerWidth < 1025) {
+        // remove position sticky with overflow hidden
+        if($('.sticky-with-hiden').length) {
+            var elements = $('.sticky-with-hiden');
+            Stickyfill.remove(elements);
+        }
+
         if($('.unit-block-img').length) {
             var unitImg = $('.unit-block-img-wrap .unit-block-img');
             unitImg.insertAfter( $( ".unit-block-title-js" ) );
@@ -285,6 +289,13 @@ $(window).on('load resize', function() {
 
 
     } else {
+        // position sticky with overflow hidden
+        if($('.sticky-with-hiden').length) {
+            Stickyfill.forceSticky();
+            var elements = $('.sticky-with-hiden');
+            Stickyfill.add(elements);
+        }
+
         if($('.unit-block-img').length) {
             var unitImg = $('.unit-block-info .unit-block-img');
             unitImg.appendTo( $( ".sticky" ) );

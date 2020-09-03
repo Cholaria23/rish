@@ -350,6 +350,11 @@
     @media (max-width: 400px) {
         width: 100%;
     }
+    &.slider {
+        @media (max-width: 576px) {
+            width: 100%;
+        }
+    }
     &.no-slider {
         margin-bottom: 20px;
         display: none;
