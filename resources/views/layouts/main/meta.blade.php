@@ -1,4 +1,4 @@
-@section('meta') 
+@section('meta')
     @if(isset($meta_type) && $meta_type == 'unit')
         <title>{{ $unit->lang->meta_title != '' ? htmlspecialchars($unit->lang->meta_title) : htmlspecialchars($page_title) }} </title>
         <meta name="description" content="{{ htmlspecialchars($unit->lang->meta_desc) }}">
@@ -7,10 +7,10 @@
         <meta property="og:type" content="website" />
         <meta property="og:title" content="{{ $unit->lang->meta_title != '' ? htmlspecialchars($unit->lang->meta_title) : htmlspecialchars($page_title) }} " />
         <meta property="og:description" content="{{ htmlspecialchars($unit->lang->meta_desc) }}" />
-        <meta property="og:image" content="{{ (isset($unit) && $unit->img_1 != '') ? unit_img('thumb', $unit->img_1) : asset('storage/logo/'.app('seo')['logo_img_4']) }}" />
+        <meta property="og:image" content="{{ (isset($unit) && $unit->img_1 != '') ? unit_img('small', $unit->img_1) : asset('storage/logo/'.app('seo')['logo_img_4']) }}" />
         @php
-            if(isset($unit) && $unit->img_1 != '' && file_exists(unit_img('thumb', $unit->img_1))){
-                $img_size = getimagesize(unit_img('thumb', $unit->img_1));
+            if(isset($unit) && $unit->img_1 != '' && file_exists(unit_img('small', $unit->img_1))){
+                $img_size = getimagesize(unit_img('small', $unit->img_1));
             }else{
                 if(file_exists('storage/logo/'.app('seo')['logo_img_4'])){
                     $img_size = getimagesize(asset('storage/logo/'.app('seo')['logo_img_4']));
@@ -25,10 +25,10 @@
         <meta property="og:type" content="website" />
         <meta property="og:title" content="{{ $cat->lang->meta_title != '' ? htmlspecialchars($cat->lang->meta_title) : htmlspecialchars($page_title) }} {{Request::has('page') ? Lang::get('main.page').' - '.Request::get('page') : ''}} " />
         <meta property="og:description" content="{{ htmlspecialchars($cat->lang->meta_desc) }}" />
-        <meta property="og:image" content="{{ (isset($cat) && $cat->cover_1_img != '') ? cat_img('thumb', $cat->cover_1_img) : asset('storage/logo/'.app('seo')['logo_img_4']) }}" />
+        <meta property="og:image" content="{{ (isset($cat) && $cat->cover_1_img != '') ? cat_img('small', $cat->cover_1_img) : asset('storage/logo/'.app('seo')['logo_img_4']) }}" />
         @php
-            if(isset($cat) && $cat->cover_1_img != ''  && file_exists(cat_img('thumb', $cat->cover_1_img))){
-                $img_size = getimagesize(cat_img('thumb', $cat->cover_1_img));
+            if(isset($cat) && $cat->cover_1_img != ''  && file_exists(cat_img('small', $cat->cover_1_img))){
+                $img_size = getimagesize(cat_img('small', $cat->cover_1_img));
             }else{
                 if(file_exists('storage/logo/'.app('seo')['logo_img_4'])){
                     $img_size = getimagesize(asset('storage/logo/'.app('seo')['logo_img_4']));

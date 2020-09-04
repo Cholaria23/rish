@@ -41,9 +41,12 @@
 											{{$specialist_item->lang->first_name}}
 											{{$specialist_item->lang->father_name}}
 										</span>
-										@if(isset($specialist_item->chars_vals[4]) && isset($specialist_item->chars_vals[4]['values']))
+										@if(isset($specialist_item->chars_vals[2]) && isset($specialist_item->chars_vals[2]['values']))
 											<span class="unit-category-desc">
-												{{implode("/ ",$specialist_item->chars_vals[4]['values'])}}
+												<svg width="26" height="26">
+													<use xlink:href="#spec_active"></use>
+												</svg>
+												{{implode(", ",$specialist_item->chars_vals[2]['values'])}}
 											</span>
 										@endif
 									</span>
