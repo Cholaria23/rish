@@ -43,9 +43,9 @@
 										</span>
 										@if(isset($specialist_item->chars_vals[2]) && isset($specialist_item->chars_vals[2]['values']))
 											<span class="unit-category-desc">
-												<svg width="26" height="26">
+												{{-- <svg width="26" height="26">
 													<use xlink:href="#spec_active"></use>
-												</svg>
+												</svg> --}}
 												{{implode(", ",$specialist_item->chars_vals[2]['values'])}}
 											</span>
 										@endif
