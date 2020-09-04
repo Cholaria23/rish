@@ -498,6 +498,11 @@
 .special-action-name {
     font-family: $montserrat_semibold;
     font-size: 18px;
+    .special-action-name-desc {
+        display: block;
+        font-family: $montserrat_regular;
+        font-size: 16px;
+    }
 }
 
 // special-actions section end

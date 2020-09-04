@@ -50,7 +50,9 @@
     <span class="special-action-name">
         {{$unit_item->lang->name}}
         @if($unit_item->lang->short_desc_1 != '')
-            {!!$unit_item->lang->short_desc_1!!}
+			<span class="special-action-name-desc">
+				{!!$unit_item->lang->short_desc_1!!}
+			</span>
         @endif
     </span>
 </a>
