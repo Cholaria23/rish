@@ -375,9 +375,10 @@ class PageController extends Controller {
                 $query->whereIn('cat_id', array_merge(Cat::descendants($cat->id),[$cat->id]));
             })->where('is_hidden',0)->whereRaw('IF (is_period = 1, start < NOW(),  1=1 )')->whereRaw('IF (is_period = 1,  (end > NOW() || end is null),  1=1)');
             $first_query = clone $query;
+            $popular_query = clone $query;
             $cat->units = $first_query->orderBy('sort_order','desc')->get();
             if(in_array($cat->id, array_merge(array_merge(Cat::descendants(2),[2]), array_merge(Cat::descendants(3),[3])))) {
-                $cat->popular_units = $query->orderBy('visitors','desc')->limit(4)->get();
+                $cat->popular_units = $popular_query->orderBy('visitors','desc')->limit(4)->get();
                 $cat->units = $query->orderBy('date_publication','desc')->paginate(8);
                 if(in_array($cat->id, array_merge(Cat::descendants(2),[2]))){
                     $view = 'pages.news_list';
