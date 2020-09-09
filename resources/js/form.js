@@ -30,10 +30,13 @@ $(document).ready( function() {
             }
         } else {
             if ($('html').attr('lang')=='ru') {
-                labelText.text('Выберите файлы');
+                labelText.text('Загрузить фото');
+                labelRemove.hide();
+            } else if ($('html').attr('lang')=='uk') {
+                labelText.text('Завантажити фото');
                 labelRemove.hide();
             } else {
-                labelText.text('Виберіть файли');
+                labelText.text('Upload a photo');
                 labelRemove.hide();
             }
         }
@@ -44,9 +47,11 @@ $(document).ready( function() {
         var labelRemove = $(this).closest('.input-file-inner-wrap').find('.label-remove');
         var input = $(this).closest('.input-file-inner-wrap').find('.input-file');
         if ($('html').attr('lang')=='ru') {
-            labelText.text('Выберите файлы');
+            labelText.text('Загрузить фото');
+        } else if ($('html').attr('lang')=='uk') {
+            labelText.text('Завантажити фото');
         } else {
-            labelText.text('Виберіть файли');
+            labelText.text('Upload a photo');
         }
         labelRemove.hide();
         input.val('');
@@ -81,11 +86,11 @@ $(document).ready( function() {
             success: function(data) {
                 $(item)[0].reset();
                 if ($('html').attr('lang')=='ru') {
-                    $('.label-text').text('Выберите файлы');
+                    $('.label-text').text('Загрузить фото');
                 } else if ($('html').attr('lang')=='uk') {
-                    $('.label-text').text('Виберіть файли');
+                    $('.label-text').text('Завантажити фото');
                 } else {
-                    $('.label-text').text('Select files');
+                    $('.label-text').text('Upload a photo');
                 }
                 $('.input-file-inner-wrap').not(':eq(0)').css('display', 'none');
                 $('.label-remove').hide();

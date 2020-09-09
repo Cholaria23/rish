@@ -45,24 +45,21 @@
 }
 
 .main-section {
-    margin-bottom: 85px;
-    @media (max-width: 1024px) {
-        margin-bottom: 60px;
-    }
+    margin-bottom: 45px;
     @media (max-width: 768px) {
-        margin-bottom: 40px;
+        margin-bottom: 30px;
     }
     &.turquoise-section {
-        padding: 85px 0 55px;
+        padding: 45px 0 25px;
         background-color: $turquoise_rgba_7;
         @media (max-width: 1024px) {
-            padding: 60px 0 30px;
+            padding: 30px 0 15px;
         }
         @media (max-width: 768px) {
-            padding: 40px 0 10px;
+            padding: 20px 0 5px;
         }
         @media (max-width: 576px) {
-            padding: 40px 0 25px;
+            padding: 20px 0 15px;
         }
     }
 }
@@ -76,30 +73,21 @@
     text-align: left;
 }
 .page-section {
-    margin-bottom: 55px;
-    @media (max-width: 1024px) {
-        margin-bottom: 35px;
-    }
+    margin-bottom: 45px;
     @media (max-width: 768px) {
-        margin-bottom: 25px;
+        margin-bottom: 30px;
     }
     &.turquoise-section {
-        padding: 60px 0;
+        padding: 45px 0;
         background-color: $turquoise_rgba_10;
-        @media (max-width: 1024px) {
-            padding: 50px 0;
-        }
         @media (max-width: 768px) {
-            padding: 40px 0;
+            padding: 30px 0;
         }
     }
     &:last-child {
-        margin-bottom: 85px;
-        @media (max-width: 1024px) {
-            margin-bottom: 60px;
-        }
+        margin-bottom: 45px;
         @media (max-width: 768px) {
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
     }
 }
@@ -402,8 +390,8 @@
     }
     h3 {
         margin: 0 0 25px 0;
-        font-family: $montserrat_bold;
-        @include adaptiv-font(28, 20);
+        font-family: $montserrat_semibold;
+        @include adaptiv-font(24, 20);
         line-height: 1.4;
         @media (max-width: 576px) {
             margin: 0 0 10px 0;
@@ -411,8 +399,8 @@
     }
     h4 {
         margin: 0 0 25px 0;
-        font-family: $montserrat_bold;
-        @include adaptiv-font(24, 18);
+        font-family: $montserrat_semibold;
+        @include adaptiv-font(22, 18);
         line-height: 1.4;
         @media (max-width: 576px) {
             margin: 0 0 10px 0;
@@ -694,6 +682,18 @@ video {
     margin: -10px 0 0 -10px;
     display: flex;
     flex-wrap: wrap;
+    &.diploms-gallery {
+        margin: -10px 0 15px -10px;
+        .gallery-item {
+            width: 25%;
+            @media (max-width: 768px) {
+                width: 50%;
+            }
+            @media (max-width: 400px) {
+                width: 100%;
+            }
+        }
+    }
     .gallery-item {
         width: 25%;
         padding: 10px 0 0 10px;
@@ -705,6 +705,9 @@ video {
         }
         @media (max-width: 400px) {
             width: 100%;
+        }
+        &.hide {
+            display: none;
         }
     }
 }

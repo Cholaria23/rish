@@ -51,8 +51,8 @@
             &:hover,
             &.active {
                 color: $dark_turquoise;
-                background-color: $turquoise_rgba_10;
-                border: 1px solid $turquoise_rgba_10;
+                // background-color: $turquoise_rgba_10;
+                // border: 1px solid $turquoise_rgba_10;
             }
             @media (max-width: 1366px) {
                 padding: 15px 25px;

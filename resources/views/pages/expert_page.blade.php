@@ -237,12 +237,28 @@
 					@lang('main.diploms')
 				</div>
 				<div class="popup-gallery diploms-gallery">
+					@php
+						$i = 0;
+					@endphp
 					@foreach ($expert->images_1 as $key => $img_item)
-						<a href="{{specialist_image('big',$img_item->src)}}" class="gallery-item" title="{{$expert->lang->last_name}} {{$expert->lang->first_name}} {{$expert->lang->father_name}} @lang('main.diploms') {{$key+1}}">
+						@php
+							$i ++;
+						@endphp
+						<a href="{{specialist_image('big',$img_item->src)}}" class="gallery-item {{ $i < 5 ? 'visible' : 'hide' }}" title="{{$expert->lang->last_name}} {{$expert->lang->first_name}} {{$expert->lang->father_name}} @lang('main.diploms') {{$key+1}}">
 							<img class="lazyload" data-src="{{specialist_image('small',$img_item->src)}}" alt="{{$expert->lang->last_name}} {{$expert->lang->first_name}} {{$expert->lang->father_name}} @lang('main.diploms') {{$key+1}}" title="{{$expert->lang->last_name}} {{$expert->lang->first_name}} {{$expert->lang->father_name}} @lang('main.diploms') {{$key+1}}">
 						</a>
 					@endforeach
 				</div>
+				@if (isset($i) && $i > 4)
+					<div class="more-link-section all_diploms_js">
+						<span class="visible-text">
+							@lang('main.see_all')
+						</span>
+						<span class="hide-text text-hide">
+							@lang('main.hide-text')
+						</span>
+					</div>
+				@endif
 			</div>
 		</section>
 	@endif
