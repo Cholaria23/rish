@@ -154,4 +154,6 @@ return [
     ],
     "all_categories" => "Все категории",
     "see_all" => "Смотреть все",
+    "give_feedback" => "Оставить отзыв",
+    "more_details" => "Подробнее",
 ];

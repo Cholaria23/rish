@@ -152,4 +152,5 @@ return [
     ],
     "all_categories" => "All categories",
     "see_all" => "See all",
+    "more_details" => "More details",
 ];

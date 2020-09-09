@@ -236,7 +236,7 @@
 				<div class="page-section-title-bold">
 					@lang('main.diploms')
 				</div>
-				<div class="popup-gallery diploms-gallery">
+				<div class="popup-gallery diploms-gallery mobile-diplom-slider-js">
 					@php
 						$i = 0;
 					@endphp
@@ -250,7 +250,7 @@
 					@endforeach
 				</div>
 				@if (isset($i) && $i > 4)
-					<div class="more-link-section all_diploms_js">
+					<div class="more-link-section all_diploms_js desktop">
 						<span class="visible-text">
 							@lang('main.see_all')
 						</span>
@@ -282,20 +282,27 @@
 							@include('layouts.tiles.lead')
 						@endforeach
 					</div>
-					<div class="counter-slider">
-						@php
-						$i = 0;
-						@endphp
-						@foreach($expert->leads as $lead_item)
+					<div class="counter-slider-wrap">
+						<div class="counter-slider">
 							@php
-							$i ++;
+							$i = 0;
 							@endphp
-							<div class="counter-slider-item">
-								<div class="count-slide">
-									{{$i}}<span class="all-count-slide">/{{$expert->leads->count()}}</span>
+							@foreach($expert->leads as $lead_item)
+								@php
+								$i ++;
+								@endphp
+								<div class="counter-slider-item">
+									<div class="count-slide">
+										{{$i}}<span class="all-count-slide">/{{$expert->leads->count()}}</span>
+									</div>
 								</div>
-							</div>
-						@endforeach
+							@endforeach
+						</div>
+						<a class="popup-js btn-arrow-transparent" href="#reviews">
+							<span class="btn-arrow-text">
+								@lang('main.give_feedback')
+							</span>
+						</a>
 					</div>
 					<div class="btn-wrap"></div>
 				</div>

@@ -74,4 +74,53 @@ $(window).on('load resize', function () {
             }
         })
     }
+
+    if($('.mobile-diplom-slider-js').length) {
+        $('.mobile-diplom-slider-js').each(function() {
+            if (window.innerWidth < 1025) {
+                $('.gallery-item').each(function() {
+                    if ($(this).hasClass('hide')) {
+                        $(this).removeClass('hide');
+                    }
+                });
+
+                if (!$(this).hasClass('slick-slider')) {
+                    $(this).slick({
+                        arrows: true,
+                        infinite: true,
+                        slidesToShow: 3,
+                        slidesToScroll: 3,
+                        prevArrow: '<div class="mobile-slider-arrow prev"></div>',
+                        nextArrow: '<div class="mobile-slider-arrow next"></div>',
+                        responsive: [
+                            {
+                                breakpoint: 769,
+                                settings: {
+                                    slidesToShow: 2,
+                                    slidesToScroll: 2,
+                                }
+                            },
+                            {
+                                breakpoint: 401,
+                                settings: {
+                                    slidesToShow: 1,
+                                    slidesToScroll: 1,
+                                }
+                            }
+                        ]
+                    });
+                }
+            } else {
+                $('.gallery-item').each(function() {
+                    if (!$(this).hasClass('visible')) {
+                        $(this).addClass('hide');
+                    }
+                });
+
+                if ($(this).hasClass('slick-slider')) {
+                    $(this).slick('destroy');
+                }
+            }
+        })
+    }
 });

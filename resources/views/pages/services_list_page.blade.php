@@ -35,7 +35,7 @@
                 </div>
             </div>
         </section>
-        
+
         @if($cat->units->count())
             <section class="main-section">
                 <div class="container-small">
@@ -185,21 +185,28 @@
                                 @include('layouts.tiles.lead')
                             @endforeach
                         </div>
-                        <div class="counter-slider">
-                            @php
-                            $i = 0;
-                            @endphp
-                            @foreach($cat->leads as $lead_item)
+                        <div class="counter-slider-wrap">
+                            <div class="counter-slider">
                                 @php
-                                $i ++;
+                                $i = 0;
                                 @endphp
-                                <div class="counter-slider-item">
-                                    <div class="count-slide">
-                                        {{$i}}<span class="all-count-slide">/{{$cat->leads->count()}}</span>
+                                @foreach($cat->leads as $lead_item)
+                                    @php
+                                    $i ++;
+                                    @endphp
+                                    <div class="counter-slider-item">
+                                        <div class="count-slide">
+                                            {{$i}}<span class="all-count-slide">/{{$cat->leads->count()}}</span>
+                                        </div>
                                     </div>
-                                </div>
-                            @endforeach
-                        </div>
+                                @endforeach
+                            </div>
+                            <a class="popup-js btn-arrow-transparent" href="#reviews">
+    							<span class="btn-arrow-text">
+    								@lang('main.give_feedback')
+    							</span>
+    						</a>
+    					</div>
                         <div class="btn-wrap"></div>
                     </div>
     			</div>

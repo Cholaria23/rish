@@ -166,7 +166,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="popup-info-text">
+								<div class="popup-img-info-text">
 									@lang('main.review.upload_img')
 								</div>
 							</div>
