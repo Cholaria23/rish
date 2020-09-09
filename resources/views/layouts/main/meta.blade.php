@@ -133,7 +133,7 @@
     @if (class_exists('LaravelLocalization'))
         @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
             @if ($localeCode != App::getLocale())
-                <link rel="alternate" hreflang="{{$localeCode}}" href="{{LaravelLocalization::getLocalizedURL($localeCode) }}" />
+                <link rel="alternate" hreflang="{{$localeCode}}" href="{{LaravelLocalization::getLocalizedURL($localeCode) }}/" />
             @endif
         @endforeach
     @endif
