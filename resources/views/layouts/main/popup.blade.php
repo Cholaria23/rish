@@ -441,3 +441,88 @@
 		</div>
 	</form>
 </div>
+
+
+@if(isset($unit) && $unit->id == 4)
+
+@else
+	{{-- reviews --}}
+	<div class="mfp-hide popup-wrap big" id="reviews">
+		<div class="popup-name-wrap">
+			<div class="popup-name">
+				@lang('main.review.write_reviews')
+			</div>
+		</div>
+		<form method="post" class="review_form" enctype="multipart/form-data">
+			<div class="review-form-inner">
+				<div class="review-input-wrap">
+					<div class="input-wrap">
+						<input class="input-form" type="text" name="name" placeholder="@lang('main.form.name')" required>
+					</div>
+					<div class="input-wrap">
+						<input class="input-form" type="email" name="email" placeholder="@lang('main.form.email')">
+					</div>
+				</div>
+				<div class="review-textarea-wrap">
+					<div class="input-wrap">
+						<textarea class="input-form form-input-textarea" name="content" placeholder="@lang('main.review.input_review')" required></textarea>
+					</div>
+				</div>
+			</div>
+			<div class="input-file-wrap">
+				<div class="input-file-inner">
+					<div class="input-file-inner-wrap">
+						<input class="form-control input-file" id="input-file-1" type="file" name="file" accept=".jpg,.jpeg,.png,.gif">
+						<label class="label-input-file" for="input-file-1">
+							<span class="label-svg">
+								<svg width="24" height="24">
+									<use xlink:href="#download"></use>
+								</svg>
+							</span>
+							<span class="label-text">
+								@lang('main.review.upload_photo')
+							</span>
+						</label>
+						<div class="label-remove">
+							<svg width="20" height="20">
+								<use xlink:href="#label-remove"></use>
+							</svg>
+						</div>
+					</div>
+					<div class="input-file-inner-wrap">
+						<input class="form-control input-file" id="input-file-2" type="file" name="file" accept=".jpg,.jpeg,.png,.gif">
+						<label class="label-input-file" for="input-file-2">
+							<span class="label-svg">
+								<svg width="24" height="24">
+									<use xlink:href="#download"></use>
+								</svg>
+							</span>
+							<span class="label-text">
+								@lang('main.review.upload_photo')
+							</span>
+						</label>
+						<div class="label-remove">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 408.5 408.5"><path d="M87.7 388.8c0.5 11 9.5 19.7 20.5 19.7h191.9c11 0 20.1-8.7 20.5-19.7l13.7-289.3H74L87.7 388.8zM247.7 171.3c0-4.6 3.7-8.3 8.4-8.3h13.4c4.6 0 8.4 3.7 8.4 8.3v165.3c0 4.6-3.7 8.3-8.3 8.3h-13.4c-4.6 0-8.3-3.7-8.3-8.3V171.3zM189.2 171.3c0-4.6 3.7-8.3 8.3-8.3h13.4c4.6 0 8.3 3.7 8.3 8.3v165.3c0 4.6-3.7 8.3-8.3 8.3h-13.4c-4.6 0-8.3-3.7-8.3-8.3V171.3L189.2 171.3zM130.8 171.3c0-4.6 3.7-8.3 8.3-8.3h13.4c4.6 0 8.3 3.7 8.3 8.3v165.3c0 4.6-3.7 8.3-8.3 8.3h-13.4c-4.6 0-8.3-3.7-8.3-8.3V171.3z"></path><path d="M343.6 21h-88.5V4.3c0-2.4-1.9-4.3-4.3-4.3h-93c-2.4 0-4.3 1.9-4.3 4.3v16.7H64.9c-7.1 0-12.9 5.8-12.9 12.9V74.5h304.5V33.9C356.5 26.8 350.7 21 343.6 21z"></path></svg>
+						</div>
+					</div>
+				</div>
+				<div class="popup-img-info-text">
+					@lang('main.review.upload_img')
+				</div>
+			</div>
+			<div class="error-file-info">
+				<div class="max-size">
+					@lang('main.review.max_size')
+				</div>
+			</div>
+			<input type="hidden" name="url" value="{{Request::path()}}">
+			<input type="hidden" name="url_name" value="{{isset($page_title) && $page_title != '' ? $page_title : '' }}">
+			<input type="hidden" name="title" value="@lang('main.review.write_reviews')">
+			<input type="hidden" name="lang" value="{{App::getLocale()}}">
+			<button type="submit" class="btn-green do_review_form">
+				@lang('main.review.send')
+			</button>
+		</form>
+		<div class='form-thanks'>@lang('main.review.thank_reviews')</div>
+	</div>
+@endif

@@ -11,7 +11,9 @@ class HeaderComposer {
         $reviews = \Demos\AdminPanel\Unit::with('lang')->where('is_hidden',0)->find(4);
         $online_consultation = \Demos\AdminPanel\Unit::with('lang')->where('is_hidden',0)->find(5);
         $specialist = \Demos\AdminPanel\Unit::with('lang')->where('is_hidden',0)->find(79);
-        
+        $get_there = \Demos\AdminPanel\Unit::with('lang')->where('is_hidden',0)->find(105);
+        $answers_questions = \Demos\AdminPanel\Unit::with('lang')->where('is_hidden',0)->find(106);
+
         $actions = \Demos\AdminPanel\Cat::with('lang')->where('is_hidden',0)->find(17);
         $offers = \Demos\AdminPanel\Cat::with('lang')->where('is_hidden',0)->find(16);
         $articles = \Demos\AdminPanel\Cat::with('lang')->where('is_hidden',0)->find(18);
@@ -49,6 +51,8 @@ class HeaderComposer {
             'offers' => $offers,
             'articles' => $articles,
             'news' => $news,
+            'get_there' => $get_there,
+            'answers_questions' => $answers_questions,
         ];
         $view->with('header_data', $header_data);
     }

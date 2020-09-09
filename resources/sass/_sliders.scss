@@ -149,7 +149,13 @@
 }
 // reviews-slider end
 // counter-slider start
+.counter-slider-wrap {
+    // display: flex;
+    // align-items: center;
+    // flex-wrap: wrap;
+}
 .counter-slider {
+    margin-bottom: 15px;
     .counter-slider-item {
         text-align: right;
     }
@@ -265,6 +271,20 @@
         top: 30%;
     }
 }
+
+.diploms-gallery.mobile-diplom-slider-js {
+    .mobile-slider-arrow {
+        top: 40%;
+    }
+    .slick-slide {
+        margin: 0 10px;
+    }
+    .slick-list {
+        margin: 0 -10px;
+    }
+}
+
+.mobile-diplom-slider-js,
 .mobile-slider-js {
     .mobile-slider-arrow {
         position: absolute;

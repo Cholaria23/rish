@@ -113,49 +113,36 @@
 			</section>
 		@endif
 
-		@if($rel_types->count())
-			@foreach ($rel_types as $type_item)
-				@if ($type_item->id == 4)
-					@if (isset($unit->related_units[$type_item->id]) && count($unit->related_units[$type_item->id]['units']))
-						<section class="main-section">
-			                <div class="container-small">
-			                    <div class="page-section-title-bold">
-									@lang('main.titles.faq')
-								</div>
-								<ul class="faq-list" itemtype="https://schema.org/FAQPage" itemscope>
-									@foreach ($unit->related_units[$type_item->id]['units'] as $unit_item)
-										<li class="faq-item" itemscope itemtype="https://schema.org/Question" itemprop="mainEntity">
-											<div class="faq-question">
-												<span class="faq-question-name" itemprop="name">
-													{{$unit_item->lang->name}}
-												</span>
-												<div class="faq-icon"></div>
-											</div>
-											@if($unit_item->lang->long_desc_1 != '')
-												<div class="faq-answer text" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer" itemscope>
-													<span itemprop="text">
-														{!!$unit_item->lang->long_desc_1!!}
-													</span>
-												</div>
-											@endif
-										</li>
-									@endforeach
-								</ul>
-								<div class="btn-wrap">
-									<a class="btn-transparent-arrow popup-js" href="#question">
-										<span class="btn-transparent-arrow-text">
-											@lang('main.btn.question_service')
+		@if($unit->rel_faq_groups->count())
+			<section class="main-section">
+				<div class="container-small">
+					<div class="page-section-title-bold">
+						@lang('main.titles.faq')
+					</div>
+					<ul class="faq-list" itemtype="https://schema.org/FAQPage" itemscope>
+						@foreach ($unit->rel_faq_groups as $faq_group_item)
+							@foreach ($faq_group_item->faq as $faq_item)
+								<li class="faq-item" itemscope itemtype="https://schema.org/Question" itemprop="mainEntity">
+									<div class="faq-question">
+										<span class="faq-question-name" itemprop="name">
+											{{$faq_item->lang->question}}
 										</span>
-			                        </a>
-								</div>
-							</div>
-			            </section>
-					@endif
-				@endif
-			@endforeach
+										<div class="faq-icon"></div>
+									</div>
+									@if($faq_item->lang->answer != '')
+										<div class="faq-answer text" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer" itemscope>
+											<span itemprop="text">
+												{!!$faq_item->lang->answer!!}
+											</span>
+										</div>
+									@endif
+								</li>
+							@endforeach
+						@endforeach
+					</ul>
+				</div>
+			</section>
 		@endif
-
-
 		@if($rel_types->count())
 			@foreach ($rel_types as $type_item)
 				@if ($type_item->id == 2)
@@ -228,20 +215,27 @@
 								@include('layouts.tiles.lead')
 							@endforeach
 						</div>
-						<div class="counter-slider">
-							@php
-							$i = 0;
-							@endphp
-							@foreach($unit->leads as $lead_item)
+						<div class="counter-slider-wrap">
+							<div class="counter-slider">
 								@php
-								$i ++;
+								$i = 0;
 								@endphp
-								<div class="counter-slider-item">
-									<div class="count-slide">
-										{{$i}}<span class="all-count-slide">/{{$unit->leads->count()}}</span>
+								@foreach($unit->leads as $lead_item)
+									@php
+									$i ++;
+									@endphp
+									<div class="counter-slider-item">
+										<div class="count-slide">
+											{{$i}}<span class="all-count-slide">/{{$unit->leads->count()}}</span>
+										</div>
 									</div>
-								</div>
-							@endforeach
+								@endforeach
+							</div>
+							<a class="popup-js btn-arrow-transparent" href="#reviews">
+								<span class="btn-arrow-text">
+									@lang('main.give_feedback')
+								</span>
+							</a>
 						</div>
 						<div class="btn-wrap"></div>
 					</div>

@@ -236,13 +236,29 @@
 				<div class="page-section-title-bold">
 					@lang('main.diploms')
 				</div>
-				<div class="popup-gallery diploms-gallery">
+				<div class="popup-gallery diploms-gallery mobile-diplom-slider-js">
+					@php
+						$i = 0;
+					@endphp
 					@foreach ($expert->images_1 as $key => $img_item)
-						<a href="{{specialist_image('big',$img_item->src)}}" class="gallery-item" title="{{$expert->lang->last_name}} {{$expert->lang->first_name}} {{$expert->lang->father_name}} @lang('main.diploms') {{$key+1}}">
+						@php
+							$i ++;
+						@endphp
+						<a href="{{specialist_image('big',$img_item->src)}}" class="gallery-item {{ $i < 5 ? 'visible' : 'hide' }}" title="{{$expert->lang->last_name}} {{$expert->lang->first_name}} {{$expert->lang->father_name}} @lang('main.diploms') {{$key+1}}">
 							<img class="lazyload" data-src="{{specialist_image('small',$img_item->src)}}" alt="{{$expert->lang->last_name}} {{$expert->lang->first_name}} {{$expert->lang->father_name}} @lang('main.diploms') {{$key+1}}" title="{{$expert->lang->last_name}} {{$expert->lang->first_name}} {{$expert->lang->father_name}} @lang('main.diploms') {{$key+1}}">
 						</a>
 					@endforeach
 				</div>
+				@if (isset($i) && $i > 4)
+					<div class="more-link-section all_diploms_js desktop">
+						<span class="visible-text">
+							@lang('main.see_all')
+						</span>
+						<span class="hide-text text-hide">
+							@lang('main.hide-text')
+						</span>
+					</div>
+				@endif
 			</div>
 		</section>
 	@endif
@@ -266,20 +282,27 @@
 							@include('layouts.tiles.lead')
 						@endforeach
 					</div>
-					<div class="counter-slider">
-						@php
-						$i = 0;
-						@endphp
-						@foreach($expert->leads as $lead_item)
+					<div class="counter-slider-wrap">
+						<div class="counter-slider">
 							@php
-							$i ++;
+							$i = 0;
 							@endphp
-							<div class="counter-slider-item">
-								<div class="count-slide">
-									{{$i}}<span class="all-count-slide">/{{$expert->leads->count()}}</span>
+							@foreach($expert->leads as $lead_item)
+								@php
+								$i ++;
+								@endphp
+								<div class="counter-slider-item">
+									<div class="count-slide">
+										{{$i}}<span class="all-count-slide">/{{$expert->leads->count()}}</span>
+									</div>
 								</div>
-							</div>
-						@endforeach
+							@endforeach
+						</div>
+						<a class="popup-js btn-arrow-transparent" href="#reviews">
+							<span class="btn-arrow-text">
+								@lang('main.give_feedback')
+							</span>
+						</a>
 					</div>
 					<div class="btn-wrap"></div>
 				</div>

@@ -153,4 +153,6 @@ return [
       'requested_rest_show' => 'Відновлення доступу на сайт',
     ],
     "all_categories" => "Усі категорії",
+    "see_all" => "Дивитись все",
+    "more_details" => "Детальніше",
 ];

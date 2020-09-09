@@ -254,6 +254,18 @@ $(document).ready(function() {
         });
     }
 
+    // open all diploms
+    if($('.all_diploms_js').length) {
+        $('.all_diploms_js').click(function(e) {
+            var diploms_list = $(this).prev();
+            diploms_list.find('.gallery-item:not(.visible)').slideToggle(function() {
+                diploms_list.find('a:not(.visible)').toggleClass('hide');
+            });
+            $(this).children('.visible-text').toggleClass('text-hide');
+            $(this).children('.hide-text').toggleClass('text-hide');
+        });
+    }
+
     //  faq accordeon
     if($('.faq-question').length) {
         $('.faq-question').on('click', function(e) {

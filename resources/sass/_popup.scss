@@ -12,6 +12,11 @@
         color: $turquoise;
     }
 }
+.mfp-gallery {
+    .mfp-close {
+        display: none;
+    }
+}
 .popup-wrap {
     position: relative;
     margin: 0 auto;
@@ -199,6 +204,14 @@
             @media (max-width: 768px) {
                 margin: 0 auto;
             }
+        }
+        .label-svg {
+            svg {
+                fill: $dark_turquoise;
+            }
+        }
+        .label-text {
+            color: $dark_turquoise;
         }
     }
     form {

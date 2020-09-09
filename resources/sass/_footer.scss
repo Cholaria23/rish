@@ -61,17 +61,21 @@
     .social-list {
         margin-top: 20px;
         display: flex;
-    }
-    .social-item + .social-item {
-        margin-left: 20px;
-    }
-    .social-link {
-        &:hover .social-icon svg {
-            fill: $turquoise;
+        .social-item + .social-item {
+            margin-left: 20px;
         }
-        .social-icon svg {
-            transition: .25s linear;
-            fill: $ligt_grey;
+        .social-link {
+            display: inline-block;
+            &:hover .social-icon svg {
+                fill: $turquoise;
+            }
+            .social-icon {
+                display: inline-block;
+                svg {
+                    transition: .25s linear;
+                    fill: $ligt_grey;
+                }
+            }
         }
     }
     .footer-subscription {

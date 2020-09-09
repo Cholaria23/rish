@@ -39,6 +39,9 @@
 									</div>
 									<div class="header-address-info">
 										{!! app('contacts')['main']['contacts']['lang']['address'] !!}
+										( <a class="header-address-info-link" href="{{build_unit_route($header_data['get_there'])}}">
+											{{$header_data['get_there']->lang->name}}
+										</a> )
 									</div>
 								</div>
 							@endif
@@ -82,15 +85,56 @@
 						</div>
 					</div>
 					@if(count(app('langSettings')->langs->pluck('code')->toArray()) > 1)
-						<ul class="lang-list desktop">
-							@foreach(app('langSettings')->langs->pluck('code')->toArray() as $localeCode)
-								<li class="lang-item">
-									<a class="lang-link {{ ($localeCode == LaravelLocalization::getCurrentLocale()) ? 'active' : '' }}" href="{{LaravelLocalization::getLocalizedURL($localeCode) }}">
-										{{ strtoupper($localeCode) }}
-									</a>
-								</li>
-							@endforeach
-						</ul>
+						<div class="lang-list-wrap desktop">
+							<ul class="lang-list">
+								@foreach(app('langSettings')->langs->pluck('code')->toArray() as $localeCode)
+									<li class="lang-item">
+										<a class="lang-link {{ ($localeCode == LaravelLocalization::getCurrentLocale()) ? 'active' : '' }}" href="{{LaravelLocalization::getLocalizedURL($localeCode) }}">
+											{{ strtoupper($localeCode) }}
+										</a>
+									</li>
+								@endforeach
+							</ul>
+							@if(isset(app('contacts')['main']['contacts']['facebook']) && app('contacts')['main']['contacts']['facebook'] != '' ||
+							isset(app('contacts')['main']['contacts']['instagram']) && app('contacts')['main']['contacts']['instagram'] != '' || isset(app('contacts')['main']['contacts']['youtube']) && app('contacts')['main']['contacts']['youtube'] != ''
+							)
+								<ul class="social-list">
+									@if(isset(app('contacts')['main']['contacts']['youtube']) && app('contacts')['main']['contacts']['youtube'] != '')
+										<li class="social-item">
+											<a class="social-link" href="{{app('contacts')['main']['contacts']['youtube']}}" target="_blank" rel="noreferrer">
+												<span class="social-icon">
+													<svg width="30" height="30">
+														<use xlink:href="#icon-You-tube"></use>
+													</svg>
+												</span>
+											</a>
+										</li>
+									@endif
+									@if(isset(app('contacts')['main']['contacts']['instagram']) && app('contacts')['main']['contacts']['instagram'] != '')
+										<li class="social-item">
+											<a class="social-link" href="{{app('contacts')['main']['contacts']['instagram']}}" target="_blank" rel="noreferrer">
+												<span class="social-icon">
+													<svg width="30" height="30">
+														<use xlink:href="#icon-Instagram"></use>
+													</svg>
+												</span>
+											</a>
+										</li>
+									@endif
+									@if(isset(app('contacts')['main']['contacts']['facebook']) && app('contacts')['main']['contacts']['facebook'] != '')
+										<li class="social-item">
+											<a class="social-link" href="{{app('contacts')['main']['contacts']['facebook']}}" target="_blank" rel="noreferrer">
+												<span class="social-icon">
+													<svg width="30" height="30">
+														<use xlink:href="#icon-Facebook"></use>
+													</svg>
+												</span>
+											</a>
+										</li>
+									@endif
+								</ul>
+							@endif
+						</div>
 					@endif
 					<div class="burger-menu mobile">
 	                    <div class="menu__icon">
@@ -161,6 +205,34 @@
 							</a>
 						</li>
 					@endif
+					@if(isset($header_data['answers_questions']) && $header_data['answers_questions'])
+						<li class="header-menu-item mobile">
+							<a class="header-menu-link" href="{{build_unit_route($header_data['answers_questions'])}}">
+								{{$header_data['answers_questions']->lang->name}}
+							</a>
+						</li>
+					@endif
+					@if(isset($header_data['actions']) && $header_data['actions'])
+						<li class="header-menu-item mobile">
+							<a class="header-menu-link" href="{{route('first_url',$header_data['actions']->alias)}}">
+								{{$header_data['actions']->lang->name}}
+							</a>
+						</li>
+					@endif
+					@if(isset($header_data['offers']) && $header_data['offers'])
+						<li class="header-menu-item mobile">
+							<a class="header-menu-link" href="{{route('first_url',$header_data['offers']->alias)}}">
+								{{$header_data['offers']->lang->name}}
+							</a>
+						</li>
+					@endif
+					@if(isset($header_data['news']) && $header_data['news'])
+						<li class="header-menu-item mobile">
+							<a class="header-menu-link" href="{{route('first_url',$header_data['news']->alias)}}">
+								{{$header_data['news']->lang->name}}
+							</a>
+						</li>
+					@endif
 					@if(isset($header_data['specialist']) && $header_data['specialist'])
 						<li class="header-menu-item mobile">
 							<a class="header-menu-link" href="{{build_unit_route($header_data['specialist'])}}">
@@ -182,24 +254,10 @@
 							</a>
 						</li>
 					@endif
-					@if(isset($header_data['news']) && $header_data['news'])
+					@if(isset($header_data['prices']) && $header_data['prices'])
 						<li class="header-menu-item mobile">
-							<a class="header-menu-link" href="{{route('first_url',$header_data['news']->alias)}}">
-								{{$header_data['news']->lang->name}}
-							</a>
-						</li>
-					@endif
-					@if(isset($header_data['offers']) && $header_data['offers'])
-						<li class="header-menu-item mobile">
-							<a class="header-menu-link" href="{{route('first_url',$header_data['offers']->alias)}}">
-								{{$header_data['offers']->lang->name}}
-							</a>
-						</li>
-					@endif
-					@if(isset($header_data['actions']) && $header_data['actions'])
-						<li class="header-menu-item mobile">
-							<a class="header-menu-link" href="{{route('first_url',$header_data['actions']->alias)}}">
-								{{$header_data['actions']->lang->name}}
+							<a class="header-menu-link" href="{{build_cat_route($header_data['prices']->alias)}}">
+								{{$header_data['prices']->lang->name}}
 							</a>
 						</li>
 					@endif
@@ -210,20 +268,13 @@
 							</a>
 						</li>
 					@endif
-					@if(isset($header_data['prices']) && $header_data['prices'])
-						<li class="header-menu-item mobile">
-							<a class="header-menu-link" href="{{build_cat_route($header_data['prices']->alias)}}">
-								{{$header_data['prices']->lang->name}}
-							</a>
-						</li>
-					@endif
-					@if(isset($header_data['online_consultation']) && $header_data['online_consultation'])
+					{{-- @if(isset($header_data['online_consultation']) && $header_data['online_consultation'])
 						<li class="header-menu-item mobile">
 							<a class="header-menu-link" href="{{build_unit_route($header_data['online_consultation'])}}">
 								{{$header_data['online_consultation']->lang->name}}
 							</a>
 						</li>
-					@endif
+					@endif --}}
 					<li class="header-menu-item has-submenu desktop">
 						<span class="header-menu-link">
 							<span class="has-submenu-text">
@@ -237,6 +288,34 @@
 						</span>
 						<div class="header-submenu-wrap">
 							<ul class="header-submenu">
+								@if(isset($header_data['answers_questions']) && $header_data['answers_questions'])
+									<li class="header-menu-item">
+										<a class="header-menu-link" href="{{build_unit_route($header_data['answers_questions'])}}">
+											{{$header_data['answers_questions']->lang->name}}
+										</a>
+									</li>
+								@endif
+								@if(isset($header_data['actions']) && $header_data['actions'])
+									<li class="header-menu-item">
+										<a class="header-menu-link" href="{{route('first_url',$header_data['actions']->alias)}}">
+											{{$header_data['actions']->lang->name}}
+										</a>
+									</li>
+								@endif
+								@if(isset($header_data['offers']) && $header_data['offers'])
+									<li class="header-menu-item">
+										<a class="header-menu-link" href="{{route('first_url',$header_data['offers']->alias)}}">
+											{{$header_data['offers']->lang->name}}
+										</a>
+									</li>
+								@endif
+								@if(isset($header_data['news']) && $header_data['news'])
+									<li class="header-menu-item">
+										<a class="header-menu-link" href="{{route('first_url',$header_data['news']->alias)}}">
+											{{$header_data['news']->lang->name}}
+										</a>
+									</li>
+								@endif
 								@if(isset($header_data['specialist']) && $header_data['specialist'])
 									<li class="header-menu-item">
 										<a class="header-menu-link" href="{{build_unit_route($header_data['specialist'])}}">
@@ -258,24 +337,10 @@
 										</a>
 									</li>
 								@endif
-								@if(isset($header_data['news']) && $header_data['news'])
+								@if(isset($header_data['prices']) && $header_data['prices'])
 									<li class="header-menu-item">
-										<a class="header-menu-link" href="{{route('first_url',$header_data['news']->alias)}}">
-											{{$header_data['news']->lang->name}}
-										</a>
-									</li>
-								@endif
-								@if(isset($header_data['offers']) && $header_data['offers'])
-									<li class="header-menu-item">
-										<a class="header-menu-link" href="{{route('first_url',$header_data['offers']->alias)}}">
-											{{$header_data['offers']->lang->name}}
-										</a>
-									</li>
-								@endif
-								@if(isset($header_data['actions']) && $header_data['actions'])
-									<li class="header-menu-item">
-										<a class="header-menu-link" href="{{route('first_url',$header_data['actions']->alias)}}">
-											{{$header_data['actions']->lang->name}}
+										<a class="header-menu-link" href="{{build_cat_route($header_data['prices']->alias)}}">
+											{{$header_data['prices']->lang->name}}
 										</a>
 									</li>
 								@endif
@@ -286,20 +351,13 @@
 										</a>
 									</li>
 								@endif
-								@if(isset($header_data['prices']) && $header_data['prices'])
-									<li class="header-menu-item">
-										<a class="header-menu-link" href="{{build_cat_route($header_data['prices']->alias)}}">
-											{{$header_data['prices']->lang->name}}
-										</a>
-									</li>
-								@endif
-								@if(isset($header_data['online_consultation']) && $header_data['online_consultation'])
+								{{-- @if(isset($header_data['online_consultation']) && $header_data['online_consultation'])
 									<li class="header-menu-item">
 										<a class="header-menu-link" href="{{build_unit_route($header_data['online_consultation'])}}">
 											{{$header_data['online_consultation']->lang->name}}
 										</a>
 									</li>
-								@endif
+								@endif --}}
 							</ul>
 						</div>
 					</li>
@@ -331,21 +389,65 @@
 									</div>
 									<div class="header-address-info">
 										{!! app('contacts')['main']['contacts']['lang']['address'] !!}
+										( <a class="header-address-info-link" href="{{build_unit_route($header_data['get_there'])}}">
+											{{$header_data['get_there']->lang->name}}
+										</a> )
 									</div>
 								</div>
 							@endif
 						</div>
 					@endif
 					@if(count(app('langSettings')->langs->pluck('code')->toArray()) > 1)
-						<ul class="lang-list">
-							@foreach(app('langSettings')->langs->pluck('code')->toArray() as $localeCode)
-								<li class="lang-item">
-									<a class="lang-link {{ ($localeCode == LaravelLocalization::getCurrentLocale()) ? 'active' : '' }}" href="{{LaravelLocalization::getLocalizedURL($localeCode) }}">
-										{{ strtoupper($localeCode) }}
-									</a>
-								</li>
-							@endforeach
-						</ul>
+						<div class="lang-list-wrap">
+							<ul class="lang-list">
+								@foreach(app('langSettings')->langs->pluck('code')->toArray() as $localeCode)
+									<li class="lang-item">
+										<a class="lang-link {{ ($localeCode == LaravelLocalization::getCurrentLocale()) ? 'active' : '' }}" href="{{LaravelLocalization::getLocalizedURL($localeCode) }}">
+											{{ strtoupper($localeCode) }}
+										</a>
+									</li>
+								@endforeach
+							</ul>
+							@if(isset(app('contacts')['main']['contacts']['facebook']) && app('contacts')['main']['contacts']['facebook'] != '' ||
+							isset(app('contacts')['main']['contacts']['instagram']) && app('contacts')['main']['contacts']['instagram'] != '' || isset(app('contacts')['main']['contacts']['youtube']) && app('contacts')['main']['contacts']['youtube'] != ''
+							)
+								<ul class="social-list">
+									@if(isset(app('contacts')['main']['contacts']['youtube']) && app('contacts')['main']['contacts']['youtube'] != '')
+										<li class="social-item">
+											<a class="social-link" href="{{app('contacts')['main']['contacts']['youtube']}}" target="_blank" rel="noreferrer">
+												<span class="social-icon">
+													<svg width="30" height="30">
+														<use xlink:href="#icon-You-tube"></use>
+													</svg>
+												</span>
+											</a>
+										</li>
+									@endif
+									@if(isset(app('contacts')['main']['contacts']['instagram']) && app('contacts')['main']['contacts']['instagram'] != '')
+										<li class="social-item">
+											<a class="social-link" href="{{app('contacts')['main']['contacts']['instagram']}}" target="_blank" rel="noreferrer">
+												<span class="social-icon">
+													<svg width="30" height="30">
+														<use xlink:href="#icon-Instagram"></use>
+													</svg>
+												</span>
+											</a>
+										</li>
+									@endif
+									@if(isset(app('contacts')['main']['contacts']['facebook']) && app('contacts')['main']['contacts']['facebook'] != '')
+										<li class="social-item">
+											<a class="social-link" href="{{app('contacts')['main']['contacts']['facebook']}}" target="_blank" rel="noreferrer">
+												<span class="social-icon">
+													<svg width="30" height="30">
+														<use xlink:href="#icon-Facebook"></use>
+													</svg>
+												</span>
+											</a>
+										</li>
+									@endif
+								</ul>
+							@endif
+						</div>
 					@endif
 				</div>
 			</div>
