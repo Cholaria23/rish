@@ -85,9 +85,9 @@
 						<ul class="lang-list desktop">
 							@foreach(app('langSettings')->langs->pluck('code')->toArray() as $localeCode)
 								<li class="lang-item">
-									<a class="lang-link {{ ($localeCode == LaravelLocalization::getCurrentLocale()) ? 'active' : '' }}" href="{{LaravelLocalization::getLocalizedURL($localeCode) }}">
+									<{{ ($localeCode == LaravelLocalization::getCurrentLocale()) ? 'span' : 'a' }} class="lang-link {{ ($localeCode == LaravelLocalization::getCurrentLocale()) ? 'active' : '' }}" href="{{LaravelLocalization::getLocalizedURL($localeCode) }}">
 										{{ strtoupper($localeCode) }}
-									</a>
+									</{{ ($localeCode == LaravelLocalization::getCurrentLocale()) ? 'span' : 'a' }}>
 								</li>
 							@endforeach
 						</ul>
@@ -340,9 +340,9 @@
 						<ul class="lang-list">
 							@foreach(app('langSettings')->langs->pluck('code')->toArray() as $localeCode)
 								<li class="lang-item">
-									<a class="lang-link {{ ($localeCode == LaravelLocalization::getCurrentLocale()) ? 'active' : '' }}" href="{{LaravelLocalization::getLocalizedURL($localeCode) }}">
+									<{{ ($localeCode == LaravelLocalization::getCurrentLocale()) ? 'span' : 'a' }} class="lang-link {{ ($localeCode == LaravelLocalization::getCurrentLocale()) ? 'active' : '' }}" href="{{LaravelLocalization::getLocalizedURL($localeCode) }}">
 										{{ strtoupper($localeCode) }}
-									</a>
+									</{{ ($localeCode == LaravelLocalization::getCurrentLocale()) ? 'span' : 'a' }}>
 								</li>
 							@endforeach
 						</ul>
