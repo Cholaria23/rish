@@ -32,7 +32,7 @@
                         <ul class="social-list">
                             @if(isset(app('contacts')['main']['contacts']['youtube']) && app('contacts')['main']['contacts']['youtube'] != '')
                                 <li class="social-item">
-                                    <a class="social-link" href="{{app('contacts')['main']['contacts']['youtube']}}">
+                                    <a class="social-link" href="{{app('contacts')['main']['contacts']['youtube']}}" target="_blank" rel="noreferrer">
                                         <span class="social-icon">
                                             <svg width="35" height="35">
                                                 <use xlink:href="#icon-You-tube"></use>
@@ -43,7 +43,7 @@
                             @endif
                             @if(isset(app('contacts')['main']['contacts']['instagram']) && app('contacts')['main']['contacts']['instagram'] != '')
                                 <li class="social-item">
-                                    <a class="social-link" href="{{app('contacts')['main']['contacts']['instagram']}}">
+                                    <a class="social-link" href="{{app('contacts')['main']['contacts']['instagram']}}" target="_blank" rel="noreferrer">
                                         <span class="social-icon">
                                             <svg width="35" height="35">
                                                 <use xlink:href="#icon-Instagram"></use>
@@ -54,7 +54,7 @@
                             @endif
                             @if(isset(app('contacts')['main']['contacts']['facebook']) && app('contacts')['main']['contacts']['facebook'] != '')
                                 <li class="social-item">
-                                    <a class="social-link" href="{{app('contacts')['main']['contacts']['facebook']}}">
+                                    <a class="social-link" href="{{app('contacts')['main']['contacts']['facebook']}}" target="_blank" rel="noreferrer">
                                         <span class="social-icon">
                                             <svg width="35" height="35">
                                                 <use xlink:href="#icon-Facebook"></use>
