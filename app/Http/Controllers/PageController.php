@@ -135,6 +135,11 @@ class PageController extends Controller {
                         ->where('is_hidden_bc',0)
                         ->orderBy('sort_order', 'asc')
                         ->get();
+            if($breadcrumbs->count()){
+                foreach ($breadcrumbs as $crumb) {
+                    $crumb->alias = route('first_url',$crumb->alias);
+                }
+            }
             $this->calculate_visitors($unit);
             View::share('page_title', $unit->lang->name);
             $rel_types = \Demos\AdminPanel\UnitsRelType::get();
@@ -362,6 +367,11 @@ class PageController extends Controller {
                                     ->where('is_hidden_bc',0)
                                     ->orderBy('sort_order', 'asc')
                                     ->get();
+            if($breadcrumbs->count()){
+                foreach ($breadcrumbs as $crumb) {
+                    $crumb->alias = route('first_url',$crumb->alias);
+                }
+            }
             if (isset($cat) && Auth::guard('admin_account')->check()) {
                 View::share('admin_edit_link', route('admin.units.categories', 'cat_id='.$cat->id));
             }

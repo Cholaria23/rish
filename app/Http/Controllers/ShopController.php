@@ -68,7 +68,7 @@ class ShopController extends Controller
             if($breadcrumbs->count()){
                 foreach ($breadcrumbs as $crumb) {
                     $active_class[] = $crumb->alias;
-                    $crumb->alias = build_cat_link($crumb->alias);
+                    $crumb->alias = build_cat_route($crumb->alias);
                 }
             }
             if($this->request->has('type') && $this->request->get('type') == 'sale'){
@@ -187,7 +187,7 @@ class ShopController extends Controller
             if($breadcrumbs->count()){
                 foreach ($breadcrumbs as $crumb) {
                     $active_class[] = $crumb->alias;
-                    $crumb->alias = build_cat_link($crumb->alias);
+                    $crumb->alias = build_cat_route($crumb->alias);
                 }
             }
             $good->group_chars = MarketCat::with(['chars_groups' => function($query) {
