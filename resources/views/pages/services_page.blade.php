@@ -216,26 +216,28 @@
 							@endforeach
 						</div>
 						<div class="counter-slider-wrap">
-							<div class="counter-slider">
-								@php
-								$i = 0;
-								@endphp
-								@foreach($unit->leads as $lead_item)
-									@php
-									$i ++;
-									@endphp
-									<div class="counter-slider-item">
-										<div class="count-slide">
-											{{$i}}<span class="all-count-slide">/{{$unit->leads->count()}}</span>
-										</div>
-									</div>
-								@endforeach
-							</div>
 							<a class="popup-js btn-arrow-transparent" href="#reviews">
 								<span class="btn-arrow-text">
 									@lang('main.give_feedback')
 								</span>
 							</a>
+							<div class="counter-slider-holder">
+								<div class="counter-slider">
+									@php
+									$i = 0;
+									@endphp
+									@foreach($unit->leads as $lead_item)
+										@php
+										$i ++;
+										@endphp
+										<div class="counter-slider-item">
+											<div class="count-slide">
+												{{$i}}<span class="all-count-slide">/{{$unit->leads->count()}}</span>
+											</div>
+										</div>
+									@endforeach
+								</div>
+							</div>
 						</div>
 						<div class="btn-wrap"></div>
 					</div>

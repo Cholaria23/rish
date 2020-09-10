@@ -150,12 +150,27 @@
 // reviews-slider end
 // counter-slider start
 .counter-slider-wrap {
-    // display: flex;
-    // align-items: center;
-    // flex-wrap: wrap;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @media (max-width: 576px) {
+        flex-wrap: wrap;
+    }
+    .btn-arrow-transparent {
+        @media (max-width: 576px) {
+            margin: 10px auto 0;
+            order: 1;
+        }
+    }
+    .counter-slider-holder {
+        width: calc(100% - 150px);
+        @media (max-width: 576px) {
+            width: 100%;
+        }
+    }
 }
 .counter-slider {
-    margin-bottom: 15px;
     .counter-slider-item {
         text-align: right;
     }
