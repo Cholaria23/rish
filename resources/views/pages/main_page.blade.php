@@ -225,7 +225,27 @@
 
 	{{-- @include('layouts.main.advantages') --}}
 
-	@if(isset($special_actions) && $special_actions)
+	@if(isset($cat_tabs) && $cat_tabs)
+		@foreach ($cat_tabs as $cat_item)
+			@if($cat_item->units->count())
+				<div data-id="{{$cat_item->id}}">
+					{{$cat_item->lang->name}}			
+				</div>
+			@endif
+		@endforeach
+
+		@foreach ($cat_tabs as $cat_item)
+			@if($cat_item->units->count())
+				<div data-tab-id="{{$cat_item->id}}">
+					@foreach ($cat_item->units as $unit_item)
+						@include('layouts.tiles.news')
+					@endforeach		
+				</div>
+			@endif			
+		@endforeach
+	@endif
+
+	{{-- @if(isset($special_actions) && $special_actions)
 		<section class="main-section">
 			<div class="container">
 				<div class="special-action-holder no-slider">
@@ -269,7 +289,7 @@
 				</div>
 			</div>
 		</section>
-	@endif
+	@endif --}}
 
 	@if($unit->lang->long_desc_1 != '')
 		<section class="main-section">

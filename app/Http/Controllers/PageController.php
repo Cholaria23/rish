@@ -46,6 +46,16 @@ class PageController extends Controller {
             View::share('admin_edit_link', route('admin.units.editUnit', $unit->id));
         }
 
+        $cat_tabs = Cat::with('lang')->whereIn('id', array_merge(Cat::descendants(2),Cat::descendants(3)))->where('is_hidden',0)->orderBy('sort_order','asc')->get();
+
+        if($cat_tabs->count()){
+            foreach($cat_tabs as $item_tab){
+                $item_tab->units = $item_tab->units()->with('lang')->whereHas('category', function($query) use ($item_tab) {
+                    $query->where('cat_id', $item_tab->id);
+                })->where('is_hidden',0)->whereRaw('IF (is_period = 1, start < NOW(),  1=1 )')->whereRaw('IF (is_period = 1,  (end > NOW() || end is null),  1=1)')->orderBy('date_publication','desc')->limit(4)->get();
+            }
+        }
+        
         $blog = Unit::with('lang')->whereHas('category', function($query){
             $query->whereIn('cat_id', Cat::descendants(2));
         })->where('is_hidden',0)->whereRaw('IF (is_period = 1, start < NOW(),  1=1 )')->whereRaw('IF (is_period = 1,  (end > NOW() || end is null),  1=1)')->orderBy('date_publication','desc')->limit(4)->get();
@@ -82,6 +92,7 @@ class PageController extends Controller {
         $page_data = [
             'unit' => $unit,
             'blog' => $blog,
+            'cat_tabs' => $cat_tabs,
             'special_actions' => $special_actions,
             'special_actions_cat' => $special_actions_cat,
             'services' => $services,
