@@ -58,7 +58,10 @@ function initSearchTabs() {
 	active_tab.addClass('active');
 	tabs_container.find('.tab-content').hide();
     $('#'+selectTab).fadeIn();
-
+    if ($('#'+selectTab).find('.mobile-slider-js').is('.slick-slider') == true) {
+        $(".mobile-slider-js").slick('destroy');
+        $(".mobile-slider-js").slick('refresh');
+    }
 	$(document).on('click', '.tab-link', function(e) {
         var selectTab = $(this).attr('data-tab');
         var parent = $(this).closest('.tabs-container');
