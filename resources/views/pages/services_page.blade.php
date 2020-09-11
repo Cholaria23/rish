@@ -3,18 +3,22 @@
 @stop
 @section('page')
 	<div class="page">
-		@include('layouts.main.breadcrumbs')
+		<section class="page-section section-with-breadcrumbs">
+            <div class="container">
+				@include('layouts.main.breadcrumbs')
+				@if($unit->lang->h1 != '')
+					<h1 class="page-section-top-title">
+						{{$unit->lang->h1}}
+					</h1>
+				@else
+					<h1 class="page-section-top-title">
+						{{$unit->lang->name}}
+					</h1>
+				@endif
+			</div>
+        </section>
 		<section class="main-section top-section">
 			<div class="container-small">
-				@if($unit->lang->h1 != '')
-					<div class="page-section-top-title">
-						{{$unit->lang->h1}}
-					</div>
-				@else
-					<div class="page-section-top-title">
-						{{$unit->lang->name}}
-					</div>
-				@endif
 				@if($unit->lang->long_desc_1 != '')
 					<div class="main-section-top-subtitle description">
 						{!!$unit->lang->long_desc_1!!}
@@ -97,7 +101,7 @@
 
 
 		@if($unit->lang->long_desc_2 != '' || $unit->videos->count())
-			<section class="main-section turquoise-section">
+			<section class="main-section">
                 <div class="container-small">
                     <div class="description">
 						@if($unit->lang->long_desc_2 != '')
@@ -216,26 +220,28 @@
 							@endforeach
 						</div>
 						<div class="counter-slider-wrap">
-							<div class="counter-slider">
-								@php
-								$i = 0;
-								@endphp
-								@foreach($unit->leads as $lead_item)
-									@php
-									$i ++;
-									@endphp
-									<div class="counter-slider-item">
-										<div class="count-slide">
-											{{$i}}<span class="all-count-slide">/{{$unit->leads->count()}}</span>
-										</div>
-									</div>
-								@endforeach
-							</div>
 							<a class="popup-js btn-arrow-transparent" href="#reviews">
 								<span class="btn-arrow-text">
 									@lang('main.give_feedback')
 								</span>
 							</a>
+							<div class="counter-slider-holder">
+								<div class="counter-slider">
+									@php
+									$i = 0;
+									@endphp
+									@foreach($unit->leads as $lead_item)
+										@php
+										$i ++;
+										@endphp
+										<div class="counter-slider-item">
+											<div class="count-slide">
+												{{$i}}<span class="all-count-slide">/{{$unit->leads->count()}}</span>
+											</div>
+										</div>
+									@endforeach
+								</div>
+							</div>
 						</div>
 						<div class="btn-wrap"></div>
 					</div>

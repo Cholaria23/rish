@@ -13,11 +13,11 @@
 						</div>
 					</div>
 					<div class="unit-block-info">
-						<div class="main-section-title unit-block-title-js">
+						<h1 class="main-section-title unit-block-title-js">
 							{{$expert->lang->last_name}}
 							{{$expert->lang->first_name}}
 							{{$expert->lang->father_name}}
-						</div>
+						</h1>
 						@if(isset($expert->chars_vals[4]) && isset($expert->chars_vals[4]['values']))
 							<ul class="specialist-activities-list">
 								@foreach ($expert->chars_vals[4]['values'] as $val_item)
@@ -283,26 +283,28 @@
 						@endforeach
 					</div>
 					<div class="counter-slider-wrap">
-						<div class="counter-slider">
-							@php
-							$i = 0;
-							@endphp
-							@foreach($expert->leads as $lead_item)
-								@php
-								$i ++;
-								@endphp
-								<div class="counter-slider-item">
-									<div class="count-slide">
-										{{$i}}<span class="all-count-slide">/{{$expert->leads->count()}}</span>
-									</div>
-								</div>
-							@endforeach
-						</div>
 						<a class="popup-js btn-arrow-transparent" href="#reviews">
 							<span class="btn-arrow-text">
 								@lang('main.give_feedback')
 							</span>
 						</a>
+						<div class="counter-slider-holder">
+							<div class="counter-slider">
+								@php
+								$i = 0;
+								@endphp
+								@foreach($expert->leads as $lead_item)
+									@php
+									$i ++;
+									@endphp
+									<div class="counter-slider-item">
+										<div class="count-slide">
+											{{$i}}<span class="all-count-slide">/{{$expert->leads->count()}}</span>
+										</div>
+									</div>
+								@endforeach
+							</div>
+						</div>
 					</div>
 					<div class="btn-wrap"></div>
 				</div>

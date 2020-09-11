@@ -176,10 +176,44 @@
 						</li>
 					@endif
 					@if(isset($header_data['services']) && $header_data['services'])
-						<li class="header-menu-item">
+						<li class="header-menu-item has-submenu-services">
 							<a class="header-menu-link" href="{{route('first_url',$header_data['services']->alias)}}">
 								{{$header_data['services']->lang->name}}
 							</a>
+							<div class="header-submenu-services-wrap">
+								@if($header_data['services']->children->count())
+									<div class="header-submenu-services">
+							            @foreach ($header_data['services']->children as $firsc_child)
+											<div class="header-submenu-services-item">
+												<div class="header-submenu-services-title">
+													{{$firsc_child->lang->name}}
+												</div>
+												@if($firsc_child->children->count())
+													<ul class="header-submenu-services-list two-columns">
+														@foreach ($firsc_child->children as $key => $second_child)
+															<li class="header-submenu-services-list-item">
+																<a class="header-submenu-services-link" href="{{route('first_url',$second_child->alias)}}">
+																	{{$second_child->lang->name}}
+																</a>
+															</li>
+														@endforeach
+													</ul>
+												@elseif($firsc_child->units->count())
+													<ul class="header-submenu-services-list">
+														@foreach ($firsc_child->units as $key => $unit_item)
+															<li class="header-submenu-services-list-item">
+																<a class="header-submenu-services-link" href="{{build_unit_route($unit_item)}}">
+																	{{$unit_item->lang->name}}
+																</a>
+															</li>
+														@endforeach
+													</ul>
+												@endif
+											</div>
+							            @endforeach
+									</div>
+						        @endif
+							</div>
 						</li>
 					@endif
 					@if(isset($header_data['checkup']) && $header_data['checkup'])

@@ -3,18 +3,22 @@
 @stop
 @section('page')
     <div class="page">
-        @include('layouts.main.breadcrumbs')
+        <section class="page-section section-with-breadcrumbs">
+            <div class="container-small">
+                @include('layouts.main.breadcrumbs')
+                @if($cat->lang->h1 != '')
+                    <h1 class="page-section-top-title">
+                        {{$cat->lang->h1}}
+                    </h1>
+                @else
+                    <h1 class="page-section-top-title">
+                        {{$cat->lang->name}}
+                    </h1>
+                @endif
+            </div>
+        </section>
         <section class="main-section top-section">
             <div class="container-small">
-                @if($cat->lang->h1 != '')
-                    <div class="page-section-top-title">
-                        {{$cat->lang->h1}}
-                    </div>
-                @else
-                    <div class="page-section-top-title">
-                        {{$cat->lang->name}}
-                    </div>
-                @endif
                 @if($cat->lang->pre_info != '')
                     <div class="main-section-top-subtitle description">
                         {!! $cat->lang->pre_info !!}
@@ -106,7 +110,7 @@
         @endif
 
         @if($cat->lang->post_info != '')
-            <section class="main-section turquoise-section">
+            <section class="main-section">
                 <div class="container-small">
                     <div class="description">
                         {!! $cat->lang->post_info !!}
@@ -186,26 +190,28 @@
                             @endforeach
                         </div>
                         <div class="counter-slider-wrap">
-                            <div class="counter-slider">
-                                @php
-                                $i = 0;
-                                @endphp
-                                @foreach($cat->leads as $lead_item)
-                                    @php
-                                    $i ++;
-                                    @endphp
-                                    <div class="counter-slider-item">
-                                        <div class="count-slide">
-                                            {{$i}}<span class="all-count-slide">/{{$cat->leads->count()}}</span>
-                                        </div>
-                                    </div>
-                                @endforeach
-                            </div>
                             <a class="popup-js btn-arrow-transparent" href="#reviews">
-    							<span class="btn-arrow-text">
-    								@lang('main.give_feedback')
-    							</span>
-    						</a>
+                                <span class="btn-arrow-text">
+                                    @lang('main.give_feedback')
+                                </span>
+                            </a>
+                            <div class="counter-slider-holder">
+                                <div class="counter-slider">
+                                    @php
+                                    $i = 0;
+                                    @endphp
+                                    @foreach($cat->leads as $lead_item)
+                                        @php
+                                        $i ++;
+                                        @endphp
+                                        <div class="counter-slider-item">
+                                            <div class="count-slide">
+                                                {{$i}}<span class="all-count-slide">/{{$cat->leads->count()}}</span>
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                </div>
+                            </div>
     					</div>
                         <div class="btn-wrap"></div>
                     </div>

@@ -4,20 +4,20 @@
 @section('page')
     @if($cat->id == 2)
         <div class="page price-page">
-            @include('layouts.main.breadcrumbs')
-            @if($cat->lang->h1 != '')
+            <section class="page-section section-with-breadcrumbs">
                 <div class="container-small">
-                    <div class="main-section-title">
-                        {{$cat->lang->h1}}
-                    </div>
+                    @include('layouts.main.breadcrumbs')
+                    @if($cat->lang->h1 != '')
+                        <h1 class="main-section-title">
+                            {{$cat->lang->h1}}
+                        </h1>
+                    @else
+                        <h1 class="main-section-title">
+                            {{$cat->lang->name}}
+                        </h1>
+                    @endif
                 </div>
-            @else
-                <div class="container-small">
-                    <div class="main-section-title">
-                        {{$cat->lang->name}}
-                    </div>
-                </div>
-            @endif
+            </section>
             @if($cat->children->count())
                 <section class="main-section">
                     <div class="container">

@@ -21,6 +21,8 @@ return [
     "price" => "Price",
     "service_direction" => "Services in the direction",
     "from" => "From",
+    "to" => "Before",
+    "request_price" => "Specify the price",
     "photo" => "Photo",
     "xp" => ":year year of experience|:year year of experience|:year year of experience",
     "diploms" => "Diplomas",
@@ -152,5 +154,6 @@ return [
     ],
     "all_categories" => "All categories",
     "see_all" => "See all",
+    "give_feedback" => "Give feedback",
     "more_details" => "More details",
 ];

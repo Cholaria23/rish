@@ -2,11 +2,15 @@
 
 @section('page')
     <div class="cabinet-page section-cabinet">
-        @include('layouts.main.breadcrumbs')
-        <div class="container">
-            <div class="page-section-top-title">
-                @lang('cabinet.page_title')
+        <section class="page-section section-with-breadcrumbs">
+            <div class="container">
+                @include('layouts.main.breadcrumbs')
+                <h1 class="page-section-top-title">
+                    @lang('cabinet.page_title')
+                </h1>
             </div>
+        </section>
+        <div class="container">
             <section class="main-section">
                 <div class="cabinet-tab-wrap">
                     <div class="tabs-container">

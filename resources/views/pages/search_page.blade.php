@@ -3,15 +3,19 @@
 @stop
 @section('page')
 	<div class="page search_page">
-		@include('layouts.main.breadcrumbs')
-		<section class="main-section">
-			<div class="container-small">
-				<div class="main-section-title">
+		<section class="page-section section-with-breadcrumbs">
+            <div class="container-small">
+				@include('layouts.main.breadcrumbs')
+				<h1 class="main-section-title">
 					{!!$page_title!!}
 					<span>
 						({{$count}})
 					</span>
-				</div>
+				</h1>
+			</div>
+        </section>
+		<section class="main-section">
+			<div class="container-small">
 				@if(
 					isset($services) && count($services) ||
 					isset($news) && count($news) ||

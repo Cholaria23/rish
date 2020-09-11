@@ -9,13 +9,13 @@
 				<div class="contact-page-wrap">
 					<div class="item-contact-wrap">
 						@if($unit->lang->h1 != '')
-							<div class="main-section-title">
+							<h1 class="main-section-title">
 								{{$unit->lang->h1}}
-							</div>
+							</h1>
 						@else
-							<div class="main-section-title">
+							<h1 class="main-section-title">
 								{{$unit->lang->name}}
-							</div>
+							</h1>
 						@endif
 						<div class="item-contact-block-wrap">
 							@if(isset(app('contacts')['main']['contacts']['phone_1']) && app('contacts')['main']['contacts']['phone_1'] != '' ||

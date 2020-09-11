@@ -3,52 +3,56 @@
 @stop
 @section('page')
 	<div class="page">
-		@include('layouts.main.breadcrumbs')
-		@if($unit->lang->h1 != '')
-			<div class="container">
-				<div class="page-section-top-title">
-					{{$unit->lang->h1}}
-				</div>
+		<section class="page-section section-with-breadcrumbs">
+            <div class="container-small">
+				@include('layouts.main.breadcrumbs')
+				@if($unit->lang->h1 != '')
+					<div class="container">
+						<h1 class="page-section-top-title">
+							{{$unit->lang->h1}}
+						</h1>
+					</div>
+				@else
+					<div class="container">
+						<h1 class="page-section-top-title">
+							{{$unit->lang->name}}
+						</h1>
+					</div>
+				@endif
 			</div>
-		@else
-			<div class="container">
-				<div class="page-section-top-title">
-					{{$unit->lang->name}}
-				</div>
-			</div>
-		@endif
+        </section>
 		@if($unit->lang->long_desc_1 != '')
-			<div class="main-section">
+			<section class="main-section">
 				<div class="container-small">
 					<div class="description">
 						{!!$unit->lang->long_desc_1!!}
 					</div>
 				</div>
-			</div>
+			</section>
 		@endif
 
 		@if($unit->lang->long_desc_2 != '')
-			<div class="main-section">
+			<section class="main-section">
 				<div class="container-small">
 					<div class="description">
 						{!!$unit->lang->long_desc_2!!}
 					</div>
 				</div>
-			</div>
+			</section>
 		@endif
 
 		@if($unit->videos->count())
 			@foreach ($unit->videos as $video)
-				<div class="main-section">
+				<section class="main-section">
 					<div class="container-small">
 						@include('layouts.main.video')
 					</div>
-				</div>
+				</section>
 			@endforeach
 		@endif
 
 		@if($unit->galleries->count())
-			<div class="main-section">
+			<section class="main-section">
 				<div class="container">
 					<div class="popup-gallery-wrap">
 						@if($unit->id == 80)
@@ -70,7 +74,7 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</section>
 		@endif
 
 		@if($unit->rel_faq_groups->count())
@@ -100,7 +104,6 @@
 				</div>
 			</section>
 		@endif
-
 	</div>
 @stop
 @section('scripts')
