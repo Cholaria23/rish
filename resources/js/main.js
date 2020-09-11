@@ -75,6 +75,10 @@ function initSearchTabs() {
             $(this).addClass('active');
             parent.find('.tab-content').hide();
             $('#'+selectTab).fadeIn();
+            if ($('#'+selectTab).find('.mobile-slider-js').is('.slick-slider') == true) {
+                $(".mobile-slider-js").slick('destroy');
+                $(".mobile-slider-js").slick('refresh');
+            }
             $(".active-tab-mobile-text").html($('.tab-mobile-link.active').text());
             $('.active-tab-mobile').toggleClass("active");
             $(".tabs").slideToggle();
@@ -149,7 +153,7 @@ $(document).ready(function() {
         initPriceTabs();
     }
 
-    if ($('.search_page').length) {
+    if ($('.search_page').length || $('.offers-tab').length) {
         initSearchTabs();
     }
 

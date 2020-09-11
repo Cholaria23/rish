@@ -3,20 +3,20 @@
 @stop
 @section('page')
 	<div class="page checkup-page">
-		@include('layouts.main.breadcrumbs')
-		@if($unit->lang->h1 != '')
-			<div class="container">
-				<div class="page-section-top-title">
-					{{$unit->lang->h1}}
-				</div>
+		<section class="page-section section-with-breadcrumbs">
+            <div class="container">
+				@include('layouts.main.breadcrumbs')
+				@if($unit->lang->h1 != '')
+					<h1 class="page-section-top-title">
+						{{$unit->lang->h1}}
+					</h1>
+				@else
+					<h1 class="page-section-top-title">
+						{{$unit->lang->name}}
+					</h1>
+				@endif
 			</div>
-		@else
-			<div class="container">
-				<div class="page-section-top-title">
-					{{$unit->lang->name}}
-				</div>
-			</div>
-		@endif
+        </section>
 		@if($unit->lang->short_desc_1 != '')
 			<div class="checkup-subtitle">
 				<div class="container-small">

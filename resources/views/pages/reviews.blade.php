@@ -3,20 +3,24 @@
 @stop
 @section('page')
 	<div class="page reviews-page">
-		@include('layouts.main.breadcrumbs')
+		<section class="page-section section-with-breadcrumbs">
+            <div class="container-small">
+				@include('layouts.main.breadcrumbs')
+				@if($unit->lang->h1 != '')
+					<h1 class="page-section-top-title">
+						{{$unit->lang->h1}}
+					</h1>
+				@else
+					<h1 class="page-section-top-title">
+						{{$unit->lang->name}}
+					</h1>
+				@endif
+			</div>
+        </section>
 		<section class="main-section">
 			<div class="container-small">
 				<div class="write-reviews-block">
 					<div class="write-reviews-title-wrap">
-						@if($unit->lang->h1 != '')
-							<div class="main-section-title">
-								{{$unit->lang->h1}}
-							</div>
-						@else
-							<div class="main-section-title">
-								{{$unit->lang->name}}
-							</div>
-						@endif
 						<button class="btn-light-green-small scroll-bnt-js" type="button" name="button" data-id="write-reviews-form-wrap">
 							@lang('main.review.write_reviews')
 						</button>

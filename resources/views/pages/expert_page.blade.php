@@ -13,11 +13,11 @@
 						</div>
 					</div>
 					<div class="unit-block-info">
-						<div class="main-section-title unit-block-title-js">
+						<h1 class="main-section-title unit-block-title-js">
 							{{$expert->lang->last_name}}
 							{{$expert->lang->first_name}}
 							{{$expert->lang->father_name}}
-						</div>
+						</h1>
 						@if(isset($expert->chars_vals[4]) && isset($expert->chars_vals[4]['values']))
 							<ul class="specialist-activities-list">
 								@foreach ($expert->chars_vals[4]['values'] as $val_item)

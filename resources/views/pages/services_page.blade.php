@@ -3,18 +3,22 @@
 @stop
 @section('page')
 	<div class="page">
-		@include('layouts.main.breadcrumbs')
+		<section class="page-section section-with-breadcrumbs">
+            <div class="container">
+				@include('layouts.main.breadcrumbs')
+				@if($unit->lang->h1 != '')
+					<h1 class="page-section-top-title">
+						{{$unit->lang->h1}}
+					</h1>
+				@else
+					<h1 class="page-section-top-title">
+						{{$unit->lang->name}}
+					</h1>
+				@endif
+			</div>
+        </section>
 		<section class="main-section top-section">
 			<div class="container-small">
-				@if($unit->lang->h1 != '')
-					<div class="page-section-top-title">
-						{{$unit->lang->h1}}
-					</div>
-				@else
-					<div class="page-section-top-title">
-						{{$unit->lang->name}}
-					</div>
-				@endif
 				@if($unit->lang->long_desc_1 != '')
 					<div class="main-section-top-subtitle description">
 						{!!$unit->lang->long_desc_1!!}
@@ -97,7 +101,7 @@
 
 
 		@if($unit->lang->long_desc_2 != '' || $unit->videos->count())
-			<section class="main-section turquoise-section">
+			<section class="main-section">
                 <div class="container-small">
                     <div class="description">
 						@if($unit->lang->long_desc_2 != '')

@@ -3,25 +3,25 @@
 @stop
 @section('page')
     <div class="page">
+        <section class="page-section section-with-breadcrumbs">
             <div class="container">
-                <section class="page-section with_breadcrumbs">
-                    @if($cat->lang->h1 != '')
-                        <div class="page-section-top-title">
-                            {{$cat->lang->h1}}
-                        </div>
-                    @else
-                        <div class="page-section-top-title">
-                            {{$cat->lang->name}}
-                        </div>
-                    @endif
-                    @include('layouts.main.breadcrumbs')
-                    {{-- @if($cat->lang->pre_info != '')
-                        <div class="page-section-top-subtitle description">
-                            {!! $cat->lang->pre_info !!}
-                        </div>
-                    @endif --}}
-                </section>
+                @include('layouts.main.breadcrumbs')
+                @if($cat->lang->h1 != '')
+                    <h1 class="page-section-top-title">
+                        {{$cat->lang->h1}}
+                    </h1>
+                @else
+                    <h1 class="page-section-top-title">
+                        {{$cat->lang->name}}
+                    </h1>
+                @endif
+                {{-- @if($cat->lang->pre_info != '')
+                    <div class="page-section-top-subtitle description">
+                        {!! $cat->lang->pre_info !!}
+                    </div>
+                @endif --}}
             </div>
+        </section>
         @if($cat->children->count())
             @foreach ($cat->children as $firsc_child)
                 <section class="page-section">

@@ -3,13 +3,17 @@
 @stop
 @section('page')
 	<div class="page">
-		@include('layouts.main.breadcrumbs')
 		@if(isset($specialists) && $specialists)
-			<div class="main-section specialists">
+			<section class="page-section section-with-breadcrumbs">
+	            <div class="container">
+					@include('layouts.main.breadcrumbs')
+					<h1 class="page-section-top-title">
+						@lang('main.our_specialists')
+					</h1>
+				</div>
+        	</section>
+			<section class="main-section specialists">
 				<div class="container">
-					<div class="main-section-title">
-                        @lang('main.our_specialists')
-                    </div>
 					<div class="search-specialists-block">
 						<div class="page-section-title">
 							@lang('main.form.search_specialist')
@@ -34,7 +38,7 @@
 						{{$specialists->links()}}
 					@endif
 				</div>
-			</div>
+			</section>
 		@endif
 	</div>
 @stop

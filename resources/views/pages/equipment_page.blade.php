@@ -14,13 +14,13 @@
 					</div>
 					<div class="unit-block-info">
 						@if($unit->lang->h1 != '')
-							<div class="main-section-title unit-block-title-js">
+							<h1 class="main-section-title unit-block-title-js">
 								{{$unit->lang->h1}}
-							</div>
+							</h1>
 						@else
-							<div class="main-section-title unit-block-title-js">
+							<h1 class="main-section-title unit-block-title-js">
 								{{$unit->lang->name}}
-							</div>
+							</h1>
 						@endif
 						@if($unit->lang->long_desc_1 != '')
 							<div class="description">

@@ -21,13 +21,13 @@
 				<div class="unit-page-main">
 					@include('layouts.main.breadcrumbs')
 					@if($unit->lang->h1 != '')
-						<div class="main-section-title">
+						<h1 class="main-section-title">
 							{{$unit->lang->h1}}
-						</div>
+						</h1>
 					@else
-						<div class="main-section-title">
+						<h1 class="main-section-title">
 							{{$unit->lang->name}}
-						</div>
+						</h1>
 					@endif
 
 					<div class="unit-category-wrap">

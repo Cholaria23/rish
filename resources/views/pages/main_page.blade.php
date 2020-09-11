@@ -226,23 +226,43 @@
 	{{-- @include('layouts.main.advantages') --}}
 
 	@if(isset($cat_tabs) && $cat_tabs)
-		@foreach ($cat_tabs as $cat_item)
-			@if($cat_item->units->count())
-				<div data-id="{{$cat_item->id}}">
-					{{$cat_item->lang->name}}			
+		<section class="main-section">
+			<div class="container">
+				<div class="tabs-container offers-tab">
+					<div class="tabs-btn-wrap">
+						<button class="active-tab-mobile" type="button" name="button">
+							<span class="active-tab-mobile-text">
+								@lang('main.view_all_price')
+							</span>
+						</button>
+						<ul class="tabs">
+							@foreach ($cat_tabs as $cat_item)
+								@if($cat_item->units->count())
+									<li class="tab-link" data-tab="{{$cat_item->id}}">
+										{{$cat_item->lang->name}}
+									</li>
+								@endif
+							@endforeach
+						</ul>
+					</div>
+					<ul class="tab-content-wrap">
+						@foreach ($cat_tabs as $cat_item)
+							@if($cat_item->units->count())
+								<li class="tab-content" id="{{$cat_item->id}}">
+									<div class="tab-content-inner mobile-slider-js">
+										@foreach ($cat_item->units as $unit_item)
+												<div class="special-action-holder">
+													@include('layouts.tiles.news')
+												</div>
+										@endforeach
+									</div>
+								</li>
+							@endif
+						@endforeach
+					</ul>
 				</div>
-			@endif
-		@endforeach
-
-		@foreach ($cat_tabs as $cat_item)
-			@if($cat_item->units->count())
-				<div data-tab-id="{{$cat_item->id}}">
-					@foreach ($cat_item->units as $unit_item)
-						@include('layouts.tiles.news')
-					@endforeach		
-				</div>
-			@endif			
-		@endforeach
+			</div>
+		</section>
 	@endif
 
 	{{-- @if(isset($special_actions) && $special_actions)

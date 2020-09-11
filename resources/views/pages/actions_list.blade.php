@@ -3,20 +3,20 @@
 @stop
 @section('page')
     <div class="page blog">
-        @include('layouts.main.breadcrumbs')
-        @if($cat->lang->h1 != '')
-            <div class="main-section-title">
-                <div class="container">
-                    {{$cat->lang->h1}}
-                </div>
+        <section class="page-section section-with-breadcrumbs">
+            <div class="container">
+                @include('layouts.main.breadcrumbs')
+                @if($cat->lang->h1 != '')
+                    <h1 class="page-section-top-title">
+                        {{$cat->lang->h1}}
+                    </h1>
+                @else
+                    <h1 class="page-section-top-title">
+                        {{$cat->lang->name}}
+                    </h1>
+                @endif
             </div>
-        @else
-            <div class="main-section-title">
-                <div class="container">
-                    {{$cat->lang->name}}
-                </div>
-            </div>
-        @endif
+        </section>
         @if($cat->lang->pre_info != '')
             <section class="page-section">
                 <div class="container">
