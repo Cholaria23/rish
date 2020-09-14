@@ -101,10 +101,7 @@ $(document).ready(function() {
             threshold: 50
         });
     }
-    // Расчет выстоты
-    if($('.special-action-info').length) {
-        $('.special-action-info').matchHeight();
-    }
+
 
     if($('.specialists-experience').length) {
         $('.specialists-experience').matchHeight({
@@ -430,6 +427,17 @@ $(window).on('load resize', function() {
         }
     }
 
+    if (window.innerWidth < 401) {
+        // отключение расчета выстоты
+        if ($('.special-action-info').length) {
+            $('.special-action-info').matchHeight({ remove: true });
+        }
+    } else {
+        // Расчет выстоты
+        if ($('.special-action-info').length && !$('.special-action-info').attr('style')) {
+            $('.special-action-info').matchHeight();
+        }
+    }
 });
 
 

@@ -445,7 +445,7 @@
     }
     ul {
         margin-bottom: 30px;
-        padding-left: 25px;
+        padding-left: 30px;
         list-style: none;
         @media (max-width: 576px) {
             margin-bottom: 15px;
@@ -469,7 +469,7 @@
             &::before {
                 content: '';
                 position: absolute;
-                left: -25px;
+                left: -30px;
                 top: 9px;
                 width: 7px;
                 height: 7px;
@@ -480,7 +480,7 @@
     }
     ol {
         margin-bottom: 30px;
-        padding-left: 25px;
+        padding-left: 30px;
         list-style: none;
         counter-reset: num;
         @media (max-width: 576px) {
@@ -490,8 +490,10 @@
             position: relative;
             &::before {
                 content: counter(num) '. ';
+                width: 26px;
+                text-align: right;
                 position: absolute;
-                left: -25px;
+                left: -30px;
                 top: 0;
                 bottom: 0;
                 counter-increment: num;
@@ -623,8 +625,7 @@ video {
   font-size: 14px;
   transition: .25s linear;
   &:hover,
-  &:focus,
-  &.js-lastcrumb {
+  &:focus {
       color: $ligt_grey;
   }
   &.js-lastcrumb {
