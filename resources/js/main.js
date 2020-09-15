@@ -286,6 +286,22 @@ $(document).ready(function() {
         });
     }
 
+    //  description spoiler
+    if($('.spoiler').length) {
+        $('.spoiler').on('click', function(e) {
+            var submenu = $(this).find('.spoiler-content');
+            var icon =  $(this).find('.spoiler-toggle');
+            $(this).toggleClass('active');
+            if($(this).hasClass('active')) {
+                icon.addClass('active');
+                submenu.slideDown(200);
+            } else {
+                icon.removeClass('active');
+                submenu.slideUp(200);
+            }
+        });
+    }
+
 });
 
 

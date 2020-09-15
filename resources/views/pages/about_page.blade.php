@@ -12,14 +12,14 @@
 			</div>
         </section>
 
-		<div class="main-section">
+		{{-- <div class="main-section">
 			<div class="container">
 				<div class="about-us-img-wrap">
 					<img class="about-us-img lazyload" data-src="{{unit_logo($unit->logo)}}" alt="{{$unit->lang->name}}" title="{{$unit->lang->name}}">
 				</div>
 				@include('layouts.main.advantages')
 			</div>
-		</div>
+		</div> --}}
 
 		@if($unit->lang->long_desc_1 != '')
 			<div class="main-section">
