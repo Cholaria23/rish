@@ -1,3 +1,4 @@
+// montserrat
 @font-face {
     font-family: 'montserratregular';
     src: url('/fonts/montserrat/montserrat-regular-webfont.eot');
@@ -39,6 +40,43 @@
          url('/fonts/montserrat/montserrat-bold-webfont.woff') format('woff'),
          url('/fonts/montserrat/montserrat-bold-webfont.ttf') format('truetype'),
          url('/fonts/montserrat/montserrat-bold-webfont.svg#montserratbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+// robotobold
+@font-face {
+    font-family: 'robotobold';
+    src: url('/fonts/roboto/roboto-bold-webfont.eot');
+    src: url('/fonts/roboto/roboto-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/roboto/roboto-bold-webfont.woff2') format('woff2'),
+         url('/fonts/roboto/roboto-bold-webfont.woff') format('woff'),
+         url('/fonts/roboto/roboto-bold-webfont.ttf') format('truetype'),
+         url('/fonts/roboto/roboto-bold-webfont.svg#robotobold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'robotomedium';
+    src: url('/fonts/roboto/roboto-medium-webfont.eot');
+    src: url('/fonts/roboto/roboto-medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/roboto/roboto-medium-webfont.woff2') format('woff2'),
+         url('/fonts/roboto/roboto-medium-webfont.woff') format('woff'),
+         url('/fonts/roboto/roboto-medium-webfont.ttf') format('truetype'),
+         url('/fonts/roboto/roboto-medium-webfont.svg#robotomedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'robotoregular';
+    src: url('/fonts/roboto/roboto-regular-webfont.eot');
+    src: url('/fonts/roboto/roboto-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/roboto/roboto-regular-webfont.woff2') format('woff2'),
+         url('/fonts/roboto/roboto-regular-webfont.woff') format('woff'),
+         url('/fonts/roboto/roboto-regular-webfont.ttf') format('truetype'),
+         url('/fonts/roboto/roboto-regular-webfont.svg#robotoregular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
