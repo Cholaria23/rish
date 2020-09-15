@@ -37,7 +37,7 @@
 		@include('layouts.main.footer')
 		@include('layouts.main.popup')
 		<div class='up_button'>
-		   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="21" height="13" viewBox="0 0 21 13"><defs><path id="g6dfa" d="M183.546 178.33l-9.215 9.216c-.213.213-.331.497-.331.8 0 .304.118.589.33.802l.68.679c.441.441 1.16.441 1.602 0l7.738-7.74 7.747 7.748c.214.213.498.331.801.331.304 0 .588-.118.802-.33l.678-.68c.213-.213.331-.497.331-.8 0-.304-.118-.589-.33-.802l-9.225-9.225a1.126 1.126 0 0 0-.803-.33c-.305 0-.59.117-.805.33z"/></defs><g><g transform="translate(-174 -178)"><use fill="#1b7f80" xlink:href="#g6dfa"/></g></g></svg>
+		   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="21" height="13" viewBox="0 0 21 13"><defs><path id="g6dfa" d="M183.546 178.33l-9.215 9.216c-.213.213-.331.497-.331.8 0 .304.118.589.33.802l.68.679c.441.441 1.16.441 1.602 0l7.738-7.74 7.747 7.748c.214.213.498.331.801.331.304 0 .588-.118.802-.33l.678-.68c.213-.213.331-.497.331-.8 0-.304-.118-.589-.33-.802l-9.225-9.225a1.126 1.126 0 0 0-.803-.33c-.305 0-.59.117-.805.33z"/></defs><g><g transform="translate(-174 -178)"><use fill="#37b6b7" xlink:href="#g6dfa"/></g></g></svg>
 	   </div>
 		@include('layouts.main.svg_sprite')
 		<script defer type="text/javascript">
