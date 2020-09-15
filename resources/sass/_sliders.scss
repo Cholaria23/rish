@@ -62,15 +62,45 @@
     .slide-title {
         margin-bottom: 30px;
         font-family: $montserrat_bold;
-         @include adaptiv-font(45, 30);
-         @media (max-width: 1024px) {
-             margin-bottom: 20px;
-         }
+        color: $page_title_color;
+        @include adaptiv-font(45, 30);
+        @media (max-width: 1024px) {
+            margin-bottom: 20px;
+        }
     }
     .slide-text {
         margin-bottom: 30px;
         @media (max-width: 1024px) {
             margin-bottom: 15px;
+        }
+    }
+    .btn-arrow {
+        display: inline-block;
+        padding: 9px 45px 9px 20px;
+        font-family: $montserrat_medium;
+        color: $white;
+        background-color: $turquoise;
+        border-radius: 6px;
+        transition: .25s linear;
+        &:hover {
+            background-color: $dark_turquoise;
+        }
+        &:hover .btn-arrow-text::after {
+            left: calc(100% + 15px);
+        }
+        .btn-arrow-text {
+            position: relative;
+            &::after {
+                content: '';
+                width: 12px;
+                height: 10px;
+                position: absolute;
+                left: calc(100% + 10px);
+                top: 50%;
+                transform: translateY(-50%);
+                background: url(/img/right-arrow-white.svg) center center/cover no-repeat;
+                transition: .25s linear;
+            }
         }
     }
     .slick-dots {
