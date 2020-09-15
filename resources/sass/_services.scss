@@ -17,13 +17,19 @@
         padding: 45px 50px;
         display: flex;
         align-items: center;
+        background-color: $white;
         border: 1px solid $ligh_grey;
         margin: -1px -1px 0 0;
+        transition: .25s linear;
+        &:hover {
+            background-color: $turquoise;
+            border: 1px solid $turquoise;
+        }
         &:hover .servises-item-name {
-            color: $turquoise;
+            color: $white;
         }
         &:hover .servises-item-count svg {
-            fill: $turquoise;
+            fill: $white;
         }
         @media (max-width: 1366px) {
             padding: 20px 25px;
@@ -42,7 +48,7 @@
             // }
             svg {
                 display: block;
-                fill: $ligh_grey;
+                fill: $turquoise;
                 transition: .25s linear;
             }
         }
