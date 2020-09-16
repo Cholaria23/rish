@@ -116,6 +116,9 @@ class PageController extends Controller {
                         $query->where('is_hidden', 0)->orderBy('sort_order');
                     }]);
                 },
+                'videos' => function ($query) {
+                    $query->with('lang')->where('is_hidden',0);
+                },
                 'leads' => function ($query) {
                     $query->with(['answers' => function ($query) {
                         $query->where('is_hidden',0);
@@ -435,6 +438,9 @@ class PageController extends Controller {
         $expert = Specialist::with([
                 'lang',
                 'appoints',
+                'videos' => function ($query) {
+                    $query->with('lang')->where('is_hidden',0);
+                },
                 'images_1' =>function ($query) {
                     $query->where('is_hidden',0)->orderBy('sort_order','asc');
                 },

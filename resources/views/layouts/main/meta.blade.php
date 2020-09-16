@@ -1,6 +1,6 @@
 @section('meta')
     @if(isset($meta_type) && $meta_type == 'unit')
-        <title>{{ $unit->lang->meta_title != '' ? htmlspecialchars($unit->lang->meta_title) : htmlspecialchars($page_title) }} </title>
+        <title>{{ $unit->lang->meta_title != '' ? html_entity_decode($unit->lang->meta_title) : htmlspecialchars($page_title) }} </title>
         <meta name="description" content="{{ htmlspecialchars($unit->lang->meta_desc) }}">
         <meta name="keywords" content="{{ htmlspecialchars($unit->lang->meta_key) }}">
         <meta property="og:url" content="{{ Request::url() }}" />
