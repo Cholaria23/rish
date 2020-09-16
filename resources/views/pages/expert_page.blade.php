@@ -51,7 +51,7 @@
 											</svg>
 										</div>
 										<div class="specialist-status-text">
-											{{implode(",",$expert->chars_vals[2]['values'])}}
+											{{implode(", ",$expert->chars_vals[2]['values'])}}
 										</div>
 									</div>
 								@endif
