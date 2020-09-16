@@ -312,6 +312,16 @@
     	</section>
 	@endif
 
+	@if($expert->videos->count())
+		@foreach ($expert->videos as $video)
+			<section class="main-section">
+				<div class="container-small">
+					@include('layouts.main.video')
+				</div>
+			</section>
+		@endforeach
+	@endif
+
 	@if(isset($expert->related_units[3]) && count($expert->related_units[3]['units']))
 		<section class="main-section">
 			<div class="container">
