@@ -156,4 +156,5 @@ return [
     "see_all" => "See all",
     "give_feedback" => "Give feedback",
     "more_details" => "More details",
+    "video" => "Video",
 ];

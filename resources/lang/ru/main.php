@@ -156,4 +156,5 @@ return [
     "see_all" => "Смотреть все",
     "give_feedback" => "Оставить отзыв",
     "more_details" => "Подробнее",
+    "video" => "Видео",
 ];
