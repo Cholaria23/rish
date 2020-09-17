@@ -251,9 +251,9 @@
 								<li class="tab-content" id="{{$cat_item->id}}">
 									<div class="tab-content-inner mobile-slider-js">
 										@foreach ($cat_item->units as $unit_item)
-												<div class="special-action-holder">
-													@include('layouts.tiles.news')
-												</div>
+											<div class="special-action-holder">
+												@include('layouts.tiles.news')
+											</div>
 										@endforeach
 									</div>
 								</li>

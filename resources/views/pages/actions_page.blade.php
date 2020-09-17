@@ -26,7 +26,7 @@
 						</h1>
 					@else
 						<h1 class="main-section-title">
-							{{$unit->lang->name}}
+							{{$unit->lang->name}} 
 						</h1>
 					@endif
 

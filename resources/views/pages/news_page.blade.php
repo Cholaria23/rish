@@ -142,6 +142,7 @@
 							</div>
 						@endforeach
 					@endif
+					
 				</div>
 				@if(isset($news) && $news->count())
 					<div class="unit-page-aside">
