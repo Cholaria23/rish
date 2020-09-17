@@ -7,7 +7,7 @@
             </li>
         @else
             <li>
-                <a href="{{ $paginator->previousPageUrl() }}" rel="prev" aria-label="@lang('pagination.previous')">&lsaquo;</a>
+                <a href="{{preg_replace('/\?page=[1]$/','',$paginator->previousPageUrl())}}" rel="prev" aria-label="@lang('pagination.previous')">&lsaquo;</a>
             </li>
         @endif
 
