@@ -95,7 +95,7 @@
 							@endforeach
 						</ul>
 						@if($unit->leads instanceof \Illuminate\Pagination\LengthAwarePaginator)
-							{{$unit->leads->links()}}
+							{{$unit->leads->links('layouts.main.custom_paginate')}}
 						@endif
 					@else
 						<div class="description text-center">

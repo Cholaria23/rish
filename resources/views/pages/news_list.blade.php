@@ -52,7 +52,7 @@
                             </div>
                         @endforeach
                     </div>
-                    {{$cat->units->links()}}
+                    {{$cat->units->links('layouts.main.custom_paginate')}}
                 </div>
             </section>
         @else

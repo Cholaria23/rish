@@ -35,7 +35,7 @@
 						@endforeach
 					</div>
 					@if($specialists instanceof \Illuminate\Pagination\LengthAwarePaginator)
-						{{$specialists->links()}}
+						{{$specialists->links('layouts.main.custom_paginate')}}
 					@endif
 				</div>
 			</section>
