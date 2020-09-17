@@ -20,6 +20,7 @@ return [
     "equipment" => "Оборудование",
     "price" => "Прайс",
     "service_direction" => "Услуги по направлению",
+    "news_direction" => "Услуги по данному материалу",
     "from" => "От",
     "to" => "До",
     "request_price" => "Цену уточняйте",

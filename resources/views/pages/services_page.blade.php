@@ -249,7 +249,7 @@
     		</section>
 		@endif
 
-		{{-- @if($rel_types->count())
+		@if($rel_types->count())
 			@foreach ($rel_types as $type_item)
 				@if ($type_item->id == 3)
 					@if (isset($unit->related_units[$type_item->id]) && count($unit->related_units[$type_item->id]['units']))
@@ -266,7 +266,7 @@
 					@endif
 				@endif
 			@endforeach
-		@endif --}}
+		@endif
 
 		{{-- @if($unit->galleries->count())
 			@foreach ($unit->galleries as $galleri_item)

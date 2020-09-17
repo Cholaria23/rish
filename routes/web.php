@@ -4,6 +4,11 @@ if (strpos(Request::path(), '//')) {
     header('Location: '.str_replace("http:/", "http://", str_replace("//", "/", Request::fullUrl())));
     die();
 }
+if(Request::get('page') == 1){
+    // var_dump(Request::path());
+    header('Location: ' . URL::to(Request::path()), TRUE, 301);
+    exit();
+}
 
 /*
 |--------------------------------------------------------------------------
