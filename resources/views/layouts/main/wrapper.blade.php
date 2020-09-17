@@ -9,7 +9,10 @@
 		{!! $seo->yandex_verification !!}
 		{!! $seo->google_verification !!}
 		@include('layouts.main.meta')
-		<link rel="canonical" href="{{URL::to(Request::path())}}" />
+		@if(Request::has('page') && Request::get('page'))
+		@else
+			<link rel="canonical" href="{{URL::to(Request::path())}}" />
+		@endif
 		@include('layouts.main.favicon')
 		@yield('links')
 		@yield('header_scripts')

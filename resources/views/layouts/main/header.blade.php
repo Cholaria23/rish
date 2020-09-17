@@ -101,7 +101,7 @@
 								<ul class="social-list">
 									@if(isset(app('contacts')['main']['contacts']['youtube']) && app('contacts')['main']['contacts']['youtube'] != '')
 										<li class="social-item">
-											<a class="social-link" href="{{app('contacts')['main']['contacts']['youtube']}}" target="_blank" rel="noreferrer">
+											<a class="social-link" href="{{app('contacts')['main']['contacts']['youtube']}}" target="_blank" rel="noopener noreferrer nofollow">
 												<span class="social-icon">
 													<svg width="30" height="30">
 														<use xlink:href="#icon-You-tube"></use>
@@ -112,7 +112,7 @@
 									@endif
 									@if(isset(app('contacts')['main']['contacts']['instagram']) && app('contacts')['main']['contacts']['instagram'] != '')
 										<li class="social-item">
-											<a class="social-link" href="{{app('contacts')['main']['contacts']['instagram']}}" target="_blank" rel="noreferrer">
+											<a class="social-link" href="{{app('contacts')['main']['contacts']['instagram']}}" target="_blank" rel="noopener noreferrer nofollow">
 												<span class="social-icon">
 													<svg width="30" height="30">
 														<use xlink:href="#icon-Instagram"></use>
@@ -123,7 +123,7 @@
 									@endif
 									@if(isset(app('contacts')['main']['contacts']['facebook']) && app('contacts')['main']['contacts']['facebook'] != '')
 										<li class="social-item">
-											<a class="social-link" href="{{app('contacts')['main']['contacts']['facebook']}}" target="_blank" rel="noreferrer">
+											<a class="social-link" href="{{app('contacts')['main']['contacts']['facebook']}}" target="_blank" rel="noopener noreferrer nofollow">
 												<span class="social-icon">
 													<svg width="30" height="30">
 														<use xlink:href="#icon-Facebook"></use>
@@ -448,7 +448,7 @@
 								<ul class="social-list">
 									@if(isset(app('contacts')['main']['contacts']['youtube']) && app('contacts')['main']['contacts']['youtube'] != '')
 										<li class="social-item">
-											<a class="social-link" href="{{app('contacts')['main']['contacts']['youtube']}}" target="_blank" rel="noreferrer">
+											<a class="social-link" href="{{app('contacts')['main']['contacts']['youtube']}}" target="_blank" rel="noopener noreferrer nofollow">
 												<span class="social-icon">
 													<svg width="30" height="30">
 														<use xlink:href="#icon-You-tube"></use>
@@ -459,7 +459,7 @@
 									@endif
 									@if(isset(app('contacts')['main']['contacts']['instagram']) && app('contacts')['main']['contacts']['instagram'] != '')
 										<li class="social-item">
-											<a class="social-link" href="{{app('contacts')['main']['contacts']['instagram']}}" target="_blank" rel="noreferrer">
+											<a class="social-link" href="{{app('contacts')['main']['contacts']['instagram']}}" target="_blank" rel="noopener noreferrer nofollow">
 												<span class="social-icon">
 													<svg width="30" height="30">
 														<use xlink:href="#icon-Instagram"></use>
@@ -470,7 +470,7 @@
 									@endif
 									@if(isset(app('contacts')['main']['contacts']['facebook']) && app('contacts')['main']['contacts']['facebook'] != '')
 										<li class="social-item">
-											<a class="social-link" href="{{app('contacts')['main']['contacts']['facebook']}}" target="_blank" rel="noreferrer">
+											<a class="social-link" href="{{app('contacts')['main']['contacts']['facebook']}}" target="_blank" rel="noopener noreferrer nofollow">
 												<span class="social-icon">
 													<svg width="30" height="30">
 														<use xlink:href="#icon-Facebook"></use>
