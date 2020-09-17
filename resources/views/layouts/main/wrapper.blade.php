@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ App::getLocale() }}">
 	<head>
-		<base href="{{ URL::to('/') }}/" />
+		<base href="{{ URL::to('/') }}" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=0">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
