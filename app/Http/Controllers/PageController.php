@@ -119,6 +119,9 @@ class PageController extends Controller {
                 'videos' => function ($query) {
                     $query->with('lang')->where('is_hidden',0);
                 },
+                'rel_categories' => function ($query) {
+                    $query->with('lang')->where('is_hidden',0)->withPivot('rel_type_id');
+                },
                 'leads' => function ($query) {
                     $query->with(['answers' => function ($query) {
                         $query->where('is_hidden',0);
@@ -171,6 +174,8 @@ class PageController extends Controller {
                 $view = 'pages.contact_page';
             } elseif(in_array($unit->cat_id, array_merge(Cat::descendants(2),[2]))){
                 $cat_ids = [];
+                $tmp_rel_cat_ids = [];
+                $tmp_rel_3_cat_ids = [];
                 $rel_service_cats = new \Illuminate\Database\Eloquent\Collection;
                 $rel_service_units = new \Illuminate\Database\Eloquent\Collection;
                 if($rel_types->count()){
@@ -180,16 +185,29 @@ class PageController extends Controller {
                                 $rel_service_units =  Unit::with('lang')->whereIn('id',array_pluck($unit->related_units[$type_item->id]['units'],'id'))->orderBy('sort_order','desc')->get();
                             }
                             if(count(array_pluck($unit->related_units[$type_item->id]['units'],'cat_id'))){
-                                $rel_service_cats =  Cat::with('lang')->whereIn('id',array_pluck($unit->related_units[$type_item->id]['units'],'cat_id'))->orderBy('sort_order','asc')->get();
+                                $tmp_rel_cat_ids = array_pluck($unit->related_units[$type_item->id]['units'],'cat_id');
                             }
                         }
                     }
+                }
+                if($unit->rel_categories->count()){
+                    foreach($unit->rel_categories as $tmp_rel_cat){
+                        if($tmp_rel_cat->pivot->rel_type_id == 3){
+                            $tmp_rel_3_cat_ids [] = $tmp_rel_cat->id;
+                        }
+                    }
+                }
+                $tmp_rel_cat_ids = array_merge($tmp_rel_cat_ids,$tmp_rel_3_cat_ids);
+
+                if(count($tmp_rel_cat_ids)){
+                    $rel_service_cats =  Cat::with('lang')->whereIn('id',$tmp_rel_cat_ids)->orderBy('sort_order','asc')->get();
                 }
                 $page_data['rel_service_cats'] = $rel_service_cats;
                 $page_data['rel_service_units'] = $rel_service_units;
                 $view = 'pages.news_page';
             } elseif(in_array($unit->cat_id, array_merge(Cat::descendants(3),[3]))) {
-
+                $tmp_rel_cat_ids = [];
+                $tmp_rel_3_cat_ids = [];
                 $rel_service_cats = new \Illuminate\Database\Eloquent\Collection;
                 $rel_service_units = new \Illuminate\Database\Eloquent\Collection;
                 if($rel_types->count()){
@@ -199,10 +217,22 @@ class PageController extends Controller {
                                 $rel_service_units =  Unit::with('lang')->whereIn('id',array_pluck($unit->related_units[$type_item->id]['units'],'id'))->orderBy('sort_order','desc')->get();
                             }
                             if(count(array_pluck($unit->related_units[$type_item->id]['units'],'cat_id'))){
-                                $rel_service_cats =  Cat::with('lang')->whereIn('id',array_pluck($unit->related_units[$type_item->id]['units'],'cat_id'))->orderBy('sort_order','asc')->get();
+                                $tmp_rel_cat_ids = array_pluck($unit->related_units[$type_item->id]['units'],'cat_id');
                             }
                         }
                     }
+                }
+                if($unit->rel_categories->count()){
+                    foreach($unit->rel_categories as $tmp_rel_cat){
+                        if($tmp_rel_cat->pivot->rel_type_id == 3){
+                            $tmp_rel_3_cat_ids [] = $tmp_rel_cat->id;
+                        }
+                    }
+                }
+                $tmp_rel_cat_ids = array_merge($tmp_rel_cat_ids,$tmp_rel_3_cat_ids);
+
+                if(count($tmp_rel_cat_ids)){
+                    $rel_service_cats =  Cat::with('lang')->whereIn('id',$tmp_rel_cat_ids)->orderBy('sort_order','asc')->get();
                 }
                 $page_data['rel_service_cats'] = $rel_service_cats;
                 $page_data['rel_service_units'] = $rel_service_units;

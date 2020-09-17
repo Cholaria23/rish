@@ -117,30 +117,35 @@
 						@endforeach
 					@endif
 
-					@if(isset($rel_service_units) && $rel_service_units->count())
-						@foreach ($rel_service_cats as $rel_service_cat)
-							<div class="activity-area-block">
-								<div class="page-section-title">
-									{{$rel_service_cat->lang->name}}
+					@if(isset($rel_service_units) && $rel_service_units->count() || isset($rel_service_cats) && $rel_service_cats->count())
+						@lang('main.news_direction')
+						@if(isset($rel_service_cats) && $rel_service_cats->count())
+							@foreach ($rel_service_cats as $rel_service_cat)
+								<div class="activity-area-block">
+									<div class="page-section-title">
+										{{$rel_service_cat->lang->name}}
+									</div>
+									@if(isset($rel_service_units) && $rel_service_units->count())
+										<div class="activity-area-item-wrap">
+											@foreach ($rel_service_units as $unit_item)
+												@if($rel_service_cat->id == $unit_item->cat_id)
+													<div class="activity-area-item unit">
+														<a class="services-list-link" href="{{build_unit_route($unit_item)}}">
+															{{$unit_item->lang->name}}
+															<span class="services-list-icon">
+																<svg width="17" height="14">
+																	<use xlink:href="#icon-right-arrow-green"></use>
+																</svg>
+															</span>
+														</a>
+													</div>
+												@endif
+											@endforeach
+										</div>
+									@endif
 								</div>
-								<div class="activity-area-item-wrap">
-									@foreach ($rel_service_units as $unit_item)
-										@if($rel_service_cat->id == $unit_item->cat_id)
-											<div class="activity-area-item unit">
-												<a class="services-list-link" href="{{build_unit_route($unit_item)}}">
-													{{$unit_item->lang->name}}
-													<span class="services-list-icon">
-														<svg width="17" height="14">
-															<use xlink:href="#icon-right-arrow-green"></use>
-														</svg>
-													</span>
-												</a>
-											</div>
-										@endif
-									@endforeach
-								</div>
-							</div>
-						@endforeach
+							@endforeach
+						@endif
 					@endif
 				</div>
 				@if(isset($news) && $news->count())
