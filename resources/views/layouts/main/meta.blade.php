@@ -1,11 +1,11 @@
 @section('meta')
     @if(isset($meta_type) && $meta_type == 'unit')
-        <title>{{ $unit->lang->meta_title != '' ? html_entity_decode($unit->lang->meta_title) : htmlspecialchars($page_title) }} </title>
+        <title>{{ $unit->lang->meta_title != '' ? html_entity_decode($unit->lang->meta_title) : htmlspecialchars($page_title) }} {{Request::has('page') ? Lang::get('main.page').' - '.Request::get('page') : ''}}</title>
         <meta name="description" content="{{ htmlspecialchars($unit->lang->meta_desc) }}">
         <meta name="keywords" content="{{ htmlspecialchars($unit->lang->meta_key) }}">
         <meta property="og:url" content="{{ Request::url() }}" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="{{ $unit->lang->meta_title != '' ? htmlspecialchars($unit->lang->meta_title) : htmlspecialchars($page_title) }} " />
+        <meta property="og:title" content="{{ $unit->lang->meta_title != '' ? htmlspecialchars($unit->lang->meta_title) : htmlspecialchars($page_title) }} {{Request::has('page') ? Lang::get('main.page').' - '.Request::get('page') : ''}}" />
         <meta property="og:description" content="{{ htmlspecialchars($unit->lang->meta_desc) }}" />
         <meta property="og:image" content="{{ (isset($unit) && $unit->img_1 != '') ? unit_img('small', $unit->img_1) : asset('storage/logo/'.app('seo')['logo_img_4']) }}" />
         @php
@@ -90,12 +90,12 @@
             }
         @endphp
     @elseif(isset($meta_type) && $meta_type == 'expert')
-        <title>{{ $expert->lang->meta_title != '' ? htmlspecialchars($expert->lang->meta_title) : htmlspecialchars($page_title) }} </title>
+        <title>{{ $expert->lang->meta_title != '' ? htmlspecialchars($expert->lang->meta_title) : htmlspecialchars($page_title) }} {{Request::has('page') ? Lang::get('main.page').' - '.Request::get('page') : ''}} </title>
         <meta name="description" content="{{ htmlspecialchars($expert->lang->meta_desc) }}">
         <meta name="keywords" content="{{ htmlspecialchars($expert->lang->meta_key) }}">
         <meta property="og:url" content="{{ Request::url() }}" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="{{ $expert->lang->meta_title != '' ? htmlspecialchars($expert->lang->meta_title) : htmlspecialchars($page_title) }} " />
+        <meta property="og:title" content="{{ $expert->lang->meta_title != '' ? htmlspecialchars($expert->lang->meta_title) : htmlspecialchars($page_title) }} {{Request::has('page') ? Lang::get('main.page').' - '.Request::get('page') : ''}} " />
         <meta property="og:description" content="{{ htmlspecialchars($expert->lang->meta_desc) }}" />
         <meta property="og:image" content="{{ (isset($expert) && $expert->img_1 != '') ? specialist_cover('small', $expert->img_1) : asset('storage/logo/'.app('seo')['logo_img_4']) }}" />
         @php
