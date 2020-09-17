@@ -129,7 +129,7 @@
 								<ul class="contact-social-list">
 									@if(isset(app('contacts')['main']['contacts']['telegram']) && app('contacts')['main']['contacts']['telegram'] != '')
 										<li class="contact-social-item">
-											<a class="contact-social-link" href="{{app('contacts')['main']['contacts']['telegram']}}" rel="noreferrer" target="_blank">
+											<a class="contact-social-link" href="{{app('contacts')['main']['contacts']['telegram']}}" rel="noopener noreferrer nofollow" target="_blank">
 												<svg width="50" height="50">
 													<use xlink:href="#telegram"></use>
 												</svg>
@@ -138,7 +138,7 @@
 									@endif
 									@if(isset(app('contacts')['main']['contacts']['viber']) && app('contacts')['main']['contacts']['viber'] != '')
 										<li class="contact-social-item">
-											<a class="contact-social-link" href="viber://chat?number={{app('contacts')['main']['contacts']['viber']}}" rel="noreferrer" target="_blank">
+											<a class="contact-social-link" href="viber://chat?number={{app('contacts')['main']['contacts']['viber']}}" rel="noopener noreferrer nofollow" target="_blank">
 												<span class="contacts__item-text">
 													<svg width="50" height="50">
 														<use xlink:href="#viber"></use>
