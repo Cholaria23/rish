@@ -47,9 +47,15 @@
             //     margin-right: 15px;
             // }
             svg {
+                width: 45px;
+                height: 31px;
                 display: block;
                 fill: $turquoise;
                 transition: .25s linear;
+                @media (max-width: 1024px) {
+                    width: 30px;
+                    height: 21px;
+                }
             }
         }
         .servises-item-name {

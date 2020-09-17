@@ -637,6 +637,24 @@
         outline-width: 0;
     }
 }
+.video-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -50px 0 0 -50px;
+    @media (max-width: 1024px) {
+        margin: -20px 0 0 -20px;
+    }
+    .video-holder {
+        width: 50%;
+        padding: 50px 0 0 50px;
+        @media (max-width: 1024px) {
+            padding: 20px 0 0 20px;
+        }
+        @media (max-width: 576px) {
+            width: 100%;
+        }
+    }
+}
 // adaptive video
 .video-wrap {
     margin-bottom: 20px;

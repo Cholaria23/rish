@@ -66,7 +66,7 @@
                     <ul class="price-list">
                         @if(!empty($cat->related_market_cats)  && $cat->related_market_cats && $cat->related_market_cats_flag)
                             @php
-                                $i = 0;
+                            $i = 0;
                             @endphp
                             @foreach ($cat->related_market_cats as $market_cat)
                                 @foreach ($market_cat->goods as $good)

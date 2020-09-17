@@ -51,7 +51,7 @@
 											</svg>
 										</div>
 										<div class="specialist-status-text">
-											{{implode(",",$expert->chars_vals[2]['values'])}}
+											{{implode(", ",$expert->chars_vals[2]['values'])}}
 										</div>
 									</div>
 								@endif
@@ -310,6 +310,29 @@
 				</div>
 			</div>
     	</section>
+	@endif
+
+	@if($expert->videos->count())
+		<section class="main-section">
+			<div class="container-small">
+				<div class="page-section-title-bold">
+					@lang('main.video')
+				</div>
+				@if ($expert->videos->count() < 2)
+					@foreach ($expert->videos as $video)
+						@include('layouts.main.video')
+					@endforeach
+				@else
+					<div class="video-wrapper">
+						@foreach ($expert->videos as $video)
+							<div class="video-holder">
+								@include('layouts.main.video')
+							</div>
+						@endforeach
+					</div>
+				@endif
+			</div>
+		</section>
 	@endif
 
 	@if(isset($expert->related_units[3]) && count($expert->related_units[3]['units']))

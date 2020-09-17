@@ -22,7 +22,7 @@
     <span class="specialists-experience">
         @if(isset($specialist_item->chars_vals[2]) && isset($specialist_item->chars_vals[2]['values']))
             <span class="specialists-experience-item">
-                {{implode(",",$specialist_item->chars_vals[2]['values'])}}
+                {{implode(", ",$specialist_item->chars_vals[2]['values'])}}
             </span>
         @endif
         @if($specialist_item->experiences->count())
