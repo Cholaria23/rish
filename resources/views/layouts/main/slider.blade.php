@@ -3,7 +3,7 @@
 		<div class="container">
 			<div class="main-slider">
 				@foreach ($slider->slides as $slide)
-					<div class="slide-item">
+					<a href="{{ $slide->href_1 }}" target="{{ ($slide->is_blank_1 == 1) ? "_blank" : "_self" }}" class="slide-item">
 						<div class="slide-item-img-wrap">
 							<div class="slide-item-mask" style="background-color: {{ $slide->mask_color }}; opacity: {{ $slide->mask_opacity / 100 }};">
 							</div>
@@ -27,15 +27,15 @@
 										{{ $slide->lang->button_1_caption }}
 									</button>
 								@elseif ($slide->href_1 != '') --}}
-									<a class="btn-arrow" href="{{ $slide->href_1 }}" target="{{ ($slide->is_blank_1 == 1) ? "_blank" : "_self" }}">
+									<span class="btn-arrow">
 										<div class="btn-arrow-text">
 											{{ $slide->lang->button_1_caption }}
 										</div>
-									</a>
+									</span>
 								{{-- @endif --}}
 							</div>
 						</div>
-					</div>
+					</a>
 				@endforeach
 			</div>
 		</div>
