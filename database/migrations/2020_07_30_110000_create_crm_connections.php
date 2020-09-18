@@ -13,7 +13,7 @@ class CreateCrmConnections extends Migration {
         Schema::create('market_crm_connections', function(Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->string('crm_url');
+            $table->string('crm_url')->nullable();
             $table->boolean('is_logged_in')->default(0);
             $table->text('key');
         });

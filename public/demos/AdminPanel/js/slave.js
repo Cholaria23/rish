@@ -32,6 +32,7 @@ function initUpload() {
         $(this).fileupload({
             dataType: 'json',
             formData: formData,
+            sequentialUploads: true,
             start: function (e) {
                 var butnLoad = $(e.target).closest(".butn__load");
                 butnLoad.addClass("is_load");
