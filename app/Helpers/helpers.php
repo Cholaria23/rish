@@ -132,6 +132,12 @@ if (!function_exists('build_expert_route')) {
     }
 }
 
+if (!function_exists('slash_url')) {
+    function slash_url($path) {
+        return $path.'/';		
+    }
+}
+
 if (!function_exists('get_cat_id_flag')) {
     function get_cat_id_flag($units,$ids){
         foreach($units as $unit){
