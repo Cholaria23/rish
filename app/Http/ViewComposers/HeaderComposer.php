@@ -28,9 +28,20 @@ class HeaderComposer {
                     $query->with([
                         'lang',
                         'children' => function ($query) {
-                            $query->with('lang')->where('is_hidden',0)->orderBy('sort_order','asc');
+                            $query->with([
+                                    'lang',
+                                    'units' => function ($query) {
+                                        $query->with('lang')->where('is_hidden',0)->orderBy('sort_order','desc');
+                                    }
+                                ])->where('is_hidden',0)->orderBy('sort_order','asc');
+                        },
+                        'units' => function ($query) {
+                            $query->with('lang')->where('is_hidden',0)->orderBy('sort_order','desc');
                         }
                     ])->where('is_hidden',0)->orderBy('sort_order','asc');
+                },
+                'units' => function ($query) {
+                    $query->with('lang')->where('is_hidden',0)->orderBy('sort_order','desc');
                 }
             ])->where('is_hidden',0)->find(4);
 
