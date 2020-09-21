@@ -2,7 +2,7 @@
 @section('links')
 @stop
 @section('page')
-    <div class="page">
+    <div class="page {{isset($cat) && $cat->id == 11 ? 'hirurgiya-page' : ''}}">
         <section class="page-section section-with-breadcrumbs">
             <div class="container-small">
                 @include('layouts.main.breadcrumbs')

@@ -1,3 +1,11 @@
+<div class="mfp-hide popup-wrap mini" id="popup-info">
+	<div class="popup-name-wrap">
+		<div class="popup-info-name">
+			@lang('main.popup_info_text')
+		</div>
+	</div>
+</div>
+
 <div class="mfp-hide popup-wrap mini" id="callback">
 	<div class="popup-name-wrap">
 		<div class="popup-name">

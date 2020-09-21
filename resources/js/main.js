@@ -89,6 +89,12 @@ function initSearchTabs() {
 }
 
 $(document).ready(function() {
+    if($('.hirurgiya-page').length) {
+        setTimeout(function(){
+          $.magnificPopup.open({items: {src: '#popup-info'},type: 'inline'}, 0);
+        }, 2000);
+    }
+
     // swipe for magnific-popup
     if($('.popup-gallery').length) {
         $("body").swipe({

@@ -40,6 +40,12 @@
             @include adaptiv-font(40, 27);
             text-align: center;
         }
+        .popup-info-name {
+            font-family: $montserrat_bold;
+            @include adaptiv-font(24, 20);
+            color: $page_title_color;
+            text-align: center;
+        }
         .popup-sub-name {
             margin-top: 5px;
             font-family: $montserrat_semibold;

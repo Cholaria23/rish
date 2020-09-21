@@ -157,4 +157,5 @@ return [
     "give_feedback" => "Give feedback",
     "more_details" => "More details",
     "video" => "Video",
+    "popup_info_text" => 'Preoperative consultation at the Rishon Medical and Diagnostic Center FREE OF CHARGE!',
 ];
