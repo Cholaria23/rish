@@ -11,7 +11,7 @@ class CreateDefaultStorage extends Migration {
      */
     public function up() {
         $crm = \Demos\Market\MarketCrmConnection::first();
-        if(!$crm) $crm = \Demos\Market\MarketCrmConnection::create(['key' => md5(uniqid())]);
+        if(!$crm) $crm = \Demos\Market\MarketCrmConnection::create(['key' => md5(uniqid()), 'crm_url' => '']);
         $storage_id = DB::table('market_storages')->insertGetId(['crm_id' => 1, 'crm_connection_id' => $crm->id, 'name' => 'Склад 1']);
         $goods = \Demos\Market\Good::select(['id', 'remains'])->pluck('remains', 'id')->toArray();
 
@@ -33,6 +33,6 @@ class CreateDefaultStorage extends Migration {
      * @return void
      */
     public function down() {
-        DB::table('market_storages')->where('crm_id', 0)->delete();
+        DB::table('market_storages')->where('crm_id', 1)->delete();
     }
 }
