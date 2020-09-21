@@ -1,7 +1,13 @@
 <?php
+//dump(Request::fullUrl());
 
-if (strpos(Request::path(), '//')) {
-    header('Location: '.str_replace("http:/", "http://", str_replace("//", "/", Request::fullUrl())));
+$url = str_replace("http://", "", Request::fullUrl());
+if (strpos($url, '//')) {
+    header('Location: '.str_replace("http:/", "http://", str_replace("//", "", Request::fullUrl())), TRUE, 301);
+    die();
+}
+if (strpos($url, '%2F')) {
+    header('Location: '.str_replace("%2F", "", Request::fullUrl()), TRUE, 301);
     die();
 }
 if(Request::get('page') == 1){
