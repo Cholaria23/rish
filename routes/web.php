@@ -6,7 +6,7 @@ if (strpos($url, '//')) {
     header('Location: '.str_replace("http:/", "http://", str_replace("//", "", Request::fullUrl())), TRUE, 301);
     die();
 }
-if (strpos($url, '%2F')) {
+if (strpos($url, '%2F') && !strpos($url, 'admin')) {
     header('Location: '.str_replace("%2F", "", Request::fullUrl()), TRUE, 301);
     die();
 }
