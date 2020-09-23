@@ -155,6 +155,32 @@
             color: $turquoise;
         }
     }
+    &.appointment-online-wrap {
+        padding: 0;
+        max-width: 800px;
+        .mfp-close {
+            top: 0;
+            @media (max-width: 768px) {
+                right: 0;
+            }
+            @media (max-width: 576px) {
+                right: 5px;
+            }
+        }
+        .appointment-online-inner {
+            position: relative;
+            min-height: calc(100vh - 3.5em);
+        }
+        .appointment-online {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+        }
+    }
     &.big {
         max-width: 1020px;
         @media (max-width: 768px) {

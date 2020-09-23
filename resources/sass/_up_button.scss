@@ -13,9 +13,17 @@
     border-radius: 50%;
     visibility: hidden;
     transition: all 0.25s linear;
+    @media (max-width: 1600px) {
+        width: 55px;
+        height: 55px;
+    }
     @media (max-width: 1366px) {
         width: 45px;
         height: 45px;
+    }
+    @media (max-width: 1024px) {
+        left: 15px;
+        right: auto;
     }
     &.visible {
         visibility: visible;
