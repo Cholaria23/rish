@@ -13,6 +13,8 @@ class HeaderComposer {
         $specialist = \Demos\AdminPanel\Unit::with('lang')->where('is_hidden',0)->find(79);
         $get_there = \Demos\AdminPanel\Unit::with('lang')->where('is_hidden',0)->find(105);
         $answers_questions = \Demos\AdminPanel\Unit::with('lang')->where('is_hidden',0)->find(106);
+        $insurance = \Demos\AdminPanel\Unit::with('lang')->where('is_hidden',0)->find(117);
+        $corporate_clients = \Demos\AdminPanel\Unit::with('lang')->where('is_hidden',0)->find(118);
 
         $actions = \Demos\AdminPanel\Cat::with('lang')->where('is_hidden',0)->find(17);
         $offers = \Demos\AdminPanel\Cat::with('lang')->where('is_hidden',0)->find(16);
@@ -64,6 +66,8 @@ class HeaderComposer {
             'news' => $news,
             'get_there' => $get_there,
             'answers_questions' => $answers_questions,
+            'insurance' => $insurance,
+            'corporate_clients' => $corporate_clients,
         ];
         $view->with('header_data', $header_data);
     }

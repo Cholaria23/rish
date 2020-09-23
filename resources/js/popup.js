@@ -5,7 +5,7 @@ $(document).ready(function() {
     	});
     });
 
-    $('.popup-js').click(function () {
+    $('.popup-js').not('.appointment-online-btn').click(function () {
         var popup = $(this).attr('href');
         setTimeout(function() {
             $(popup).find(".input-form")[0].focus();

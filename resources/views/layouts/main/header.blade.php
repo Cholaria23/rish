@@ -295,6 +295,20 @@
 							</a>
 						</li>
 					@endif
+					@if(isset($header_data['corporate_clients']) && $header_data['corporate_clients'])
+						<li class="header-menu-item mobile">
+							<a class="header-menu-link" href="{{build_unit_route($header_data['corporate_clients'])}}">
+								{{$header_data['corporate_clients']->lang->name}}
+							</a>
+						</li>
+					@endif
+					@if(isset($header_data['insurance']) && $header_data['insurance'])
+						<li class="header-menu-item mobile">
+							<a class="header-menu-link" href="{{build_unit_route($header_data['insurance'])}}">
+								{{$header_data['insurance']->lang->name}}
+							</a>
+						</li>
+					@endif
 					@if(isset($header_data['reviews']) && $header_data['reviews'])
 						<li class="header-menu-item mobile">
 							<a class="header-menu-link" href="{{build_unit_route($header_data['reviews'])}}">
@@ -375,6 +389,20 @@
 									<li class="header-menu-item">
 										<a class="header-menu-link" href="{{build_cat_route($header_data['prices']->alias)}}">
 											{{$header_data['prices']->lang->name}}
+										</a>
+									</li>
+								@endif
+								@if(isset($header_data['corporate_clients']) && $header_data['corporate_clients'])
+									<li class="header-menu-item">
+										<a class="header-menu-link" href="{{build_unit_route($header_data['corporate_clients'])}}">
+											{{$header_data['corporate_clients']->lang->name}}
+										</a>
+									</li>
+								@endif
+								@if(isset($header_data['insurance']) && $header_data['insurance'])
+									<li class="header-menu-item">
+										<a class="header-menu-link" href="{{build_unit_route($header_data['insurance'])}}">
+											{{$header_data['insurance']->lang->name}}
 										</a>
 									</li>
 								@endif
