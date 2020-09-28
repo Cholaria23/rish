@@ -116,6 +116,11 @@
 @stop
 @section('scripts')
   <script src="js/alertify.min.js"></script>
+
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/bootstrap-editable.min.js"></script>
+  <script src="js/bootstrap-switch.min.js"></script>
+  <script src="js/pGenerator.jquery.js"></script>
     <script>
         $(window).on("load", function() {
           $(window).trigger('scroll');

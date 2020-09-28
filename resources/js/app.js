@@ -35,13 +35,14 @@ require('./sliders');
 require('./popup');
 // form
 require('./form');
-// air-datepicker
-require('./air-datepicker');
+// air-datepicker перенес в online_consultation 
+// require('./air-datepicker');
+
 // main
 require('./main');
 
-//cabinet
-require("bootstrap");
-require('x-editable/dist/bootstrap3-editable/js/bootstrap-editable');
-require('bootstrap-switch');
-require('pgenerator');
+// перенес в cabinet
+// require("bootstrap");
+// require('x-editable/dist/bootstrap3-editable/js/bootstrap-editable');
+// require('bootstrap-switch');
+// require('pgenerator');
