@@ -10,7 +10,7 @@
 							{{-- <picture>
 								<source media="(max-width: 800px)" srcset="{{ asset("storage/slider/img_mobile/".$slide->img_mobile) }}">
 								<source srcset="{{ asset("storage/slider/img_desktop/".$slide->img_desktop) }}"> --}}
-								<img src="{{ asset("storage/slider/img_desktop/".$slide->img_desktop) }}" alt="{{$slide->lang->title}}" class="slide-item-img object-fit-js object-fit-cover">
+								<img data-src="{{ asset("storage/slider/img_desktop/".$slide->img_desktop) }}" alt="{{$slide->lang->title}}" class="slide-item-img object-fit-js object-fit-cover lazyload">
 							{{-- </picture> --}}
 						</div>
 						<div class="content-slide">
