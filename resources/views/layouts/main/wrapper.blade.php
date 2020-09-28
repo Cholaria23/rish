@@ -22,8 +22,10 @@
 	        <meta name="robots" content="noindex, nofollow" />
 	    @endif
 		<link rel="stylesheet" href="{{ asset('/css/app.css') }}">
+		{!! $seo->google_tm_start !!}
 	</head>
 	<body>
+		{!! $seo->google_tm_end !!}
 		@if (isset($admin_edit_link))
 	        <a href="{{ $admin_edit_link }}" title="@lang('main.edit')" class="edit-btn" style="position:fixed;left:50px;top:230px;z-index: 99999;width: 40px;height: 40px;display: flex;border-radius: 50%;border: 2px solid #812ca4;justify-content: space-around;align-items: center;transition: all .2s linear;background: transparent;" target="_blank">
 	            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="25px" height="25px" viewBox="0 0 485.219 485.22" style="enable-background:new 0 0 485.219 485.22;" xml:space="preserve">
