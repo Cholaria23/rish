@@ -1,9 +1,9 @@
 <?php
 //dump(Request::fullUrl());
 
-$url = str_replace("http://", "", Request::fullUrl());
+$url = str_replace("https://", "", Request::fullUrl());
 if (strpos($url, '//')) {
-    header('Location: '.str_replace("http:/", "http://", str_replace("//", "", Request::fullUrl())), TRUE, 301);
+    header('Location: '.str_replace("https:/", "https://", str_replace("//", "", Request::fullUrl())), TRUE, 301);
     die();
 }
 if (strpos($url, '%2F') && !strpos($url, 'admin')) {
