@@ -9,6 +9,7 @@
     url('/fonts/montserrat/montserrat-regular-webfont.svg#montserratregular') format('svg');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 @font-face {
     font-family: 'montserratmedium';
@@ -20,6 +21,7 @@
          url('/fonts/montserrat/montserrat-medium-webfont.svg#montserratmedium') format('svg');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 @font-face {
     font-family: 'montserratsemibold';
@@ -31,6 +33,7 @@
          url('/fonts/montserrat/montserrat-semibold-webfont.svg#montserratsemibold') format('svg');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 @font-face {
     font-family: 'montserratbold';
@@ -42,6 +45,7 @@
          url('/fonts/montserrat/montserrat-bold-webfont.svg#montserratbold') format('svg');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 
 // robotobold
@@ -55,6 +59,7 @@
          url('/fonts/roboto/roboto-bold-webfont.svg#robotobold') format('svg');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -67,6 +72,7 @@
          url('/fonts/roboto/roboto-medium-webfont.svg#robotomedium') format('svg');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -79,4 +85,5 @@
          url('/fonts/roboto/roboto-regular-webfont.svg#robotoregular') format('svg');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
