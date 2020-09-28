@@ -1,8 +1,8 @@
 // jQuery
-require('jquery/dist/jquery.min');
+// require('jquery/dist/jquery.min');
 window.$ = window.jQuery = require('jquery');
 // form Stickyfill
-import Stickyfill from "stickyfilljs/dist/stickyfill.min.js";
+// import Stickyfill from "stickyfilljs/dist/stickyfill.min.js";
 window.Stickyfill = require('stickyfilljs');
 // object-fit-images
 import objectFitPolyfill from 'objectFitPolyfill';
@@ -35,7 +35,7 @@ require('./sliders');
 require('./popup');
 // form
 require('./form');
-// air-datepicker перенес в online_consultation 
+// air-datepicker перенес в online_consultation
 // require('./air-datepicker');
 
 // main

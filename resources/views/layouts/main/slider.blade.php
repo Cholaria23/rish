@@ -7,11 +7,11 @@
 						<div class="slide-item-img-wrap">
 							<div class="slide-item-mask" style="background-color: {{ $slide->mask_color }}; opacity: {{ $slide->mask_opacity / 100 }};">
 							</div>
-							{{-- <picture>
-								<source media="(max-width: 800px)" srcset="{{ asset("storage/slider/img_mobile/".$slide->img_mobile) }}">
-								<source srcset="{{ asset("storage/slider/img_desktop/".$slide->img_desktop) }}"> --}}
+							<picture>
+								<source media="(max-width: 1025px)" data-srcset="{{ asset("storage/slider/img_mobile/".$slide->img_mobile) }}">
+								<source data-srcset="{{ asset("storage/slider/img_desktop/".$slide->img_desktop) }}">
 								<img data-src="{{ asset("storage/slider/img_desktop/".$slide->img_desktop) }}" alt="{{$slide->lang->title}}" class="slide-item-img object-fit-js object-fit-cover lazyload">
-							{{-- </picture> --}}
+							</picture>
 						</div>
 						<div class="content-slide">
 							<div class="slide-item-mask" style="background-color: {{ $slide->mask_color }}; opacity: {{ $slide->mask_opacity / 100 }};">
