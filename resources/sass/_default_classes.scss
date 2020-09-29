@@ -393,8 +393,7 @@
 }
 
 .appointment-online-btn {
-    display: flex;
-    // background-color: $turquoise_rgba_one;
+    display: none;
     background-color: $white;
     font-size: 14px;
     font-family: $montserrat_medium;
@@ -412,9 +411,9 @@
     z-index: 2;
     transition: .25s;
     animation: email-an linear 1s infinite;
-    // &:hover {
-    //     background-color: $turquoise_rgba_25;
-    // }
+    &.visible {
+        display: flex;
+    }
     &:hover {
         border: 3px solid $turquoise;
     }

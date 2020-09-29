@@ -89,6 +89,11 @@ function initSearchTabs() {
 }
 
 $(document).ready(function() {
+    // Добавление онлайн записи в модалку
+    $('.appointment-online-inner').append('<iframe class="appointment-online" src="https://booking.lakmus.org/?client=rishon&defaultAppointmentType=appointment&defaultPaymentSource=inclinic" frameborder="0" allowtransparency="true" width="100%" height="100%" style="display: block;"></iframe>');
+    // отображение кнопки после добавления онлай записи в модалку
+    $('.appointment-online-btn').addClass('visible');
+
     if($('.hirurgiya-page').length) {
         setTimeout(function(){
           $.magnificPopup.open({items: {src: '#popup-info'},type: 'inline'}, 0);
