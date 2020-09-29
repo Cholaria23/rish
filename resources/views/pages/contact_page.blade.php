@@ -34,35 +34,35 @@
 								<ul class="contact-phone-list">
 									@if(isset(app('contacts')['main']['contacts']['phone_1']) && app('contacts')['main']['contacts']['phone_1'] != '')
 										<li class="contact-phone-item">
-											<a class="contact-phone-link" href="tel:+{{ preg_replace( '/[^0-9]/', '', app('contacts')['main']['contacts']['phone_1'] ) }}">
+											<a class="contact-phone-link" href="tel:{{ substr(preg_replace( '/[^0-9]/', '', app('contacts')['main']['contacts']['phone_1']),0,1) == '0' ? '' : '+' }}{{ preg_replace( '/[^0-9]/', '', app('contacts')['main']['contacts']['phone_1'] ) }}">
 												{{app('contacts')['main']['contacts']['lang']['phone_1_name'] != '' ? app('contacts')['main']['contacts']['lang']['phone_1_name'] : app('contacts')['main']['contacts']['phone_1']}}
 											</a>
 										</li>
 									@endif
 									@if(isset(app('contacts')['main']['contacts']['phone_2']) && app('contacts')['main']['contacts']['phone_2'] != '')
 										<li class="contact-phone-item">
-											<a class="contact-phone-link" href="tel:+{{ preg_replace( '/[^0-9]/', '', app('contacts')['main']['contacts']['phone_2'] ) }}">
+											<a class="contact-phone-link" href="tel:{{ substr(preg_replace( '/[^0-9]/', '', app('contacts')['main']['contacts']['phone_2']),0,1) == '0' ? '' : '+' }}{{ preg_replace( '/[^0-9]/', '', app('contacts')['main']['contacts']['phone_2'] ) }}">
 												{{app('contacts')['main']['contacts']['lang']['phone_2_name'] != '' ? app('contacts')['main']['contacts']['lang']['phone_2_name'] : app('contacts')['main']['contacts']['phone_2']}}
 											</a>
 										</li>
 									@endif
 									@if(isset(app('contacts')['main']['contacts']['phone_3']) && app('contacts')['main']['contacts']['phone_3'] != '')
 										<li class="contact-phone-item">
-											<a class="contact-phone-link" href="tel:+{{ preg_replace( '/[^0-9]/', '', app('contacts')['main']['contacts']['phone_3'] ) }}">
+											<a class="contact-phone-link" href="tel:{{ substr(preg_replace( '/[^0-9]/', '', app('contacts')['main']['contacts']['phone_3']),0,1) == '0' ? '' : '+' }}{{ preg_replace( '/[^0-9]/', '', app('contacts')['main']['contacts']['phone_3'] ) }}">
 												{{app('contacts')['main']['contacts']['lang']['phone_3_name'] != '' ? app('contacts')['main']['contacts']['lang']['phone_3_name'] : app('contacts')['main']['contacts']['phone_3']}}
 											</a>
 										</li>
 									@endif
 									@if(isset(app('contacts')['main']['contacts']['phone_4']) && app('contacts')['main']['contacts']['phone_4'] != '')
 										<li class="contact-phone-item">
-											<a class="contact-phone-link" href="tel:+{{ preg_replace( '/[^0-9]/', '', app('contacts')['main']['contacts']['phone_4'] ) }}">
+											<a class="contact-phone-link" href="tel:{{ substr(preg_replace( '/[^0-9]/', '', app('contacts')['main']['contacts']['phone_4']),0,1) == '0' ? '' : '+' }}{{ preg_replace( '/[^0-9]/', '', app('contacts')['main']['contacts']['phone_4'] ) }}">
 												{{app('contacts')['main']['contacts']['lang']['phone_4_name'] != '' ? app('contacts')['main']['contacts']['lang']['phone_4_name'] : app('contacts')['main']['contacts']['phone_4']}}
 											</a>
 										</li>
 									@endif
 									@if(isset(app('contacts')['main']['contacts']['phone_5']) && app('contacts')['main']['contacts']['phone_5'] != '')
 										<li class="contact-phone-item">
-											<a class="contact-phone-link" href="tel:+{{ preg_replace( '/[^0-9]/', '', app('contacts')['main']['contacts']['phone_5'] ) }}">
+											<a class="contact-phone-link" href="tel:{{ substr(preg_replace( '/[^0-9]/', '', app('contacts')['main']['contacts']['phone_5']),0,1) == '0' ? '' : '+' }}{{ preg_replace( '/[^0-9]/', '', app('contacts')['main']['contacts']['phone_5'] ) }}">
 												{{app('contacts')['main']['contacts']['lang']['phone_5_name'] != '' ? app('contacts')['main']['contacts']['lang']['phone_5_name'] : app('contacts')['main']['contacts']['phone_5']}}
 											</a>
 										</li>
