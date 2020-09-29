@@ -74,7 +74,7 @@
 	</div>
 @stop
 @section('scripts')
-	<script src="js/datepicker.min.js"></script>
+	{{-- <script src="js/datepicker.min.js"></script>
 	<script>
 		$(document).ready(function(){
 
@@ -138,5 +138,5 @@
 		    }
 
 		});
-	</script>
+	</script> --}}
 @stop

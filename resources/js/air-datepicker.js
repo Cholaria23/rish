@@ -1,8 +1,7 @@
 import datepicker from "air-datepicker/dist/js/datepicker.min.js";
 
-$(document).ready(function(){
-
-     if ($('html').attr('lang')=='en') {
+function initDatePicker() {
+    if ($('html').attr('lang')=='en') {
 
         $.fn.datepicker.language['en'] =  {
             days: [ 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday' ,'Saturday'],
@@ -50,7 +49,7 @@ $(document).ready(function(){
             language: 'uk',
             minDate: new Date()
         });
-        
+
     } else {
         $('.datepicker-before-js').datepicker({
             maxDate: new Date()
@@ -60,5 +59,10 @@ $(document).ready(function(){
             minDate: new Date()
         });
     }
+}
 
+$(document).ready(function() {
+    if ($('.datepicker-before-js').length || $('.datepicker-after-js').length) {
+        initDatePicker();
+    }
 });
