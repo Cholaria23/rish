@@ -393,7 +393,7 @@
 }
 
 .appointment-online-btn {
-    display: none;
+    display: flex;
     background-color: $white;
     font-size: 14px;
     font-family: $montserrat_medium;
@@ -411,9 +411,6 @@
     z-index: 2;
     transition: .25s;
     animation: email-an linear 1s infinite;
-    &.visible {
-        display: flex;
-    }
     &:hover {
         border: 3px solid $turquoise;
     }
