@@ -114,7 +114,7 @@
                                                         @if(isset(app('contacts')['main']['contacts']['phone_1']) && app('contacts')['main']['contacts']['phone_1'] != '')
                                                             <p style="margin: 0 0 5px 0; text-align: left; font-size: 14px; color: #343434;">
                                                                 @lang('main.email.phone')
-                                                               <a href="tel:+{{ preg_replace( '/[^0-9]/', '', app('contacts')['main']['contacts']['phone_1'] ) }}" style="font-size: 14px; color: #343434; text-decoration: none;">
+                                                               <a href="tel:{{ substr(preg_replace( '/[^0-9]/', '', app('contacts')['main']['contacts']['phone_1']),0,1) == '0' ? '' : '+' }}{{ preg_replace( '/[^0-9]/', '', app('contacts')['main']['contacts']['phone_1'] ) }}" style="font-size: 14px; color: #343434; text-decoration: none;">
                                                                    {{app('contacts')['main']['contacts']['phone_1']}}
                                                                </a>
                                                             </p>
