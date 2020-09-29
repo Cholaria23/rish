@@ -51,6 +51,9 @@
 		   </span>
 	   </a>
 		@include('layouts.main.svg_sprite')
+		@if(isset($unit) && in_array($unit->id,[1]) || isset($cat) && in_array($cat->id,[13]))
+	   		кнопки сюда!
+		@endif
 		<script defer type="text/javascript">
 			var routes = {
 				'postSend' : "{{route('service.postSend')}}",
