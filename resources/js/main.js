@@ -309,6 +309,11 @@ $(document).ready(function() {
         });
     }
 
+    // добавление формы записи онлайн в модалку
+    $('.appointment-online-inner').append('<iframe class="appointment-online" src="https://booking.lakmus.org/?client=rishon&defaultAppointmentType=appointment&defaultPaymentSource=inclinic" frameborder="0" allowtransparency="true" width="100%" height="100%" style="display: block;"></iframe>');
+    // отображение кнопки записи онлайн после добавления формы записи онлайн в модалку
+    $('.appointment-online-btn').addClass('visible');
+
 });
 
 
