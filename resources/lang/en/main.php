@@ -158,4 +158,9 @@ return [
     "more_details" => "More details",
     "video" => "Video",
     "popup_info_text" => 'Preoperative consultation at the Rishon Medical and Diagnostic Center FREE OF CHARGE!',
+    "test" => 'Recording for PCR test',
+    "vaccination" => 'Applying for a flu shot',
+    "flu_shots" => 'Pre-Enrollment for Flu Shots',
+    "test_date" => 'Desired test date',
+    "count_people" => 'Number of persons',
 ];

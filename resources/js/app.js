@@ -33,14 +33,13 @@ require('jquery-touchswipe/jquery.touchSwipe.min.js');
 require("jquery-validation");
 
 
-
 // sliders
 require('./sliders');
 // popup
 require('./popup');
 // form
 require('./form');
-// air-datepicker 
+// air-datepicker
 require('./air-datepicker');
 
 // main

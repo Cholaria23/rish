@@ -34,6 +34,9 @@
         display: block;
     }
 }
+.datepicker {
+    z-index: 1151;
+}
 .form-thanks {
     display: none;
     font-family: $montserrat_semibold;
@@ -392,30 +395,61 @@
     }
 }
 
+.appointment-online-btn-wrap {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    right: 5%;
+    bottom: 5%;
+    z-index: 2;
+}
+.appointment-online-popup-btn {
+    margin-bottom: 15px;
+    display: flex;
+    background-color: $white;
+    font-size: 14px;
+    font-family: $montserrat_medium;
+    color: $turquoise;
+    border: 6px solid #EAF8F8;
+    border-radius: 50%;
+    box-shadow: 0 6px 15px rgba(216, 235, 235, 0.45);
+    cursor: pointer;
+    height: 100px;
+    text-align: center;
+    width: 100px;
+    transition: .25s;
+    &.visible {
+        display: flex;
+    }
+    &:hover {
+        background-color: #EAF8F8;
+    }
+    span {
+        margin: auto;
+    }
+}
 .appointment-online-btn {
     display: none;
     background-color: $white;
     font-size: 14px;
     font-family: $montserrat_medium;
     color: $turquoise;
-    border: 3px solid $grey;
+    // border: 3px solid $grey;
+    border: 6px solid #EAF8F8;
     border-radius: 50%;
     box-shadow: 0 8px 10px rgba(46, 186, 162, .32);
     cursor: pointer;
     height: 100px;
     text-align: center;
     width: 100px;
-    position: fixed;
-    right: 5%;
-    bottom: 5%;
-    z-index: 2;
     transition: .25s;
     animation: email-an linear 1s infinite;
     &.visible {
         display: flex;
     }
     &:hover {
-        border: 3px solid $turquoise;
+        // border: 3px solid $turquoise;
+        background-color: #EAF8F8;
     }
     span {
         margin: auto;

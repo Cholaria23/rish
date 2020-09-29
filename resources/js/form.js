@@ -673,4 +673,85 @@ $(document).ready( function() {
       });
     });
 
+
+    // Registration for Test
+    $(".do_appointment_test").click(function(e) {
+        e.stopPropagation();
+        e.preventDefault();
+        var formVal = $(this).closest('.appointment_test');
+        formAppointmentTestValidate(formVal);
+        formVal.submit();
+    });
+    function formAppointmentTestValidate(form) {
+        form.validate({
+            submitHandler: function(form) {
+              var csrf_token = $('meta[name="csrf-token"]').attr('content');
+              var formdata = $(form).serialize();
+              $(form)[0].reset();
+              $.ajax({
+                url: routes.postSend,
+                type: 'POST',
+                data: {
+                    "_token" : csrf_token,
+                    "data": formdata,
+                    "subj": "test"
+                },
+                success: function(data) {
+                    $(form).hide();
+                    $(form).next('.form-thanks').show();
+                    function hidePopup(){
+                        $.magnificPopup.close();
+                    }
+                    function showForm(){
+                        $(form).next('.form-thanks').hide();
+                        $(form).show();
+                    }
+                    setTimeout( hidePopup ,5000);
+                    setTimeout( showForm ,5000);
+                }
+              });
+            }
+        });
+    };
+
+    // Registration for vaccination
+    $(".do_vaccination_form").click(function(e) {
+        e.stopPropagation();
+        e.preventDefault();
+        var formVal = $(this).closest('.vaccination_form');
+        formAppointmentVaccinationValidate(formVal);
+        formVal.submit();
+    });
+    function formAppointmentVaccinationValidate(form) {
+        form.validate({
+            submitHandler: function(form) {
+              var csrf_token = $('meta[name="csrf-token"]').attr('content');
+              var formdata = $(form).serialize();
+              $(form)[0].reset();
+              $.ajax({
+                url: routes.postSend,
+                type: 'POST',
+                data: {
+                    "_token" : csrf_token,
+                    "data": formdata,
+                    "subj": "vaccination"
+                },
+                success: function(data) {
+                    $(form).hide();
+                    $(form).next('.form-thanks').show();
+                    function hidePopup(){
+                        $.magnificPopup.close();
+                    }
+                    function showForm(){
+                        $(form).next('.form-thanks').hide();
+                        $(form).show();
+                    }
+                    setTimeout( hidePopup ,5000);
+                    setTimeout( showForm ,5000);
+                }
+              });
+            }
+        });
+    };
+
 });

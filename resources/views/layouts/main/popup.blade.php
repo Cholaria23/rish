@@ -1,6 +1,6 @@
 <div class="mfp-hide popup-wrap appointment-online-wrap" id="appointment-online-popup">
 	<div class="appointment-online-inner">
-		
+
 	</div>
 </div>
 
@@ -540,3 +540,60 @@
 		<div class='form-thanks'>@lang('main.review.thank_reviews')</div>
 	</div>
 @endif
+
+
+<div class="mfp-hide popup-wrap mini" id="appointment_test">
+	<div class="popup-name-wrap">
+		<div class="popup-name">
+			@lang('main.test')
+		</div>
+	</div>
+	<form method="post" class="appointment_test">
+        <div class="input-wrap">
+            <input class="input-form" type="tel" name="phone" placeholder="@lang('main.form.phone')*"  required>
+        </div>
+        <div class="input-wrap">
+            <input class="input-form" type="text" name="name" placeholder="@lang('main.form.name')">
+        </div>
+		<div class="input-wrap">
+            <input class="input-form datepicker-after-js" type="text" name="date" placeholder="@lang('main.test_date')">
+        </div>
+        <input type="hidden" name="url" value="{{Request::path()}}">
+        <input type="hidden" name="url_name" value="{{isset($page_title) && $page_title != '' ? $page_title : '' }}">
+        <input type="hidden" name="title" value="@lang('main.test')">
+        <input type="hidden" name="lang" value="{{App::getLocale()}}">
+        <div class="popup-info-text">
+            @lang('main.form.required_text')
+        </div>
+        <button type="submit" class="btn-green do_appointment_test">@lang('main.btn.sign_up')</button>
+    </form>
+   <div class='form-thanks'>@lang('main.form.form_thanks')</div>
+</div>
+
+<div class="mfp-hide popup-wrap mini" id="vaccination">
+	<div class="popup-name-wrap">
+		<div class="popup-name">
+			@lang('main.flu_shots')
+		</div>
+	</div>
+	<form method="post" class="vaccination_form">
+        <div class="input-wrap">
+            <input class="input-form" type="tel" name="phone" placeholder="@lang('main.form.phone')*" required>
+        </div>
+        <div class="input-wrap">
+            <input class="input-form" type="text" name="name" placeholder="@lang('main.form.name')">
+        </div>
+		<div class="input-wrap">
+            <input class="input-form" type="text" name="number" placeholder="@lang('main.count_people')">
+        </div>
+        <input type="hidden" name="url" value="{{Request::path()}}">
+        <input type="hidden" name="url_name" value="{{isset($page_title) && $page_title != '' ? $page_title : '' }}">
+        <input type="hidden" name="title" value="@lang('main.test')">
+        <input type="hidden" name="lang" value="{{App::getLocale()}}">
+        <div class="popup-info-text">
+            @lang('main.form.required_text')
+        </div>
+        <button type="submit" class="btn-green do_vaccination_form">@lang('main.btn.sign_up')</button>
+    </form>
+   <div class='form-thanks'>@lang('main.form.form_thanks')</div>
+</div>
