@@ -21,7 +21,6 @@
 		@if ( $seo->noindex == 1)
 	        <meta name="robots" content="noindex, nofollow" />
 	    @endif
-		<link rel="stylesheet" href="/css/fonts.css">
 		<link rel="stylesheet" href="{{ asset('/css/app.css') }}">
 		{!! $seo->google_tm_start !!}
 	</head>
@@ -63,6 +62,7 @@
 				'postSaveUserPassword' : "{{route('service.postSaveUserPassword')}}",
 			}
 		</script>
+		<script src="{{asset('/js/plugins.js')}}"></script>
 		<script src="{{asset('/js/app.js')}}"></script>
 		@if (App::getLocale() !== "en")
 			<script defer type="text/javascript" src='/js/messages_{{ App::getLocale() }}.js'></script>

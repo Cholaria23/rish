@@ -1,6 +1,6 @@
 <div class="mfp-hide popup-wrap appointment-online-wrap" id="appointment-online-popup">
 	<div class="appointment-online-inner">
-		<iframe class="appointment-online" src="https://booking.lakmus.org/?client=rishon&defaultAppointmentType=appointment&defaultPaymentSource=inclinic" frameborder="0" allowtransparency="true" width="100%" height="100%" style="display: block;"></iframe>
+		
 	</div>
 </div>
 
