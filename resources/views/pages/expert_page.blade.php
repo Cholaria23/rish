@@ -66,9 +66,11 @@
 								</span>
 								@lang('main.btn.question_specialist')
 							</a>
-							<a class="btn-green-small popup-js specialist-btn-js" data-subtitle="{{$expert->lang->last_name}} {{$expert->lang->first_name}} {{$expert->lang->father_name}}" href="#specialist">
-								@lang('main.btn.make_appointment')
-							</a>
+							@if($expert->id != 1)
+								<a class="btn-green-small popup-js specialist-btn-js" data-subtitle="{{$expert->lang->last_name}} {{$expert->lang->first_name}} {{$expert->lang->father_name}}" href="#specialist">
+									@lang('main.btn.make_appointment')
+								</a>
+							@endif
 						</div>
 						@if(!empty($expert->related_goods) && isset($expert->related_goods['1']['goods']) && $expert->related_goods['1']['goods']->count() || !empty($expert->related_market_cats) && isset($expert->related_market_cats['1']['cats']) && $expert->related_market_cats_flag)
 							<section class="main-section">
