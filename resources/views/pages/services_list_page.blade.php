@@ -114,6 +114,11 @@
                 <div class="container-small">
                     <div class="description">
                         {!! $cat->lang->post_info !!}
+                        @if($cat->videos->count())
+							@foreach ($cat->videos as $video)
+								@include('layouts.main.video')
+							@endforeach
+						@endif
                     </div>
                 </div>
             </section>

@@ -382,6 +382,9 @@ class PageController extends Controller {
     public function showCat($alias) {
         $cat = Cat::with([
                 'lang',
+                'videos' => function ($query) {
+                    $query->with('lang')->where('is_hidden',0);
+                },
                 'children' => function ($query) {
                     $query->with([
                         'lang',
