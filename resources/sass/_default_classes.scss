@@ -396,15 +396,12 @@
 }
 
 .appointment-online-btn-wrap {
-    display: none;
+    display: flex;
     flex-direction: column;
     position: fixed;
     right: 5%;
     bottom: 5%;
     z-index: 2;
-    &.visible {
-        display: flex;
-    }
 }
 .appointment-online-popup-btn {
     margin-bottom: 15px;

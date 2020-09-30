@@ -74,9 +74,11 @@
 							@if(isset($services) && count($services))
 								<li class="tab-content" id="services">
 									<div class="tab-content-inner">
-										@foreach ($services as $unit_item)
-											@include('layouts.tiles.search')
-										@endforeach
+										<div class="servises-block">
+											@foreach ($services as $unit_item)
+												@include('layouts.tiles.search')
+											@endforeach
+										</div>
 									</div>
 								</li>
 							@endif
