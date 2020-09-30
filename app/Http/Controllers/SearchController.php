@@ -161,7 +161,7 @@ class SearchController extends Controller
                             });
                         }
                     )->get();
-                    
+
                     foreach ($specialists as $specialist) {
                         $result_specialists_ids[] = $specialist->id;
                         $response['count'] ++;
@@ -205,7 +205,7 @@ class SearchController extends Controller
                             $query->where('long_desc_1', 'LIKE', '%'.$search_item.'%')->orWhere('long_desc_2', 'LIKE', '%'.$search_item.'%');
                         });
                     })->get();
-        
+
                     foreach ($specialists as $specialist) {
                         $result_specialists_ids[] = $specialist->id;
                         $response['count'] ++;
@@ -268,7 +268,7 @@ class SearchController extends Controller
                             });
                         }
                     )->get();
-                    
+
                     foreach ($specialists as $specialist) {
                         $result_specialists_ids[] = $specialist->id;
                         $response['count'] ++;
@@ -311,7 +311,7 @@ class SearchController extends Controller
                             $query->where('long_desc_1', 'LIKE', '%'.$search_item.'%')->orWhere('long_desc_2', 'LIKE', '%'.$search_item.'%');
                         });
                     })->get();
-        
+
                     foreach ($specialists as $specialist) {
                         $result_specialists_ids[] = $specialist->id;
                         $response['count'] ++;
@@ -385,7 +385,7 @@ class SearchController extends Controller
 
     public static function build_search_specialist($unit, $search, $segment='') {
         $response = [
-            
+
 
 
             'name'             => str_ireplace($search, '<b>'.$search.'</b>', $unit->lang->last_name.' '.$unit->lang->first_name.' '.$unit->lang->father_name),
