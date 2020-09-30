@@ -80,7 +80,7 @@
                                                                 <p style="margin: 0; padding: 15px 0; text-align: left; font-size: 14px; color: #343434;; font-weight: bold; border-bottom: 1px solid #f2f2f2;">
                                                                     <b>@Lang('main.form.your_question'):</b>
                                                                 </p>
-                                                                <p style="display: flex; align-items: center; justify-content: space-between;font-size: 14px; margin: 0; padding: 10px 0; color: #343434; font-weight: 400; border-bottom: 1px solid #f2f2f2;">
+                                                                <p style="font-size: 14px; margin: 0; padding: 10px 0; color: #343434; font-weight: 400; border-bottom: 1px solid #f2f2f2;">
                                                                     {{ $content }}
                                                                 </p>
                                                             @endif
