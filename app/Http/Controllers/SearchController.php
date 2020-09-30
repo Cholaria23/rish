@@ -62,6 +62,12 @@ class SearchController extends Controller
             $equipments_cats = array_merge([7], Cat::descendants(7));
             $specialists_cats = array_merge([5], Cat::descendants(5));
 
+            $response['services_cats'] = $services_cats;
+            $response['news_cats'] = $news_cats;
+            $response['articles_cats'] = $articles_cats;
+            $response['actions_cats'] = $actions_cats;
+            $response['equipments_cats'] = $equipments_cats;
+            $response['specialists_cats'] = $specialists_cats;
 
             $units = Unit::with('lang')->whereHas('category', function ($query) {
                 $query->with('lang')->where('is_hidden',0);
@@ -347,6 +353,7 @@ class SearchController extends Controller
         $response = [
             'name'             => str_ireplace($search, '<b>'.$search.'</b>', $unit->lang->name),
             'cat_name'         => $unit->category->lang->name,
+            'cat_id'           => $unit->category->id,
             'short_desc_1'     => str_ireplace($search, '<b>'.$search.'</b>', mb_strtolower($unit->lang->short_desc_1)),
             'short_desc_2'     => str_ireplace($search, '<b>'.$search.'</b>', mb_strtolower($unit->lang->short_desc_2)),
             'date_publication' => ($unit->date_publication != '') ? $unit->date_publication->format('d.m.Y') : NULL,
@@ -385,9 +392,6 @@ class SearchController extends Controller
 
     public static function build_search_specialist($unit, $search, $segment='') {
         $response = [
-
-
-
             'name'             => str_ireplace($search, '<b>'.$search.'</b>', $unit->lang->last_name.' '.$unit->lang->first_name.' '.$unit->lang->father_name),
             'short_desc_1'     => str_ireplace($search, '<b>'.$search.'</b>', mb_strtolower($unit->lang->short_desc_1)),
             'short_desc_2'     => str_ireplace($search, '<b>'.$search.'</b>', mb_strtolower($unit->lang->short_desc_2)),
@@ -475,7 +479,7 @@ class SearchController extends Controller
             case 'specialist':
                 if ($source != '') {
                     $img = $source;
-                    $path_to_folder = \Config::get('app')['url'].'storage/specialists/covers/small';
+                    $path_to_folder = \Config::get('app')['url'].'/storage/specialists/covers/small';
                 } else {
                     $img = app('specialists_params')->noimage_covers;
                     $path_to_folder = \Config::get('app')['url'].'/storage/noimage/specialists/covers/small';
