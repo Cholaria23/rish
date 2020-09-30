@@ -318,11 +318,7 @@
 				<div class="page-section-title-bold">
 					@lang('main.video')
 				</div>
-				@if ($expert->videos->count() < 2)
-					@foreach ($expert->videos as $video)
-						@include('layouts.main.video')
-					@endforeach
-				@else
+				@if ($expert->videos->count() > 1)
 					<div class="video-wrapper">
 						@foreach ($expert->videos as $video)
 							<div class="video-holder">
@@ -330,6 +326,10 @@
 							</div>
 						@endforeach
 					</div>
+				@else
+					@foreach ($expert->videos as $video)
+						@include('layouts.main.video')
+					@endforeach
 				@endif
 			</div>
 		</section>
