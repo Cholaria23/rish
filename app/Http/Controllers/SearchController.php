@@ -385,9 +385,6 @@ class SearchController extends Controller
 
     public static function build_search_specialist($unit, $search, $segment='') {
         $response = [
-            
-
-
             'name'             => str_ireplace($search, '<b>'.$search.'</b>', $unit->lang->last_name.' '.$unit->lang->first_name.' '.$unit->lang->father_name),
             'short_desc_1'     => str_ireplace($search, '<b>'.$search.'</b>', mb_strtolower($unit->lang->short_desc_1)),
             'short_desc_2'     => str_ireplace($search, '<b>'.$search.'</b>', mb_strtolower($unit->lang->short_desc_2)),
@@ -475,7 +472,7 @@ class SearchController extends Controller
             case 'specialist':
                 if ($source != '') {
                     $img = $source;
-                    $path_to_folder = \Config::get('app')['url'].'storage/specialists/covers/small';
+                    $path_to_folder = \Config::get('app')['url'].'/storage/specialists/covers/small';
                 } else {
                     $img = app('specialists_params')->noimage_covers;
                     $path_to_folder = \Config::get('app')['url'].'/storage/noimage/specialists/covers/small';
