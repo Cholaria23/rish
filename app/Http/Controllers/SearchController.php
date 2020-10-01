@@ -31,16 +31,17 @@ class SearchController extends Controller
         $search = strtolower($request->search);
 
         $response = [
-            'page_title'   => Lang::get('main.search_page').' «'.$search.'»',
-            'meta_title'   => Lang::get('main.search_meta').' «'.$search.'»',
-            'count'        => 0,
-            'services'     => [],
-            'news'         => [],
-            'articles'     => [],
-            'actions'      => [],
-            'specialists'  => [],
-            'equipments'   => [],
-            'units'        => [],
+            'page_title'         => Lang::get('main.search_page').' «'.$search.'»',
+            'meta_title'         => Lang::get('main.search_meta').' «'.$search.'»',
+            'count'              => 0,
+            'services'           => [],
+            'services_categories'=> [],
+            'news'               => [],
+            'articles'           => [],
+            'actions'            => [],
+            'specialists'        => [],
+            'equipments'         => [],
+            'units'              => [],
 
         ];
         $unset_top_price = TRUE;
@@ -74,6 +75,16 @@ class SearchController extends Controller
             })->whereNotIn('cat_id', $block_cats)->where('is_hidden', 0)->whereHas('lang', function($query) use ($search) {
                 $query->where('name', 'LIKE', '%'.$search.'%');
             })->get();
+
+            $cats = Cat::with('lang')->whereIn('id', $services_cats)->where('is_hidden', 0)->whereHas('lang', function($query) use ($search) {
+                $query->where('name', 'LIKE', '%'.$search.'%');
+            })->get();
+
+            foreach ($cats as $cat) {
+                $result_cats_ids[] = $cat->id;
+                $response['count'] ++;
+                $response['services_categories'][] = self::build_search_cat($cat, $search);
+            }
 
             $specialists = Specialist::with('lang')->where('is_hidden', 0)->whereHas('lang', function($query) use ($search) {
                 $query->where(function ($query) use ($search) {
@@ -112,6 +123,18 @@ class SearchController extends Controller
                     $query->where('long_desc_1', 'LIKE', '%'.$search.'%')->orWhere('long_desc_2', 'LIKE', '%'.$search.'%');
                 });
             })->get();
+
+            $cats = Cat::with('lang')->whereIn('id', $services_cats)->where('is_hidden', 0)->whereNotIn('id', $result_cats_ids)->whereHas('lang', function($query) use ($search) {
+                $query->where(function($query) use ($search){
+                    $query->where('pre_info', 'LIKE', '%'.$search.'%')->orWhere('post_info', 'LIKE', '%'.$search.'%');
+                });
+            })->get();
+
+            foreach ($cats as $cat) {
+                $result_cats_ids[] = $cat->id;
+                $response['count'] ++;
+                $response['services_categories'][] = self::build_search_cat($cat, $search);
+            }
 
             $specialists = Specialist::with('lang')->where('is_hidden', 0)->whereNotIn('id', $result_specialists_ids)->whereHas('lang', function($query) use ($search) {
                 $query->where(function($query) use ($search){
@@ -157,6 +180,16 @@ class SearchController extends Controller
                             $query->where('name', 'LIKE', '%'.$search_item.'%');
                         }
                     )->get();
+
+                    $cats = Cat::with('lang')->whereIn('id', $services_cats)->where('is_hidden', 0)->whereNotIn('id', $result_cats_ids)->whereHas('lang', function($query) use ($search) {
+                        $query->where('name', 'LIKE', '%'.$search.'%');
+                    })->get();
+
+                    foreach ($cats as $cat) {
+                        $result_cats_ids[] = $cat->id;
+                        $response['count'] ++;
+                        $response['services_categories'][] = self::build_search_cat($cat, $search);
+                    }
 
                     $specialists = Specialist::with('lang')
                         ->whereNotIn('id', $result_specialists_ids)
@@ -205,6 +238,18 @@ class SearchController extends Controller
                             });
                         }
                     )->get();
+
+                    $cats = Cat::with('lang')->whereIn('id', $services_cats)->where('is_hidden', 0)->whereNotIn('id', $result_cats_ids)->whereHas('lang', function($query) use ($search) {
+                        $query->where(function($query) use ($search){
+                            $query->where('pre_info', 'LIKE', '%'.$search.'%')->orWhere('post_info', 'LIKE', '%'.$search.'%');
+                        });
+                    })->get();
+        
+                    foreach ($cats as $cat) {
+                        $result_cats_ids[] = $cat->id;
+                        $response['count'] ++;
+                        $response['services_categories'][] = self::build_search_cat($cat, $search);
+                    }
 
                     $specialists = Specialist::with('lang')->where('is_hidden', 0)->whereNotIn('id', $result_specialists_ids)->whereHas('lang', function($query) use ($search_item) {
                         $query->where(function($query) use ($search_item){
@@ -265,6 +310,17 @@ class SearchController extends Controller
                         }
                     )->get();
 
+                    $cats = Cat::with('lang')->whereIn('id', $services_cats)->where('is_hidden', 0)->whereNotIn('id',$result_cats_ids)->whereHas('lang', function($query) use ($search) {
+                        $query->where('name', 'LIKE', '%'.$search.'%');
+                    })->get();
+        
+                    foreach ($cats as $cat) {
+                        $result_cats_ids[] = $cat->id;
+                        $response['count'] ++;
+                        $response['services_categories'][] = self::build_search_cat($cat, $search);
+                    }
+        
+
                     $specialists = Specialist::with('lang')
                         ->whereNotIn('id', $result_specialists_ids)
                         ->where('is_hidden', 0)
@@ -311,6 +367,18 @@ class SearchController extends Controller
                             });
                         }
                     )->get();
+
+                    $cats = Cat::with('lang')->whereIn('id', $services_cats)->where('is_hidden', 0)->whereNotIn('id', $result_cats_ids)->whereHas('lang', function($query) use ($search) {
+                        $query->where(function($query) use ($search){
+                            $query->where('pre_info', 'LIKE', '%'.$search.'%')->orWhere('post_info', 'LIKE', '%'.$search.'%');
+                        });
+                    })->get();
+        
+                    foreach ($cats as $cat) {
+                        $result_cats_ids[] = $cat->id;
+                        $response['count'] ++;
+                        $response['services_categories'][] = self::build_search_cat($cat, $search);
+                    }
 
                     $specialists = Specialist::with('lang')->where('is_hidden', 0)->whereNotIn('id', $result_specialists_ids)->whereHas('lang', function($query) use ($search_item) {
                         $query->where(function($query) use ($search_item){
@@ -421,6 +489,37 @@ class SearchController extends Controller
                 }
             } else {
                 $response['href'] = build_expert_route($unit->alias);
+                $response['href_segments'] = [
+                    'segment_1'  => $unit->alias,
+                ];
+            }
+        }
+        return $response;
+    }
+
+    public static function build_search_cat($unit, $search, $segment='') {
+        $response = [
+            'name'             => str_ireplace($search, '<b>'.$search.'</b>', $unit->lang->name),
+            'cat_id'           => $unit->id,
+            'short_desc_1'     => str_ireplace($search, '<b>'.$search.'</b>', mb_strtolower($unit->lang->short_desc_1)),
+            'short_desc_2'     => str_ireplace($search, '<b>'.$search.'</b>', mb_strtolower($unit->lang->short_desc_2)),
+            'date_publication' => ($unit->created_at != '') ? $unit->created_at->format('d.m.Y') : NULL,
+            'is_outer_href'    => 0,
+            'cover'            => self::_build_img($unit->cover_1_img, 'category'),
+        ];
+        if ($unit->is_short_unit == 1) {
+            $response['href'] = route('first_url',$unit->alias);
+            $response['href_segments'] = [];
+
+        } else {
+            if ($segment != '') {
+                $response['href'] = route('first_url',$unit->alias);
+                $response['href_segments'] = [
+                    'segment_1'  => $segment,
+                    'segment_2'  => $unit->alias,
+                ];
+            } else {
+                $response['href'] = route('first_url',$unit->alias);
                 $response['href_segments'] = [
                     'segment_1'  => $unit->alias,
                 ];
