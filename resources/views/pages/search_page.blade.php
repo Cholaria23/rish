@@ -18,6 +18,7 @@
 			<div class="container-small">
 				@if(
 					isset($services) && count($services) ||
+					isset($services_categories) && count($services_categories) ||
 					isset($news) && count($news) ||
 					isset($articles) && count($articles) ||
 					isset($actions) && count($actions) ||
@@ -36,6 +37,11 @@
 								@if(isset($services) && count($services))
 									<li class="tab-link" data-tab="services">
 										@lang('main.search_arr.services') ({{count($services)}})
+									</li>
+								@endif
+								@if(isset($services_categories) && count($services_categories))
+									<li class="tab-link" data-tab="services_categories">
+										@lang('main.search_arr.services_categories') ({{count($services_categories)}})
 									</li>
 								@endif
 								@if(isset($news) && count($news))
@@ -76,6 +82,17 @@
 									<div class="tab-content-inner">
 										<div class="servises-block">
 											@foreach ($services as $unit_item)
+												@include('layouts.tiles.search')
+											@endforeach
+										</div>
+									</div>
+								</li>
+							@endif
+							@if(isset($services_categories) && count($services_categories))
+								<li class="tab-content" id="services_categories">
+									<div class="tab-content-inner">
+										<div class="servises-block">
+											@foreach ($services_categories as $unit_item)
 												@include('layouts.tiles.search')
 											@endforeach
 										</div>
