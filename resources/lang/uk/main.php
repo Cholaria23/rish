@@ -85,6 +85,7 @@ return [
     ],
     'search_arr' => [
         "services" => "Послуги",
+        "services_categories" => "Напрями",
         "news" => "Новини",
         "articles" => "Статті",
         "actions" => "Акції",
