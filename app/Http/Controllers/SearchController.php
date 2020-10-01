@@ -48,6 +48,7 @@ class SearchController extends Controller
         if ($search && mb_strlen(trim($search)) >= 3) {
             $result_units_ids = [];
             $result_specialists_ids = [];
+            $result_cats_ids = [];
 
             $block_cats_arr = [1,6,15,5];
             $block_cats = [];
