@@ -1,3 +1,8 @@
+#bingc-phone-button {
+    @media (min-width: 576px) {
+        bottom: 13% !important;
+    }
+}
 .main {
     flex: 1 0 auto;
 }

@@ -169,9 +169,8 @@ class CreateMentors extends Migration {
         });
 
         Schema::create('specialists_images', function(Blueprint $table) {
-            $table->engine = "InnoDB";
             $table->increments('id')->unsigned();
-            $table->integer('specialist_id')->nullable()->unsigned()->index();
+            $table->integer('specialist_id')->unsigned()->index();
             $table->string('src', 255)->nullable();
             $table->integer('sort_order')->default(0);
             $table->integer('group')->default(1);

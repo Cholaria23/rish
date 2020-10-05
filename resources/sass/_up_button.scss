@@ -22,7 +22,7 @@
         height: 45px;
     }
     @media (max-width: 1024px) {
-        left: 15px;
+        left: 95px;
         right: auto;
     }
     &.visible {
@@ -32,6 +32,9 @@
         &:hover {
             border: 3px solid $turquoise;
             cursor: pointer;
+        }
+        @media (max-width: 1024px) {
+            bottom: 20px;
         }
     }
     & svg {
