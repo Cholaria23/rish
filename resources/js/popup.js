@@ -12,6 +12,8 @@ $(document).ready(function() {
         }, 300)
     });
 
+    
+
     $('.appointment-btn-js').click(function () {
         var text = $(this).attr('data-subtitle');
         $('#appointment').find('.popup-sub-name').text(text);
