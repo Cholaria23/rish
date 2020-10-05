@@ -96,7 +96,7 @@ function() {
             $controller = App::make('App\Http\Controllers\ShopController');
             return $controller->showBrand($slug);
         } else {
-            return Redirect::to('404');
+            return abort('404');
         }
     })->name('showBrand');
     Route::get('brands/{slug}/{alias}', function($slug,$alias) {
@@ -104,32 +104,21 @@ function() {
             $controller = App::make('App\Http\Controllers\ShopController');
             return $controller->showSeries($slug,$alias);
         } else {
-            return Redirect::to('404');
+            return abort('404');
         }
     });
 
     Route::get('search', 'SearchController@showSearch')->name('search');
-    if(class_exists(\Demos\Market\MarketServiceProvider::class) && app('market_params')->cat_url_prefix != ''){
-        $slash_check = substr(app('market_params')->cat_url_prefix, -1) != '/'? '/':'';
-        Route::get(app('market_params')->cat_url_prefix.$slash_check.'{slug}', function($slug){
+    if(class_exists(\Demos\Market\MarketServiceProvider::class) && app('market_params')->xml_rule != ''){
+        $slash_check = substr(app('market_params')->xml_rule, -1) != '/'? '/':'';
+        Route::get(app('market_params')->xml_rule.$slash_check.'{slug}', function($slug){
             if (Demos\Market\MarketCat::where('alias', '=', $slug)->count() > 0 ) {
                 $controller = App::make('App\Http\Controllers\ShopController');
                 return $controller->showCat($slug);
             } else {
-                return Redirect::to('404');
+                return abort('404');
             }
         })->name('market_cat_url');
-    }
-    if(class_exists(\Demos\Market\MarketServiceProvider::class) && app('market_params')->good_url_prefix != '') {
-        $slash_check = substr(app('market_params')->good_url_prefix, -1) != '/'? '/':'';
-        Route::get(app('market_params')->good_url_prefix.$slash_check.'{slug}', function($slug){
-            if (Demos\Market\Good::where('alias', '=', $slug)->count() > 0 ) {
-                $controller = App::make('App\Http\Controllers\ShopController');
-                return $controller->showGood($slug);
-            } else {
-                return Redirect::to('404');
-            }
-        })->name('market_good_url');
     }
 
     Route::get('expert/{slug}', function($slug) {
@@ -137,7 +126,7 @@ function() {
             $controller = App::make('App\Http\Controllers\PageController');
             return $controller->showExpert($slug);
         } else {
-            return Redirect::to('404');
+            return abort('404');
         }
     })->where([
         'slug' => '[a-zA-Z0-9-_]+'
@@ -148,7 +137,7 @@ function() {
             $controller = App::make('App\Http\Controllers\PageController');
             return $controller->showUnit($slug,$cat);
         } else {
-            return Redirect::to('404');
+            return abort('404');
         }
     })->name('second_url');
 
@@ -166,7 +155,7 @@ function() {
             $controller = App::make('App\Http\Controllers\ShopController');
             return $controller->showGood($slug);
         } else {
-            return Redirect::to('404');
+            return abort('404');
         }
     })->where([
         'slug' => '[a-zA-Z0-9-_]+'
