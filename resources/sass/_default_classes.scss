@@ -8,6 +8,16 @@
         bottom: 70px !important;
     }
 }
+._show_914.wrap_fdc {
+    @media (max-width: 1024px) {
+        z-index: 200001 !important;
+    }
+}
+.mfp-wrap {
+    @media (max-width: 1024px) {
+        z-index: 2147483646 !important;
+    }
+}
 .main {
     flex: 1 0 auto;
 }
