@@ -182,14 +182,14 @@ class SearchController extends Controller
                         }
                     )->get();
 
-                    $cats = Cat::with('lang')->whereIn('id', $services_cats)->where('is_hidden', 0)->whereNotIn('id', $result_cats_ids)->whereHas('lang', function($query) use ($search) {
-                        $query->where('name', 'LIKE', '%'.$search.'%');
+                    $cats = Cat::with('lang')->whereIn('id', $services_cats)->where('is_hidden', 0)->whereNotIn('id', $result_cats_ids)->whereHas('lang', function($query) use ($search_item) {
+                        $query->where('name', 'LIKE', '%'.$search_item.'%');
                     })->get();
 
                     foreach ($cats as $cat) {
                         $result_cats_ids[] = $cat->id;
                         $response['count'] ++;
-                        $response['services_categories'][] = self::build_search_cat($cat, $search);
+                        $response['services_categories'][] = self::build_search_cat($cat, $search_item);
                     }
 
                     $specialists = Specialist::with('lang')
@@ -311,14 +311,14 @@ class SearchController extends Controller
                         }
                     )->get();
 
-                    $cats = Cat::with('lang')->whereIn('id', $services_cats)->where('is_hidden', 0)->whereNotIn('id',$result_cats_ids)->whereHas('lang', function($query) use ($search) {
-                        $query->where('name', 'LIKE', '%'.$search.'%');
+                    $cats = Cat::with('lang')->whereIn('id', $services_cats)->where('is_hidden', 0)->whereNotIn('id',$result_cats_ids)->whereHas('lang', function($query) use ($search_item) {
+                        $query->where('name', 'LIKE', '%'.$search_item.'%');
                     })->get();
         
                     foreach ($cats as $cat) {
                         $result_cats_ids[] = $cat->id;
                         $response['count'] ++;
-                        $response['services_categories'][] = self::build_search_cat($cat, $search);
+                        $response['services_categories'][] = self::build_search_cat($cat, $search_item);
                     }
         
 
@@ -369,16 +369,16 @@ class SearchController extends Controller
                         }
                     )->get();
 
-                    $cats = Cat::with('lang')->whereIn('id', $services_cats)->where('is_hidden', 0)->whereNotIn('id', $result_cats_ids)->whereHas('lang', function($query) use ($search) {
-                        $query->where(function($query) use ($search){
-                            $query->where('pre_info', 'LIKE', '%'.$search.'%')->orWhere('post_info', 'LIKE', '%'.$search.'%');
+                    $cats = Cat::with('lang')->whereIn('id', $services_cats)->where('is_hidden', 0)->whereNotIn('id', $result_cats_ids)->whereHas('lang', function($query) use ($search_item) {
+                        $query->where(function($query) use ($search_item){
+                            $query->where('pre_info', 'LIKE', '%'.$search_item.'%')->orWhere('post_info', 'LIKE', '%'.$search_item.'%');
                         });
                     })->get();
         
                     foreach ($cats as $cat) {
                         $result_cats_ids[] = $cat->id;
                         $response['count'] ++;
-                        $response['services_categories'][] = self::build_search_cat($cat, $search);
+                        $response['services_categories'][] = self::build_search_cat($cat, $search_item);
                     }
 
                     $specialists = Specialist::with('lang')->where('is_hidden', 0)->whereNotIn('id', $result_specialists_ids)->whereHas('lang', function($query) use ($search_item) {
