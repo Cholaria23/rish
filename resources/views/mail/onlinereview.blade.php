@@ -55,7 +55,7 @@
                                                             @if (isset($name) && $name != '')
                                                                 <p style="display: flex; align-items: center; justify-content: space-between;font-size: 14px; margin: 0; padding: 10px 0; color: #343434; font-weight: 400; border-bottom: 1px solid #f2f2f2;">
                                                                     <span style="width: 50%; text-align: left; font-size: 14px; color: #343434;">
-                                                                        @Lang('main.form.name'):
+                                                                        @Lang('main.form.name_client'):
                                                                     </span>
                                                                     <span style="width: 50%; text-align: right; font-size: 14px; color: #343434;">
                                                                         {{ $name }}

@@ -65,6 +65,7 @@ return [
         "feedback_text_2" => "Make an appointment with a doctor through the form on the website and receive a loyalty card already at the first visit to the medical center",
         "checkup-form-title" => "Appointment",
         "name" => "Your name",
+        "name" => "Name",
         "phone" => "Telephone",
         "number_phone" => "Telephone",
         "email" => "Email",
@@ -81,6 +82,7 @@ return [
         'for_service'  => 'Sign up for a service',
         'choose_specialist' => 'Choose a specialist',
         'no_choose_specialist' => 'No specialist selected',
+        'company_name' => 'Company',
     ],
     'search_arr' => [
         "services" => "Services",
@@ -163,4 +165,7 @@ return [
     "flu_shots" => 'Pre-Enrollment for Flu Shots',
     "test_date" => 'Desired test date',
     "count_people" => 'Number of persons',
+    "corporate_form_title" => 'Do you want your company to become our corporate client?',
+    "corporate_form_desc" => 'Fill out the form and we will contact you shortly.',
+    "corporate" => 'For corporate clients',
 ];
