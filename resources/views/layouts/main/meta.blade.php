@@ -130,11 +130,9 @@
             <meta property="og:image:height" content="{{$img_size[1]}}" />
         @endif
     @endif
-    @if (class_exists('LaravelLocalization'))
-        @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-            {{-- @if ($localeCode != App::getLocale()) --}}
-                <link rel="alternate" hreflang="{{$localeCode}}" href="{{LaravelLocalization::getLocalizedURL($localeCode) }}" />
-            {{-- @endif --}}
+    @if(count(app('langSettings')->langs->pluck('code')->toArray()) > 1)
+        @foreach(app('langSettings')->langs->pluck('code')->toArray() as $localeCode)
+            <link rel="alternate" hreflang="{{$localeCode}}" href="{{LaravelLocalization::getLocalizedURL($localeCode) }}" />
         @endforeach
     @endif
 @show
