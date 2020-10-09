@@ -39,15 +39,15 @@
             @include('layouts.main.breadcrumbs')
             @if($cat->lang->h1 != '')
                 <div class="container-small">
-                    <div class="main-section-title">
+                    <h1 class="main-section-title">
                         {{$cat->lang->h1}}
-                    </div>
+                    </h1>
                 </div>
             @else
                 <div class="container-small">
-                    <div class="main-section-title">
+                    <h1 class="main-section-title">
                         {{$cat->lang->name}}
-                    </div>
+                    </h1>
                 </div>
             @endif
             <div class="main-section price {{$cat->children->count() && $categories->count() ? 'price-with-category':'' }}">
