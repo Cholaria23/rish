@@ -21,7 +21,6 @@
 		@if ( $seo->noindex == 1)
 	        <meta name="robots" content="noindex, nofollow" />
 	    @endif
-		<link rel="stylesheet" href="{{ asset('/css/fonts.css') }}">
 		<link rel="stylesheet" href="{{ asset('/css/app.css') }}">
 		{!! $seo->google_tm_start !!}
 	</head>
