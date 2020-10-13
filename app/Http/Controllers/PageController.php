@@ -108,6 +108,57 @@ class PageController extends Controller {
         return View::make('pages.main_page', $page_data);
     }
 
+    public function indexEn() {
+        App::setLocale('en');
+        $unit = Unit::with('lang')->find(142);
+        $our_mission = Unit::with('lang')->where('is_hidden',0)->find(143);
+        $directions = Unit::with('lang')->where('is_hidden',0)->find(147);
+        $translator = Unit::with('lang')->where('is_hidden',0)->find(144);
+        $check_up = Unit::with('lang')->where('is_hidden',0)->find(151);
+        $telemed = Unit::with('lang')->where('is_hidden',0)->find(152);
+        $standards = Unit::with('lang')->where('is_hidden',0)->find(153);
+        $offer = \Demos\AdminPanel\Cat::with([
+            'lang',
+            'units' => function ($query) {
+                $query->with('lang')->where('is_hidden',0)->orderBy('sort_order','desc');
+            }
+        ])->where('is_hidden',0)->find(45);
+        $pricelist = \Demos\AdminPanel\Cat::with([
+            'lang',
+            'units' => function ($query) {
+                $query->with('lang')->where('is_hidden',0)->orderBy('sort_order','desc');
+            }
+        ])->where('is_hidden',0)->find(46);
+        $departments = \Demos\AdminPanel\Cat::with([
+            'lang',
+            'units' => function ($query) {
+                $query->with('lang')->where('is_hidden',0)->orderBy('sort_order','desc');
+            }
+        ])->where('is_hidden',0)->find(44);
+        $principles = \Demos\AdminPanel\Cat::with([
+            'lang',
+            'units' => function ($query) {
+                $query->with('lang')->where('is_hidden',0)->orderBy('sort_order','desc');
+            }
+        ])->where('is_hidden',0)->find(47);
+        $page_data = [
+            "unit" => $unit,
+            "our_mission" => $our_mission,
+            "directions" => $directions,
+            "translator" => $translator,
+            "check_up" => $check_up,
+            "telemed" => $telemed,
+            "standards" => $standards,
+            "offer" => $offer,
+            "pricelist" => $pricelist,
+            "departments" => $departments,
+            "principles" => $principles,
+            'meta_type' => 'unit',
+        ];
+        View::share('page_title', $unit->lang->name);
+        return View::make('pages.en_main_page', $page_data);
+    }
+
     public function showUnit($alias,$cat_alias=NULL) {
         $unit = Unit::with([
                 'lang',

@@ -5,8 +5,8 @@ class ViewComposerServiceProvider extends ServiceProvider {
     public function boot() {
         view()->composer("layouts.main.wrapper","App\Http\ViewComposers\WrapperComposer");
         view()->composer("layouts.main.slider","App\Http\ViewComposers\SliderComposer");
-        view()->composer("layouts.main.header","App\Http\ViewComposers\HeaderComposer");
-        view()->composer("layouts.main.footer","App\Http\ViewComposers\FooterComposer");
+        view()->composer(["layouts.main.header","layouts.main.en_header"],"App\Http\ViewComposers\HeaderComposer");
+        view()->composer(["layouts.main.footer","layouts.main.en_footer"],"App\Http\ViewComposers\FooterComposer");
         view()->composer("layouts.main.checkup","App\Http\ViewComposers\CheckComposer");
         view()->composer("layouts.main.advantages","App\Http\ViewComposers\AdvantagesComposer");
     }

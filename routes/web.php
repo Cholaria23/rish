@@ -1,4 +1,5 @@
 <?php
+
 if(env('APP_NAME') == 'rishon.com.ua'){
     $url = str_replace("https://", "", Request::fullUrl());
     if (strpos($url, '//')) {
@@ -75,6 +76,7 @@ Route::any('/ckfinder/connector', function (){
 Route::any('/ckfinder/browser', function (){
     return view('errors.404');
 })->name('ckfinder_browser');
+
 
 
 Route::group(
@@ -161,3 +163,4 @@ function() {
         'slug' => '[a-zA-Z0-9-_]+'
     ])->name('first_url');
 });
+Route::get('en', 'PageController@indexEn')->name('indexEn');
