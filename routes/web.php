@@ -16,7 +16,10 @@ if(Request::get('page') == 1){
     header('Location: ' . URL::to(Request::path()), TRUE, 301);
     exit();
 }
-
+if(count(explode('/',Request::path())) > 1 && in_array('en',explode('/',Request::path()))){
+    header('Location: ' . URL::to('en'), TRUE, 301);
+    exit();
+}
 /*
 |--------------------------------------------------------------------------
 | Web Routes
