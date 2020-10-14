@@ -21,7 +21,11 @@
 		@if ( $seo->noindex == 1)
 	        <meta name="robots" content="noindex, nofollow" />
 	    @endif
-		<link rel="stylesheet" href="{{ asset('/css/app.css') }}">
+		@if(App::getLocale() == 'en')
+			<link rel="stylesheet" href="{{ asset('/css/landing_app.css') }}">
+		@else
+			<link rel="stylesheet" href="{{ asset('/css/app.css') }}">
+		@endif
 		{!! $seo->google_tm_start !!}
 	</head>
 	<body>

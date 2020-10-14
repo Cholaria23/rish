@@ -2,29 +2,48 @@
 @section('links')
 @stop
 @section('page')
-
-	@if($unit->lang->long_desc_1 != '')
-		{!!$unit->lang->long_desc_1!!}
-	@endif
-	@if($unit->lang->long_desc_2 != '')
-		{!!$unit->lang->long_desc_2!!}
-	@endif
-	<img src="{{unit_img('small',$unit->img_1)}}" alt="{{$unit->lang->name}}" title="{{$unit->lang->name}}">
+	<section class="landing-main-section">
+		<div class="container">
+			<div class="landing-main-section-wrap">
+				<div class="landing-main-section-item">
+					<div class="landing-main-section-inner">
+						@if($unit->lang->long_desc_1 != '')
+							<div class="landing-description">
+								{!!$unit->lang->long_desc_1!!}
+							</div>
+						@endif
+						@if($unit->lang->long_desc_2 != '')
+							<div class="landing-description">
+								{!!$unit->lang->long_desc_2!!}
+							</div>
+						@endif
+					</div>
+				</div>
+				<div class="landing-main-section-item">
+					<img class="lazyload" data-src="{{unit_img('big',$unit->img_1)}}" alt="{{$unit->lang->name}}" title="{{$unit->lang->name}}">
+				</div>
+			</div>
+		</div>
+	</section>
 
 
 	@if(isset($offer) && $offer->units->count() )
-		@if($offer->lang->pre_info != '')
-			{!!$offer->lang->pre_info!!}
-		@endif
-		@foreach ($offer->units as $unit_item)
-			@if($unit_item->svg != '')
-				{!! $unit_item->svg !!}
-			@endif
-			{{$unit_item->lang->name}}
-		@endforeach
-		@if($offer->lang->post_info != '')
-			{!!$offer->lang->post_info!!}
-		@endif
+		<section class="landing-section">
+			<div class="container">
+				@if($offer->lang->pre_info != '')
+					{!!$offer->lang->pre_info!!}
+				@endif
+				@foreach ($offer->units as $unit_item)
+					@if($unit_item->svg != '')
+						{!! $unit_item->svg !!}
+					@endif
+					{{$unit_item->lang->name}}
+				@endforeach
+				@if($offer->lang->post_info != '')
+					{!!$offer->lang->post_info!!}
+				@endif
+			</div>
+		</section>
 	@endif
 
 
@@ -82,7 +101,7 @@
 			{!!$translator->lang->long_desc_2!!}
 		@endif
 	@endif
-	
+
 	@if(isset($departments) && $departments->units->count() )
 		@if($departments->lang->pre_info != '')
 			{!!$departments->lang->pre_info!!}
@@ -126,7 +145,7 @@
 			{!!$telemed->lang->long_desc_2!!}
 		@endif
 	@endif
-	
+
 	@if(isset($principles) && $principles->units->count() )
 		@if($principles->lang->pre_info != '')
 			{!!$principles->lang->pre_info!!}

@@ -141,13 +141,13 @@
 							</span>
 						</li>
 					@endif
-                    @if(isset($standards) && $standards)
+                    {{-- @if(isset($standards) && $standards)
 						<li class="header-menu-item">
 							<span class="header-menu-link header-scroll-js" data-scroll="{{$standards->lang->name}}">
 								{{$standards->lang->name}}
 							</span>
 						</li>
-					@endif
+					@endif --}}
                     @if(isset($departments) && $departments)
 						<li class="header-menu-item">
 							<span class="header-menu-link header-scroll-js" data-scroll="{{$departments->lang->name}}">

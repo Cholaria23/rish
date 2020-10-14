@@ -413,6 +413,7 @@
         color: $main_color;
         font-size: 16px;
         transition: .25s linear;
+        cursor: pointer;
         @media (min-width: 1025px) {
             font-size: 18px;
             &.active,

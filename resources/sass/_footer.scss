@@ -12,6 +12,7 @@
         flex-wrap: wrap;
     }
     .footer-logo {
+        display: inline-block;
         margin-right: 25px;
         max-width: 228px;
         width: 100%;
@@ -153,5 +154,87 @@
         @media (max-width: 576px) {
             text-align: center;
         }
+    }
+    // landing
+    &.footer-landing {
+        background: none;
+        background-color: $lig_grey;
+        .footer-wrap {
+            @media (max-width: 1024px) {
+                flex-direction: column;
+            }
+        }
+    }
+    .footer-item {
+        padding-right: 30px;
+        width: 33.33%;
+        @media (max-width: 1024px) {
+            margin: 0 auto;
+            padding-right: 0;
+            max-width: 350px;
+            width: 100%;
+            text-align: center;
+        }
+        & + .footer-item {
+            @media (max-width: 1024px) {
+                margin-top: 30px;
+            }
+        }
+        .social-list {
+            display: flex;
+            flex-direction: column;
+            @media (max-width: 1024px) {
+                margin-top: 15px;
+                align-items: center;
+            }
+        }
+        .social-item {
+            display: flex;
+            align-items: center;
+            & + .social-item {
+                margin-left: 0;
+                margin-top: 10px;
+            }
+            .social-item-icon {
+                margin-right: 10px;
+                svg {
+                    display: block;
+                    fill: $ligt_grey;
+                }
+            }
+        }
+        .social-link {
+            font-size: 18px;
+            color: $main_color;
+            transition: .25s linear;
+            &:hover {
+                color: $turquoise;
+            }
+        }
+    }
+    .footer-contact-wrap {
+        margin-bottom: 5px;
+        display: flex;
+        flex-wrap: wrap;
+        .footer-contacts-phone {
+            width: 50%;
+            margin-bottom: 10px;
+            padding-right: 15px;
+            & + .footer-contacts-phone {
+                margin-top: 0;
+            }
+        }
+    }
+    .footer-contact-link {
+        font-size: 18px;
+        color: $main_color;
+        transition: .25s linear;
+        &:hover {
+            color: $turquoise;
+        }
+    }
+    .footer_social_text {
+        font-family: $montserrat_medium;
+        font-size: 20px;
     }
 }
