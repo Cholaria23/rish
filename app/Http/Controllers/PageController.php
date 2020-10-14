@@ -111,6 +111,9 @@ class PageController extends Controller {
     public function indexEn() {
         App::setLocale('en');
         $unit = Unit::with('lang')->find(142);
+        if (isset($unit) && Auth::guard('admin_account')->check()) {
+            View::share('admin_edit_link', route('admin.units.editUnit', $unit->id));
+        }
         $our_mission = Unit::with('lang')->where('is_hidden',0)->find(143);
         $directions = Unit::with('lang')->where('is_hidden',0)->find(147);
         $translator = Unit::with('lang')->where('is_hidden',0)->find(144);
@@ -141,6 +144,7 @@ class PageController extends Controller {
                 $query->with('lang')->where('is_hidden',0)->orderBy('sort_order','desc');
             }
         ])->where('is_hidden',0)->find(47);
+        $directions_list = Cat::with('lang')->where('spec_option_2',1)->where('is_hidden',0)->orderBy('sort_order','asc')->get();
         $page_data = [
             "unit" => $unit,
             "our_mission" => $our_mission,
@@ -153,6 +157,7 @@ class PageController extends Controller {
             "pricelist" => $pricelist,
             "departments" => $departments,
             "principles" => $principles,
+            "directions_list" => $directions_list,
             'meta_type' => 'unit',
         ];
         View::share('page_title', $unit->lang->name);
