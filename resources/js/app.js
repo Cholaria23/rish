@@ -13,8 +13,8 @@ import slick from "slick-carousel/slick/slick.min.js";
 // input mask
 import Inputmask from "inputmask";
 // eventstouch
-var loadTouchEvents = require('jquery-touch-events');
-loadTouchEvents($);
+// var loadTouchEvents = require('jquery-touch-events');
+// loadTouchEvents($);
 // malihu_scrollbar
 // import mCustomScrollbar from "malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js";
 // simplebar

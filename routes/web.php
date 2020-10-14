@@ -1,4 +1,5 @@
 <?php
+
 if(env('APP_NAME') == 'rishon.com.ua'){
     $url = str_replace("https://", "", Request::fullUrl());
     if (strpos($url, '//')) {
@@ -15,7 +16,10 @@ if(Request::get('page') == 1){
     header('Location: ' . URL::to(Request::path()), TRUE, 301);
     exit();
 }
-
+if(count(explode('/',Request::path())) > 1 && in_array('en',explode('/',Request::path()))){
+    header('Location: ' . URL::to('en'), TRUE, 301);
+    exit();
+}
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -75,6 +79,7 @@ Route::any('/ckfinder/connector', function (){
 Route::any('/ckfinder/browser', function (){
     return view('errors.404');
 })->name('ckfinder_browser');
+
 
 
 Route::group(
@@ -161,3 +166,4 @@ function() {
         'slug' => '[a-zA-Z0-9-_]+'
     ])->name('first_url');
 });
+Route::get('en', 'PageController@indexEn')->name('indexEn');

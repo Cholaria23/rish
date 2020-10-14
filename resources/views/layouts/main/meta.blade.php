@@ -132,7 +132,13 @@
     @endif
     @if(count(app('langSettings')->langs->pluck('code')->toArray()) > 1)
         @foreach(app('langSettings')->langs->pluck('code')->toArray() as $localeCode)
-            <link rel="alternate" hreflang="{{$localeCode}}" href="{{LaravelLocalization::getLocalizedURL($localeCode) }}" />
+            @if($localeCode == 'en' && isset($unit) && $unit->alias == 'main')
+                <link rel="alternate" hreflang="{{$localeCode}}" href="{{URL::to($localeCode)}}" />
+            @else
+                @if($localeCode != 'en')
+                    <link rel="alternate" hreflang="{{$localeCode}}" href="{{LaravelLocalization::getLocalizedURL($localeCode) }}" />
+                @endif
+            @endif
         @endforeach
     @endif
 @show

@@ -71,6 +71,16 @@
                 margin-top: 30px;
             }
         }
+        .reviews-item .reviews-item-admin {
+            margin-top: 15px;
+            padding-left: 30px;
+            @media (max-width: 768px) {
+                padding-left: 15px;
+            }
+            .reviews-item-name {
+                color: $turquoise;
+            }
+        }
         .reviews-item-name-wrap {
             margin-bottom: 13px;
             display: flex;
