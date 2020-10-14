@@ -43,7 +43,7 @@ return [
     'btn' => [
         'sign_up' => 'Sign up',
         "feedback" => "Appointment",
-        "callback" => "Callback",
+        "callback" => "Call me back",
         "find" => "Search",
         "call_me" => "Call me back",
         "make_appointment" => "To make an appointment",
