@@ -13,9 +13,9 @@
                     </span>
                 @endif
             </div>
-            @if($lead_item->updated_at != '')
+            @if($lead_item->created_at != '')
 				<div class="reviews-date">
-					{{$lead_item->updated_at->format('d.m.Y')}}
+					{{$lead_item->created_at->format('d.m.Y')}}
 				</div>
 			@endif
         </div>
