@@ -8,11 +8,11 @@
                 @include('layouts.main.breadcrumbs')
                 @if($cat->lang->h1 != '')
                     <h1 class="page-section-top-title">
-                        {{$cat->lang->h1}}
+                        {{$cat->lang->h1}} {{Request::has('page') && Request::get('page') ? Lang::get('main.page').' - '.Request::get('page') : ''}}
                     </h1>
                 @else
                     <h1 class="page-section-top-title">
-                        {{$cat->lang->name}}
+                        {{$cat->lang->name}} {{Request::has('page') && Request::get('page') ? Lang::get('main.page').' - '.Request::get('page') : ''}}
                     </h1>
                 @endif
             </div>
