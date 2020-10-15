@@ -43,7 +43,7 @@ return [
     'btn' => [
         'sign_up' => 'Sign up',
         "feedback" => "Appointment",
-        "callback" => "Callback",
+        "callback" => "Call me back",
         "find" => "Search",
         "call_me" => "Call me back",
         "make_appointment" => "To make an appointment",
@@ -168,4 +168,7 @@ return [
     "corporate_form_title" => 'Do you want your company to become our corporate client?',
     "corporate_form_desc" => 'Fill out the form and we will contact you shortly.',
     "corporate" => 'For corporate clients',
+    'landing' => [
+        'footer_social_text' => 'Join us on social networks and follow the news and promotions',
+    ],
 ];

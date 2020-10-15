@@ -43,9 +43,9 @@
 													</span>
 												@endif
 											</div>
-											@if($lead_item->updated_at != '')
+											@if($lead_item->created_at != '')
 												<div class="reviews-item-date">
-													{{$lead_item->updated_at->format('d.m.Y')}}
+													{{$lead_item->created_at->format('d.m.Y')}}
 												</div>
 											@endif
 										</div>
@@ -91,6 +91,27 @@
 											</span>
 										</div>
 									@endif
+									@if($lead_item->answers->count())
+				                    @foreach ($lead_item->answers as $answer_item)
+				                      <div class='reviews-item-admin'>
+				                        <div class="reviews-item-name-wrap">
+				                          <div class='reviews-item-name'>
+											  @lang('main.review.admin')
+										  </div>
+				                          @if($answer_item->created_at)
+				                          	<div class="reviews-item-date">
+				                              {{$answer_item->created_at->format('d.m.Y')}}
+				                            </div>
+				                          @endif
+				                        </div>
+				                        <div class="reviews-item-text">
+											<div class="description">
+												{!!$answer_item->content!!}
+											</div>
+										</div>
+				                      </div>
+				                    @endforeach
+				                  @endif
 								</li>
 							@endforeach
 						</ul>
