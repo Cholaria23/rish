@@ -89,6 +89,30 @@ function initSearchTabs() {
 }
 
 $(document).ready(function() {
+    // landing-page
+    if($('.landing-page').length) {
+        $('.header-scroll-js').on('click', function() {
+            var scroll_el = $(this).attr('data-scroll');
+            if ($('.header-menu').hasClass('open')) {
+                $('.menu__icon').toggleClass('open');
+                $('.header-menu').toggleClass('open');
+                $('body').toggleClass('overflow');
+                $('html').toggleClass('not-overflow');
+                if (scroll_el === 'home') {
+                    $("html, body").animate({ scrollTop: 0 }, 1000);
+                } else {
+                    $('html, body').animate({ scrollTop: $("."+scroll_el).offset().top }, 1000);
+                }
+            } else {
+                var scroll_el = $(this).attr('data-scroll');
+                if (scroll_el === 'home') {
+                    $("html, body").animate({ scrollTop: 0 }, 1000);
+                } else {
+                    $('html, body').animate({ scrollTop: $("."+scroll_el).offset().top }, 1000);
+                }
+            }
+        });
+    }
 
     if($('.hirurgiya-page').length) {
         setTimeout(function(){
@@ -117,7 +141,7 @@ $(document).ready(function() {
     }
 
     // scrollTop
-    $('.up_button').click(function(){
+    $('.up_button').on('click', function(){
         $("html, body").animate({ scrollTop: 0 }, 1000);
         return false;
     });

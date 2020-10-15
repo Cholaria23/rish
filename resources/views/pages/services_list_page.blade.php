@@ -114,21 +114,26 @@
                 <div class="container-small">
                     <div class="description">
                         {!! $cat->lang->post_info !!}
-                        <div class="page-section-title-bold">
-        					@lang('main.video')
-        				</div>
-                        @if($cat->videos->count() > 1)
-                            <div class="video-wrapper">
+                        @if($cat->videos->count())
+                            @if($cat->videos->count() > 1)
+                                <div class="page-section-title-bold">
+                                    @lang('main.video')
+                                </div>
+                                <div class="video-wrapper">
+                                    @foreach ($cat->videos as $video)
+                                        <div class="video-holder">
+                                            @include('layouts.main.video')
+                                        </div>
+                                    @endforeach
+                                </div>
+                            @else
+                                <div class="page-section-title-bold">
+                                    @lang('main.video')
+                                </div>
                                 @foreach ($cat->videos as $video)
-                                    <div class="video-holder">
-                                        @include('layouts.main.video')
-                                    </div>
+                                    @include('layouts.main.video')
                                 @endforeach
-                            </div>
-                        @else
-                            @foreach ($cat->videos as $video)
-                                @include('layouts.main.video')
-                            @endforeach
+                            @endif
                         @endif
                     </div>
                 </div>

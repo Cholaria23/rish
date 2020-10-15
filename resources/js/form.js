@@ -787,3 +787,159 @@ $(document).ready( function() {
     });
 
 });
+
+
+// for landing
+
+// question a service
+$(".do_question_services").click(function(e) {
+    e.stopPropagation();
+    e.preventDefault();
+    $(".question_services_form").submit();
+});
+
+$(".question_services_form").validate({
+    submitHandler: function(form) {
+      var csrf_token = $('meta[name="csrf-token"]').attr('content');
+      var formdata = $(form).serialize();
+      $(form)[0].reset();
+      $.ajax({
+        url: routes.postSend,
+        type: 'POST',
+        data: {
+            "_token" : csrf_token,
+            "data": formdata,
+            "subj": "landing_question_services"
+        },
+        success: function(data) {
+            $('#question-services').find('input[name=services_id]').val('');
+            $('.select-question-services').prop('selectedIndex', 0).selectric('refresh');
+            $(form).hide();
+            $(form).next('.form-thanks').show();
+            function hidePopup(){
+                $.magnificPopup.close();
+            }
+            function showForm(){
+                $(form).next('.form-thanks').hide();
+                $(form).show();
+            }
+            setTimeout( hidePopup ,5000);
+            setTimeout( showForm ,5000);
+        }
+      });
+    }
+});
+
+
+$(".do_appointment_services").click(function(e) {
+    e.stopPropagation();
+    e.preventDefault();
+    $(".appointment_services_form").submit();
+});
+
+$(".appointment_services_form").validate({
+    submitHandler: function(form) {
+      var csrf_token = $('meta[name="csrf-token"]').attr('content');
+      var formdata = $(form).serialize();
+      $(form)[0].reset();
+      $.ajax({
+        url: routes.postSend,
+        type: 'POST',
+        data: {
+            "_token" : csrf_token,
+            "data": formdata,
+            "subj": "landing_appointment_services"
+        },
+        success: function(data) {
+            $('#appointment-services').find('input[name=appointment_services_id]').val('');
+            $('.select-appointment-services').prop('selectedIndex', 0).selectric('refresh');
+            $(form).hide();
+            $(form).next('.form-thanks').show();
+            function hidePopup(){
+                $.magnificPopup.close();
+            }
+            function showForm(){
+                $(form).next('.form-thanks').hide();
+                $(form).show();
+            }
+            setTimeout( hidePopup ,5000);
+            setTimeout( showForm ,5000);
+        }
+      });
+    }
+});
+
+$(".do_personal_ranslator").click(function(e) {
+    e.stopPropagation();
+    e.preventDefault();
+    $(".personal_ranslator_form").submit();
+});
+
+$(".personal_ranslator_form").validate({
+    submitHandler: function(form) {
+      var csrf_token = $('meta[name="csrf-token"]').attr('content');
+      var formdata = $(form).serialize();
+      $(form)[0].reset();
+      $.ajax({
+        url: routes.postSend,
+        type: 'POST',
+        data: {
+            "_token" : csrf_token,
+            "data": formdata,
+            "subj": "landing_personal_ranslator"
+        },
+        success: function(data) {
+            $(form).hide();
+            $(form).next('.form-thanks').show();
+            function hidePopup(){
+                $.magnificPopup.close();
+            }
+            function showForm(){
+                $(form).next('.form-thanks').hide();
+                $(form).show();
+            }
+            setTimeout( hidePopup ,5000);
+            setTimeout( showForm ,5000);
+        }
+      });
+    }
+});
+
+
+$(".do_landing_question").click(function(e) {
+    e.stopPropagation();
+    e.preventDefault();
+    $(".landing_question_form").submit();
+});
+
+$(".landing_question_form").validate({
+    submitHandler: function(form) {
+      var csrf_token = $('meta[name="csrf-token"]').attr('content');
+      var formdata = $(form).serialize();
+      $(form)[0].reset();
+      $.ajax({
+        url: routes.postSend,
+        type: 'POST',
+        data: {
+            "_token" : csrf_token,
+            "data": formdata,
+            "subj": "landing_question"
+        },
+        success: function(data) {
+            $('#landing-question').find('.popup-sub-name').text();
+            $('#landing-question').find('input[name=landing_question_id]').val('');
+            $(form).hide();
+            $(form).next('.form-thanks').show();
+            function hidePopup(){
+                $.magnificPopup.close();
+            }
+            function showForm(){
+                $(form).next('.form-thanks').hide();
+                $(form).show();
+            }
+            setTimeout( hidePopup ,5000);
+            setTimeout( showForm ,5000);
+        }
+      });
+    }
+});

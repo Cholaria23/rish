@@ -101,7 +101,7 @@
 				<ul class="header-menu-list">
 					@if(isset($unit) && $unit)
 						<li class="header-menu-item">
-							<span class="header-menu-link header-scroll-js" data-scroll="{{$unit->lang->name}}">
+							<span class="header-menu-link header-scroll-js" data-scroll="home">
 								{{$unit->lang->name}}
 							</span>
 						</li>
@@ -115,28 +115,28 @@
                     @endif --}}
                     @if(isset($our_mission) && $our_mission)
 						<li class="header-menu-item">
-							<span class="header-menu-link header-scroll-js" data-scroll="{{$our_mission->lang->name}}">
+							<span class="header-menu-link header-scroll-js" data-scroll="our_mission">
 								{{$our_mission->lang->name}}
 							</span>
 						</li>
 					@endif
                     @if(isset($directions) && $directions)
 						<li class="header-menu-item">
-							<span class="header-menu-link header-scroll-js" data-scroll="{{$directions->lang->name}}">
+							<span class="header-menu-link header-scroll-js" data-scroll="directions">
 								{{$directions->lang->name}}
 							</span>
 						</li>
 					@endif
                     @if(isset($pricelist) && $pricelist)
                         <li class="header-menu-item">
-                            <span class="header-menu-link header-scroll-js" data-scroll="{{$pricelist->lang->name}}">
+                            <span class="header-menu-link header-scroll-js" data-scroll="pricelist">
                                 {{$pricelist->lang->name}}
                             </span>
                         </li>
                     @endif
                     @if(isset($translator) && $translator)
 						<li class="header-menu-item">
-							<span class="header-menu-link header-scroll-js" data-scroll="{{$translator->lang->name}}">
+							<span class="header-menu-link header-scroll-js" data-scroll="translator">
 								{{$translator->lang->name}}
 							</span>
 						</li>
@@ -150,21 +150,21 @@
 					@endif --}}
                     @if(isset($departments) && $departments)
 						<li class="header-menu-item">
-							<span class="header-menu-link header-scroll-js" data-scroll="{{$departments->lang->name}}">
+							<span class="header-menu-link header-scroll-js" data-scroll="departments">
 								{{$departments->lang->name}}
 							</span>
 						</li>
 					@endif
                     @if(isset($check_up) && $check_up)
                         <li class="header-menu-item">
-                            <span class="header-menu-link header-scroll-js" data-scroll="{{$check_up->lang->name}}">
+                            <span class="header-menu-link header-scroll-js" data-scroll="check_up">
                                 {{$check_up->lang->name}}
                             </span>
                         </li>
                     @endif
                     @if(isset($telemed) && $telemed)
                         <li class="header-menu-item">
-                            <span class="header-menu-link header-scroll-js" data-scroll="{{$telemed->lang->name}}">
+                            <span class="header-menu-link header-scroll-js" data-scroll="telemed">
                                 {{$telemed->lang->name}}
                             </span>
                         </li>

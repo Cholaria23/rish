@@ -8,14 +8,14 @@
         bottom: 70px !important;
     }
 }
-._show_914.wrap_fdc {
+.wrap_8fa {
     @media (max-width: 1024px) {
         z-index: 200001 !important;
     }
 }
 .mfp-wrap {
     @media (max-width: 1024px) {
-        z-index: 2147483646 !important;
+        z-index: 2147483647 !important;
     }
 }
 .main {
@@ -316,6 +316,7 @@
     display: inline-block;
     padding: 9px 35px;
     font-family: $montserrat_medium;
+    text-align: center;
     color: $white;
     background-color: $turquoise;
     border-radius: 6px;

@@ -12,7 +12,7 @@ $(document).ready(function() {
         }, 300)
     });
 
-    
+
 
     $('.appointment-btn-js').click(function () {
         var text = $(this).attr('data-subtitle');
@@ -20,9 +20,25 @@ $(document).ready(function() {
         $('#appointment').find('input[name=appointment]').val(text);
     });
 
+    $('.landing-question-js').click(function () {
+        var text = $(this).attr('data-subtitle');
+        $('#landing-question').find('.popup-sub-name').text(text);
+        $('#landing-question').find('input[name=landing_question_id]').val(text);
+    });
+
     $(document).on('change', '.select-appointment-specialist', function(e) {
         var selectAppointmentSpecialist = $(".select-appointment-specialist option:selected").text();
         $('#appointment').find('input[name=specialist]').val(selectAppointmentSpecialist);
+    });
+
+    $(document).on('change', '.select-question-services', function(e) {
+        var selectLandingQuestionServices = $(".select-question-services option:selected").text();
+        $('#question-services').find('input[name=services_id]').val(selectLandingQuestionServices);
+    });
+
+    $(document).on('change', '.select-appointment-services', function(e) {
+        var selectLandingAppointmentServices = $(".select-appointment-services option:selected").text();
+        $('#appointment-services').find('input[name=appointment_services_id]').val(selectLandingAppointmentServices);
     });
 
     $('.specialist-btn-js').click(function () {
