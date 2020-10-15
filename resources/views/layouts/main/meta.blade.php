@@ -1,12 +1,12 @@
 @section('meta')
     @if(isset($meta_type) && $meta_type == 'unit')
         <title>{{ $unit->lang->meta_title != '' ? htmlspecialchars($unit->lang->meta_title) : htmlspecialchars($page_title) }} {{Request::has('page') ? Lang::get('main.page').' - '.Request::get('page') : ''}}</title>
-        <meta name="description" content="{{ htmlspecialchars($unit->lang->meta_desc) }}">
+        <meta name="description" content="{{ htmlspecialchars($unit->lang->meta_desc) }} {{Request::has('page') ? Lang::get('main.page').' - '.Request::get('page') : ''}}">
         <meta name="keywords" content="{{ htmlspecialchars($unit->lang->meta_key) }}">
         <meta property="og:url" content="{{ Request::url() }}" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="{{ $unit->lang->meta_title != '' ? htmlspecialchars($unit->lang->meta_title) : htmlspecialchars($page_title) }} {{Request::has('page') ? Lang::get('main.page').' - '.Request::get('page') : ''}}" />
-        <meta property="og:description" content="{{ htmlspecialchars($unit->lang->meta_desc) }}" />
+        <meta property="og:description" content="{{ htmlspecialchars($unit->lang->meta_desc) }} {{Request::has('page') ? Lang::get('main.page').' - '.Request::get('page') : ''}}" />
         <meta property="og:image" content="{{ (isset($unit) && $unit->img_1 != '') ? unit_img('small', $unit->img_1) : asset('storage/'.app('seo')['logo_img_4']) }}" />
         @php
             if(isset($unit) && $unit->img_1 != '' && file_exists(unit_img('small', $unit->img_1))){
@@ -19,12 +19,12 @@
         @endphp
     @elseif(isset($meta_type) && $meta_type == 'cat_unit')
         <title>{{ $cat->lang->meta_title != '' ? htmlspecialchars($cat->lang->meta_title) : htmlspecialchars($page_title) }} {{Request::has('page') ? Lang::get('main.page').' - '.Request::get('page') : ''}} </title>
-        <meta name="description" content="{{ htmlspecialchars($cat->lang->meta_desc) }}">
+        <meta name="description" content="{{ htmlspecialchars($cat->lang->meta_desc) }} {{Request::has('page') ? Lang::get('main.page').' - '.Request::get('page') : ''}}">
         <meta name="keywords" content="{{ htmlspecialchars($cat->lang->meta_key) }}">
         <meta property="og:url" content="{{ Request::url() }}" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="{{ $cat->lang->meta_title != '' ? htmlspecialchars($cat->lang->meta_title) : htmlspecialchars($page_title) }} {{Request::has('page') ? Lang::get('main.page').' - '.Request::get('page') : ''}} " />
-        <meta property="og:description" content="{{ htmlspecialchars($cat->lang->meta_desc) }}" />
+        <meta property="og:description" content="{{ htmlspecialchars($cat->lang->meta_desc) }} {{Request::has('page') ? Lang::get('main.page').' - '.Request::get('page') : ''}}" />
         <meta property="og:image" content="{{ (isset($cat) && $cat->cover_1_img != '') ? cat_img('small', $cat->cover_1_img) : asset('storage/'.app('seo')['logo_img_4']) }}" />
         @php
             if(isset($cat) && $cat->cover_1_img != ''  && file_exists(cat_img('small', $cat->cover_1_img))){
@@ -37,12 +37,12 @@
         @endphp
     @elseif(isset($meta_type) && $meta_type == 'cat_good')
         <title>{{ $cat->lang->meta_title != '' ? htmlspecialchars($cat->lang->meta_title) : htmlspecialchars($page_title) }} {{Request::get('page') ? Lang::get('main.page').' - '.Request::get('page') : ''}} </title>
-        <meta name="description" content="{{ htmlspecialchars($cat->lang->meta_desc) }}">
+        <meta name="description" content="{{ htmlspecialchars($cat->lang->meta_desc) }} {{Request::has('page') ? Lang::get('main.page').' - '.Request::get('page') : ''}}">
         <meta name="keywords" content="{{ htmlspecialchars($cat->lang->meta_key) }}">
         <meta property="og:url" content="{{ Request::url() }}" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="{{ $cat->lang->meta_title != '' ? htmlspecialchars($cat->lang->meta_title) : htmlspecialchars($page_title) }} {{Request::get('page') ? Lang::get('main.page').' - '.Request::get('page') : ''}} " />
-        <meta property="og:description" content="{{ htmlspecialchars($cat->lang->meta_desc) }}" />
+        <meta property="og:description" content="{{ htmlspecialchars($cat->lang->meta_desc) }} {{Request::has('page') ? Lang::get('main.page').' - '.Request::get('page') : ''}}" />
         <meta property="og:image" content="{{ (isset($cat) && $cat->cover_1_img != '') ? market_cat_img('small', $cat->cover_1_img) : asset('storage/'.app('seo')['logo_img_4']) }}" />
         @php
             if(isset($cat) && $cat->cover_1_img != ''  && file_exists(market_cat_img('small', $cat->cover_1_img))){
@@ -91,12 +91,12 @@
         @endphp
     @elseif(isset($meta_type) && $meta_type == 'expert')
         <title>{{ $expert->lang->meta_title != '' ? htmlspecialchars($expert->lang->meta_title) : htmlspecialchars($page_title) }} {{Request::has('page') ? Lang::get('main.page').' - '.Request::get('page') : ''}} </title>
-        <meta name="description" content="{{ htmlspecialchars($expert->lang->meta_desc) }}">
+        <meta name="description" content="{{ htmlspecialchars($expert->lang->meta_desc) }} {{Request::has('page') ? Lang::get('main.page').' - '.Request::get('page') : ''}}">
         <meta name="keywords" content="{{ htmlspecialchars($expert->lang->meta_key) }}">
         <meta property="og:url" content="{{ Request::url() }}" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="{{ $expert->lang->meta_title != '' ? htmlspecialchars($expert->lang->meta_title) : htmlspecialchars($page_title) }} {{Request::has('page') ? Lang::get('main.page').' - '.Request::get('page') : ''}} " />
-        <meta property="og:description" content="{{ htmlspecialchars($expert->lang->meta_desc) }}" />
+        <meta property="og:description" content="{{ htmlspecialchars($expert->lang->meta_desc) }} {{Request::has('page') ? Lang::get('main.page').' - '.Request::get('page') : ''}}" />
         <meta property="og:image" content="{{ (isset($expert) && $expert->img_1 != '') ? specialist_cover('small', $expert->img_1) : asset('storage/'.app('seo')['logo_img_4']) }}" />
         @php
             if(isset($expert) && $expert->img_1 != '' && file_exists(specialist_cover('small', $expert->img_1))){

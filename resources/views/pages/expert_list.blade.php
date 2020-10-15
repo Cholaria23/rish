@@ -8,7 +8,7 @@
 	            <div class="container">
 					@include('layouts.main.breadcrumbs')
 					<h1 class="page-section-top-title">
-						@lang('main.our_specialists')
+						@lang('main.our_specialists') {{Request::has('page') && Request::get('page') ? Lang::get('main.page').' - '.Request::get('page') : ''}}
 					</h1>
 				</div>
         	</section>
