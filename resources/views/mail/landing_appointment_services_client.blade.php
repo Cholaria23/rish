@@ -4,13 +4,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>
-            @if(isset($form_type->lang_name[App::getLocale()]) && $form_type->lang_name[App::getLocale()] !='')
-            	{{$form_type->lang_name[App::getLocale()]}}
-            @else
-                @lang('main.chekup')
-            @endif
-        </title>
+        <title>@lang('main.form.appointment')</title>
         <style>
             p {
                 margin: 0;
@@ -26,7 +20,7 @@
                         <td style="border: 0;" align="left" valign="top" border="0">
                             <div style="border-width: 0px; border-style: solid; border-radius: 0px; border-color: #ffffff;">
                                 <div class="email_header">
-                                    <table cellpadding="0" cellspacing="0" border="0" style="width: 100%; margin: 0;">
+                                    <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin: 0;">
                                         <tbody>
                                             <tr>
                                                 <td align="left" valign="bottom" border="0" style="vertical-align: middle;">
@@ -50,7 +44,7 @@
                                                     <div style="margin-bottom: 20px;text-align: left; font-size:14px; font-family: Arial, sans-serif;">
                                                         <div style="padding-bottom:10px;">
                                                             <p style="margin: 0; padding-bottom: 15px; text-align: left; font-size: 14px; color: #343434; font-weight: bold; border-bottom: 1px solid #f2f2f2;">
-                                                                @lang('main.email.client_info'):
+                                                                @lang('main.email.your_data'):
                                                             </p>
                                                             @if (isset($phone) && $phone != '')
                                                                 <p style="display: flex; align-items: center; justify-content: space-between;font-size: 14px; margin: 0; padding: 10px 0; color: #343434; font-weight: 400; border-bottom: 1px solid #f2f2f2;">
@@ -65,7 +59,7 @@
                                                             @if (isset($name) && $name != '')
                                                                 <p style="display: flex; align-items: center; justify-content: space-between;font-size: 14px; margin: 0; padding: 10px 0; color: #343434; font-weight: 400; border-bottom: 1px solid #f2f2f2;">
                                                                     <span style="width: 50%; text-align: left; font-size: 14px; color: #343434;">
-                                                                        @Lang('main.form.name_client'):
+                                                                        @Lang('main.form.name'):
                                                                     </span>
                                                                     <span style="width: 50%; text-align: right; font-size: 14px; color: #343434;">
                                                                         {{ $name }}
@@ -82,20 +76,14 @@
                                                                     </span>
                                                                 </p>
                                                             @endif
-                                                            @if (isset($url) && $url != '')
+                                                            @if (isset($appointment_services_id) && $appointment_services_id != '')
                                                                 <p style="display: flex; align-items: center; justify-content: space-between;font-size: 14px; margin: 0; padding: 10px 0; color: #343434; font-weight: 400; border-bottom: 1px solid #f2f2f2;">
-                                                                    <span style="width: 50%; text-align: left; font-size: 14px; font-weight: bold; color: #343434;">
-                                                                        @Lang('main.form.url'):
+                                                                    <span style="width: 50%; text-align: left; font-size: 14px; color: #343434;">
+                                                                        @Lang('main.form.for_service'):
                                                                     </span>
-                                                                    <a href="{{URL::to($url)}}" style="width: 50%; text-align: right; font-size: 14px; color: #343434; text-decoration: underline;">
-                                                                        @if(isset($url_name) && $url_name != '')
-                                                                            {{$url_name}}
-                                                                        @elseif(isset($title) && $title != '')
-                                                                            {{$title}}
-                                                                        @else
-                                                                            @lang('main.move_page')
-                                                                        @endif
-                                                                    </a>
+                                                                    <span style="width: 50%; color:#343434; text-decoration:none; text-align: right;">
+                                                                        {{ $appointment_services_id }}
+                                                                    </span>
                                                                 </p>
                                                             @endif
                                                         </div>

@@ -4,13 +4,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>
-            @if(isset($form_type->lang_name[App::getLocale()]) && $form_type->lang_name[App::getLocale()] !='')
-            	{{$form_type->lang_name[App::getLocale()]}}
-            @else
-                @lang('main.chekup')
-            @endif
-        </title>
+        <title>@lang('main.form.appointment')</title>
         <style>
             p {
                 margin: 0;
@@ -79,6 +73,16 @@
                                                                     </span>
                                                                     <span style="width: 50%; text-align: right; font-size: 14px; color: #343434;">
                                                                         {{ $email }}
+                                                                    </span>
+                                                                </p>
+                                                            @endif
+                                                            @if (isset($appointment_services_id) && $appointment_services_id != '')
+                                                                <p style="display: flex; align-items: center; justify-content: space-between;font-size: 14px; margin: 0; padding: 10px 0; color: #343434; font-weight: 400; border-bottom: 1px solid #f2f2f2;">
+                                                                    <span style="width: 50%; text-align: left; font-size: 14px; color: #343434;">
+                                                                        @Lang('main.form.for_service'):
+                                                                    </span>
+                                                                    <span style="width: 50%; color:#343434; text-decoration:none; text-align: right;">
+                                                                        {{ $appointment_services_id }}
                                                                     </span>
                                                                 </p>
                                                             @endif

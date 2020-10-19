@@ -7,26 +7,29 @@
         font-size: 16px;
         line-height: 1.4;
         color: $turquoise;
-        // @media (max-width: 576px) {
-        //     margin: 0 0 10px 0;
-        // }
+        @media (max-width: 576px) {
+            margin: 0 0 20px 0;
+        }
         span {
             @include adaptiv-font(35, 25);
             color: $main_color;
         }
     }
     h2 {
-        margin: 0 0 25px 0;
-        font-family: $montserrat_bold;
+        margin: 0 0 40px 0;
+        font-family: $montserrat_medium;
         @include adaptiv-font(30, 22);
         line-height: 1.4;
+        @media (max-width: 1024px) {
+            margin: 0 0 25px 0;
+        }
         @media (max-width: 576px) {
-            margin: 0 0 10px 0;
+            margin: 0 0 20px 0;
         }
     }
     h3 {
         margin: 0 0 25px 0;
-        font-family: $montserrat_semibold;
+        font-family: $montserrat_medium;
         @include adaptiv-font(24, 20);
         line-height: 1.4;
         @media (max-width: 576px) {
@@ -35,7 +38,7 @@
     }
     h4 {
         margin: 0 0 25px 0;
-        font-family: $montserrat_semibold;
+        font-family: $montserrat_medium;
         @include adaptiv-font(22, 18);
         line-height: 1.4;
         @media (max-width: 576px) {
@@ -222,22 +225,439 @@
     }
 }
 // landing-description end
-
+.container-middle {
+    max-width: 1160px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
 .landing-section {
-    padding: 80px 0;
+    margin-bottom: 70px;
+    @media (max-width: 1024px) {
+        margin-bottom: 40px;
+    }
+    @media (max-width: 768px) {
+        margin-bottom: 30px;
+    }
     &.with-bg {
         background-color: $lig_grey;
+        padding: 70px 0;
+        @media (max-width: 1024px) {
+            padding: 40px 0;
+        }
+        @media (max-width: 768px) {
+            padding: 30px 0;
+        }
     }
 }
 
-.landing-main-section-wrap {
+.landing-section-wrap {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    .landing-main-section-item {
+    .landing-section-item {
         width: calc(50% - 25px);
+        @media (max-width: 1024px) {
+            width: 100%;
+        }
+        &.landing-section-item-first-pos {
+            @media (max-width: 1024px) {
+                order: -1;
+            }
+        }
+        .landing-section-item-img {
+            @media (max-width: 1024px) {
+                margin: 0 auto 15px 0;
+                width: 50%;
+            }
+            @media (max-width: 576px) {
+                width: 100%;
+            }
+        }
     }
-    .landing-main-section-inner {
-        
+    .landing-section-inner {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 }
+.landing-page {
+    .btn-green,
+    .btn-light-green {
+        padding: 9px 5px;
+        max-width: 255px;
+        width: 100%;
+    }
+    .popup-btn-wrap {
+        .btn-green,
+        .btn-light-green {
+            margin: 15px 15px 0;
+        }
+    }
+}
+.btn-light-green {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 9px 20px;
+    font-family: $montserrat_medium;
+    color: $turquoise;
+    background-color: $turquoise_rgba_one;
+    border-radius: 6px;
+    transition: .25s linear;
+    &:hover {
+        background-color: $turquoise_rgba_25;
+    }
+}
+// main section start
+.landing-main-section {
+    min-height: 445px;
+    padding: 20px 0;
+    background-image: url(/img/main-bg.png);
+    background-position-x: center;
+    background-position-y: -25px;
+    background-size: 122%  100%;
+    background-repeat: no-repeat;
+    @media (max-width: 1024px) {
+        background: none;
+        background-color: $lig_grey;
+    }
+    .popup-btn-wrap {
+        justify-content: flex-start;
+        .btn-light-green {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px 20px;
+            font-family: $montserrat_medium;
+            color: $turquoise;
+            background-color: transparent;
+            border: 1px solid $turquoise;
+            border-radius: 6px;
+            transition: .25s linear;
+            &:hover {
+                background-color: $turquoise_rgba_25;
+                border: 1px solid transparent;
+            }
+        }
+    }
+    .landing-section-wrap .landing-section-item .landing-section-item-img {
+        margin: 0 auto 25px 0;
+    }
+}
+// main section
+
+// offer-section start
+.landing-offer-wrap {
+    margin: -35px 0 0 -50px;
+    display: flex;
+    flex-wrap: wrap;
+    @media (max-width: 576px) {
+        margin: -15px 0 0 -50px;
+    }
+    .landing-offer-item {
+        width: 33.33%;
+        padding: 35px 0 0 50px;
+        display: flex;
+        align-items: center;
+        @media (max-width: 1024px) {
+            width: 50%;
+        }
+        @media (max-width: 576px) {
+            width: 100%;
+            padding: 15px 0 0 50px;
+        }
+    }
+    .landing-offer-icon {
+        margin-right: 10px;
+        width: 68px;
+        height: 68px;
+    }
+    .landing-offer-name {
+        font-family: $montserrat_medium;
+    }
+}
+// offer-section end
+
+// directions start
+.landing-section.directions {
+    .popup-btn-wrap {
+        @media (max-width: 576px) {
+            justify-content: flex-start;
+        }
+    }
+}
+.landing-directions-list {
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .landing-directions-item {
+        margin-bottom: 15px;
+        position: relative;
+        padding-left: 30px;
+        max-width: 230px;
+        width: 100%;
+        font-family: $montserrat_medium;
+        font-size: 20px;
+        @media (max-width: 768px) {
+            max-width: none;
+            width: 50%;
+            font-size: 18px;
+        }
+        @media (max-width: 576px) {
+            margin-bottom: 5px;
+            width: 100%;
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 4px;
+            width: 19px;
+            height: 14px;
+            border-radius: 0;
+            background: url(/img/check.svg) center center/cover no-repeat;
+        }
+    }
+}
+// directions end
+
+// pricelist start
+.landing-pricelist-wrap {
+    margin: -35px 0 0 -55px;
+    display: flex;
+    flex-wrap: wrap;
+    @media (max-width: 1024px) {
+        margin: -25px 0 0 -25px;
+    }
+    .landing-pricelist-holder {
+        width: 33.33%;
+        padding: 35px 0 0 55px;
+        @media (max-width: 1024px) {
+            padding: 25px 0 0 25px;
+        }
+        @media (max-width: 768px) {
+            width: 50%;
+        }
+        @media (max-width: 576px) {
+            width: 100%;
+        }
+    }
+    .landing-pricelist-item {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        padding: 20px;
+        border: 3px solid $lig_grey;
+        @media (max-width: 576px) {
+            margin: 0 auto;
+            max-width: 340px;
+        }
+    }
+    .landing-pricelist-img {
+        margin-bottom: 25px;
+    }
+    .landing-pricelist-name {
+        margin-bottom: 8px;
+        font-family: $montserrat_medium;
+        text-align: center;
+        font-size: 18px;
+    }
+    .landing-pricelist-price-block {
+        margin-top: auto;
+    }
+    .landing-pricelist-price {
+        margin-bottom: 10px;
+        text-align: center;
+        font-size: 20px;
+        text-transform: uppercase;
+        color: $turquoise;
+    }
+    .btn-green {
+        max-width: none;
+        width: 100%;
+    }
+}
+// pricelist end
+// translator start
+.landing-translator-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    border: 3px solid $lig_grey;
+    .landing-translator-info {
+        width: 60%;
+        padding: 30px 45px;
+        align-self: center;
+        @media (max-width: 1024px) {
+            width: 50%;
+            padding: 30px 20px;
+        }
+        @media (max-width: 768px) {
+            width: 100%;
+            padding: 20px 20px;
+        }
+        .landing-description h2 {
+            margin-bottom: 10px;
+        }
+    }
+    .landing-translator-img {
+        width: 40%;
+        @media (max-width: 1024px) {
+            width: 50%;
+        }
+        @media (max-width: 768px) {
+            width: 100%;
+            padding: 20px 20px 0 20px;
+            order: -1;
+        }
+        img {
+            margin: 0 0 0 auto;
+            height: 100%;
+            @media (max-width: 768px) {
+                margin: 0 auto 0 0;
+                height: auto;
+            }
+        }
+    }
+}
+// translator end
+// departments start
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.departments-wrap {
+	margin: -25px;
+    @media (max-width: 1024px) {
+        display: flex;
+        flex-wrap: wrap;
+        margin: -12.5px;
+    }
+    .departments-holder-wrap {
+        @media (max-width: 1024px) {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+    .departments-holder {
+        width: 50%;
+        padding: 25px;
+        @media (max-width: 1024px) {
+            width: 100%;
+            padding: 12.5px;
+        }
+        &.left {
+            float: left;
+            @media (max-width: 1024px) {
+                float: none;
+            }
+        }
+        &.rigth {
+            float: right;
+            @media (max-width: 1024px) {
+                float: none;
+            }
+        }
+        &.departments-holder-first-pos {
+            @media (max-width: 1024px) {
+                order: -1;
+            }
+        }
+    }
+    .landing-departments-title {
+        margin: 0 0 25px 0;
+        font-family: $montserrat_medium;
+        @include adaptiv-font(24, 20);
+        line-height: 1.4;
+        @media (max-width: 576px) {
+            margin: 0 0 15px 0;
+        }
+    }
+    .departments-item {
+        &.departments-item-img {
+            @media (max-width: 1024px) {
+                width: 50%
+            }
+            @media (max-width: 576px) {
+                width: 100%
+            }
+        }
+        .landing-description p:last-child {
+            @media (max-width: 1024px) {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+// departments end
+// check_up start
+.landing-section.check_up {
+    .popup-btn-wrap {
+        justify-content: flex-start;
+    }
+    .landing-description ul {
+        display: flex;
+        flex-wrap: wrap;
+        li {
+            margin-bottom: 10px;
+            padding-right: 50px;
+            width: 50%;
+            @media (max-width: 576px) {
+                padding-right: 0;
+                width: 100%;
+            }
+            & + li {
+                margin-top: 0;
+            }
+        }
+    }
+}
+// check_up end
+// telemed start
+.landing-section.telemed {
+    .popup-btn-wrap {
+        justify-content: flex-start;
+    }
+}
+// telemed end
+
+// principles start
+.landing-section.principles {
+    .landing-description h2 {
+        text-align: center;
+    }
+    .landing-principles-wrap {
+        margin: -25px 0 0 -25px;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        .landing-principles-holder {
+            width: 25%;
+            padding: 25px 0 0 25px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            @media (max-width: 576px) {
+                width: 50%;
+            }
+        }
+        .landing-principles-icon {
+            margin-bottom: 10px;
+            width: 100px;
+            height: 100px;
+            display: flex;
+            svg {
+                margin: auto;
+            }
+        }
+        .landing-principles-name {
+            font-family: $montserrat_medium;
+            color: $turquoise;
+        }
+    }
+}
+// principles end

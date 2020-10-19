@@ -44,7 +44,7 @@
 		@else
 			@include('layouts.main.header')
 		@endif
-		<main class="main">
+		<main class="{{App::getLocale() == 'en' ? 'landing-page':'main'}}">
 			@yield('page')
 		</main>
 		@if(App::getLocale() == 'en')

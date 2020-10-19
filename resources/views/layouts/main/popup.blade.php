@@ -74,12 +74,13 @@
 		<div class="popup-sub-name"></div>
 	</div>
 	<form method="post" class="registration_form">
-		@if(isset($meta_type) && $meta_type == 'expert')
-			<input class="input-form" type="hidden" name="specialist_id" value="{{$expert->id}}">
-		@else
-			@if(isset($cat) && isset($cat->related_specialists) && $cat->related_specialists && isset($cat->related_specialists[1]) && isset($cat->related_specialists[1]['specialists']) && $cat->related_specialists[1]['specialists']->count() ||
-			isset($unit) && isset($unit->related_specialists) && $unit->related_specialists && isset($unit->related_specialists[2]) && isset($unit->related_specialists[2]['specialists']) && $unit->related_specialists[2]['specialists']->count() ||
-			isset($all_specialists) && $all_specialists && $all_specialists->count())
+		@if(App::getLocale() != 'en')
+			@if(isset($meta_type) && $meta_type == 'expert')
+				<input class="input-form" type="hidden" name="specialist_id" value="{{$expert->id}}">
+			@else
+				@if(isset($cat) && isset($cat->related_specialists) && $cat->related_specialists && isset($cat->related_specialists[1]) && isset($cat->related_specialists[1]['specialists']) && $cat->related_specialists[1]['specialists']->count() ||
+				isset($unit) && isset($unit->related_specialists) && $unit->related_specialists && isset($unit->related_specialists[2]) && isset($unit->related_specialists[2]['specialists']) && $unit->related_specialists[2]['specialists']->count() ||
+				isset($all_specialists) && $all_specialists && $all_specialists->count())
 				<div class="input-wrap">
 					<select class="selectric select-appointment-specialist" name="specialist_id">
 						<option value="">@lang('main.form.choose_specialist')</option>
@@ -100,8 +101,9 @@
 				</div>
 			@endif
 		@endif
+		@endif
 	    <div class="input-wrap">
-            <input class="input-form" class="phone" type="tel" name="phone" placeholder="@lang('main.form.phone')" required>
+            <input class="input-form" class="phone" type="tel" name="phone" placeholder="@lang('main.form.phone')*" required>
 	    </div>
 	    <div class="input-wrap">
             <input class="input-form" type="text" name="name" placeholder="@lang('main.form.name')">
@@ -133,7 +135,7 @@
 	</div>
 	<form method="post" class="specialist_form">
 	    <div class="input-wrap">
-            <input class="input-form" class="phone" type="tel" name="phone" placeholder="@lang('main.form.phone')" required>
+            <input class="input-form" class="phone" type="tel" name="phone" placeholder="@lang('main.form.phone')*" required>
 	    </div>
 	    <div class="input-wrap">
             <input class="input-form" type="text" name="name" placeholder="@lang('main.form.name')">
@@ -267,6 +269,7 @@
             <input class="input-form" type="email" name="email" placeholder="@lang('main.form.email')">
 	    </div>
 	    <input type="hidden" name="url" value="{{Request::path()}}">
+		<input type="hidden" name="url_name" value="{{isset($page_title) && $page_title != '' ? $page_title : '' }}">
 	    <input type="hidden" name="title" value="@lang('main.chekup')">
 	    <input type="hidden" name="lang" value="{{App::getLocale()}}">
 	    <div class="popup-info-text">
@@ -594,6 +597,161 @@
             @lang('main.form.required_text')
         </div>
         <button type="submit" class="btn-green do_vaccination_form">@lang('main.btn.sign_up')</button>
+    </form>
+   <div class='form-thanks'>@lang('main.form.form_thanks')</div>
+</div>
+
+{{-- landing popup --}}
+
+<div class="mfp-hide popup-wrap mini" id="appointment-services">
+	<div class="popup-name-wrap">
+		<div class="popup-name">
+			@lang('main.form.appointment')
+		</div>
+		<div class="popup-sub-name"></div>
+	</div>
+	<form method="post" class="appointment_services_form">
+		@if(isset($directions) && $directions)
+			@if(isset($directions_list) && $directions_list->count())
+				<div class="input-wrap">
+					<select class="selectric select-appointment-services" name="appointment_services_id">
+						<option value="">@lang('main.form.choose_services')</option>
+						@foreach ($directions_list as $direction_item)
+							<option value="{{$direction_item->lang->name}}">{{$direction_item->lang->name}}</option>
+						@endforeach
+					</select>
+				</div>
+			@endif
+		@endif
+	    <div class="input-wrap">
+            <input class="input-form" class="phone" type="tel" name="phone" placeholder="@lang('main.form.phone')*" required>
+	    </div>
+	    <div class="input-wrap">
+            <input class="input-form" type="text" name="name" placeholder="@lang('main.form.name')">
+	    </div>
+	    <div class="input-wrap">
+            <input class="input-form" type="email" name="email" placeholder="@lang('main.form.email')">
+	    </div>
+	    <input type="hidden" name="url" value="{{Request::path()}}">
+		<input type="hidden" name="url_name" value="{{isset($page_title) && $page_title != '' ? $page_title : '' }}">
+	    <input type="hidden" name="title" value="@lang('main.form.appointment')">
+	    <input type="hidden" name="appointment_services_id" value="">
+	    <input type="hidden" name="lang" value="{{App::getLocale()}}">
+	    <div class="popup-info-text">
+	        @lang('main.form.required_text')
+	    </div>
+	    <button type="submit" class="btn-green do_appointment_services">@lang('main.btn.sign_up')</button>
+	</form>
+	<div class='form-thanks'>@lang('main.form.form_thanks')</div>
+</div>
+
+
+
+<div class="mfp-hide popup-wrap big" id="question-services">
+	<div class="popup-name-wrap">
+		<div class="popup-name">
+			@lang('main.form.question_services')
+		</div>
+	</div>
+	<form method="post" class="question_services_form">
+		<div class="popup-form-wrap">
+			<div class="popup-input-wrap">
+				<div class="input-wrap">
+					<input class="input-form" type="text" name="name" placeholder="@lang('main.form.name')*" required>
+				</div>
+				<div class="input-wrap">
+					<input class="input-form" class="phone" type="tel" name="phone" placeholder="@lang('main.form.phone')*" required>
+				</div>
+				<div class="input-wrap">
+					<input class="input-form" type="email" name="email" placeholder="@lang('main.form.email')">
+				</div>
+			</div>
+			<div class="popup-textarea-wrap">
+				@if(isset($directions) && $directions)
+					@if(isset($directions_list) && $directions_list->count())
+						<div class="input-wrap">
+							<select class="selectric select-question-services" name="services_id">
+								<option value="">@lang('main.form.choose_services')</option>
+								@foreach ($directions_list as $direction_item)
+									<option value="{{$direction_item->lang->name}}">{{$direction_item->lang->name}}</option>
+								@endforeach
+							</select>
+						</div>
+					@endif
+				@endif
+				<div class="input-wrap">
+					<textarea class="input-form form-input-textarea" name="content" placeholder="@lang('main.form.your_question')*" required></textarea>
+				</div>
+				<div class="popup-info-text">
+					@lang('main.form.required_text')
+				</div>
+			</div>
+		</div>
+	    <input type="hidden" name="url" value="{{Request::path()}}">
+		<input type="hidden" name="url_name" value="{{isset($page_title) && $page_title != '' ? $page_title : '' }}">
+	    <input type="hidden" name="title" value="@lang('main.form.question_services')">
+	    <input type="hidden" name="services_id" value="">
+	    <input type="hidden" name="lang" value="{{App::getLocale()}}">
+	    <button type="submit" class="btn-green do_question_services">@lang('main.review.send')</button>
+	</form>
+	<div class='form-thanks'>@lang('main.form.form_thanks')</div>
+</div>
+
+
+<div class="mfp-hide popup-wrap mini" id="personal_ranslator">
+	<div class="popup-name-wrap">
+		<div class="popup-name">
+			@lang('main.form.personal_ranslator')
+		</div>
+	</div>
+	<form method="post" class="personal_ranslator_form">
+        <div class="input-wrap">
+            <input class="input-form" type="tel" name="phone" placeholder="@lang('main.form.phone')*"  required>
+        </div>
+        <div class="input-wrap">
+            <input class="input-form" type="text" name="name" placeholder="@lang('main.form.name')">
+        </div>
+        <input type="hidden" name="url" value="{{Request::path()}}">
+        <input type="hidden" name="url_name" value="{{isset($page_title) && $page_title != '' ? $page_title : '' }}">
+        <input type="hidden" name="title" value="@lang('main.form.personal_ranslator')">
+        <input type="hidden" name="lang" value="{{App::getLocale()}}">
+        <div class="popup-info-text">
+            @lang('main.form.required_text')
+        </div>
+        <button type="submit" class="btn-green do_personal_ranslator">@lang('main.btn.order')</button>
+    </form>
+   <div class='form-thanks'>@lang('main.form.form_thanks')</div>
+</div>
+
+<div class="mfp-hide popup-wrap mini" id="landing-question">
+	<div class="popup-name-wrap">
+		<div class="popup-name">
+			@lang('main.form.question_services')
+		</div>
+		<div class="popup-sub-name"></div>
+	</div>
+	<form method="post" class="landing_question_form">
+        <div class="input-wrap">
+            <input class="input-form" type="tel" name="phone" placeholder="@lang('main.form.phone')*"  required>
+        </div>
+        <div class="input-wrap">
+            <input class="input-form" type="text" name="name" placeholder="@lang('main.form.name')*" required>
+        </div>
+		<div class="input-wrap">
+			<input class="input-form" type="email" name="email" placeholder="@lang('main.form.email')">
+		</div>
+		<div class="input-wrap">
+			<textarea class="input-form form-input-textarea" name="content" placeholder="@lang('main.form.your_question')*" required></textarea>
+		</div>
+        <input type="hidden" name="url" value="{{Request::path()}}">
+        <input type="hidden" name="url_name" value="{{isset($page_title) && $page_title != '' ? $page_title : '' }}">
+		<input type="hidden" name="landing_question_id" value="">
+        <input type="hidden" name="title" value="@lang('main.form.question_services')">
+        <input type="hidden" name="lang" value="{{App::getLocale()}}">
+        <div class="popup-info-text">
+            @lang('main.form.required_text')
+        </div>
+        <button type="submit" class="btn-green do_landing_question">@lang('main.btn.send')</button>
     </form>
    <div class='form-thanks'>@lang('main.form.form_thanks')</div>
 </div>
