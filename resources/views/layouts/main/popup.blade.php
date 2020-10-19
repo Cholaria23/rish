@@ -550,6 +550,9 @@
 		<div class="popup-name">
 			@lang('main.test')
 		</div>
+		<div class="popup-sub-name">
+			@lang('main.test_subtitle')
+		</div>
 	</div>
 	<form method="post" class="appointment_test">
         <div class="input-wrap">

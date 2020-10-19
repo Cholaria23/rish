@@ -163,11 +163,15 @@
             }
         }
     }
-    .input-file-wrap {
-        margin: -15px 0 10px;
-        display: flex;
-        flex-wrap: wrap;
+    .do_review_form {
+        margin-top: 15px;
     }
+}
+
+.input-file-wrap {
+    margin: -15px 0 10px;
+    display: flex;
+    flex-wrap: wrap;
     .label-input-file {
         display: flex;
         align-items: center;
@@ -220,20 +224,17 @@
         margin-bottom: 0;
         line-height: 24px;
     }
-    .error-file-info {
-        display: none;
-        margin-bottom: 10px;
-        .max-files {
-            margin-bottom: 5px;
-        }
-        .max-files,
-        .max-size {
-            display: none;
-            text-align: left;
-            color: $red;
-        }
+}
+.error-file-info {
+    display: none;
+    margin-bottom: 10px;
+    .max-files {
+        margin-bottom: 5px;
     }
-    .do_review_form {
-        margin-top: 15px;
+    .max-files,
+    .max-size {
+        display: none;
+        text-align: left;
+        color: $red;
     }
 }

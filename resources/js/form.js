@@ -46,12 +46,22 @@ $(document).ready( function() {
         var labelText = $(this).closest('.input-file-inner-wrap').find('.label-text');
         var labelRemove = $(this).closest('.input-file-inner-wrap').find('.label-remove');
         var input = $(this).closest('.input-file-inner-wrap').find('.input-file');
-        if ($('html').attr('lang')=='ru') {
-            labelText.text('Загрузить фото');
-        } else if ($('html').attr('lang')=='uk') {
-            labelText.text('Завантажити фото');
+        if ($(this).hasClass('label-remove-cv')) {
+            if ($('html').attr('lang')=='ru') {
+                labelText.text('Загрузить файл');
+            } else if ($('html').attr('lang')=='uk') {
+                labelText.text('Завантажити файл');
+            } else {
+                labelText.text('upload_file');
+            }
         } else {
-            labelText.text('Upload a photo');
+            if ($('html').attr('lang')=='ru') {
+                labelText.text('Загрузить фото');
+            } else if ($('html').attr('lang')=='uk') {
+                labelText.text('Завантажити фото');
+            } else {
+                labelText.text('Upload a photo');
+            }
         }
         labelRemove.hide();
         input.val('');
@@ -786,160 +796,284 @@ $(document).ready( function() {
         }
     });
 
-});
-
-
-// for landing
-
-// question a service
-$(".do_question_services").click(function(e) {
-    e.stopPropagation();
-    e.preventDefault();
-    $(".question_services_form").submit();
-});
-
-$(".question_services_form").validate({
-    submitHandler: function(form) {
-      var csrf_token = $('meta[name="csrf-token"]').attr('content');
-      var formdata = $(form).serialize();
-      $(form)[0].reset();
-      $.ajax({
-        url: routes.postSend,
-        type: 'POST',
-        data: {
-            "_token" : csrf_token,
-            "data": formdata,
-            "subj": "landing_question_services"
-        },
-        success: function(data) {
-            $('#question-services').find('input[name=services_id]').val('');
-            $('.select-question-services').prop('selectedIndex', 0).selectric('refresh');
-            $(form).hide();
-            $(form).next('.form-thanks').show();
-            function hidePopup(){
-                $.magnificPopup.close();
+    // order_package
+    $(".do_order_package").click(function(e) {
+        e.stopPropagation();
+        e.preventDefault();
+        $(".order_package").submit();
+    });
+    $(".order_package").validate({
+        submitHandler: function(form) {
+          var csrf_token = $('meta[name="csrf-token"]').attr('content');
+          var formdata = $(form).serialize();
+          $(form)[0].reset();
+          $.ajax({
+            url: routes.postSend,
+            type: 'POST',
+            data: {
+                "_token" : csrf_token,
+                "data": formdata,
+                "subj": "order_package"
+            },
+            success: function(data) {
+                $(form).hide();
+                $(form).next('.form-thanks').show();
+                function showForm(){
+                    $(form).next('.form-thanks').hide();
+                    $(form).show();
+                }
+                setTimeout( showForm ,5000);
             }
-            function showForm(){
-                $(form).next('.form-thanks').hide();
-                $(form).show();
-            }
-            setTimeout( hidePopup ,5000);
-            setTimeout( showForm ,5000);
+          });
         }
-      });
-    }
-});
+    });
 
 
-$(".do_appointment_services").click(function(e) {
-    e.stopPropagation();
-    e.preventDefault();
-    $(".appointment_services_form").submit();
-});
+    // resume_form
 
-$(".appointment_services_form").validate({
-    submitHandler: function(form) {
-      var csrf_token = $('meta[name="csrf-token"]').attr('content');
-      var formdata = $(form).serialize();
-      $(form)[0].reset();
-      $.ajax({
-        url: routes.postSend,
-        type: 'POST',
-        data: {
-            "_token" : csrf_token,
-            "data": formdata,
-            "subj": "landing_appointment_services"
-        },
-        success: function(data) {
-            $('#appointment-services').find('input[name=appointment_services_id]').val('');
-            $('.select-appointment-services').prop('selectedIndex', 0).selectric('refresh');
-            $(form).hide();
-            $(form).next('.form-thanks').show();
-            function hidePopup(){
-                $.magnificPopup.close();
+    var item_cv = $('.send_resume_form');
+    function sendCvFields(item_cv, formdata, file = '') {
+        var csrf_token = $('meta[name="csrf-token"]').attr('content');
+        var dataForm;
+        if (file != '') {
+            dataForm = {
+                data: formdata,
+                file: file,
+                _token : csrf_token,
+                subj: 'resume',
             }
-            function showForm(){
-                $(form).next('.form-thanks').hide();
-                $(form).show();
+        } else {
+            dataForm = {
+                data: formdata,
+                _token : csrf_token,
+                subj: 'resume',
+            };
+        };
+        $.ajax({
+            url: routes.postSend,
+            type: 'POST',
+            data: dataForm,
+            success: function(data) {
+                $(item_cv)[0].reset();
+                if ($('html').attr('lang')=='ru') {
+                    $('.send_resume_form').find('.label-text').text('Загрузить файл');
+                } else if ($('html').attr('lang')=='uk') {
+                    $('.send_resume_form').find('.label-text').text('Завантажити файл');
+                } else {
+                    $('.send_resume_form').find('.label-text').text('upload_file');
+                }
+                $('.send_resume_form').find('.label-remove').hide();
+                $('.send_resume_form').closest('.item-contact-form-wrap').find('.form-thanks').show();
+                function showForm(){
+                    $('.send_resume_form').closest('.item-contact-form-wrap').find('.form-thanks').hide();
+                }
+                setTimeout( showForm ,5000);
             }
-            setTimeout( hidePopup ,5000);
-            setTimeout( showForm ,5000);
+        })
+    };
+
+
+    $(".send_resume_form").validate({
+        submitHandler: function(form) {
+            var csrf_token = $('meta[name="csrf-token"]').attr('content');
+            var formdata = $(form).serialize();
+            if (document.getElementById('input-file-cv').files.length) {
+                var inputs = $('.input-file');
+                let $data = {};
+                for (let i = 0; i < inputs.length; i++) {
+                    let element = inputs[i];
+                    let next_el = (inputs[i + 1]) ? (inputs[i + 1]) : null;
+                    if (element != null && element.files.length) {
+                        let reader = new FileReader();
+                        reader.onload = function () {
+                            let key = 'file_' + i;
+                            let value = reader.result;
+                            $data[key] = value;
+                            if (next_el == null || !next_el.files.length) {
+                                setTimeout(function () {
+                                    $.ajax({
+                                        type: 'POST',
+                                        url: routes.postLoadFile,
+                                        data: {
+                                            "_token": csrf_token,
+                                            "data": $data,
+                                        },
+                                        success: function (response) {
+                                            var uploadedFile = response.file_name;
+                                            sendCvFields(item_cv, formdata, uploadedFile);
+                                        },
+                                        error: function (response) {},
+                                    });
+                                }, 100);
+                            }
+                        };
+                        reader.readAsDataURL(inputs[i].files[0]);
+                    }
+                }
+            } else {
+                sendCvFields(item_cv, formdata);
+            }
         }
-      });
-    }
-});
+    });
 
-$(".do_personal_ranslator").click(function(e) {
-    e.stopPropagation();
-    e.preventDefault();
-    $(".personal_ranslator_form").submit();
-});
+    $(".do_send_resume_form").click(function(e) {
+        e.stopPropagation();
+        e.preventDefault();
+        $(".send_resume_form").submit();
+    });
 
-$(".personal_ranslator_form").validate({
-    submitHandler: function(form) {
-      var csrf_token = $('meta[name="csrf-token"]').attr('content');
-      var formdata = $(form).serialize();
-      $(form)[0].reset();
-      $.ajax({
-        url: routes.postSend,
-        type: 'POST',
-        data: {
-            "_token" : csrf_token,
-            "data": formdata,
-            "subj": "landing_personal_ranslator"
-        },
-        success: function(data) {
-            $(form).hide();
-            $(form).next('.form-thanks').show();
-            function hidePopup(){
-                $.magnificPopup.close();
-            }
-            function showForm(){
-                $(form).next('.form-thanks').hide();
-                $(form).show();
-            }
-            setTimeout( hidePopup ,5000);
-            setTimeout( showForm ,5000);
+    // for landing
+
+    // question a service
+    $(".do_question_services").click(function(e) {
+        e.stopPropagation();
+        e.preventDefault();
+        $(".question_services_form").submit();
+    });
+
+    $(".question_services_form").validate({
+        submitHandler: function(form) {
+            var csrf_token = $('meta[name="csrf-token"]').attr('content');
+            var formdata = $(form).serialize();
+            $(form)[0].reset();
+            $.ajax({
+                url: routes.postSend,
+                type: 'POST',
+                data: {
+                    "_token" : csrf_token,
+                    "data": formdata,
+                    "subj": "landing_question_services"
+                },
+                success: function(data) {
+                    $('#question-services').find('input[name=services_id]').val('');
+                    $('.select-question-services').prop('selectedIndex', 0).selectric('refresh');
+                    $(form).hide();
+                    $(form).next('.form-thanks').show();
+                    function hidePopup(){
+                        $.magnificPopup.close();
+                    }
+                    function showForm(){
+                        $(form).next('.form-thanks').hide();
+                        $(form).show();
+                    }
+                    setTimeout( hidePopup ,5000);
+                    setTimeout( showForm ,5000);
+                }
+            });
         }
-      });
-    }
-});
+    });
 
 
-$(".do_landing_question").click(function(e) {
-    e.stopPropagation();
-    e.preventDefault();
-    $(".landing_question_form").submit();
-});
+    $(".do_appointment_services").click(function(e) {
+        e.stopPropagation();
+        e.preventDefault();
+        $(".appointment_services_form").submit();
+    });
 
-$(".landing_question_form").validate({
-    submitHandler: function(form) {
-      var csrf_token = $('meta[name="csrf-token"]').attr('content');
-      var formdata = $(form).serialize();
-      $(form)[0].reset();
-      $.ajax({
-        url: routes.postSend,
-        type: 'POST',
-        data: {
-            "_token" : csrf_token,
-            "data": formdata,
-            "subj": "landing_question"
-        },
-        success: function(data) {
-            $('#landing-question').find('.popup-sub-name').text();
-            $('#landing-question').find('input[name=landing_question_id]').val('');
-            $(form).hide();
-            $(form).next('.form-thanks').show();
-            function hidePopup(){
-                $.magnificPopup.close();
-            }
-            function showForm(){
-                $(form).next('.form-thanks').hide();
-                $(form).show();
-            }
-            setTimeout( hidePopup ,5000);
-            setTimeout( showForm ,5000);
+    $(".appointment_services_form").validate({
+        submitHandler: function(form) {
+            var csrf_token = $('meta[name="csrf-token"]').attr('content');
+            var formdata = $(form).serialize();
+            $(form)[0].reset();
+            $.ajax({
+                url: routes.postSend,
+                type: 'POST',
+                data: {
+                    "_token" : csrf_token,
+                    "data": formdata,
+                    "subj": "landing_appointment_services"
+                },
+                success: function(data) {
+                    $('#appointment-services').find('input[name=appointment_services_id]').val('');
+                    $('.select-appointment-services').prop('selectedIndex', 0).selectric('refresh');
+                    $(form).hide();
+                    $(form).next('.form-thanks').show();
+                    function hidePopup(){
+                        $.magnificPopup.close();
+                    }
+                    function showForm(){
+                        $(form).next('.form-thanks').hide();
+                        $(form).show();
+                    }
+                    setTimeout( hidePopup ,5000);
+                    setTimeout( showForm ,5000);
+                }
+            });
         }
-      });
-    }
+    });
+
+    $(".do_personal_ranslator").click(function(e) {
+        e.stopPropagation();
+        e.preventDefault();
+        $(".personal_ranslator_form").submit();
+    });
+
+    $(".personal_ranslator_form").validate({
+        submitHandler: function(form) {
+            var csrf_token = $('meta[name="csrf-token"]').attr('content');
+            var formdata = $(form).serialize();
+            $(form)[0].reset();
+            $.ajax({
+                url: routes.postSend,
+                type: 'POST',
+                data: {
+                    "_token" : csrf_token,
+                    "data": formdata,
+                    "subj": "landing_personal_ranslator"
+                },
+                success: function(data) {
+                    $(form).hide();
+                    $(form).next('.form-thanks').show();
+                    function hidePopup(){
+                        $.magnificPopup.close();
+                    }
+                    function showForm(){
+                        $(form).next('.form-thanks').hide();
+                        $(form).show();
+                    }
+                    setTimeout( hidePopup ,5000);
+                    setTimeout( showForm ,5000);
+                }
+            });
+        }
+    });
+
+
+    $(".do_landing_question").click(function(e) {
+        e.stopPropagation();
+        e.preventDefault();
+        $(".landing_question_form").submit();
+    });
+
+    $(".landing_question_form").validate({
+        submitHandler: function(form) {
+            var csrf_token = $('meta[name="csrf-token"]').attr('content');
+            var formdata = $(form).serialize();
+            $(form)[0].reset();
+            $.ajax({
+                url: routes.postSend,
+                type: 'POST',
+                data: {
+                    "_token" : csrf_token,
+                    "data": formdata,
+                    "subj": "landing_question"
+                },
+                success: function(data) {
+                    $('#landing-question').find('.popup-sub-name').text();
+                    $('#landing-question').find('input[name=landing_question_id]').val('');
+                    $(form).hide();
+                    $(form).next('.form-thanks').show();
+                    function hidePopup(){
+                        $.magnificPopup.close();
+                    }
+                    function showForm(){
+                        $(form).next('.form-thanks').hide();
+                        $(form).show();
+                    }
+                    setTimeout( hidePopup ,5000);
+                    setTimeout( showForm ,5000);
+                }
+            });
+        }
+    });
 });

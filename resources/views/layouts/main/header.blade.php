@@ -301,6 +301,13 @@
 							</a>
 						</li>
 					@endif
+					@if(isset($header_data['doctors']) && $header_data['doctors'])
+						<li class="header-menu-item mobile">
+							<a class="header-menu-link" href="{{build_unit_route($header_data['doctors'])}}">
+								{{$header_data['doctors']->lang->name}}
+							</a>
+						</li>
+					@endif
 					@if(isset($header_data['corporate_clients']) && $header_data['corporate_clients'])
 						<li class="header-menu-item mobile">
 							<a class="header-menu-link" href="{{build_unit_route($header_data['corporate_clients'])}}">
@@ -319,6 +326,13 @@
 						<li class="header-menu-item mobile">
 							<a class="header-menu-link" href="{{build_unit_route($header_data['reviews'])}}">
 								{{$header_data['reviews']->lang->name}}
+							</a>
+						</li>
+					@endif
+					@if(isset($header_data['useful_information']) && $header_data['useful_information'])
+						<li class="header-menu-item mobile">
+							<a class="header-menu-link" href="{{build_unit_route($header_data['useful_information'])}}">
+								{{$header_data['useful_information']->lang->name}}
 							</a>
 						</li>
 					@endif
@@ -398,6 +412,13 @@
 										</a>
 									</li>
 								@endif
+								@if(isset($header_data['doctors']) && $header_data['doctors'])
+									<li class="header-menu-item">
+										<a class="header-menu-link" href="{{build_unit_route($header_data['doctors'])}}">
+											{{$header_data['doctors']->lang->name}}
+										</a>
+									</li>
+								@endif
 								@if(isset($header_data['corporate_clients']) && $header_data['corporate_clients'])
 									<li class="header-menu-item">
 										<a class="header-menu-link" href="{{build_unit_route($header_data['corporate_clients'])}}">
@@ -416,6 +437,13 @@
 									<li class="header-menu-item">
 										<a class="header-menu-link" href="{{build_unit_route($header_data['reviews'])}}">
 											{{$header_data['reviews']->lang->name}}
+										</a>
+									</li>
+								@endif
+								@if(isset($header_data['useful_information']) && $header_data['useful_information'])
+									<li class="header-menu-item">
+										<a class="header-menu-link" href="{{build_unit_route($header_data['useful_information'])}}">
+											{{$header_data['useful_information']->lang->name}}
 										</a>
 									</li>
 								@endif
