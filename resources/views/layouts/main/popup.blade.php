@@ -269,6 +269,7 @@
             <input class="input-form" type="email" name="email" placeholder="@lang('main.form.email')">
 	    </div>
 	    <input type="hidden" name="url" value="{{Request::path()}}">
+		<input type="hidden" name="url_name" value="{{isset($page_title) && $page_title != '' ? $page_title : '' }}">
 	    <input type="hidden" name="title" value="@lang('main.chekup')">
 	    <input type="hidden" name="lang" value="{{App::getLocale()}}">
 	    <div class="popup-info-text">

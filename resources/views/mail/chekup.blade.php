@@ -82,6 +82,22 @@
                                                                     </span>
                                                                 </p>
                                                             @endif
+                                                            @if (isset($url) && $url != '')
+                                                                <p style="display: flex; align-items: center; justify-content: space-between;font-size: 14px; margin: 0; padding: 10px 0; color: #343434; font-weight: 400; border-bottom: 1px solid #f2f2f2;">
+                                                                    <span style="width: 50%; text-align: left; font-size: 14px; font-weight: bold; color: #343434;">
+                                                                        @Lang('main.form.url'):
+                                                                    </span>
+                                                                    <a href="{{URL::to($url)}}" style="width: 50%; text-align: right; font-size: 14px; color: #343434; text-decoration: underline;">
+                                                                        @if(isset($url_name) && $url_name != '')
+                                                                            {{$url_name}}
+                                                                        @elseif(isset($title) && $title != '')
+                                                                            {{$title}}
+                                                                        @else
+                                                                            @lang('main.move_page')
+                                                                        @endif
+                                                                    </a>
+                                                                </p>
+                                                            @endif
                                                         </div>
                                                     </div>
                                                 </td>

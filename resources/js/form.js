@@ -483,10 +483,10 @@ $(document).ready( function() {
         e.stopPropagation();
         e.preventDefault();
         var formVal = $(this).closest('.consultation_form');
-        formChekupValidate(formVal);
+        formConsultationValidate(formVal);
         formVal.submit();
     });
-    function formChekupValidate(form) {
+    function formConsultationValidate(form) {
         form.validate({
             submitHandler: function(form) {
               var csrf_token = $('meta[name="csrf-token"]').attr('content');
