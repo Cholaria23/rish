@@ -499,6 +499,9 @@
 .text-center {
     text-align: center;
 }
+.text-right {
+    text-align: right;
+}
 .description {
     line-height: 26px;
     h1 {
@@ -751,6 +754,27 @@
         }
     }
 }
+// files
+.files_list {
+
+    .file-item:not(:last-child) {
+        margin-bottom: 15px;
+    }
+    .file-item-link {
+        color: $main_color;
+        transition: .25s linear;
+        &:hover {
+            color: $turquoise;
+        }
+    }
+    .file-item-img {
+        margin-right: 10px;
+        display: block;
+        width: 40px;
+        height: auto;
+    }
+}
+
 // adaptive video
 .video-wrap {
     margin-bottom: 20px;
@@ -759,6 +783,11 @@ video {
   width: 100%;
   height: auto;
   max-height: 100%;
+}
+
+.send_resume_form {
+    max-width: 450px;
+    margin: 0 auto;
 }
 
 //  breadcrumbs start

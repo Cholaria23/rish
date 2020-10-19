@@ -104,6 +104,38 @@
 				</div>
 			</section>
 		@endif
+		
+		@if($unit->files->count())
+			<section class="main-section">
+				<div class="container">
+					<div class="page-section-title-bold">
+						@lang('main.files')
+					</div>
+					<ul class="files_list">
+						@foreach ($unit->files as $file)
+							<li class="file-item">
+								<a class="file-item-link" href="{{ URL::to('/storage/files/'.$file->src) }}" target="_blank">
+									@foreach (app('brandbook')['extentions'] as $key => $value)
+										@if($value['extention'] == $file->extention)
+											<span class="file-item-img">
+												{!!$value['svg']!!}
+											</span>
+										@endif
+									@endforeach
+									<span>
+										@if($file->lang && $file->lang->name != '')
+											{{$file->lang->name}}
+										@else
+											{{ $file->src }}
+										@endif
+									</span>
+								</a>
+							</li>
+						@endforeach
+					</ul>
+				</div>
+			</section>
+		@endif
 
 		@if($unit->id == 118)
 			<section class="main-section">
@@ -132,6 +164,56 @@
 							<input type="hidden" name="url" value="{{Request::path()}}">
 							<input type="hidden" name="url_name" value="{{isset($page_title) && $page_title != '' ? $page_title : '' }}">
 							<button type="submit" class="btn-green do_corporate_form">@lang('main.btn.call_me')</button>
+						</form>
+						<div class='form-thanks'>@lang('main.form.form_thanks')</div>
+					</div>
+	            </div>
+	        </section>
+		@endif
+
+		@if($unit->id == 169)
+			<section class="main-section">
+	            <div class="container-small">
+					<div class="item-contact-form-wrap">
+						<div class="contact-form-name text-center">
+							@lang('main.send_resume')
+						</div>
+						<form method="post" class="send_resume_form text-right">
+							<div class="input-wrap">
+								<input class="input-form" type="text" name="name" placeholder="@lang('main.form.name')">
+							</div>
+							<div class="input-wrap">
+								<input class="input-form" type="tel" name="phone" placeholder="@lang('main.form.number_phone')" required>
+							</div>
+							<div class="input-wrap">
+								<input class="input-form" type="email" name="email" placeholder="@lang('main.form.email')" required>
+							</div>
+							<div class="input-file-wrap">
+								<div class="input-file-inner">
+									<div class="input-file-inner-wrap">
+										<input class="form-control input-file" id="input-file-cv" type="file" name="file">
+										<label class="label-input-file" for="input-file-cv">
+											<span class="label-svg">
+												<svg width="24" height="24">
+													<use xlink:href="#download"></use>
+												</svg>
+											</span>
+											<span class="label-text">
+												@lang('main.upload_file')
+											</span>
+										</label>
+										<div class="label-remove label-remove-cv">
+											<svg width="20" height="20">
+												<use xlink:href="#label-remove"></use>
+											</svg>
+										</div>
+									</div>
+								</div>
+							</div>
+							<input type="hidden" name="lang" value="{{App::getLocale()}}">
+							<input type="hidden" name="url" value="{{Request::path()}}">
+							<input type="hidden" name="url_name" value="{{isset($page_title) && $page_title != '' ? $page_title : '' }}">
+							<button type="submit" class="btn-green do_send_resume_form">@lang('main.review.send')</button>
 						</form>
 						<div class='form-thanks'>@lang('main.form.form_thanks')</div>
 					</div>

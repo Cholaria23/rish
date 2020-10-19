@@ -18,7 +18,7 @@
 	<div class="unit-page">
 		<div class="container">
 			<div class="unit-page-wrap">
-				<div class="unit-page-main">
+				<div class="unit-page-main {{isset($news) && $news->count() ? '':'no-padding-right'}}">
 					@include('layouts.main.breadcrumbs')
 					@if($unit->lang->h1 != '')
 						<h1 class="main-section-title">
@@ -183,6 +183,31 @@
 								@endif
 							</div>
 						</div>
+					@endif
+					@if($unit->category->id == 16)
+						<div class="unit-page-form">
+							<div class="item-contact-form-wrap">
+								<div class="contact-form-name">
+									@lang('main.order_package_title')
+								</div>
+								<form method="post" class="order_package">
+									<div class="input-wrap">
+										<input class="input-form" type="text" name="name" placeholder="@lang('main.form.name')">
+									</div>
+									<div class="input-wrap">
+										<input class="input-form" type="tel" name="phone" placeholder="@lang('main.form.number_phone')" required>
+									</div>
+									<div class="input-wrap">
+										<input class="input-form" type="email" name="email" placeholder="@lang('main.form.email')" required>
+									</div>
+									<input type="hidden" name="lang" value="{{App::getLocale()}}">
+									<input type="hidden" name="url" value="{{Request::path()}}">
+									<input type="hidden" name="url_name" value="{{isset($page_title) && $page_title != '' ? $page_title : '' }}">
+									<button type="submit" class="btn-green do_order_package">@lang('main.order_btn')</button>
+								</form>
+								<div class='form-thanks'>@lang('main.form.form_thanks')</div>
+							</div>
+				        </div>
 					@endif
 				</div>
 				@if(isset($news) && $news->count())
