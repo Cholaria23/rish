@@ -756,11 +756,15 @@
 }
 // files
 .files_list {
-
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     .file-item:not(:last-child) {
         margin-bottom: 15px;
     }
     .file-item-link {
+        display: flex;
+        align-items: center;
         color: $main_color;
         transition: .25s linear;
         &:hover {
