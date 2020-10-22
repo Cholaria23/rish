@@ -537,6 +537,14 @@ class PageController extends Controller {
                     $query->with(['answers' => function ($query) {
                         $query->where('is_hidden',0);
                     }])->whereIn('form_type_id',[8])->where('is_hidden',0)->where('parent_id',null)->orderBy('created_at','desc');
+                },
+                'rel_faq_groups' => function ($query) {
+                    $query->with([
+                        'lang',
+                        'faq' => function ($query) {
+                            $query->with('lang')/*->where('is_hidden',0)*/->orderBy('sort_order','asc');
+                        }
+                    ])->where('is_hidden',0)->orderBy('sort_order','asc');
                 }
             ])->where('alias', $alias)->first();
         $specialist = Unit::with('lang')->where('is_hidden',0)->find(79);
