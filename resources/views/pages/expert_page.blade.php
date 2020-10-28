@@ -271,21 +271,7 @@
 				<ul class="faq-list" itemtype="https://schema.org/FAQPage" itemscope>
 					@foreach ($expert->rel_faq_groups as $faq_group_item)
 						@foreach ($faq_group_item->faq as $faq_item)
-							<li class="faq-item" itemscope itemtype="https://schema.org/Question" itemprop="mainEntity">
-								<div class="faq-question">
-									<span class="faq-question-name" itemprop="name">
-										{{$faq_item->lang->question}}
-									</span>
-									<div class="faq-icon"></div>
-								</div>
-								@if($faq_item->lang->answer != '')
-									<div class="faq-answer text" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer" itemscope>
-										<span itemprop="text">
-											{!!$faq_item->lang->answer!!}
-										</span>
-									</div>
-								@endif
-							</li>
+							@include('layouts.tiles.faq_item')
 						@endforeach
 					@endforeach
 				</ul>

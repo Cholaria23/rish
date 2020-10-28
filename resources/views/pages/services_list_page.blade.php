@@ -140,6 +140,23 @@
             </section>
         @endif
 
+        @if($cat->rel_faq_groups->count())
+			<section class="main-section">
+				<div class="container-small">
+					<div class="page-section-title-bold">
+						@lang('main.titles.faq')
+					</div>
+					<ul class="faq-list" itemtype="https://schema.org/FAQPage" itemscope>
+						@foreach ($cat->rel_faq_groups as $faq_group_item)
+							@foreach ($faq_group_item->faq as $faq_item)
+								@include('layouts.tiles.faq_item')
+							@endforeach
+						@endforeach
+					</ul>
+				</div>
+			</section>
+		@endif
+
 
         @if(isset($cat->related_units) && $cat->related_units && $cat->related_units->count() && get_cat_id_flag($cat->related_units,[7]))
             <section class="main-section">
