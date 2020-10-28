@@ -498,9 +498,15 @@
 							<ul class="lang-list">
 								@foreach(app('langSettings')->langs->pluck('code')->toArray() as $localeCode)
 									<li class="lang-item">
-										<a class="lang-link {{ ($localeCode == LaravelLocalization::getCurrentLocale()) ? 'active' : '' }}" href="{{LaravelLocalization::getLocalizedURL($localeCode) }}">
-											{{ strtoupper($localeCode) }}
-										</a>
+										@if($localeCode == 'en')
+											<a class="lang-link {{ ($localeCode == LaravelLocalization::getCurrentLocale()) ? 'active' : '' }}" href="{{URL::to($localeCode) }}">
+												{{ strtoupper($localeCode) }}
+											</a>
+										@else
+											<a class="lang-link {{ ($localeCode == LaravelLocalization::getCurrentLocale()) ? 'active' : '' }}" href="{{LaravelLocalization::getLocalizedURL($localeCode) }}">
+												{{ strtoupper($localeCode) }}
+											</a>
+										@endif
 									</li>
 								@endforeach
 							</ul>
