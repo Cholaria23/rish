@@ -18,6 +18,8 @@ class MarketCatsRelations extends Migration
         Schema::table('market_goods_rel_types', function(Blueprint $table) {
             $table->boolean('is_cats_relation')->default(0);
         });
+
+        DB::table('market_goods_rel_types')->where('id', 3)->update(['is_cats_relation' => 1]);
     }
 
     /**

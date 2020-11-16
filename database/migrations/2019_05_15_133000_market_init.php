@@ -540,13 +540,20 @@ class MarketInit extends Migration
             $table->timestamps();         
         });
 
-        DB::table('market_price_types')->insert(
+        DB::table('market_price_types')->insert([
             [
                 'alias' => "default",
                 'name' => "Основная",
                 'is_main' => 1,
-            ]
-        );
+                'is_action' => 0,
+            ],
+            [
+                'alias' => "sale",
+                'name' => "Акционная",
+                'is_main' => 0,
+                'is_action' => 1,
+            ],
+        ]);
 
         Schema::create('market_prices', function (Blueprint $table) {
             $table->increments('id');

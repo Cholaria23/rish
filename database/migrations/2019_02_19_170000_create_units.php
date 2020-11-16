@@ -135,21 +135,37 @@ class CreateUnits extends Migration {
         });
 
         DB::table('units_categories')->insert([
-            ['alias' => "html", 'is_hidden' => 0,],
-            ['alias' => "news", 'is_hidden' => 0,],
-            ['alias' => "articles", 'is_hidden' => 0,],
+            ['alias' => "html", 'is_hidden' => 0, 'parent_id' => NULL,],
+            ['alias' => "blog", 'is_hidden' => 0, 'parent_id' => NULL,],
+            ['alias' => "news", 'is_hidden' => 0, 'parent_id' => 2,],
+            ['alias' => "articles", 'is_hidden' => 0, 'parent_id' => 2,],
+            ['alias' => "actions", 'is_hidden' => 0, 'parent_id' => 2,],
+            ['alias' => "overview", 'is_hidden' => 0, 'parent_id' => 2,],
         ]);
 
         DB::table('units_categories_lang')->insert([
-            ['cat_id' => 1, 'lang' => "ru", 'name' => "HTML",],
-            ['cat_id' => 2, 'lang' => "ru", 'name' => "Новости",],
-            ['cat_id' => 3, 'lang' => "ru", 'name' => "Статьи",],
-            ['cat_id' => 1, 'lang' => "uk", 'name' => "HTML",],
-            ['cat_id' => 2, 'lang' => "uk", 'name' => "Новини",],
-            ['cat_id' => 3, 'lang' => "uk", 'name' => "Статті",],
-            ['cat_id' => 1, 'lang' => "en", 'name' => "HTML",],
-            ['cat_id' => 2, 'lang' => "en", 'name' => "News",],
-            ['cat_id' => 3, 'lang' => "en", 'name' => "Articles",],
+            ['cat_id' => 1, 'lang' => "ru", 'name' => "HTML", 'meta_title' => "HTML",],
+            ['cat_id' => 2, 'lang' => "ru", 'name' => "Блог", 'meta_title' => "Блог",],
+            ['cat_id' => 3, 'lang' => "ru", 'name' => "Новости", 'meta_title' => "Новости",],
+            ['cat_id' => 4, 'lang' => "ru", 'name' => "Статьи", 'meta_title' => "Статьи",],
+            ['cat_id' => 5, 'lang' => "ru", 'name' => "Акции", 'meta_title' => "Акции",],
+            ['cat_id' => 6, 'lang' => "ru", 'name' => "Обзоры", 'meta_title' => "Обзоры",],
+
+
+            ['cat_id' => 1, 'lang' => "uk", 'name' => "HTML", 'meta_title' => "HTML",],
+            ['cat_id' => 2, 'lang' => "uk", 'name' => "Блог", 'meta_title' => "Блог",],
+            ['cat_id' => 3, 'lang' => "uk", 'name' => "Новини", 'meta_title' => "Новини",],
+            ['cat_id' => 4, 'lang' => "uk", 'name' => "Статті", 'meta_title' => "Статті",],
+            ['cat_id' => 5, 'lang' => "uk", 'name' => "Акції", 'meta_title' => "Акції",],
+            ['cat_id' => 6, 'lang' => "uk", 'name' => "Огляди", 'meta_title' => "Огляди",],
+
+
+            ['cat_id' => 1, 'lang' => "en", 'name' => "Html", 'meta_title' => "Html",],
+            ['cat_id' => 2, 'lang' => "en", 'name' => "Blog", 'meta_title' => "Blog",],
+            ['cat_id' => 3, 'lang' => "en", 'name' => "Тews", 'meta_title' => "News",],
+            ['cat_id' => 4, 'lang' => "en", 'name' => "Articles", 'meta_title' => "Articles",],
+            ['cat_id' => 5, 'lang' => "en", 'name' => "Promotions", 'meta_title' => "Promotions",],
+            ['cat_id' => 6, 'lang' => "en", 'name' => "Reviews", 'meta_title' => "Reviews",],
         ]);
 
         Schema::create('units_categories_logs', function (Blueprint $table) {

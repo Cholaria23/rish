@@ -166,8 +166,9 @@ class InitAdminPanel extends Migration
         });
 
         DB::table('form_types')->insert([
-            ['alias' => "feedback", 'name' => "Обратная связь"],
-            ['alias' => "callback", 'name' => "Запрос обр. звонка"],
+            ['alias' => "feedback", 'name' => '{"ru":"\u041e\u0431\u0440\u0430\u0442\u043d\u0430\u044f \u0441\u0432\u044f\u0437\u044c","uk":"\u0417\u0432\u043e\u0440\u043e\u0442\u043d\u0456\u0439 \u0437\u0432\'\u044f\u0437\u043e\u043a"}'],
+            ['alias' => "callback", 'name' => '{"ru":"\u0417\u0430\u043f\u0440\u043e\u0441 \u043e\u0431\u0440\u0430\u0442\u043d\u043e\u0433\u043e \u0437\u0432\u043e\u043d\u043a\u0430","uk":"\u0417\u0430\u043f\u0438\u0442 \u0437\u0432\u043e\u0440\u043e\u0442\u043d\u043e\u0433\u043e \u0434\u0437\u0432\u0456\u043d\u043a\u0430"}'],
+            ['alias' => "review", 'name' => '{"ru":"\u041e\u0442\u0437\u044b\u0432","uk":"\u0412\u0456\u0434\u0433\u0443\u043a"}'],
         ]);
 
         Schema::create('form_types_accounts', function (Blueprint $table){

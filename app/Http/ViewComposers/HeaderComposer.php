@@ -18,6 +18,7 @@ class HeaderComposer {
         $doctors = \Demos\AdminPanel\Unit::with('lang')->where('is_hidden',0)->find(169);
         $useful_information = \Demos\AdminPanel\Unit::with('lang')->where('is_hidden',0)->find(170);
         $virtual_tour = \Demos\AdminPanel\Unit::with('lang')->where('is_hidden',0)->find(178);
+        $training = \Demos\AdminPanel\Unit::with('lang')->where('is_hidden',0)->find(179);
 
         $actions = \Demos\AdminPanel\Cat::with('lang')->where('is_hidden',0)->find(17);
         $offers = \Demos\AdminPanel\Cat::with('lang')->where('is_hidden',0)->find(16);
@@ -73,7 +74,8 @@ class HeaderComposer {
             'corporate_clients' => $corporate_clients,
             'doctors' => $doctors,
             'useful_information' => $useful_information,
-            'virtual_tour' => $virtual_tour,            
+            'virtual_tour' => $virtual_tour,
+            'training' => $training,
         ];
         $view->with('header_data', $header_data);
     }
