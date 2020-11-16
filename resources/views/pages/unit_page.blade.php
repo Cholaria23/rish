@@ -220,6 +220,38 @@
 	            </div>
 	        </section>
 		@endif
+
+		@if($unit->id == 169)
+			<section class="main-section">
+				<div class="container-small">
+					<div class="item-contact-form-wrap">
+						<div class="contact-form-name text-center">
+							@lang('main.title_request_registration_form')
+						</div>
+						<form method="post" class="training_form text-right">
+							<div class="input-wrap">
+								<input class="input-form" type="text" name="name" placeholder="@lang('main.form.name')">
+							</div>
+							<div class="input-wrap">
+								<input class="input-form" type="tel" name="phone" placeholder="@lang('main.form.number_phone')" required>
+							</div>
+							<div class="input-wrap">
+								<input class="input-form" type="email" name="email" placeholder="@lang('main.form.email')" required>
+							</div>
+							<div class="input-wrap">
+								<input class="input-form" type="text" name="specialization" placeholder="@lang('main.form.specialization')" required>
+							</div>
+							<input type="hidden" name="lang" value="{{App::getLocale()}}">
+							<input type="hidden" name="url" value="{{Request::path()}}">
+							<input type="hidden" name="url_name" value="{{isset($page_title) && $page_title != '' ? $page_title : '' }}">
+							<button type="submit" class="btn-green do_training_form">@lang('main.review.send')</button>
+						</form>
+						<div class='form-thanks'>@lang('main.form.form_thanks')</div>
+					</div>
+				</div>
+			</section>
+		@endif
+
 	</div>
 @stop
 @section('scripts')

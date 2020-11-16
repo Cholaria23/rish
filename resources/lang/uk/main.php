@@ -85,6 +85,7 @@ return [
         'choose_specialist' => 'Виберіть фахівця',
         'no_choose_specialist' => 'Фахівця не обраний',
         'company_name' => 'Компанія',
+        'specialization' => 'Спеціалізація',
     ],
     'search_arr' => [
         "services" => "Послуги",
@@ -179,4 +180,6 @@ return [
     "upload_file" => 'Завантажити файл',
     "resume" => 'Резюме',
     "files" => 'Файли',
+    "title_request_registration_form" => 'Залишити заявку на реєстрацію',
+    "training" => 'Навчання',
 ];

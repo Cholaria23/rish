@@ -922,6 +922,38 @@ $(document).ready( function() {
         $(".send_resume_form").submit();
     });
 
+    // training_form
+    $(".do_training_form").click(function(e) {
+        e.stopPropagation();
+        e.preventDefault();
+        $(".training_form").submit();
+    });
+    $(".training_form").validate({
+        submitHandler: function(form) {
+          var csrf_token = $('meta[name="csrf-token"]').attr('content');
+          var formdata = $(form).serialize();
+          $(form)[0].reset();
+          $.ajax({
+            url: routes.postSend,
+            type: 'POST',
+            data: {
+                "_token" : csrf_token,
+                "data": formdata,
+                "subj": "training"
+            },
+            success: function(data) {
+                $(form).hide();
+                $(form).next('.form-thanks').show();
+                function showForm(){
+                    $(form).next('.form-thanks').hide();
+                    $(form).show();
+                }
+                setTimeout( showForm ,5000);
+            }
+          });
+        }
+    });
+
     // for landing
 
     // question a service

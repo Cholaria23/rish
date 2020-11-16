@@ -85,6 +85,7 @@ return [
         'choose_specialist' => 'Выберите специалиста',
         'no_choose_specialist' => 'Специалиста не выбран',
         'company_name' => 'Компания',
+        'specialization' => 'Специализация',
     ],
     'search_arr' => [
         "services" => "Услуги",
@@ -179,4 +180,6 @@ return [
     "upload_file" => 'Загрузить файл',
     "resume" => 'Резюме',
     "files" => 'Файлы',
+    "title_request_registration_form" => 'Оставить заявку на регистрацию',
+    "training" => 'Обучение',
 ];
