@@ -228,6 +228,8 @@ class PageController extends Controller {
             ];
             if($unit->id == 2){
                 $view = 'pages.contact_page';
+            } elseif($unit->id == 178){
+                $view = 'pages.virtual_page';
             } elseif(in_array($unit->cat_id, array_merge(Cat::descendants(2),[2]))){
                 $cat_ids = [];
                 $tmp_rel_cat_ids = [];

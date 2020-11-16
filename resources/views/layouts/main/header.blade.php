@@ -245,6 +245,13 @@
 							</a>
 						</li>
 					@endif
+					@if(isset($header_data['virtual_tour']) && $header_data['virtual_tour'])
+						<li class="header-menu-item mobile">
+							<a class="header-menu-link" href="{{build_unit_route($header_data['virtual_tour'])}}">
+								{{$header_data['virtual_tour']->lang->name}}
+							</a>
+						</li>
+					@endif
 					@if(isset($header_data['answers_questions']) && $header_data['answers_questions'])
 						<li class="header-menu-item mobile">
 							<a class="header-menu-link" href="{{build_unit_route($header_data['answers_questions'])}}">
@@ -356,6 +363,13 @@
 						</span>
 						<div class="header-submenu-wrap">
 							<ul class="header-submenu">
+								@if(isset($header_data['virtual_tour']) && $header_data['virtual_tour'])
+									<li class="header-menu-item">
+										<a class="header-menu-link" href="{{build_unit_route($header_data['virtual_tour'])}}">
+											{{$header_data['virtual_tour']->lang->name}}
+										</a>
+									</li>
+								@endif
 								@if(isset($header_data['answers_questions']) && $header_data['answers_questions'])
 									<li class="header-menu-item">
 										<a class="header-menu-link" href="{{build_unit_route($header_data['answers_questions'])}}">
