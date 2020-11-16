@@ -44,7 +44,7 @@
                                         @endif --}}
                                         <span class="servises-item-count">
                                             <svg>
-    											<use xlink:href="#rishon-icon"></use>
+    											<use xlink:href=""></use>
     										</svg>
                                         </span>
                                         <span class="servises-item-name">
