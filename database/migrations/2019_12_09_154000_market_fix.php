@@ -19,9 +19,10 @@ class MarketFix extends Migration
 
         DB::table('market_goods_rel_types')->insert([
             ['is_undeletable' => 1, 'name' => '{"uk":"\u0421\u0445\u043e\u0436\u0456 \u0442\u043e\u0432\u0430\u0440\u0438","ru":"\u041f\u043e\u0445\u043e\u0436\u0438\u0435 \u0442\u043e\u0432\u0430\u0440\u044b"}'],
-            ['is_undeletable' => 1, 'name' => '{"uk":"\u041f\u043e\u0434\u0430\u0440\u0443\u043d\u043e\u043a","ru":"\u041f\u043e\u0434\u0430\u0440\u043e\u043a"}'],
+            ['is_undeletable' => 1, 'name' => '{"ru":"\u0421\u0432\u044f\u0437\u0430\u043d\u043d\u0430\u044f \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f","uk":"\u041f\u043e\u0432\'\u044f\u0437\u0430\u043d\u0430 \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0456\u044f"}'],
             ['is_undeletable' => 1, 'name' => '{"uk":"\u0414\u043e\u0441\u0442\u0443\u043f\u043d\u0456 \u043a\u043e\u043b\u044c\u043e\u0440\u0438","ru":"\u0414\u043e\u0441\u0442\u0443\u043f\u043d\u044b\u0435 \u0446\u0432\u0435\u0442\u0430"}'],
         ]);
+
 
         Schema::table('market_goods', function(Blueprint $table) {
             $table->integer('length')->default(0);
