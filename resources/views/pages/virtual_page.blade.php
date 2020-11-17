@@ -23,7 +23,7 @@
         </section>
 		@if($unit->lang->long_desc_1 != '')
 			<section class="main-section">
-				<div class="description">
+				<div class="panorama-wrap">
 					{!!$unit->lang->long_desc_1!!}
 				</div>
 			</section>

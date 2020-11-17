@@ -88,6 +88,7 @@ class ServiceController extends Controller {
             $save_data['content'] = (isset($data['content']) && $data['content'] != '') ? $data['content'] : '';
             $save_data['content'] .= (isset($data['date_birth']) && $data['date_birth'] != '') ? "<br>".Lang::get('main.year_birth')." ".$data['date_birth'] : '';
             $save_data['content'] .= (isset($data['date']) && $data['date'] != '') ? "<br>".Lang::get('main.data_text')." ".$data['date'] : '';
+            $save_data['content'] .= (isset($data['specialization']) && $data['specialization'] != '') ? "<br>".Lang::get('main.form.specialization')." ".$data['specialization'] : '';
             $save_data['content'] .= (isset($data['messenger']) && $data['messenger'] != '') ? "<br>".Lang::get('main.consultation_platform')." ".$data['messenger'] : '';
             if(isset($data['unit_id'])){
 				$data['unit'] = Unit::with('lang')->find($data['unit_id']);
