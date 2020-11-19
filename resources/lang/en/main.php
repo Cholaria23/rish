@@ -91,6 +91,7 @@ return [
         'choose_services' => 'Choose a services',
         'question_services' => 'Ask a Question',
         'personal_ranslator' => 'Order the “Personal Translator”',
+        'specialization' => 'Specialization',
     ],
     'search_arr' => [
         "services" => "Services",
@@ -186,4 +187,6 @@ return [
     "upload_file" => 'Upload file',
     "resume" => 'CV',
     "files" => 'Files',
+    "title_request_registration_form" => 'Leave a request for registration',
+    "training" => 'Training',
 ];

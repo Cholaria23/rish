@@ -315,6 +315,13 @@
 							</a>
 						</li>
 					@endif
+					@if(isset($header_data['training']) && $header_data['training'])
+						<li class="header-menu-item mobile">
+							<a class="header-menu-link" href="{{build_unit_route($header_data['training'])}}">
+								{{$header_data['training']->lang->name}}
+							</a>
+						</li>
+					@endif
 					@if(isset($header_data['corporate_clients']) && $header_data['corporate_clients'])
 						<li class="header-menu-item mobile">
 							<a class="header-menu-link" href="{{build_unit_route($header_data['corporate_clients'])}}">
@@ -430,6 +437,13 @@
 									<li class="header-menu-item">
 										<a class="header-menu-link" href="{{build_unit_route($header_data['doctors'])}}">
 											{{$header_data['doctors']->lang->name}}
+										</a>
+									</li>
+								@endif
+								@if(isset($header_data['training']) && $header_data['training'])
+									<li class="header-menu-item">
+										<a class="header-menu-link" href="{{build_unit_route($header_data['training'])}}">
+											{{$header_data['training']->lang->name}}
 										</a>
 									</li>
 								@endif
