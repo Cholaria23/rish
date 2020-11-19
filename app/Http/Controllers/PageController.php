@@ -55,7 +55,7 @@ class PageController extends Controller {
                 })->where('is_hidden',0)->whereRaw('IF (is_period = 1, start < NOW(),  1=1 )')->whereRaw('IF (is_period = 1,  (end > NOW() || end is null),  1=1)')->orderBy('date_publication','desc')->limit(4)->get();
             }
         }
-        
+
         $blog = Unit::with('lang')->whereHas('category', function($query){
             $query->whereIn('cat_id', Cat::descendants(2));
         })->where('is_hidden',0)->whereRaw('IF (is_period = 1, start < NOW(),  1=1 )')->whereRaw('IF (is_period = 1,  (end > NOW() || end is null),  1=1)')->orderBy('date_publication','desc')->limit(4)->get();
@@ -89,6 +89,8 @@ class PageController extends Controller {
             $query->where('cat_id', 6);
         })->where('is_hidden',0)->whereRaw('IF (is_period = 1, start < NOW(),  1=1 )')->whereRaw('IF (is_period = 1,  (end > NOW() || end is null),  1=1)')->orderBy('sort_order','desc')->get();
 
+        $virtual_tour = \Demos\AdminPanel\Unit::with('lang')->where('is_hidden',0)->find(178);
+
         $page_data = [
             'unit' => $unit,
             'blog' => $blog,
@@ -102,6 +104,7 @@ class PageController extends Controller {
             'leads' => $leads,
             'reviews' => $reviews,
             'advantages' => $advantages,
+            'virtual_tour' => $virtual_tour,
             'meta_type' => 'unit'
         ];
         View::share('page_title', $unit->lang->name);
@@ -218,12 +221,16 @@ class PageController extends Controller {
             $rel_types = \Demos\AdminPanel\UnitsRelType::get();
             $news = Unit::with('lang')->where('id','!=',$unit->id)->where('cat_id',$unit->cat_id)->where('is_hidden',0)->orderBy('date_publication','desc')->limit(3)->get();
             $reviews = Unit::with('lang')->where('is_hidden',0)->find(4);
+
+            $virtual_tour = \Demos\AdminPanel\Unit::with('lang')->where('is_hidden',0)->find(178);
+
             $page_data = [
                 'unit' => $unit,
                 'news' => $news,
                 'reviews' => $reviews,
                 'rel_types' => $rel_types,
                 'breadcrumbs' => $breadcrumbs,
+                'virtual_tour' => $virtual_tour,
                 'meta_type' => 'unit'
             ];
             if($unit->id == 2){
@@ -691,12 +698,12 @@ class PageController extends Controller {
     }
 
     public function getCabinet () {
-        
+
         if (Auth::guard('web')->check()) {
             View::share('page_title', Lang::get("cabinet.page_title"));
             $id = Auth::guard('web')->user()->id;
             $user = \Demos\AdminPanel\User::find($id);
- 
+
             $orders_query = Order::orderBy('created_at', 'desc')->with('status', 'goods.lang');
             if($user){
                 $orders_query->where(function($query) use ($user){
@@ -708,26 +715,26 @@ class PageController extends Controller {
                     if ($search_phone != ''){
                         $query->orWhere('phone', 'LIKE', "%".$search_phone."%");
                     }
- 
+
                     $search_phone = preg_replace( '/[^0-9]/', '', "%".$user->phone_2."%");
                     if ($search_phone != ''){
                         $query->orWhere('phone', 'LIKE', "%".$search_phone."%");
                     }
- 
+
                 });
             }
-            $user->orders = $orders_query->get(); 
+            $user->orders = $orders_query->get();
             $page_data = [
                 'user' => $user,
             ];
- 
+
             $view = 'pages.cabinet.cabinet_page';
             return View::make($view, $page_data);
         } else {
             return Redirect::to('./');
         }
- 
- 
+
+
     }
 
     public function calculate_visitors(Unit $unit) {
