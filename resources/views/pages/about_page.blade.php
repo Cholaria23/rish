@@ -37,12 +37,12 @@
 						<div class="virtual-block-info-inner">
 							<div class="virtual-block-info-title">
 								@lang('main.virtual_tour_title')
-								<!-- @lang('main.virtual_tour_title_gallery') -->
+								{{-- @lang('main.virtual_tour_title_gallery') --}}
 							</div>
 							<div class="virtual-block-text text">
 								@lang('main.virtual_tour_text')
 							</div>
-							<a class="btn-arrow" href="/virtual-tour">
+							<a class="btn-arrow" href="{{build_unit_route($virtual_tour)}}">
 								<span class="btn-arrow-text">
 									@lang('main.look')
 								</span>
