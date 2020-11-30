@@ -180,7 +180,7 @@ return [
     'landing' => [
         'footer_social_text' => 'Join us on social networks and follow the news and promotions',
     ],
-    "test_subtitle" => 'Cost 1350 UAH, result the next day',
+    "test_subtitle" => 'Cost 1150 UAH, result the next day',
     "order_package_title" => 'Order a package',
     "order_btn" => 'To order',
     "send_resume" => 'To send a resume',
