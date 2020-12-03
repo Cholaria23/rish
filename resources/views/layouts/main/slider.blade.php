@@ -4,9 +4,9 @@
 			<div class="main-slider">
 				@foreach ($slider->slides as $slide)
 					@if($slide->href_1 != '' && $slide->href_2 == '')
-						<div class="slide-item">
-					@else
 						<a href="{{ $slide->href_1 }}" target="{{ ($slide->is_blank_1 == 1) ? "_blank" : "_self" }}" class="slide-item">
+					@else
+						<div class="slide-item">
 					@endif
 						<div class="slide-item-img-wrap">
 							<div class="slide-item-mask" style="background-color: {{ $slide->mask_color }}; opacity: {{ $slide->mask_opacity / 100 }};">
@@ -30,34 +30,34 @@
 									<button class="btn-slider open-modal-js" data-popup="{{ $slide->data_attr_1 }}">
 										{{ $slide->lang->button_1_caption }}
 									</button>
-								@else
-									@if($slide->href_1 != '' && $slide->href_2 !== '')
-										<div class="btn-arrow-wrap">
-											<a href="{{$slide->href_1}}" target="{{ ($slide->is_blank_1 == 1) ? "_blank" : "_self" }}" class="btn-arrow">
-												<div class="btn-arrow-text">
-													{{ $slide->lang->button_1_caption }}
-												</div>
-											</a>
-											<a href="{{$slide->href_2}}" target="{{ ($slide->is_blank_2 == 1) ? "_blank" : "_self" }}" class="btn-arrow">
-												<div class="btn-arrow-text">
-													{{ $slide->lang->button_2_caption }}
-												</div>
-											</a>
-										</div>
-									@else
-										<span class="btn-arrow">
-											<div class="btn-arrow-text">
-												{{ $slide->lang->button_1_caption }}
-											</div>
+								@endif
+								@if ($slide->href_1 != '' && $slide->href_2 == '')
+									<span href="{{$slide->href_1}}" target="{{ ($slide->is_blank_1 == 1) ? "_blank" : "_self" }}" class="btn-arrow">
+										<span class="btn-arrow-text">
+											{{ $slide->lang->button_1_caption }}
 										</span>
-									@endif
+									</span>
+								@endif
+								@if ($slide->href_1 != '' && $slide->href_2 != '')
+									<div class="btn-arrow-wrap">
+										<a href="{{$slide->href_1}}" target="{{ ($slide->is_blank_1 == 1) ? "_blank" : "_self" }}" class="btn-arrow">
+											<span class="btn-arrow-text">
+												{{ $slide->lang->button_1_caption }}
+											</span>
+										</a>
+										<a href="{{$slide->href_2}}" target="{{ ($slide->is_blank_2 == 1) ? "_blank" : "_self" }}" class="btn-arrow">
+											<span class="btn-arrow-text">
+												{{ $slide->lang->button_2_caption }}
+											</span>
+										</a>
+									</div>
 								@endif
 							</div>
 						</div>
 					@if($slide->href_1 != '' && $slide->href_2 == '')
-						</div>
-					@else
 						</a>
+					@else
+						</div>
 					@endif
 				@endforeach
 			</div>
