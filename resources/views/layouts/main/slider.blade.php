@@ -3,7 +3,11 @@
 		<div class="container">
 			<div class="main-slider">
 				@foreach ($slider->slides as $slide)
-					<a href="{{ $slide->href_1 }}" target="{{ ($slide->is_blank_1 == 1) ? "_blank" : "_self" }}" class="slide-item">
+					@if($slide->href_1 != '')
+						<a href="{{ $slide->href_1 }}" target="{{ ($slide->is_blank_1 == 1) ? "_blank" : "_self" }}" class="slide-item">
+					@else
+						<div class="slide-item">
+					@endif
 						<div class="slide-item-img-wrap">
 							<div class="slide-item-mask" style="background-color: {{ $slide->mask_color }}; opacity: {{ $slide->mask_opacity / 100 }};">
 							</div>
@@ -22,20 +26,31 @@
 							<div class="content-slide-wrap">
 								<div class="slide-title">{!! $slide->lang->title !!}</div>
 								<div class="slide-text text">{!! $slide->lang->text !!}</div>
-								{{-- @if ($slide->data_attr_1 != '')
+								@if ($slide->data_attr_1 != '')
 									<button class="btn-slider open-modal-js" data-popup="{{ $slide->data_attr_1 }}">
 										{{ $slide->lang->button_1_caption }}
 									</button>
-								@elseif ($slide->href_1 != '') --}}
-									<span class="btn-arrow">
+								@elseif ($slide->href_1 != '')
+									<a href="{{$slide->href_1}}" target="{{ ($slide->is_blank_1 == 1) ? "_blank" : "_self" }}" class="btn-arrow">
 										<div class="btn-arrow-text">
 											{{ $slide->lang->button_1_caption }}
 										</div>
-									</span>
-								{{-- @endif --}}
+									</a>
+								@endif
+								@if ($slide->href_2 != '')
+									<a href="{{$slide->href_2}}" target="{{ ($slide->is_blank_2 == 1) ? "_blank" : "_self" }}" class="btn-arrow">
+										<div class="btn-arrow-text">
+											{{ $slide->lang->button_2_caption }}
+										</div>
+									</a>
+								@endif
 							</div>
 						</div>
-					</a>
+					@if($slide->href_1 != '')
+						</a>
+					@else
+						</div>
+					@endif
 				@endforeach
 			</div>
 		</div>
