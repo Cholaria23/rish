@@ -1,3 +1,6 @@
+.mfp-bg {
+    z-index: 2147483648;
+}
 .mfp-close-btn-in .mfp-close {
     top: 10px;
     right: 10px;
@@ -22,8 +25,6 @@
     margin: 0 auto;
     padding: 85px;
     background-color: $white;
-    // background-color: rgba(255, 255, 255, 0.8);
-    // background: url(/img/light-bg.png) center center/cover no-repeat;
     @media (max-width: 768px) {
         padding: 50px;
     }
