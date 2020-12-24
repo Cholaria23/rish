@@ -122,15 +122,21 @@ $(document).ready(function() {
 
     // swipe for magnific-popup
     if($('.popup-gallery').length) {
-        $("body").swipe({
-            swipeLeft: function(event, direction, distance, duration, fingerCount) {
-                $(".mfp-arrow-right").magnificPopup("next");
-            },
-            swipeRight: function() {
-                $(".mfp-arrow-left").magnificPopup("prev");
-            },
-            threshold: 50
-        });
+        // листание галерее по свайпу
+        (function() {
+            $(".popup-gallery a").click(function(e) {
+              setTimeout(function() {
+                $(".mfp-gallery").swipe({
+                  swipeLeft: function(event, direction, distance, duration, fingerCount) {
+                    $(".mfp-gallery .mfp-arrow-right").magnificPopup("next");
+                  },
+                  swipeRight: function(event, direction, distance, duration, fingerCount) {
+                    $(".mfp-gallery .mfp-arrow-left").magnificPopup("prev");
+                  },
+                });
+              }, 500);
+            });
+          }).call(this);
     }
 
 
@@ -224,6 +230,12 @@ $(document).ready(function() {
                     navigateByImgClick: true,
                     preload: [0,1]
                 },
+                callbacks: {
+                    close: function() {
+                        // удаление swipe при закрытии галереи
+                        $(".mfp-gallery").swipe('destroy');
+                    }
+                }
             });
         });
     }
