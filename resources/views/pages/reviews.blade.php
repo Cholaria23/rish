@@ -57,23 +57,12 @@
 											</div>
 										</div>
 									@endif
-									{{-- @if ($lead_item->files->count())
+									@if ($lead_item->files->count())
 										<div class="reviews-img-wrap popup-gallery">
 											@foreach ($lead_item->files as $file_item)
-												<div class="reviews-img-item">
-													<a class="reviews-img-link" href="{{asset('storage/leads/files/'.$file_item->url)}}">
-														<img class="reviews-img" src="{{asset('storage/leads/files/'.$file_item->url)}}">
-													</a>
-												</div>
-											@endforeach
-										</div>
-									@endif --}}
-									@if ($lead_item->files->count())
-										<div class="reviews-img-wrap">
-											@foreach ($lead_item->files as $file_item)
-												<div class="reviews-img-item">
+												<a class="reviews-img-item" href="{{asset('storage/leads/files/'.$file_item->url)}}">
 													<img class="reviews-img" src="{{asset('storage/leads/files/'.$file_item->url)}}">
-												</div>
+												</a>
 											@endforeach
 										</div>
 									@endif
