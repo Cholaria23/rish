@@ -13,11 +13,6 @@
         z-index: 200001 !important;
     }
 }
-.mfp-wrap {
-    @media (max-width: 1024px) {
-        z-index: 2147483647 !important;
-    }
-}
 .main {
     flex: 1 0 auto;
 }
