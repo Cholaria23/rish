@@ -58,7 +58,12 @@
 	   </div>
 	   <div class="appointment-online-btn-wrap">
 		   @if(isset($unit) && in_array($unit->id,[1]) || isset($cat) && in_array($cat->id,[13]))
-			   <a class="popup-js appointment-online-popup-btn appointment_test-js" href="#appointment_test">
+			   <a class="popup-js appointment-online-popup-btn" href="#appointment_ultrasound">
+				   <span>
+					   @lang('main.appointment_ultrasound')
+				   </span>
+			   </a>
+			   <a class="popup-js appointment-online-popup-btn" href="#appointment_test">
 				   <span>
 					   @lang('main.test')
 				   </span>

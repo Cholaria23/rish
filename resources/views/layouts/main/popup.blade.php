@@ -545,6 +545,35 @@
 @endif
 
 
+<div class="mfp-hide popup-wrap mini" id="appointment_ultrasound">
+	<div class="popup-name-wrap">
+		<div class="popup-name">
+			@lang('main.appointment_ultrasound')
+		</div>
+	</div>
+	<form method="post" class="appointment_ultrasound">
+        <div class="input-wrap">
+            <input class="input-form" type="tel" name="phone" placeholder="@lang('main.form.phone')*"  required>
+        </div>
+        <div class="input-wrap">
+            <input class="input-form" type="text" name="name" placeholder="@lang('main.form.name')">
+        </div>
+		<div class="input-wrap">
+            <input class="input-form datepicker-after-js" type="text" name="date" placeholder="@lang('main.appointment_ultrasound_data')">
+        </div>
+        <input type="hidden" name="url" value="{{Request::path()}}">
+        <input type="hidden" name="url_name" value="{{isset($page_title) && $page_title != '' ? $page_title : '' }}">
+        <input type="hidden" name="title" value="@lang('main.appointment_ultrasound')">
+        <input type="hidden" name="lang" value="{{App::getLocale()}}">
+        <div class="popup-info-text">
+            @lang('main.form.required_text')
+        </div>
+        <button type="submit" class="btn-green do_appointment_ultrasound">@lang('main.btn.sign_up')</button>
+    </form>
+   <div class='form-thanks'>@lang('main.form.form_thanks')</div>
+</div>
+
+
 <div class="mfp-hide popup-wrap mini" id="appointment_test">
 	<div class="popup-name-wrap">
 		<div class="popup-name">
