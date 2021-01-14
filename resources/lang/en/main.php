@@ -1,5 +1,7 @@
 <?php
 return [
+    'appointment_ultrasound' => "Appointment for ultrasound",
+    'appointment_ultrasound_data' => "Desired recording date",
     'main_page' => "Home",
     'edit' => "Edit",
     'page' => "page",

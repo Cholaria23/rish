@@ -683,6 +683,46 @@ $(document).ready( function() {
       });
     });
 
+    // appointment ultrasound
+
+    $(".do_appointment_ultrasound").click(function(e) {
+        e.stopPropagation();
+        e.preventDefault();
+        var formVal = $(this).closest('.appointment_ultrasound');
+        formAppointmentUltrasound(formVal);
+        formVal.submit();
+    });
+    function formAppointmentUltrasound(form) {
+        form.validate({
+            submitHandler: function(form) {
+              var csrf_token = $('meta[name="csrf-token"]').attr('content');
+              var formdata = $(form).serialize();
+              $(form)[0].reset();
+              $.ajax({
+                url: routes.postSend,
+                type: 'POST',
+                data: {
+                    "_token" : csrf_token,
+                    "data": formdata,
+                    "subj": "ultrasound"
+                },
+                success: function(data) {
+                    $(form).hide();
+                    $(form).next('.form-thanks').show();
+                    function hidePopup(){
+                        $.magnificPopup.close();
+                    }
+                    function showForm(){
+                        $(form).next('.form-thanks').hide();
+                        $(form).show();
+                    }
+                    setTimeout( hidePopup ,5000);
+                    setTimeout( showForm ,5000);
+                }
+              });
+            }
+        });
+    };
 
     // Registration for Test
     $(".do_appointment_test").click(function(e) {

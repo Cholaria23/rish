@@ -1,5 +1,7 @@
 <?php
 return [
+    'appointment_ultrasound' => "Запись на УЗИ",
+    'appointment_ultrasound_data' => "Желамая дата записи",
     'main_page' => "Главная",
     'edit' => "Редактировать",
     'page' => "страница",
