@@ -9,7 +9,7 @@
         <meta property="og:description" content="{{ htmlspecialchars($unit->lang->meta_desc) }} {{Request::has('page') ? Lang::get('main.page').' - '.Request::get('page') : ''}}" />
         <meta property="og:image" content="{{ (isset($unit) && $unit->img_1 != '') ? unit_img('small', $unit->img_1) : asset('storage/'.app('seo')['logo_img_4']) }}" />
         @php
-            if(isset($unit) && $unit->img_1 != '' && file_exists(unit_img('small', $unit->img_1))){
+            if(isset($unit) && $unit->img_1 != ''){
                 $img_size = getimagesize(unit_img('small', $unit->img_1));
             }else{
                 if(file_exists('storage/'.app('seo')['logo_img_4'])){
@@ -27,7 +27,7 @@
         <meta property="og:description" content="{{ htmlspecialchars($cat->lang->meta_desc) }} {{Request::has('page') ? Lang::get('main.page').' - '.Request::get('page') : ''}}" />
         <meta property="og:image" content="{{ (isset($cat) && $cat->cover_1_img != '') ? cat_img('small', $cat->cover_1_img) : asset('storage/'.app('seo')['logo_img_4']) }}" />
         @php
-            if(isset($cat) && $cat->cover_1_img != ''  && file_exists(cat_img('small', $cat->cover_1_img))){
+            if(isset($cat) && $cat->cover_1_img != ''){
                 $img_size = getimagesize(cat_img('small', $cat->cover_1_img));
             }else{
                 if(file_exists('storage/'.app('seo')['logo_img_4'])){
@@ -45,7 +45,7 @@
         <meta property="og:description" content="{{ htmlspecialchars($cat->lang->meta_desc) }} {{Request::has('page') ? Lang::get('main.page').' - '.Request::get('page') : ''}}" />
         <meta property="og:image" content="{{ (isset($cat) && $cat->cover_1_img != '') ? market_cat_img('small', $cat->cover_1_img) : asset('storage/'.app('seo')['logo_img_4']) }}" />
         @php
-            if(isset($cat) && $cat->cover_1_img != ''  && file_exists(market_cat_img('small', $cat->cover_1_img))){
+            if(isset($cat) && $cat->cover_1_img != ''){
                 $img_size = getimagesize(market_cat_img('small', $cat->cover_1_img));
             }else{
                 if(file_exists('storage/'.app('seo')['logo_img_4'])){
@@ -63,7 +63,7 @@
         <meta property="og:description" content="{{ htmlspecialchars($good->lang->meta_desc) }}" />
         <meta property="og:image" content="{{ (isset($good) && $good->img_1 != '') ? good_img('small', $good->img_1) : asset('storage/'.app('seo')['logo_img_4']) }}" />
         @php
-            if(isset($good) && $good->img_1 != ''  && file_exists(good_img('small', $good->img_1))){
+            if(isset($good) && $good->img_1 != '' ){
                 $img_size = getimagesize(good_img('small', $good->img_1));
             }else{
                 if(file_exists('storage/'.app('seo')['logo_img_4'])){
@@ -81,7 +81,7 @@
         <meta property="og:description" content="{{ htmlspecialchars($brand->lang->meta_desc) }}" />
         <meta property="og:image" content="{{ (isset($brand) && $brand->logo != '') ? market_brand_logo($brand->logo) : asset('storage/'.app('seo')['logo_img_4']) }}" />
         @php
-            if(isset($brand) && $brand->logo != ''  && file_exists(market_brand_logo($brand->logo))){
+            if(isset($brand) && $brand->logo != ''){
                 $img_size = getimagesize(market_brand_logo($brand->logo));
             }else{
                 if(file_exists('storage/'.app('seo')['logo_img_4'])){
@@ -99,7 +99,7 @@
         <meta property="og:description" content="{{ htmlspecialchars($expert->lang->meta_desc) }} {{Request::has('page') ? Lang::get('main.page').' - '.Request::get('page') : ''}}" />
         <meta property="og:image" content="{{ (isset($expert) && $expert->img_1 != '') ? specialist_cover('small', $expert->img_1) : asset('storage/'.app('seo')['logo_img_4']) }}" />
         @php
-            if(isset($expert) && $expert->img_1 != '' && file_exists(specialist_cover('small', $expert->img_1))){
+            if(isset($expert) && $expert->img_1 != '' ){
                 $img_size = getimagesize(specialist_cover('small', $expert->img_1));
             }else{
                 if(file_exists('storage/'.app('seo')['logo_img_4'])){
