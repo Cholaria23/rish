@@ -150,7 +150,7 @@ function() {
         if (Demos\AdminPanel\Cat::where('alias', '=', $slug)->count() > 0) {
             $controller = App::make('App\Http\Controllers\PageController');
             return $controller->showCat($slug);
-        } elseif (Demos\AdminPanel\Unit::where('alias', '=', $slug)->count() > 0 ) {
+        } elseif (Demos\AdminPanel\Unit::where('alias', '=', $slug)->count() > 0 && in_array(Demos\AdminPanel\Unit::where('alias', '=', $slug)->first()->category->alias, ['html'])) {
             $controller = App::make('App\Http\Controllers\PageController');
             return $controller->showUnit($slug);
         } elseif (class_exists(\Demos\Market\MarketServiceProvider::class) && Demos\Market\MarketCat::where('alias', '=', $slug)->count() > 0 ) {
