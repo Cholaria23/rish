@@ -117,7 +117,7 @@ function() {
     if(class_exists(\Demos\Market\MarketServiceProvider::class) && app('market_params')->xml_rule != ''){
         $slash_check = substr(app('market_params')->xml_rule, -1) != '/'? '/':'';
         Route::get(app('market_params')->xml_rule.$slash_check.'{slug}', function($slug){
-            if (Demos\Market\MarketCat::where('alias', '=', $slug)->count() > 0 ) {
+            if (Demos\Market\MarketCat::where('alias', '=', $slug)->count() > 0 && Demos\Market\MarketCat::where('alias', '=', $slug)->first()->id != 2) {
                 $controller = App::make('App\Http\Controllers\ShopController');
                 return $controller->showCat($slug);
             } else {
@@ -153,7 +153,7 @@ function() {
         } elseif (Demos\AdminPanel\Unit::where('alias', '=', $slug)->count() > 0 && in_array(Demos\AdminPanel\Unit::where('alias', '=', $slug)->first()->category->alias, ['html'])) {
             $controller = App::make('App\Http\Controllers\PageController');
             return $controller->showUnit($slug);
-        } elseif (class_exists(\Demos\Market\MarketServiceProvider::class) && Demos\Market\MarketCat::where('alias', '=', $slug)->count() > 0 ) {
+        } elseif (class_exists(\Demos\Market\MarketServiceProvider::class) && Demos\Market\MarketCat::where('alias', '=', $slug)->count() > 0  && Demos\Market\MarketCat::where('alias', '=', $slug)->first()->id == 2) {
             $controller = App::make('App\Http\Controllers\ShopController');
             return $controller->showCat($slug);
         // }  elseif (class_exists(\Demos\Market\MarketServiceProvider::class) && Demos\Market\Good::where('alias', '=', $slug)->count() > 0 ) {
