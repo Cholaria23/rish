@@ -156,9 +156,9 @@ function() {
         } elseif (class_exists(\Demos\Market\MarketServiceProvider::class) && Demos\Market\MarketCat::where('alias', '=', $slug)->count() > 0 ) {
             $controller = App::make('App\Http\Controllers\ShopController');
             return $controller->showCat($slug);
-        }  elseif (class_exists(\Demos\Market\MarketServiceProvider::class) && Demos\Market\Good::where('alias', '=', $slug)->count() > 0 ) {
-            $controller = App::make('App\Http\Controllers\ShopController');
-            return $controller->showGood($slug);
+        // }  elseif (class_exists(\Demos\Market\MarketServiceProvider::class) && Demos\Market\Good::where('alias', '=', $slug)->count() > 0 ) {
+        //     $controller = App::make('App\Http\Controllers\ShopController');
+        //     return $controller->showGood($slug);
         } else {
             return abort('404');
         }
