@@ -5,7 +5,7 @@ return [
     'main_page' => "Home",
     'edit' => "Edit",
     'page' => "page",
-    'footer_copyright' => "© Rishon Clinic, :date. All rights reserved.",
+    'footer_copyright' => "© Rishon Clinic, 2020 - :date. All rights reserved.",
     'main_services' => "Directions",
     'main_services_text' => "In our medical center there are more than 20 directions of consulting by highly professional specialists, cutting-edge surgery departments, family medicine, cutting-edge ultrasound diagnostics and computed tomography, a dental department for children and adults.",
     'all_services' => "All directions",
