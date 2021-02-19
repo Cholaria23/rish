@@ -2,145 +2,271 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://rishon.com.ua/ru</loc>
-    <lastmod>2020-10-09</lastmod>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk</loc>
-    <lastmod>2020-10-09</lastmod>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://rishon.com.ua/en</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/obuchenie</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/obuchenie</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/obuchenie</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/virtual-tour</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/virtual-tour</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/virtual-tour</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/vracham</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/vracham</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/vracham</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://rishon.com.ua/ru/korporativnym-klientam</loc>
-    <lastmod>2020-10-09</lastmod>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/korporativnym-klientam</loc>
-    <lastmod>2020-10-09</lastmod>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/korporativnym-klientam</loc>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/expert</loc>
-    <lastmod>2020-10-09</lastmod>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/expert</loc>
-    <lastmod>2020-10-09</lastmod>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/expert</loc>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/chekap</loc>
-    <lastmod>2020-10-09</lastmod>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/chekap</loc>
-    <lastmod>2020-10-09</lastmod>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/chekap</loc>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/kontakty</loc>
-    <lastmod>2020-10-09</lastmod>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/kontakty</loc>
-    <lastmod>2020-10-09</lastmod>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/kontakty</loc>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/kak-dobratysya</loc>
-    <lastmod>2020-10-09</lastmod>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/kak-dobratysya</loc>
-    <lastmod>2020-10-09</lastmod>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/kak-dobratysya</loc>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/about-us</loc>
-    <lastmod>2020-10-09</lastmod>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/about-us</loc>
-    <lastmod>2020-10-09</lastmod>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/about-us</loc>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/otvety-na-voprosy</loc>
-    <lastmod>2020-10-09</lastmod>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/otvety-na-voprosy</loc>
-    <lastmod>2020-10-09</lastmod>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/otvety-na-voprosy</loc>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/otzyvy</loc>
-    <lastmod>2020-10-09</lastmod>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/otzyvy</loc>
-    <lastmod>2020-10-09</lastmod>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/otzyvy</loc>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/insurance</loc>
-    <lastmod>2020-10-09</lastmod>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/insurance</loc>
-    <lastmod>2020-10-09</lastmod>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/insurance</loc>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/zakazaty-onlayn-konsulytaciyu</loc>
-    <lastmod>2020-10-05</lastmod>
+    <lastmod>2021-01-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/zakazaty-onlayn-konsulytaciyu</loc>
-    <lastmod>2020-10-05</lastmod>
+    <lastmod>2021-01-31</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/zakazaty-onlayn-konsulytaciyu</loc>
+    <lastmod>2021-01-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/galereya</loc>
-    <lastmod>2020-10-08</lastmod>
+    <lastmod>2021-02-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/galereya</loc>
-    <lastmod>2020-10-08</lastmod>
+    <lastmod>2021-02-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/galereya</loc>
+    <lastmod>2021-02-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
@@ -157,1166 +283,2492 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://rishon.com.ua/ru/hirurgiya</loc>
+    <loc>https://rishon.com.ua/en/uslugi</loc>
     <lastmod>2020-09-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/hirurgiya</loc>
+    <lastmod>2020-10-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/hirurgiya</loc>
-    <lastmod>2020-09-30</lastmod>
+    <lastmod>2020-10-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://rishon.com.ua/en/hirurgiya</loc>
+    <lastmod>2020-10-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/hirurgiya/zagalyna-hirurgiya</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/hirurgiya/zagalyna-hirurgiya</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/hirurgiya/zagalyna-hirurgiya</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://rishon.com.ua/ru/hirurgiya/operacii-po-urologii</loc>
-    <lastmod>2020-10-09</lastmod>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/hirurgiya/operacii-po-urologii</loc>
-    <lastmod>2020-10-09</lastmod>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/hirurgiya/operacii-po-urologii</loc>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/hirurgiya/mammologiya-onkohirurgiya</loc>
-    <lastmod>2020-10-01</lastmod>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/hirurgiya/mammologiya-onkohirurgiya</loc>
-    <lastmod>2020-10-01</lastmod>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rishon.com.ua/ru/hirurgiya/plasticheskie-operacii</loc>
-    <lastmod>2020-10-05</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://rishon.com.ua/uk/hirurgiya/plasticheskie-operacii</loc>
-    <lastmod>2020-10-05</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://rishon.com.ua/ru/hirurgiya/operacii-na-schitovidnoy-gheleze</loc>
-    <lastmod>2020-10-02</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://rishon.com.ua/uk/hirurgiya/operacii-na-schitovidnoy-gheleze</loc>
-    <lastmod>2020-10-02</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://rishon.com.ua/ru/hirurgiya/operacii-na-paraschitovidnyh-ghelezah</loc>
-    <lastmod>2020-10-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://rishon.com.ua/uk/hirurgiya/operacii-na-paraschitovidnyh-ghelezah</loc>
-    <lastmod>2020-10-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://rishon.com.ua/ru/hirurgiya/operacii-v-oblasti-proktologii</loc>
-    <lastmod>2020-10-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://rishon.com.ua/uk/hirurgiya/operacii-v-oblasti-proktologii</loc>
-    <lastmod>2020-10-01</lastmod>
+    <loc>https://rishon.com.ua/en/hirurgiya/mammologiya-onkohirurgiya</loc>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/hirurgiya/ginekologicheskie-operacii</loc>
-    <lastmod>2020-10-05</lastmod>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/hirurgiya/ginekologicheskie-operacii</loc>
-    <lastmod>2020-10-05</lastmod>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rishon.com.ua/ru/hirurgiya/otorinolaringologicheskie-operacii</loc>
-    <lastmod>2020-09-28</lastmod>
+    <loc>https://rishon.com.ua/en/hirurgiya/ginekologicheskie-operacii</loc>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rishon.com.ua/uk/hirurgiya/otorinolaringologicheskie-operacii</loc>
-    <lastmod>2020-09-28</lastmod>
+    <loc>https://rishon.com.ua/ru/hirurgiya/hirurgicheskie-operacii-na-glazah-st</loc>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rishon.com.ua/ru/hirurgiya/hirurgiya-stopy-t</loc>
-    <lastmod>2020-10-05</lastmod>
+    <loc>https://rishon.com.ua/uk/hirurgiya/hirurgicheskie-operacii-na-glazah-st</loc>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rishon.com.ua/uk/hirurgiya/hirurgiya-stopy-t</loc>
-    <lastmod>2020-10-05</lastmod>
+    <loc>https://rishon.com.ua/en/hirurgiya/hirurgicheskie-operacii-na-glazah-st</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/hirurgiya/rinoplastika</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/hirurgiya/rinoplastika</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/hirurgiya/rinoplastika</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/hirurgiya/plasticheskie-operacii</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/hirurgiya/plasticheskie-operacii</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/hirurgiya/plasticheskie-operacii</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/hirurgiya/operacii-na-schitovidnoy-gheleze</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/hirurgiya/operacii-na-schitovidnoy-gheleze</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/hirurgiya/operacii-na-schitovidnoy-gheleze</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/hirurgiya/dityacha-hirurgiya</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/hirurgiya/dityacha-hirurgiya</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/hirurgiya/dityacha-hirurgiya</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/hirurgiya/operacii-v-oblasti-proktologii</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/hirurgiya/operacii-v-oblasti-proktologii</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/hirurgiya/operacii-v-oblasti-proktologii</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/hirurgiya/ortopedichni-operacii</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/hirurgiya/ortopedichni-operacii</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/hirurgiya/ortopedichni-operacii</loc>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/ortopediya</loc>
-    <lastmod>2020-09-30</lastmod>
+    <lastmod>2020-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/ortopediya</loc>
-    <lastmod>2020-09-30</lastmod>
+    <lastmod>2020-11-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/ortopediya</loc>
+    <lastmod>2020-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/stomatologiya</loc>
-    <lastmod>2020-09-30</lastmod>
+    <lastmod>2020-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/stomatologiya</loc>
-    <lastmod>2020-09-30</lastmod>
+    <lastmod>2020-11-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/stomatologiya</loc>
+    <lastmod>2020-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/stomatologiya/endodontiya</loc>
-    <lastmod>2020-10-08</lastmod>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/stomatologiya/endodontiya</loc>
-    <lastmod>2020-10-08</lastmod>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/stomatologiya/endodontiya</loc>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/stomatologiya/plombirovanie</loc>
-    <lastmod>2020-10-09</lastmod>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/stomatologiya/plombirovanie</loc>
-    <lastmod>2020-10-09</lastmod>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/stomatologiya/plombirovanie</loc>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/stomatologiya/ortodontiya</loc>
-    <lastmod>2020-10-08</lastmod>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/stomatologiya/ortodontiya</loc>
-    <lastmod>2020-10-08</lastmod>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/stomatologiya/ortodontiya</loc>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/semeynyy-doktor</loc>
-    <lastmod>2020-09-30</lastmod>
+    <lastmod>2020-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/semeynyy-doktor</loc>
-    <lastmod>2020-09-30</lastmod>
+    <lastmod>2020-11-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/semeynyy-doktor</loc>
+    <lastmod>2020-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/ginekologiya</loc>
-    <lastmod>2020-09-30</lastmod>
+    <lastmod>2020-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/ginekologiya</loc>
-    <lastmod>2020-09-30</lastmod>
+    <lastmod>2020-11-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/ginekologiya</loc>
+    <lastmod>2020-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/ginekologiya/esteticheskaya-ginekologiya-ab</loc>
-    <lastmod>2020-10-08</lastmod>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/ginekologiya/esteticheskaya-ginekologiya-ab</loc>
-    <lastmod>2020-10-08</lastmod>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/ginekologiya/esteticheskaya-ginekologiya-ab</loc>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/ginekologiya/udalenie-koghnogo-kapyushona-klitora</loc>
-    <lastmod>2020-10-08</lastmod>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/ginekologiya/udalenie-koghnogo-kapyushona-klitora</loc>
-    <lastmod>2020-10-08</lastmod>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/ginekologiya/udalenie-koghnogo-kapyushona-klitora</loc>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/ginekologiya/labioplastika-eu</loc>
-    <lastmod>2020-10-08</lastmod>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/ginekologiya/labioplastika-eu</loc>
-    <lastmod>2020-10-08</lastmod>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/ginekologiya/labioplastika-eu</loc>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/ginekologiya/gimenoplastika</loc>
-    <lastmod>2020-10-08</lastmod>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/ginekologiya/gimenoplastika</loc>
-    <lastmod>2020-10-08</lastmod>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/ginekologiya/gimenoplastika</loc>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/urologiya</loc>
-    <lastmod>2020-09-30</lastmod>
+    <lastmod>2020-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/urologiya</loc>
-    <lastmod>2020-09-30</lastmod>
+    <lastmod>2020-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://rishon.com.ua/ru/esteticheskaya-ginekologiya</loc>
-    <lastmod>2020-09-30</lastmod>
+    <loc>https://rishon.com.ua/en/urologiya</loc>
+    <lastmod>2020-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://rishon.com.ua/uk/esteticheskaya-ginekologiya</loc>
-    <lastmod>2020-09-30</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://rishon.com.ua/ru/esteticheskaya-ginekologiya/labioplastika</loc>
-    <lastmod>2020-10-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://rishon.com.ua/uk/esteticheskaya-ginekologiya/labioplastika</loc>
-    <lastmod>2020-10-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/nevrologiya</loc>
-    <lastmod>2020-09-30</lastmod>
+    <lastmod>2020-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/nevrologiya</loc>
-    <lastmod>2020-09-30</lastmod>
+    <lastmod>2020-11-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/nevrologiya</loc>
+    <lastmod>2020-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/dermatologiya</loc>
-    <lastmod>2020-09-30</lastmod>
+    <lastmod>2020-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/dermatologiya</loc>
-    <lastmod>2020-09-30</lastmod>
+    <lastmod>2020-11-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/dermatologiya</loc>
+    <lastmod>2020-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/kardiologiya</loc>
-    <lastmod>2020-09-30</lastmod>
+    <lastmod>2020-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/kardiologiya</loc>
-    <lastmod>2020-09-30</lastmod>
+    <lastmod>2020-11-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/kardiologiya</loc>
+    <lastmod>2020-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/oftalymologiya</loc>
-    <lastmod>2020-09-30</lastmod>
+    <lastmod>2020-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/oftalymologiya</loc>
-    <lastmod>2020-09-30</lastmod>
+    <lastmod>2020-11-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/oftalymologiya</loc>
+    <lastmod>2020-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/otolaringologiya</loc>
-    <lastmod>2020-09-30</lastmod>
+    <lastmod>2020-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/otolaringologiya</loc>
-    <lastmod>2020-09-30</lastmod>
+    <lastmod>2020-11-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/otolaringologiya</loc>
+    <lastmod>2020-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/terapiya</loc>
-    <lastmod>2020-09-30</lastmod>
+    <lastmod>2020-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/terapiya</loc>
-    <lastmod>2020-09-30</lastmod>
+    <lastmod>2020-11-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/terapiya</loc>
+    <lastmod>2020-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/gastroenterologiya</loc>
-    <lastmod>2020-09-30</lastmod>
+    <lastmod>2020-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/gastroenterologiya</loc>
-    <lastmod>2020-09-30</lastmod>
+    <lastmod>2020-11-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/gastroenterologiya</loc>
+    <lastmod>2020-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/proktologiya</loc>
-    <lastmod>2020-09-30</lastmod>
+    <lastmod>2020-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/proktologiya</loc>
-    <lastmod>2020-09-30</lastmod>
+    <lastmod>2020-11-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/proktologiya</loc>
+    <lastmod>2020-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/allergologiya</loc>
-    <lastmod>2020-09-30</lastmod>
+    <lastmod>2020-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/allergologiya</loc>
-    <lastmod>2020-09-30</lastmod>
+    <lastmod>2020-11-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/allergologiya</loc>
+    <lastmod>2020-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/endokrinologiya</loc>
-    <lastmod>2020-09-30</lastmod>
+    <lastmod>2020-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/endokrinologiya</loc>
-    <lastmod>2020-09-30</lastmod>
+    <lastmod>2020-11-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/endokrinologiya</loc>
+    <lastmod>2020-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/pulymonologiya</loc>
-    <lastmod>2020-09-30</lastmod>
+    <lastmod>2020-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/pulymonologiya</loc>
-    <lastmod>2020-09-30</lastmod>
+    <lastmod>2020-11-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/pulymonologiya</loc>
+    <lastmod>2020-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/vakcinaciya</loc>
-    <lastmod>2020-09-30</lastmod>
+    <lastmod>2020-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/vakcinaciya</loc>
-    <lastmod>2020-09-30</lastmod>
+    <lastmod>2020-11-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/vakcinaciya</loc>
+    <lastmod>2020-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/mammologiya</loc>
-    <lastmod>2020-09-30</lastmod>
+    <lastmod>2020-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/mammologiya</loc>
-    <lastmod>2020-09-30</lastmod>
+    <lastmod>2020-11-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/mammologiya</loc>
+    <lastmod>2020-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/nefrologiya</loc>
-    <lastmod>2020-09-30</lastmod>
+    <lastmod>2020-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/nefrologiya</loc>
-    <lastmod>2020-09-30</lastmod>
+    <lastmod>2020-11-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/nefrologiya</loc>
+    <lastmod>2020-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/vyzov-na-dom</loc>
-    <lastmod>2020-09-30</lastmod>
+    <lastmod>2020-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/vyzov-na-dom</loc>
-    <lastmod>2020-09-30</lastmod>
+    <lastmod>2020-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://rishon.com.ua/ru/vyzov-na-dom/medsestra-na-domu</loc>
-    <lastmod>2020-10-08</lastmod>
+    <loc>https://rishon.com.ua/en/vyzov-na-dom</loc>
+    <lastmod>2020-11-09</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://rishon.com.ua/uk/vyzov-na-dom/medsestra-na-domu</loc>
-    <lastmod>2020-10-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/pediatriya</loc>
-    <lastmod>2020-09-30</lastmod>
+    <lastmod>2020-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/pediatriya</loc>
-    <lastmod>2020-09-30</lastmod>
+    <lastmod>2020-11-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/pediatriya</loc>
+    <lastmod>2020-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/pediatriya/detskiy-urolog</loc>
-    <lastmod>2020-10-08</lastmod>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/pediatriya/detskiy-urolog</loc>
-    <lastmod>2020-10-08</lastmod>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/pediatriya/detskiy-urolog</loc>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/pediatriya/kompyyuternaya-tomografiya-kt-dlya-detey</loc>
-    <lastmod>2020-10-09</lastmod>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/pediatriya/kompyyuternaya-tomografiya-kt-dlya-detey</loc>
-    <lastmod>2020-10-09</lastmod>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/pediatriya/kompyyuternaya-tomografiya-kt-dlya-detey</loc>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/pediatriya/detskaya-stomatologiya</loc>
-    <lastmod>2020-10-09</lastmod>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/pediatriya/detskaya-stomatologiya</loc>
-    <lastmod>2020-10-09</lastmod>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/pediatriya/detskaya-stomatologiya</loc>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/diagnostika</loc>
-    <lastmod>2020-09-30</lastmod>
+    <lastmod>2020-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/diagnostika</loc>
-    <lastmod>2020-09-30</lastmod>
+    <lastmod>2020-11-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/diagnostika</loc>
+    <lastmod>2020-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/diagnostika/uzi</loc>
-    <lastmod>2020-10-09</lastmod>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/diagnostika/uzi</loc>
-    <lastmod>2020-10-09</lastmod>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/diagnostika/uzi</loc>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/diagnostika/endoskopiya</loc>
-    <lastmod>2020-10-09</lastmod>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/diagnostika/endoskopiya</loc>
-    <lastmod>2020-10-09</lastmod>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/diagnostika/endoskopiya</loc>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/diagnostika/rentgen</loc>
-    <lastmod>2020-10-09</lastmod>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/diagnostika/rentgen</loc>
-    <lastmod>2020-10-09</lastmod>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/diagnostika/rentgen</loc>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/diagnostika/biopsiya</loc>
-    <lastmod>2020-10-09</lastmod>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/diagnostika/biopsiya</loc>
-    <lastmod>2020-10-09</lastmod>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/diagnostika/biopsiya</loc>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/diagnostika/kompyyuternaya-tomografiya-kt</loc>
-    <lastmod>2020-10-09</lastmod>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/diagnostika/kompyyuternaya-tomografiya-kt</loc>
-    <lastmod>2020-10-09</lastmod>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/diagnostika/kompyyuternaya-tomografiya-kt</loc>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/diagnostika/analizy</loc>
-    <lastmod>2020-10-09</lastmod>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/diagnostika/analizy</loc>
-    <lastmod>2020-10-09</lastmod>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/diagnostika/analizy</loc>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/oborudovanie</loc>
-    <lastmod>2020-09-22</lastmod>
+    <lastmod>2020-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/oborudovanie</loc>
-    <lastmod>2020-09-22</lastmod>
+    <lastmod>2020-11-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/oborudovanie</loc>
+    <lastmod>2020-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/oborudovanie/tomograf-optopol-revo-nx</loc>
-    <lastmod>2020-10-08</lastmod>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/oborudovanie/tomograf-optopol-revo-nx</loc>
-    <lastmod>2020-10-08</lastmod>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/oborudovanie/tomograf-optopol-revo-nx</loc>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/oborudovanie/elektrokardiograf-beneheart-r3</loc>
-    <lastmod>2020-10-08</lastmod>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/oborudovanie/elektrokardiograf-beneheart-r3</loc>
-    <lastmod>2020-10-08</lastmod>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/oborudovanie/elektrokardiograf-beneheart-r3</loc>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/oborudovanie/apparat-uzi-siemens-acuson-redwood</loc>
-    <lastmod>2020-10-08</lastmod>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/oborudovanie/apparat-uzi-siemens-acuson-redwood</loc>
-    <lastmod>2020-10-08</lastmod>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/oborudovanie/apparat-uzi-siemens-acuson-redwood</loc>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/oborudovanie/rentgen-apparat-new-oriental-1000c-pf</loc>
-    <lastmod>2020-10-09</lastmod>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/oborudovanie/rentgen-apparat-new-oriental-1000c-pf</loc>
-    <lastmod>2020-10-09</lastmod>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/oborudovanie/rentgen-apparat-new-oriental-1000c-pf</loc>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/oborudovanie/kompyyuternyy-tomograf-philips-brilliance-ict</loc>
-    <lastmod>2020-10-08</lastmod>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/oborudovanie/kompyyuternyy-tomograf-philips-brilliance-ict</loc>
-    <lastmod>2020-10-08</lastmod>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/oborudovanie/kompyyuternyy-tomograf-philips-brilliance-ict</loc>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/oborudovanie/cifrovoy-endoskop-evis-exera-ii-olympus-cv-180</loc>
-    <lastmod>2020-10-08</lastmod>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/oborudovanie/cifrovoy-endoskop-evis-exera-ii-olympus-cv-180</loc>
-    <lastmod>2020-10-08</lastmod>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/oborudovanie/cifrovoy-endoskop-evis-exera-ii-olympus-cv-180</loc>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/oborudovanie/stol-operacionnyy-dl-01a-1-t</loc>
-    <lastmod>2020-10-08</lastmod>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/oborudovanie/stol-operacionnyy-dl-01a-1-t</loc>
-    <lastmod>2020-10-08</lastmod>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/oborudovanie/stol-operacionnyy-dl-01a-1-t</loc>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/oborudovanie/mikroskop-operacionnyy-lor-yz20r5-t</loc>
-    <lastmod>2020-10-08</lastmod>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/oborudovanie/mikroskop-operacionnyy-lor-yz20r5-t</loc>
-    <lastmod>2020-10-08</lastmod>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/oborudovanie/mikroskop-operacionnyy-lor-yz20r5-t</loc>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/specialynye-predlogheniya</loc>
-    <lastmod>2020-09-22</lastmod>
+    <lastmod>2020-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/specialynye-predlogheniya</loc>
-    <lastmod>2020-09-22</lastmod>
+    <lastmod>2020-11-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/specialynye-predlogheniya</loc>
+    <lastmod>2020-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/akcii</loc>
-    <lastmod>2020-09-22</lastmod>
+    <lastmod>2020-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/akcii</loc>
-    <lastmod>2020-09-22</lastmod>
+    <lastmod>2020-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://rishon.com.ua/ru/akcii/50-na-konsulytaciyu-detskogo-stomatologa</loc>
-    <lastmod>2020-10-09</lastmod>
+    <loc>https://rishon.com.ua/en/akcii</loc>
+    <lastmod>2020-11-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/akcii/konsulytaciya-likarya-stomatologa-350-grn-zi-skladennyam-planu-likuvannya-u-podarunok</loc>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rishon.com.ua/uk/akcii/50-na-konsulytaciyu-detskogo-stomatologa</loc>
-    <lastmod>2020-10-09</lastmod>
+    <loc>https://rishon.com.ua/uk/akcii/konsulytaciya-likarya-stomatologa-350-grn-zi-skladennyam-planu-likuvannya-u-podarunok</loc>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rishon.com.ua/ru/akcii/pri-konsulytacii-u-mammologa-uzi-molochnoy-ghelezy-besplatno</loc>
-    <lastmod>2020-10-09</lastmod>
+    <loc>https://rishon.com.ua/en/akcii/konsulytaciya-likarya-stomatologa-350-grn-zi-skladennyam-planu-likuvannya-u-podarunok</loc>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rishon.com.ua/uk/akcii/pri-konsulytacii-u-mammologa-uzi-molochnoy-ghelezy-besplatno</loc>
-    <lastmod>2020-10-09</lastmod>
+    <loc>https://rishon.com.ua/ru/akcii/20-na-konsulytaciyu-proktologa</loc>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rishon.com.ua/ru/akcii/20-na-ortolechenie</loc>
-    <lastmod>2020-10-08</lastmod>
+    <loc>https://rishon.com.ua/uk/akcii/20-na-konsulytaciyu-proktologa</loc>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rishon.com.ua/uk/akcii/20-na-ortolechenie</loc>
-    <lastmod>2020-10-08</lastmod>
+    <loc>https://rishon.com.ua/en/akcii/20-na-konsulytaciyu-proktologa</loc>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rishon.com.ua/ru/akcii/super-akciya-50-na-konsulytaciyu-vracha-ortopeda</loc>
-    <lastmod>2020-10-09</lastmod>
+    <loc>https://rishon.com.ua/ru/akcii/konsulytaciya-nefrologa-uzd-nirok-ta-sechovogo-mihura-lishe-580-grn</loc>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rishon.com.ua/uk/akcii/super-akciya-50-na-konsulytaciyu-vracha-ortopeda</loc>
-    <lastmod>2020-10-09</lastmod>
+    <loc>https://rishon.com.ua/uk/akcii/konsulytaciya-nefrologa-uzd-nirok-ta-sechovogo-mihura-lishe-580-grn</loc>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rishon.com.ua/ru/akcii/20-na-professionalynuyu-chistku-zubov</loc>
-    <lastmod>2020-10-09</lastmod>
+    <loc>https://rishon.com.ua/en/akcii/konsulytaciya-nefrologa-uzd-nirok-ta-sechovogo-mihura-lishe-580-grn</loc>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rishon.com.ua/uk/akcii/20-na-professionalynuyu-chistku-zubov</loc>
-    <lastmod>2020-10-09</lastmod>
+    <loc>https://rishon.com.ua/ru/akcii/universalyniy-sheck-up-u-podarunok-do-rinoplastiki</loc>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rishon.com.ua/ru/akcii/konsulytaciya-pediatra-20-karta-individualynoy-vakcinacii-v-podarok</loc>
-    <lastmod>2020-10-08</lastmod>
+    <loc>https://rishon.com.ua/uk/akcii/universalyniy-sheck-up-u-podarunok-do-rinoplastiki</loc>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rishon.com.ua/uk/akcii/konsulytaciya-pediatra-20-karta-individualynoy-vakcinacii-v-podarok</loc>
-    <lastmod>2020-10-08</lastmod>
+    <loc>https://rishon.com.ua/en/akcii/universalyniy-sheck-up-u-podarunok-do-rinoplastiki</loc>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rishon.com.ua/ru/akcii/konsulytaciya-nevrologa-20-10-na-kt-issledovanie</loc>
-    <lastmod>2020-10-08</lastmod>
+    <loc>https://rishon.com.ua/ru/akcii/specialynaya-cena-na-privivku-hiberiks</loc>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rishon.com.ua/uk/akcii/konsulytaciya-nevrologa-20-10-na-kt-issledovanie</loc>
-    <lastmod>2020-10-08</lastmod>
+    <loc>https://rishon.com.ua/uk/akcii/specialynaya-cena-na-privivku-hiberiks</loc>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rishon.com.ua/ru/akcii/10-na-detskiy-check-up</loc>
-    <lastmod>2020-10-08</lastmod>
+    <loc>https://rishon.com.ua/en/akcii/specialynaya-cena-na-privivku-hiberiks</loc>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rishon.com.ua/uk/akcii/10-na-detskiy-check-up</loc>
-    <lastmod>2020-10-08</lastmod>
+    <loc>https://rishon.com.ua/ru/akcii/pcr-test-vsego-850-grn-do-konca-dekabrya</loc>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rishon.com.ua/ru/akcii/speccena-na-luchshie-v-mire-dentalynye-implanty-shveycarskoy-kompanii-straumann</loc>
-    <lastmod>2020-10-08</lastmod>
+    <loc>https://rishon.com.ua/uk/akcii/pcr-test-vsego-850-grn-do-konca-dekabrya</loc>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rishon.com.ua/uk/akcii/speccena-na-luchshie-v-mire-dentalynye-implanty-shveycarskoy-kompanii-straumann</loc>
-    <lastmod>2020-10-08</lastmod>
+    <loc>https://rishon.com.ua/en/akcii/pcr-test-vsego-850-grn-do-konca-dekabrya</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/akcii/vakcina-ads-m-biolek-vsego-250-grn</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/akcii/vakcina-ads-m-biolek-vsego-250-grn</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/akcii/vakcina-ads-m-biolek-vsego-250-grn</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/akcii/20-na-konsulytaciyu-detskogo-hirurga</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/akcii/20-na-konsulytaciyu-detskogo-hirurga</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/akcii/20-na-konsulytaciyu-detskogo-hirurga</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/akcii/speccena-na-konsulytaciyu-otolaringologa-s-videoendoskopiey-nosa</loc>
+    <lastmod>2021-02-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/akcii/speccena-na-konsulytaciyu-otolaringologa-s-videoendoskopiey-nosa</loc>
+    <lastmod>2021-02-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/akcii/speccena-na-konsulytaciyu-otolaringologa-s-videoendoskopiey-nosa</loc>
+    <lastmod>2021-02-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/akcii/konsulytaciya-kardiologa-ekg-v-podarok</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/akcii/konsulytaciya-kardiologa-ekg-v-podarok</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/akcii/konsulytaciya-kardiologa-ekg-v-podarok</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/akcii/10-na-himicheskiy-piling-u-kosmetologa</loc>
+    <lastmod>2021-02-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/akcii/10-na-himicheskiy-piling-u-kosmetologa</loc>
+    <lastmod>2021-02-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/akcii/10-na-himicheskiy-piling-u-kosmetologa</loc>
+    <lastmod>2021-02-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/akcii/20-na-vakciny-protiv-grippa-konsulytaciya-terapevta-pered-privivkoy-vhodit-v-stoimosty</loc>
+    <lastmod>2021-02-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/akcii/20-na-vakciny-protiv-grippa-konsulytaciya-terapevta-pered-privivkoy-vhodit-v-stoimosty</loc>
+    <lastmod>2021-02-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/akcii/20-na-vakciny-protiv-grippa-konsulytaciya-terapevta-pered-privivkoy-vhodit-v-stoimosty</loc>
+    <lastmod>2021-02-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/akcii/specialynaya-cena-na-chek-ap-60</loc>
+    <lastmod>2021-02-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/akcii/specialynaya-cena-na-chek-ap-60</loc>
+    <lastmod>2021-02-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/akcii/specialynaya-cena-na-chek-ap-60</loc>
+    <lastmod>2021-02-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/akcii/konsulytaciya-oftalymologa-20</loc>
+    <lastmod>2021-02-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/akcii/konsulytaciya-oftalymologa-20</loc>
+    <lastmod>2021-02-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/akcii/konsulytaciya-oftalymologa-20</loc>
+    <lastmod>2021-02-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/akcii/20-na-konsulytaciyu-nefrologa</loc>
+    <lastmod>2021-02-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/akcii/20-na-konsulytaciyu-nefrologa</loc>
+    <lastmod>2021-02-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/akcii/20-na-konsulytaciyu-nefrologa</loc>
+    <lastmod>2021-02-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/akcii/10-na-intimnuyu-plastiku</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/akcii/10-na-intimnuyu-plastiku</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/akcii/10-na-intimnuyu-plastiku</loc>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/akcii/20-na-udalenie-novoobrazovaniy-papillom</loc>
-    <lastmod>2020-09-30</lastmod>
+    <lastmod>2021-02-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/akcii/20-na-udalenie-novoobrazovaniy-papillom</loc>
-    <lastmod>2020-09-30</lastmod>
+    <lastmod>2021-02-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/akcii/20-na-udalenie-novoobrazovaniy-papillom</loc>
+    <lastmod>2021-02-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/akcii/dermatoskopiya-koghnyh-obrazovaniy-besplatno</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/akcii/dermatoskopiya-koghnyh-obrazovaniy-besplatno</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/akcii/dermatoskopiya-koghnyh-obrazovaniy-besplatno</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/akcii/konsulytaciya-lora-so-skidkoy-20</loc>
+    <lastmod>2021-02-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/akcii/konsulytaciya-lora-so-skidkoy-20</loc>
+    <lastmod>2021-02-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/akcii/konsulytaciya-lora-so-skidkoy-20</loc>
+    <lastmod>2021-02-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/akcii/10-na-udalenie-grygh</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/akcii/10-na-udalenie-grygh</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/akcii/10-na-udalenie-grygh</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/akcii/oftalymohirurgiya-predoperacionnoe-obsledovanie-besplatno</loc>
+    <lastmod>2021-02-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/akcii/oftalymohirurgiya-predoperacionnoe-obsledovanie-besplatno</loc>
+    <lastmod>2021-02-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/akcii/oftalymohirurgiya-predoperacionnoe-obsledovanie-besplatno</loc>
+    <lastmod>2021-02-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/akcii/konsulytaciya-nevrologa-20-10-na-kt-issledovanie</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/akcii/konsulytaciya-nevrologa-20-10-na-kt-issledovanie</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/akcii/konsulytaciya-nevrologa-20-10-na-kt-issledovanie</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/akcii/pri-konsulytacii-u-mammologa-uzi-molochnoy-ghelezy-besplatno</loc>
+    <lastmod>2021-02-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/akcii/pri-konsulytacii-u-mammologa-uzi-molochnoy-ghelezy-besplatno</loc>
+    <lastmod>2021-02-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/akcii/pri-konsulytacii-u-mammologa-uzi-molochnoy-ghelezy-besplatno</loc>
+    <lastmod>2021-02-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/akcii/50-na-konsulytaciyu-detskogo-stomatologa</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/akcii/50-na-konsulytaciyu-detskogo-stomatologa</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/akcii/50-na-konsulytaciyu-detskogo-stomatologa</loc>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/akcii/kurs-kriomassagha-apparatom-cryopro-5-y-seans-besplatno</loc>
-    <lastmod>2020-10-08</lastmod>
+    <lastmod>2021-01-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/akcii/kurs-kriomassagha-apparatom-cryopro-5-y-seans-besplatno</loc>
-    <lastmod>2020-10-08</lastmod>
+    <lastmod>2021-01-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rishon.com.ua/ru/akcii/konsulytaciya-dermatologa-dermatoskopiya-580-grn</loc>
-    <lastmod>2020-10-08</lastmod>
+    <loc>https://rishon.com.ua/en/akcii/kurs-kriomassagha-apparatom-cryopro-5-y-seans-besplatno</loc>
+    <lastmod>2021-01-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rishon.com.ua/uk/akcii/konsulytaciya-dermatologa-dermatoskopiya-580-grn</loc>
-    <lastmod>2020-10-08</lastmod>
+    <loc>https://rishon.com.ua/ru/akcii/10-na-detskiy-check-up</loc>
+    <lastmod>2021-02-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/akcii/10-na-detskiy-check-up</loc>
+    <lastmod>2021-02-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/akcii/10-na-detskiy-check-up</loc>
+    <lastmod>2021-02-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/akcii/20-na-professionalynuyu-chistku-zubov</loc>
+    <lastmod>2021-02-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/akcii/20-na-professionalynuyu-chistku-zubov</loc>
+    <lastmod>2021-02-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/akcii/20-na-professionalynuyu-chistku-zubov</loc>
+    <lastmod>2021-02-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/akcii/konsulytaciya-kosmetologa-50</loc>
-    <lastmod>2020-10-05</lastmod>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/akcii/konsulytaciya-kosmetologa-50</loc>
-    <lastmod>2020-10-05</lastmod>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rishon.com.ua/ru/akcii/chekap-programmy-kompleksnoe-obsledovanie-organizma-ew</loc>
-    <lastmod>2020-10-01</lastmod>
+    <loc>https://rishon.com.ua/en/akcii/konsulytaciya-kosmetologa-50</loc>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rishon.com.ua/uk/akcii/chekap-programmy-kompleksnoe-obsledovanie-organizma-ew</loc>
-    <lastmod>2020-10-01</lastmod>
+    <loc>https://rishon.com.ua/ru/akcii/konsulytaciya-dermatologa-dermatoskopiya-580-grn</loc>
+    <lastmod>2021-02-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rishon.com.ua/ru/akcii/chekap-programmy-kompleksnoe-obsledovanie-organizma</loc>
-    <lastmod>2020-10-08</lastmod>
+    <loc>https://rishon.com.ua/uk/akcii/konsulytaciya-dermatologa-dermatoskopiya-580-grn</loc>
+    <lastmod>2021-02-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rishon.com.ua/uk/akcii/chekap-programmy-kompleksnoe-obsledovanie-organizma</loc>
-    <lastmod>2020-10-08</lastmod>
+    <loc>https://rishon.com.ua/en/akcii/konsulytaciya-dermatologa-dermatoskopiya-580-grn</loc>
+    <lastmod>2021-02-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rishon.com.ua/ru/akcii/unikalynoe-predloghenie-20-priem-ginekologa-uzi-organov-malogo-taza</loc>
-    <lastmod>2020-09-17</lastmod>
+    <loc>https://rishon.com.ua/ru/akcii/speccena-na-luchshie-v-mire-dentalynye-implanty-shveycarskoy-kompanii-straumann</loc>
+    <lastmod>2021-02-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rishon.com.ua/uk/akcii/unikalynoe-predloghenie-20-priem-ginekologa-uzi-organov-malogo-taza</loc>
-    <lastmod>2020-09-17</lastmod>
+    <loc>https://rishon.com.ua/uk/akcii/speccena-na-luchshie-v-mire-dentalynye-implanty-shveycarskoy-kompanii-straumann</loc>
+    <lastmod>2021-02-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rishon.com.ua/ru/akcii/konsulytaciya-dermatologa-dermatoskopiya-vsego-za-580-grn</loc>
-    <lastmod>2020-10-01</lastmod>
+    <loc>https://rishon.com.ua/en/akcii/speccena-na-luchshie-v-mire-dentalynye-implanty-shveycarskoy-kompanii-straumann</loc>
+    <lastmod>2021-02-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rishon.com.ua/uk/akcii/konsulytaciya-dermatologa-dermatoskopiya-vsego-za-580-grn</loc>
-    <lastmod>2020-10-01</lastmod>
+    <loc>https://rishon.com.ua/ru/akcii/konsulytaciya-pediatra-20-karta-individualynoy-vakcinacii-v-podarok</loc>
+    <lastmod>2021-02-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rishon.com.ua/ru/akcii/akciya-20-konsulytaciya-otolaringologa-videoendoskopiya-lor-organov-za-580-grn</loc>
-    <lastmod>2020-09-17</lastmod>
+    <loc>https://rishon.com.ua/uk/akcii/konsulytaciya-pediatra-20-karta-individualynoy-vakcinacii-v-podarok</loc>
+    <lastmod>2021-02-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rishon.com.ua/uk/akcii/akciya-20-konsulytaciya-otolaringologa-videoendoskopiya-lor-organov-za-580-grn</loc>
-    <lastmod>2020-09-17</lastmod>
+    <loc>https://rishon.com.ua/en/akcii/konsulytaciya-pediatra-20-karta-individualynoy-vakcinacii-v-podarok</loc>
+    <lastmod>2021-02-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/akcii/super-akciya-50-na-konsulytaciyu-vracha-ortopeda</loc>
+    <lastmod>2021-02-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/akcii/super-akciya-50-na-konsulytaciyu-vracha-ortopeda</loc>
+    <lastmod>2021-02-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/akcii/super-akciya-50-na-konsulytaciyu-vracha-ortopeda</loc>
+    <lastmod>2021-02-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/akcii/20-na-ortolechenie</loc>
+    <lastmod>2021-02-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/akcii/20-na-ortolechenie</loc>
+    <lastmod>2021-02-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/akcii/20-na-ortolechenie</loc>
+    <lastmod>2021-02-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/paketnye-predlogheniya</loc>
-    <lastmod>2020-09-22</lastmod>
+    <lastmod>2020-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/paketnye-predlogheniya</loc>
-    <lastmod>2020-09-22</lastmod>
+    <lastmod>2020-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://rishon.com.ua/ru/paketnye-predlogheniya/telemedicina-onlayn-konsulytacii-vrachey-rishon</loc>
-    <lastmod>2020-10-08</lastmod>
+    <loc>https://rishon.com.ua/en/paketnye-predlogheniya</loc>
+    <lastmod>2020-11-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/paketnye-predlogheniya/paket-god-zdorovyya</loc>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rishon.com.ua/uk/paketnye-predlogheniya/telemedicina-onlayn-konsulytacii-vrachey-rishon</loc>
-    <lastmod>2020-10-08</lastmod>
+    <loc>https://rishon.com.ua/uk/paketnye-predlogheniya/paket-god-zdorovyya</loc>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rishon.com.ua/ru/paketnye-predlogheniya/bezlimitnoe-soprovoghdenie-na-1-god</loc>
-    <lastmod>2020-10-09</lastmod>
+    <loc>https://rishon.com.ua/en/paketnye-predlogheniya/paket-god-zdorovyya</loc>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rishon.com.ua/uk/paketnye-predlogheniya/bezlimitnoe-soprovoghdenie-na-1-god</loc>
-    <lastmod>2020-10-09</lastmod>
+    <loc>https://rishon.com.ua/ru/paketnye-predlogheniya/paket-semeynyy-doktor-bezlimitnyy</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/paketnye-predlogheniya/paket-semeynyy-doktor-bezlimitnyy</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/paketnye-predlogheniya/paket-semeynyy-doktor-bezlimitnyy</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/paketnye-predlogheniya/bezlimitnyy-paket-semeynyy-vrach-paket-vip-rasshirennyy</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/paketnye-predlogheniya/bezlimitnyy-paket-semeynyy-vrach-paket-vip-rasshirennyy</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/paketnye-predlogheniya/bezlimitnyy-paket-semeynyy-vrach-paket-vip-rasshirennyy</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/paketnye-predlogheniya/paket-zabota-o-rodnyh</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/paketnye-predlogheniya/paket-zabota-o-rodnyh</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/paketnye-predlogheniya/paket-zabota-o-rodnyh</loc>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/blog</loc>
-    <lastmod>2020-09-22</lastmod>
+    <lastmod>2020-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/blog</loc>
-    <lastmod>2020-09-22</lastmod>
+    <lastmod>2020-11-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/blog</loc>
+    <lastmod>2020-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/statyi</loc>
-    <lastmod>2020-09-22</lastmod>
+    <lastmod>2020-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/statyi</loc>
-    <lastmod>2020-09-22</lastmod>
+    <lastmod>2020-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://rishon.com.ua/en/statyi</loc>
+    <lastmod>2020-11-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/statyi/nederzhanie-mochi</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/statyi/nederzhanie-mochi</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/statyi/nederzhanie-mochi</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/statyi/hirurgiya-uzd-endokrinologiya</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/statyi/hirurgiya-uzd-endokrinologiya</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/statyi/hirurgiya-uzd-endokrinologiya</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/statyi/vidi-hirurgicheskih-operaciy</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/statyi/vidi-hirurgicheskih-operaciy</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/statyi/vidi-hirurgicheskih-operaciy</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/statyi/d-dimer</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/statyi/d-dimer</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/statyi/d-dimer</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/statyi/serdechno-sosudistye-zabolevaniya</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/statyi/serdechno-sosudistye-zabolevaniya</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/statyi/serdechno-sosudistye-zabolevaniya</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/statyi/novoobrazovaniyia</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/statyi/novoobrazovaniyia</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/statyi/novoobrazovaniyia</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/statyi/diagnostika-oftalmologiy</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/statyi/diagnostika-oftalmologiy</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/statyi/diagnostika-oftalmologiy</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/statyi/zaloghennosty-nosa-naibolee-rasprostranennyy-rinologicheskiy-simptom</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/statyi/zaloghennosty-nosa-naibolee-rasprostranennyy-rinologicheskiy-simptom</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/statyi/zaloghennosty-nosa-naibolee-rasprostranennyy-rinologicheskiy-simptom</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/statyi/endokrinnaya-hirurgiya</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/statyi/endokrinnaya-hirurgiya</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/statyi/endokrinnaya-hirurgiya</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/statyi/dostuchatysya-do-serdca-pacienta</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/statyi/dostuchatysya-do-serdca-pacienta</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/statyi/dostuchatysya-do-serdca-pacienta</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/statyi/hirurgicheskie-operacii-na-glazah</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/statyi/hirurgicheskie-operacii-na-glazah</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/statyi/hirurgicheskie-operacii-na-glazah</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://rishon.com.ua/ru/statyi/chek-ap-check-up</loc>
-    <lastmod>2020-10-09</lastmod>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/statyi/chek-ap-check-up</loc>
-    <lastmod>2020-10-09</lastmod>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/statyi/chek-ap-check-up</loc>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/statyi/hirurgiya-uskorennoy-reabilitacii-sovremennaya-realynosty-v-harykove</loc>
-    <lastmod>2020-10-08</lastmod>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/statyi/hirurgiya-uskorennoy-reabilitacii-sovremennaya-realynosty-v-harykove</loc>
-    <lastmod>2020-10-08</lastmod>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/statyi/hirurgiya-uskorennoy-reabilitacii-sovremennaya-realynosty-v-harykove</loc>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/statyi/sovremennaya-ulytrazvukovaya-diagnostika-osobennosti-i-nyuansy</loc>
-    <lastmod>2020-10-09</lastmod>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/statyi/sovremennaya-ulytrazvukovaya-diagnostika-osobennosti-i-nyuansy</loc>
-    <lastmod>2020-10-09</lastmod>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/statyi/sovremennaya-ulytrazvukovaya-diagnostika-osobennosti-i-nyuansy</loc>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/statyi/semeynyy-vrach-pravilynyy-vybor</loc>
-    <lastmod>2020-10-09</lastmod>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/statyi/semeynyy-vrach-pravilynyy-vybor</loc>
-    <lastmod>2020-10-09</lastmod>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/statyi/semeynyy-vrach-pravilynyy-vybor</loc>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/statyi/vzglyad-iznutri-segodnyashnie-gorizonty-endoskopii</loc>
-    <lastmod>2020-10-08</lastmod>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/statyi/vzglyad-iznutri-segodnyashnie-gorizonty-endoskopii</loc>
-    <lastmod>2020-10-08</lastmod>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/statyi/vzglyad-iznutri-segodnyashnie-gorizonty-endoskopii</loc>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/statyi/endoskopicheskoe-issledovanie-lor-zabolevaniy</loc>
-    <lastmod>2020-10-08</lastmod>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/statyi/endoskopicheskoe-issledovanie-lor-zabolevaniy</loc>
-    <lastmod>2020-10-08</lastmod>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/statyi/endoskopicheskoe-issledovanie-lor-zabolevaniy</loc>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/novosti</loc>
-    <lastmod>2020-09-22</lastmod>
+    <lastmod>2020-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/novosti</loc>
-    <lastmod>2020-09-22</lastmod>
+    <lastmod>2020-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://rishon.com.ua/en/novosti</loc>
+    <lastmod>2020-11-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/novosti/uzi-legkih-480-grn</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/novosti/uzi-legkih-480-grn</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/novosti/uzi-legkih-480-grn</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://rishon.com.ua/ru/novosti/telemedicina-onlayn-konsulytacii-vrachey-rishon111</loc>
-    <lastmod>2020-10-09</lastmod>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/novosti/telemedicina-onlayn-konsulytacii-vrachey-rishon111</loc>
-    <lastmod>2020-10-09</lastmod>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/novosti/telemedicina-onlayn-konsulytacii-vrachey-rishon111</loc>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/novosti/v-harykove-otkryvaetsya-noveyshiy-lechebno-diagnosticheskiy-centr</loc>
-    <lastmod>2020-10-08</lastmod>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/novosti/v-harykove-otkryvaetsya-noveyshiy-lechebno-diagnosticheskiy-centr</loc>
-    <lastmod>2020-10-08</lastmod>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rishon.com.ua/ru/spisok-programm-dlya-stranicy-chekap/sheck-up-razvernutyy-dlya-mughchin</loc>
-    <lastmod>2020-10-09</lastmod>
+    <loc>https://rishon.com.ua/en/novosti/v-harykove-otkryvaetsya-noveyshiy-lechebno-diagnosticheskiy-centr</loc>
+    <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rishon.com.ua/uk/spisok-programm-dlya-stranicy-chekap/sheck-up-razvernutyy-dlya-mughchin</loc>
-    <lastmod>2020-10-09</lastmod>
+    <loc>https://rishon.com.ua/ru/vtoroy-ekran-offer</loc>
+    <lastmod>2020-11-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/vtoroy-ekran-offer</loc>
+    <lastmod>2020-11-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/vtoroy-ekran-offer</loc>
+    <lastmod>2020-11-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/vtoroy-ekran-offer/more-than-20-directions-of-consulting-by-highly-professional-specialists</loc>
+    <lastmod>2021-02-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rishon.com.ua/ru/spisok-programm-dlya-stranicy-chekap/gastroenterologicheskiy-sheck-up-2-dnya</loc>
-    <lastmod>2020-10-09</lastmod>
+    <loc>https://rishon.com.ua/uk/vtoroy-ekran-offer/more-than-20-directions-of-consulting-by-highly-professional-specialists</loc>
+    <lastmod>2021-02-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rishon.com.ua/uk/spisok-programm-dlya-stranicy-chekap/gastroenterologicheskiy-sheck-up-2-dnya</loc>
-    <lastmod>2020-10-09</lastmod>
+    <loc>https://rishon.com.ua/en/vtoroy-ekran-offer/more-than-20-directions-of-consulting-by-highly-professional-specialists</loc>
+    <lastmod>2021-02-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rishon.com.ua/ru/spisok-programm-dlya-stranicy-chekap/sheck-up-razvernutyy-dlya-ghenschin</loc>
-    <lastmod>2020-10-09</lastmod>
+    <loc>https://rishon.com.ua/ru/vtoroy-ekran-offer/ultramodern-surgery-department</loc>
+    <lastmod>2021-02-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rishon.com.ua/uk/spisok-programm-dlya-stranicy-chekap/sheck-up-razvernutyy-dlya-ghenschin</loc>
-    <lastmod>2020-10-09</lastmod>
+    <loc>https://rishon.com.ua/uk/vtoroy-ekran-offer/ultramodern-surgery-department</loc>
+    <lastmod>2021-02-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/vtoroy-ekran-offer/ultramodern-surgery-department</loc>
+    <lastmod>2021-02-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/vtoroy-ekran-offer/family-medicine</loc>
+    <lastmod>2021-02-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/vtoroy-ekran-offer/family-medicine</loc>
+    <lastmod>2021-02-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/vtoroy-ekran-offer/family-medicine</loc>
+    <lastmod>2021-02-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/vtoroy-ekran-offer/state-of-the-art-ultrasound-diagnostics-and-computed-tomography</loc>
+    <lastmod>2021-02-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/vtoroy-ekran-offer/state-of-the-art-ultrasound-diagnostics-and-computed-tomography</loc>
+    <lastmod>2021-02-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/vtoroy-ekran-offer/state-of-the-art-ultrasound-diagnostics-and-computed-tomography</loc>
+    <lastmod>2021-02-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/vtoroy-ekran-offer/dental-department-for-children-and-adults</loc>
+    <lastmod>2021-02-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/vtoroy-ekran-offer/dental-department-for-children-and-adults</loc>
+    <lastmod>2021-02-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/vtoroy-ekran-offer/dental-department-for-children-and-adults</loc>
+    <lastmod>2021-02-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/chetvertyy-ekran-pricelist</loc>
+    <lastmod>2020-11-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/chetvertyy-ekran-pricelist</loc>
+    <lastmod>2020-11-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/chetvertyy-ekran-pricelist</loc>
+    <lastmod>2020-11-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/chetvertyy-ekran-pricelist/a-primary-doctors-consultation</loc>
+    <lastmod>2021-02-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/chetvertyy-ekran-pricelist/a-primary-doctors-consultation</loc>
+    <lastmod>2021-02-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/chetvertyy-ekran-pricelist/a-primary-doctors-consultation</loc>
+    <lastmod>2021-02-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/chetvertyy-ekran-pricelist/repeated-consultation</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/chetvertyy-ekran-pricelist/repeated-consultation</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/chetvertyy-ekran-pricelist/repeated-consultation</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/chetvertyy-ekran-pricelist/ct-of-the-lungs</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/chetvertyy-ekran-pricelist/ct-of-the-lungs</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/chetvertyy-ekran-pricelist/ct-of-the-lungs</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/sedymoy-ekran</loc>
+    <lastmod>2020-11-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/sedymoy-ekran</loc>
+    <lastmod>2020-11-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/sedymoy-ekran</loc>
+    <lastmod>2020-11-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/desyatyy-ekran-principles</loc>
+    <lastmod>2020-11-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/desyatyy-ekran-principles</loc>
+    <lastmod>2020-11-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/desyatyy-ekran-principles</loc>
+    <lastmod>2020-11-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/desyatyy-ekran-principles/professionalism</loc>
+    <lastmod>2021-02-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/desyatyy-ekran-principles/professionalism</loc>
+    <lastmod>2021-02-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/desyatyy-ekran-principles/professionalism</loc>
+    <lastmod>2021-02-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/desyatyy-ekran-principles/confidence</loc>
+    <lastmod>2021-02-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/desyatyy-ekran-principles/confidence</loc>
+    <lastmod>2021-02-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/desyatyy-ekran-principles/confidence</loc>
+    <lastmod>2021-02-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/desyatyy-ekran-principles/reliability</loc>
+    <lastmod>2021-02-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/desyatyy-ekran-principles/reliability</loc>
+    <lastmod>2021-02-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/desyatyy-ekran-principles/reliability</loc>
+    <lastmod>2021-02-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/desyatyy-ekran-principles/care</loc>
+    <lastmod>2021-02-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/desyatyy-ekran-principles/care</loc>
+    <lastmod>2021-02-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/desyatyy-ekran-principles/care</loc>
+    <lastmod>2021-02-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1333,14 +2785,26 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://rishon.com.ua/en/expert/mishenina-ekaterina-vladimirovna</loc>
+    <lastmod>2020-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://rishon.com.ua/ru/expert/korchagin-egor-pavlovich</loc>
-    <lastmod>2020-09-16</lastmod>
+    <lastmod>2020-10-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/expert/korchagin-egor-pavlovich</loc>
-    <lastmod>2020-09-16</lastmod>
+    <lastmod>2020-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/expert/korchagin-egor-pavlovich</loc>
+    <lastmod>2020-10-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1357,74 +2821,206 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://rishon.com.ua/en/expert/vovk-valeriy-anatolyevich</loc>
+    <lastmod>2020-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://rishon.com.ua/ru/expert/rakov-anton-vasilyevich</loc>
-    <lastmod>2020-09-18</lastmod>
+    <lastmod>2020-10-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/expert/rakov-anton-vasilyevich</loc>
-    <lastmod>2020-09-18</lastmod>
+    <lastmod>2020-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/expert/rakov-anton-vasilyevich</loc>
+    <lastmod>2020-10-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/expert/cherneckiy-valentin-vladislavovich</loc>
-    <lastmod>2020-09-18</lastmod>
+    <lastmod>2020-10-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/expert/cherneckiy-valentin-vladislavovich</loc>
-    <lastmod>2020-09-18</lastmod>
+    <lastmod>2020-10-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/expert/cherneckiy-valentin-vladislavovich</loc>
+    <lastmod>2020-10-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/expert/sarian-igory-valentinovich</loc>
-    <lastmod>2020-09-01</lastmod>
+    <lastmod>2020-10-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/expert/sarian-igory-valentinovich</loc>
-    <lastmod>2020-09-01</lastmod>
+    <lastmod>2020-10-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rishon.com.ua/ru/expert/59</loc>
-    <lastmod>2020-10-07</lastmod>
+    <loc>https://rishon.com.ua/en/expert/sarian-igory-valentinovich</loc>
+    <lastmod>2020-10-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rishon.com.ua/uk/expert/59</loc>
-    <lastmod>2020-10-07</lastmod>
+    <loc>https://rishon.com.ua/ru/expert/65</loc>
+    <lastmod>2020-11-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/expert/65</loc>
+    <lastmod>2020-11-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/expert/65</loc>
+    <lastmod>2020-11-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/expert/62</loc>
+    <lastmod>2020-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/expert/62</loc>
+    <lastmod>2020-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/expert/62</loc>
+    <lastmod>2020-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/expert/66</loc>
+    <lastmod>2020-12-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/expert/66</loc>
+    <lastmod>2020-12-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/expert/66</loc>
+    <lastmod>2020-12-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/expert/57</loc>
-    <lastmod>2020-10-06</lastmod>
+    <lastmod>2020-10-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/expert/57</loc>
-    <lastmod>2020-10-06</lastmod>
+    <lastmod>2020-10-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rishon.com.ua/ru/expert/yanishevskaya-liliya-pavlovna</loc>
-    <lastmod>2020-09-18</lastmod>
+    <loc>https://rishon.com.ua/en/expert/57</loc>
+    <lastmod>2020-10-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rishon.com.ua/uk/expert/yanishevskaya-liliya-pavlovna</loc>
-    <lastmod>2020-09-18</lastmod>
+    <loc>https://rishon.com.ua/ru/expert/67</loc>
+    <lastmod>2021-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/expert/67</loc>
+    <lastmod>2021-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/expert/67</loc>
+    <lastmod>2021-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/expert/61</loc>
+    <lastmod>2021-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/expert/61</loc>
+    <lastmod>2021-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/expert/61</loc>
+    <lastmod>2021-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/expert/74</loc>
+    <lastmod>2021-02-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/expert/74</loc>
+    <lastmod>2021-02-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/expert/74</loc>
+    <lastmod>2021-02-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/expert/schukina-nataliya-nikolaevna</loc>
+    <lastmod>2021-02-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/expert/schukina-nataliya-nikolaevna</loc>
+    <lastmod>2021-02-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/expert/schukina-nataliya-nikolaevna</loc>
+    <lastmod>2021-02-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1441,38 +3037,62 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rishon.com.ua/ru/expert/48</loc>
+    <loc>https://rishon.com.ua/en/expert/49</loc>
     <lastmod>2020-09-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rishon.com.ua/uk/expert/48</loc>
-    <lastmod>2020-09-16</lastmod>
+    <loc>https://rishon.com.ua/ru/expert/63</loc>
+    <lastmod>2020-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/expert/63</loc>
+    <lastmod>2020-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/expert/63</loc>
+    <lastmod>2020-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/expert/reshetnyak-sergey-aleksandrovich</loc>
+    <lastmod>2021-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/expert/reshetnyak-sergey-aleksandrovich</loc>
+    <lastmod>2021-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/expert/reshetnyak-sergey-aleksandrovich</loc>
+    <lastmod>2021-02-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/expert/47</loc>
-    <lastmod>2020-09-16</lastmod>
+    <lastmod>2020-10-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/expert/47</loc>
-    <lastmod>2020-09-16</lastmod>
+    <lastmod>2020-10-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rishon.com.ua/ru/expert/60</loc>
-    <lastmod>2020-10-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://rishon.com.ua/uk/expert/60</loc>
-    <lastmod>2020-10-06</lastmod>
+    <loc>https://rishon.com.ua/en/expert/47</loc>
+    <lastmod>2020-10-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1489,14 +3109,26 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://rishon.com.ua/en/expert/46</loc>
+    <lastmod>2020-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://rishon.com.ua/ru/expert/45</loc>
-    <lastmod>2020-09-18</lastmod>
+    <lastmod>2021-02-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/expert/45</loc>
-    <lastmod>2020-09-18</lastmod>
+    <lastmod>2021-02-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/expert/45</loc>
+    <lastmod>2021-02-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1513,6 +3145,30 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://rishon.com.ua/en/expert/44</loc>
+    <lastmod>2020-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/expert/73</loc>
+    <lastmod>2021-02-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/expert/73</loc>
+    <lastmod>2021-02-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/expert/73</loc>
+    <lastmod>2021-02-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://rishon.com.ua/ru/expert/43</loc>
     <lastmod>2020-09-16</lastmod>
     <changefreq>monthly</changefreq>
@@ -1520,6 +3176,12 @@
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/expert/43</loc>
+    <lastmod>2020-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/expert/43</loc>
     <lastmod>2020-09-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -1537,6 +3199,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://rishon.com.ua/en/expert/42</loc>
+    <lastmod>2020-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://rishon.com.ua/ru/expert/41</loc>
     <lastmod>2020-09-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -1544,6 +3212,12 @@
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/expert/41</loc>
+    <lastmod>2020-09-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/expert/41</loc>
     <lastmod>2020-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -1561,26 +3235,62 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rishon.com.ua/ru/expert/makarov-denis-vladimirovich</loc>
+    <loc>https://rishon.com.ua/en/expert/40</loc>
     <lastmod>2020-09-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/expert/makarov-denis-vladimirovich</loc>
+    <lastmod>2021-02-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/expert/makarov-denis-vladimirovich</loc>
-    <lastmod>2020-09-18</lastmod>
+    <lastmod>2021-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/expert/makarov-denis-vladimirovich</loc>
+    <lastmod>2021-02-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/expert/lobortas-oksana-mihaylovna</loc>
-    <lastmod>2020-09-18</lastmod>
+    <lastmod>2021-02-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/expert/lobortas-oksana-mihaylovna</loc>
-    <lastmod>2020-09-18</lastmod>
+    <lastmod>2021-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/expert/lobortas-oksana-mihaylovna</loc>
+    <lastmod>2021-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/expert/64</loc>
+    <lastmod>2020-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/expert/64</loc>
+    <lastmod>2020-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/expert/64</loc>
+    <lastmod>2020-11-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1597,6 +3307,30 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://rishon.com.ua/en/expert/burlaka-inna-anatolyevna</loc>
+    <lastmod>2020-08-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/expert/kudryavtsev-anton-andreevich</loc>
+    <lastmod>2021-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/expert/kudryavtsev-anton-andreevich</loc>
+    <lastmod>2021-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/expert/kudryavtsev-anton-andreevich</loc>
+    <lastmod>2021-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://rishon.com.ua/ru/expert/miroshnik-dmitriy-mihaylovich</loc>
     <lastmod>2020-09-16</lastmod>
     <changefreq>monthly</changefreq>
@@ -1609,14 +3343,26 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rishon.com.ua/ru/expert/docenko-marina-vladimirovna</loc>
+    <loc>https://rishon.com.ua/en/expert/miroshnik-dmitriy-mihaylovich</loc>
     <lastmod>2020-09-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://rishon.com.ua/ru/expert/docenko-marina-vladimirovna</loc>
+    <lastmod>2020-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://rishon.com.ua/uk/expert/docenko-marina-vladimirovna</loc>
-    <lastmod>2020-09-16</lastmod>
+    <lastmod>2020-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/expert/docenko-marina-vladimirovna</loc>
+    <lastmod>2020-10-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1628,6 +3374,12 @@
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/expert/seregina-irina-stanislavovna</loc>
+    <lastmod>2020-08-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/expert/seregina-irina-stanislavovna</loc>
     <lastmod>2020-08-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -1645,14 +3397,26 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://rishon.com.ua/en/expert/zapara-pavel-sergeevich</loc>
+    <lastmod>2020-09-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://rishon.com.ua/ru/expert/kryachko-sergey-stanislavovich</loc>
-    <lastmod>2020-08-19</lastmod>
+    <lastmod>2020-11-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/expert/kryachko-sergey-stanislavovich</loc>
-    <lastmod>2020-08-19</lastmod>
+    <lastmod>2020-11-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/expert/kryachko-sergey-stanislavovich</loc>
+    <lastmod>2020-11-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1669,38 +3433,44 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://rishon.com.ua/en/expert/kekalo-viktor-borisovich</loc>
+    <lastmod>2020-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://rishon.com.ua/ru/expert/58</loc>
-    <lastmod>2020-10-06</lastmod>
+    <lastmod>2021-02-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/expert/58</loc>
-    <lastmod>2020-10-06</lastmod>
+    <lastmod>2021-02-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rishon.com.ua/ru/expert/highnyak-tatyyana-nikolaevna</loc>
-    <lastmod>2020-09-16</lastmod>
+    <loc>https://rishon.com.ua/en/expert/58</loc>
+    <lastmod>2021-02-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rishon.com.ua/uk/expert/highnyak-tatyyana-nikolaevna</loc>
-    <lastmod>2020-09-16</lastmod>
+    <loc>https://rishon.com.ua/ru/expert/gudilin-timur-evgenyevich</loc>
+    <lastmod>2021-01-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rishon.com.ua/ru/expert/yarosh-artem-anatolyevich</loc>
-    <lastmod>2020-09-16</lastmod>
+    <loc>https://rishon.com.ua/uk/expert/gudilin-timur-evgenyevich</loc>
+    <lastmod>2021-01-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rishon.com.ua/uk/expert/yarosh-artem-anatolyevich</loc>
-    <lastmod>2020-09-16</lastmod>
+    <loc>https://rishon.com.ua/en/expert/gudilin-timur-evgenyevich</loc>
+    <lastmod>2021-01-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1717,26 +3487,188 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://rishon.com.ua/en/expert/titova-yuliya-aleksandrovna</loc>
+    <lastmod>2020-09-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/expert/55</loc>
+    <lastmod>2020-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/expert/55</loc>
+    <lastmod>2020-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/expert/55</loc>
+    <lastmod>2020-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://rishon.com.ua/ru/expert/abaskuluzade-sabina-vidadievna</loc>
-    <lastmod>2020-09-16</lastmod>
+    <lastmod>2020-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/expert/abaskuluzade-sabina-vidadievna</loc>
-    <lastmod>2020-09-16</lastmod>
+    <lastmod>2020-10-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/expert/abaskuluzade-sabina-vidadievna</loc>
+    <lastmod>2020-10-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/expert/69</loc>
+    <lastmod>2021-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/expert/69</loc>
+    <lastmod>2021-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/expert/69</loc>
+    <lastmod>2021-02-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/ru/expert/steshenko-svetlana-nikolaevna</loc>
-    <lastmod>2020-09-16</lastmod>
+    <lastmod>2020-11-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/expert/steshenko-svetlana-nikolaevna</loc>
+    <lastmod>2020-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/expert/steshenko-svetlana-nikolaevna</loc>
+    <lastmod>2020-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/expert/gula-elena-petrovna</loc>
     <lastmod>2020-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/expert/gula-elena-petrovna</loc>
+    <lastmod>2020-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/expert/gula-elena-petrovna</loc>
+    <lastmod>2020-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/expert/makagonova-marina-viktorovna</loc>
+    <lastmod>2020-09-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/expert/makagonova-marina-viktorovna</loc>
+    <lastmod>2020-09-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/expert/makagonova-marina-viktorovna</loc>
+    <lastmod>2020-09-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/expert/syrovatskaya-tatyyana-igorevna</loc>
+    <lastmod>2020-12-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/expert/syrovatskaya-tatyyana-igorevna</loc>
+    <lastmod>2020-12-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/expert/syrovatskaya-tatyyana-igorevna</loc>
+    <lastmod>2020-12-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/expert/53</loc>
+    <lastmod>2021-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/expert/53</loc>
+    <lastmod>2021-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/expert/53</loc>
+    <lastmod>2021-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/expert/60</loc>
+    <lastmod>2020-10-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/expert/60</loc>
+    <lastmod>2020-10-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/expert/60</loc>
+    <lastmod>2020-10-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/expert/68</loc>
+    <lastmod>2021-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/expert/68</loc>
+    <lastmod>2021-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/expert/68</loc>
+    <lastmod>2021-02-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1748,6 +3680,12 @@
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/expert/borovskoy-mihail-borisovich</loc>
+    <lastmod>2020-09-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/expert/borovskoy-mihail-borisovich</loc>
     <lastmod>2020-09-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -1765,61 +3703,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rishon.com.ua/ru/expert/mischenko-lyubovy-petrovna</loc>
-    <lastmod>2020-08-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://rishon.com.ua/uk/expert/mischenko-lyubovy-petrovna</loc>
-    <lastmod>2020-08-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://rishon.com.ua/ru/expert/gudilin-timur-evgenyevich</loc>
-    <lastmod>2020-10-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://rishon.com.ua/uk/expert/gudilin-timur-evgenyevich</loc>
-    <lastmod>2020-10-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://rishon.com.ua/ru/expert/56</loc>
-    <lastmod>2020-09-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://rishon.com.ua/uk/expert/56</loc>
-    <lastmod>2020-09-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://rishon.com.ua/ru/expert/gula-elena-petrovna</loc>
-    <lastmod>2020-09-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://rishon.com.ua/uk/expert/gula-elena-petrovna</loc>
-    <lastmod>2020-09-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://rishon.com.ua/ru/expert/kozyreva-tatyyana-evgenyevna</loc>
-    <lastmod>2020-09-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://rishon.com.ua/uk/expert/kozyreva-tatyyana-evgenyevna</loc>
+    <loc>https://rishon.com.ua/en/expert/orehova-elena-nikolaevna</loc>
     <lastmod>2020-09-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -1837,37 +3721,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rishon.com.ua/ru/expert/makagonova-marina-viktorovna</loc>
-    <lastmod>2020-09-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://rishon.com.ua/uk/expert/makagonova-marina-viktorovna</loc>
-    <lastmod>2020-09-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://rishon.com.ua/ru/expert/roschupkina-tatyyana-nikolaevna</loc>
-    <lastmod>2020-09-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://rishon.com.ua/uk/expert/roschupkina-tatyyana-nikolaevna</loc>
-    <lastmod>2020-09-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://rishon.com.ua/ru/expert/syrovatskaya-tatyyana-igorevna</loc>
-    <lastmod>2020-08-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://rishon.com.ua/uk/expert/syrovatskaya-tatyyana-igorevna</loc>
+    <loc>https://rishon.com.ua/en/expert/prohorova-larisa-aleksandrovna</loc>
     <lastmod>2020-08-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -1885,14 +3739,80 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://rishon.com.ua/en/expert/chub-olyga-igorevna</loc>
+    <lastmod>2020-09-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/expert/54</loc>
+    <lastmod>2021-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/expert/54</loc>
+    <lastmod>2021-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/expert/54</loc>
+    <lastmod>2021-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/expert/kozyreva-tatyyana-evgenyevna</loc>
+    <lastmod>2020-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/expert/kozyreva-tatyyana-evgenyevna</loc>
+    <lastmod>2020-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/expert/kozyreva-tatyyana-evgenyevna</loc>
+    <lastmod>2020-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/ru/expert/roschupkina-tatyyana-nikolaevna</loc>
+    <lastmod>2020-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/uk/expert/roschupkina-tatyyana-nikolaevna</loc>
+    <lastmod>2020-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/expert/roschupkina-tatyyana-nikolaevna</loc>
+    <lastmod>2020-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://rishon.com.ua/ru/expert/51</loc>
-    <lastmod>2020-09-22</lastmod>
+    <lastmod>2020-10-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rishon.com.ua/uk/expert/51</loc>
-    <lastmod>2020-09-22</lastmod>
+    <lastmod>2020-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/expert/51</loc>
+    <lastmod>2020-10-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1909,38 +3829,44 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rishon.com.ua/ru/expert/53</loc>
+    <loc>https://rishon.com.ua/en/expert/52</loc>
     <lastmod>2020-09-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rishon.com.ua/uk/expert/53</loc>
-    <lastmod>2020-09-22</lastmod>
+    <loc>https://rishon.com.ua/ru/expert/56</loc>
+    <lastmod>2020-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rishon.com.ua/ru/expert/54</loc>
-    <lastmod>2020-09-22</lastmod>
+    <loc>https://rishon.com.ua/uk/expert/56</loc>
+    <lastmod>2020-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rishon.com.ua/uk/expert/54</loc>
-    <lastmod>2020-09-22</lastmod>
+    <loc>https://rishon.com.ua/en/expert/56</loc>
+    <lastmod>2020-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rishon.com.ua/ru/expert/55</loc>
-    <lastmod>2020-10-05</lastmod>
+    <loc>https://rishon.com.ua/ru/expert/59</loc>
+    <lastmod>2020-10-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rishon.com.ua/uk/expert/55</loc>
-    <lastmod>2020-10-05</lastmod>
+    <loc>https://rishon.com.ua/uk/expert/59</loc>
+    <lastmod>2020-10-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rishon.com.ua/en/expert/59</loc>
+    <lastmod>2020-10-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
