@@ -95,6 +95,11 @@
 											<span itemprop="text">
 												{!!$faq_item->lang->answer!!}
 											</span>
+											@if($faq_item->lang->link != '')
+								                <div class="popup-btn-wrap">
+								                    <a class="btn-green-small" href="{{substr($faq_item->lang->link,0,4) != 'http' ? "http://".$faq_item->lang->link : $faq_item->lang->link}}">@lang('main.more_details')</a>
+								                </div>
+								            @endif
 										</div>
 									@endif
 								</li>
