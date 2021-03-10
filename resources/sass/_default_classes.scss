@@ -3,19 +3,15 @@
         bottom: 150px !important;
     }
 }
-.__jivoMobileButton {
-    @media (max-width: 1024px) {
-        z-index: 200001 !important;
-    }
-}
 // jivo site
-._orientationRight_ec72.wrap_5fd7 {
+.__jivoMobileButton {
+    z-index: 200001 !important;
     right: auto !important;
     left: 0 !important;
-}
-._orientationRight_ec72 .button_d51c {
-    margin-right: 0 !important;
-    margin-left: 20px !important;
+    .button_d51c {
+        margin-right: 0 !important;
+        margin-left: 20px !important;
+    }
 }
 // jivo site
 .main {
