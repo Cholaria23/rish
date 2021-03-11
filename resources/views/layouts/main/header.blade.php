@@ -236,9 +236,13 @@
 									<a class="header-menu-link" href="{{route('first_url',$services_top->alias)}}">
 										{{$services_top->lang->name}}
 									</a>
+									@if($services_top->units->count())
 									<div class="header-submenu-services-wrap">
-										
+										@foreach ($services_top->units as $unit_item)
+											@include('layouts.tiles.service_unit_tile')
+										@endforeach
 									</div>
+									@endif
 								</li>
 							@else
 								<li class="header-menu-item">

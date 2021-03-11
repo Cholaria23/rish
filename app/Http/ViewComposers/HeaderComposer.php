@@ -27,8 +27,29 @@ class HeaderComposer {
         $news = \Demos\AdminPanel\Cat::with('lang')->where('is_hidden',0)->find(19);
         $equipment = \Demos\AdminPanel\Cat::with('lang')->where('is_hidden',0)->find(7);
 
-        $services_top = \Demos\AdminPanel\Cat::with('lang')->whereIn('id',\Demos\AdminPanel\Cat::descendants(4))->where('spec_option_1',1)->where('is_hidden',0)->orderBy('sort_order','asc')->get();
-
+        $services_top = \Demos\AdminPanel\Cat::with([
+                'lang',
+                'children' => function ($query) {
+                    $query->with([
+                        'lang',
+                        'children' => function ($query) {
+                            $query->with([
+                                    'lang',
+                                    'units' => function ($query) {
+                                        $query->with('lang')->where('is_hidden',0)->orderBy('sort_order','desc');
+                                    }
+                                ])->where('is_hidden',0)->orderBy('sort_order','asc');
+                        },
+                        'units' => function ($query) {
+                            $query->with('lang')->where('is_hidden',0)->orderBy('sort_order','desc');
+                        }
+                    ])->where('is_hidden',0)->orderBy('sort_order','asc');
+                },
+                'units' => function ($query) {
+                    $query->with('lang')->where('is_hidden',0)->orderBy('sort_order','desc');
+                }
+            ])->whereIn('id',\Demos\AdminPanel\Cat::descendants(4))->where('spec_option_1',1)->where('is_hidden',0)->orderBy('sort_order','asc')->get();
+           
         $services = \Demos\AdminPanel\Cat::with([
                 'lang',
                 'children' => function ($query) {
