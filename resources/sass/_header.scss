@@ -340,7 +340,14 @@
         @media (min-width: 1201px) {
             min-width: 280px;
         }
-        &:first-child {
+        &.header-submenu-services-surgery {
+            @media (min-width: 1025px) {
+                padding: 30px 25px 15px;
+                min-width: 340px;
+                width: 100%;
+            }
+        }
+        &:not(.header-submenu-services-surgery):first-child {
             @media (min-width: 1025px) {
                 min-width: 435px;
             }

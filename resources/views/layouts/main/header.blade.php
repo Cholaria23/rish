@@ -237,11 +237,24 @@
 										{{$services_top->lang->name}}
 									</a>
 									@if($services_top->units->count())
-									<div class="header-submenu-services-wrap">
-										@foreach ($services_top->units as $unit_item)
-											@include('layouts.tiles.service_unit_tile')
-										@endforeach
-									</div>
+										<div class="header-submenu-services-wrap">
+											<div class="header-submenu-services">
+												<div class="header-submenu-services-item header-submenu-services-surgery">
+													<div class="header-submenu-services-title">
+														@lang('main.main_services')
+													</div>
+													<ul class="header-submenu-services-list">
+														@foreach ($services_top->units as $unit_item)
+															<li class="header-submenu-services-list-item">
+																<a class="header-submenu-services-link" href="{{build_unit_route($unit_item)}}">
+																	{{$unit_item->lang->name}}
+																</a>
+															</li>
+														@endforeach
+													</ul>
+												</div>
+											</div>
+										</div>
 									@endif
 								</li>
 							@else
