@@ -353,18 +353,33 @@ $(window).on('load resize', function() {
         // for header submenu services
         if(!$('.has-submenu-services .header-menu-link').hasClass('header-menu-link-js')) {
             $('.has-submenu-services .header-menu-link').addClass('header-menu-link-js');
-
             $('.header-menu-link-js').on('click', function(e) {
-                e.stopPropagation();
-                e.preventDefault();
-                var submenu = $(this).closest('.has-submenu-services').find('.header-submenu-services-wrap');
-                 if(!$(this).hasClass('active')) {
-                     $(this).addClass('active');
-                     submenu.slideDown(200);
-                 } else {
-                     $(this).removeClass('active');
-                     submenu.slideUp(200);
-                 }
+                if ($(this).hasClass('header-menu-link-surgery')) {
+                    // для открытия меню один раз
+                    if (!$(this).hasClass('active')) {
+                        e.stopPropagation();
+                        e.preventDefault();
+                        var submenu = $(this).closest('.has-submenu-services').find('.header-submenu-services-wrap');
+                        if(!$(this).hasClass('active')) {
+                            $(this).addClass('active');
+                            submenu.slideDown(200);
+                        } else {
+                            $(this).removeClass('active');
+                            submenu.slideUp(200);
+                        }
+                    }
+                } else {
+                    e.stopPropagation();
+                    e.preventDefault();
+                    var submenu = $(this).closest('.has-submenu-services').find('.header-submenu-services-wrap');
+                    if(!$(this).hasClass('active')) {
+                        $(this).addClass('active');
+                        submenu.slideDown(200);
+                    } else {
+                        $(this).removeClass('active');
+                        submenu.slideUp(200);
+                    }
+                }
             });
         }
 

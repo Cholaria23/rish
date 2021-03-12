@@ -233,7 +233,7 @@
 						@foreach ($header_data['services_top'] as $services_top)
 							@if ($services_top->id == 11)
 								<li class="header-menu-item has-submenu-services">
-									<a class="header-menu-link" href="{{route('first_url',$services_top->alias)}}">
+									<a class="header-menu-link header-menu-link-surgery" href="{{route('first_url',$services_top->alias)}}">
 										{{$services_top->lang->name}}
 									</a>
 									@if($services_top->units->count())
