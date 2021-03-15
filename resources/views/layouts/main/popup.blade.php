@@ -310,39 +310,12 @@
 	<div class='form-thanks'>@lang('main.form.form_thanks')</div>
 </div>
 
-<div class="mfp-hide popup-wrap mini popup-cabinet" id="login">
+{{-- <div class="mfp-hide popup-wrap mini popup-cabinet" id="login">
 	<div class="popup-name-wrap">
 		<div class="popup-name">
 			@lang('cabinet.log_inn')
 		</div>
 	</div>
-	{{-- <div class="social-login-block">
-		<a href="{{ route('social-login', array('google')) }}" class="social-login-link">
-			<span class="social-login-icon">
-				<svg width="21" height="21">
-					<use xlink:href="#google-icon"></use>
-				</svg>
-			</span>
-			<span class="social-login-name">
-				@lang('cabinet.reg_via_google')
-			</span>
-		</a>
-		<a href="{{ route('social-login', array('facebook')) }}" class="social-login-link">
-			<span class="social-login-icon">
-				<svg width="21" height="21">
-					<use xlink:href="#fb-icon"></use>
-				</svg>
-			</span>
-			<span class="social-login-name">
-				@lang('cabinet.reg_via_facebook')
-			</span>
-		</a>
-	</div>
-	<div class="or-line">
-		<span class="or-line-text">
-			@lang('cabinet.or')
-		</span>
-	</div> --}}
 	<form class="login-form">
 		<div class="input-wrap">
             <input class="input-form" type="email" name="email" placeholder="@lang('cabinet.email')*">
@@ -373,41 +346,14 @@
 			@lang('cabinet.incorrect')
 		</div>
 	</form>
-</div>
+</div> --}}
 
-<div class="mfp-hide popup-wrap mini popup-cabinet" id="registration">
+{{-- <div class="mfp-hide popup-wrap mini popup-cabinet" id="registration">
 	<div class="popup-name-wrap">
 		<div class="popup-name">
 			@lang('cabinet.registration')
 		</div>
 	</div>
-	{{-- <div class="social-login-block">
-		<a href="{{ route('social-login', array('google')) }}" class="social-login-link">
-			<span class="social-login-icon">
-				<svg width="21" height="21">
-					<use xlink:href="#google-icon"></use>
-				</svg>
-			</span>
-			<span class="social-login-name">
-				@lang('cabinet.reg_via_google')
-			</span>
-		</a>
-		<a href="{{ route('social-login', array('facebook')) }}" class="social-login-link">
-			<span class="social-login-icon">
-				<svg width="21" height="21">
-					<use xlink:href="#fb-icon"></use>
-				</svg>
-			</span>
-			<span class="social-login-name">
-				@lang('cabinet.reg_via_facebook')
-			</span>
-		</a>
-	</div>
-	<div class="or-line">
-		<span class="or-line-text">
-			@lang('cabinet.or')
-		</span>
-	</div> --}}
 	<form class="registration-form">
 		<div class="input-wrap">
             <input class="input-form" type="email" name="email" placeholder="@lang('cabinet.email')*" required>
@@ -430,9 +376,9 @@
 			@lang('cabinet.deleted')
 		</div>
 	</form>
-</div>
+</div> --}}
 
-<div class="mfp-hide popup-wrap mini popup-cabinet" id="reset">
+{{-- <div class="mfp-hide popup-wrap mini popup-cabinet" id="reset">
 	<div class="popup-name-wrap">
 		<div class="popup-name">
 			@lang('cabinet.reseting_password')
@@ -457,7 +403,7 @@
 			@lang('cabinet.pass_sent')
 		</div>
 	</form>
-</div>
+</div> --}}
 
 
 @if(isset($unit) && $unit->id == 4)
