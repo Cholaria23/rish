@@ -82,6 +82,16 @@
                                                                     </span>
                                                                 </p>
                                                             @endif
+                                                            @if (isset($date) && $date != '')
+                                                                <p style="display: flex; align-items: center; justify-content: space-between;font-size: 14px; margin: 0; padding: 10px 0; color: #343434; font-weight: 400; border-bottom: 1px solid #f2f2f2;">
+                                                                    <span style="width: 50%; text-align: left; font-size: 14px; color: #343434;">
+                                                                        @Lang('main.test_date'):
+                                                                    </span>
+                                                                    <span style="width: 50%; color:#343434; text-decoration:none; text-align: right;">
+                                                                        {{ $date }}
+                                                                    </span>
+                                                                </p>
+                                                            @endif
                                                         </div>
                                                     </div>
                                                 </td>

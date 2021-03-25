@@ -21,6 +21,9 @@
 		@if ( $seo->noindex == 1)
 	        <meta name="robots" content="noindex, nofollow" />
 	    @endif
+		<link rel="preload" href="{{ asset('/fonts/roboto/roboto-bold-webfont.woff2') }}" as="font" crossorigin>
+    	<link rel="preload" href="{{ asset('/fonts/roboto/roboto-medium-webfont.woff2') }}" as="font" crossorigin>
+		<link rel="preload" href="{{ asset('/fonts/roboto/roboto-regular-webfont.woff2') }}" as="font" crossorigin>
 		@if(App::getLocale() == 'en')
 			<link rel="stylesheet" href="{{ asset('/css/landing_app.css') }}">
 		@else
@@ -68,9 +71,15 @@
 					   @lang('main.test')
 				   </span>
 			   </a>
-			   <a class="popup-js appointment-online-popup-btn" href="#vaccination">
+			   {{-- Предварительная запись на прививки от гриппа, всплывающaя кнопка на главной странице --}}
+			   {{-- <a class="popup-js appointment-online-popup-btn" href="#vaccination">
 				   <span>
 					   @lang('main.vaccination')
+				   </span>
+			   </a> --}}
+			   <a class="popup-js appointment-online-popup-btn" href="#chekup">
+				   <span>
+					   @lang('main.chekup')
 				   </span>
 			   </a>
 		   @endif

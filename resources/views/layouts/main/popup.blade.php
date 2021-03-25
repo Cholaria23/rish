@@ -265,9 +265,12 @@
 	    <div class="input-wrap">
             <input class="input-form" type="text" name="name" placeholder="@lang('main.form.name')">
 	    </div>
-	    <div class="input-wrap">
+	    {{-- <div class="input-wrap">
             <input class="input-form" type="email" name="email" placeholder="@lang('main.form.email')">
-	    </div>
+	    </div> --}}
+		<div class="input-wrap">
+            <input class="input-form datepicker-after-js" type="text" name="date" placeholder="@lang('main.appointment_ultrasound_data')">
+        </div>
 	    <input type="hidden" name="url" value="{{Request::path()}}">
 		<input type="hidden" name="url_name" value="{{isset($page_title) && $page_title != '' ? $page_title : '' }}">
 	    <input type="hidden" name="title" value="@lang('main.chekup')">
@@ -551,7 +554,9 @@
    <div class='form-thanks'>@lang('main.form.form_thanks')</div>
 </div>
 
-<div class="mfp-hide popup-wrap mini" id="vaccination">
+{{-- Предварительная запись на прививки от гриппа, всплывающaя кнопка на главной странице --}}
+
+{{-- <div class="mfp-hide popup-wrap mini" id="vaccination">
 	<div class="popup-name-wrap">
 		<div class="popup-name">
 			@lang('main.flu_shots')
@@ -577,7 +582,7 @@
         <button type="submit" class="btn-green do_vaccination_form">@lang('main.btn.sign_up')</button>
     </form>
    <div class='form-thanks'>@lang('main.form.form_thanks')</div>
-</div>
+</div> --}}
 
 {{-- landing popup --}}
 
